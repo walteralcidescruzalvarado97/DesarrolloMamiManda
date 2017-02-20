@@ -79,6 +79,24 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inventario.Designer.vb">
+      <DependentUpon>Inventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario1.1.Designer.vb">
+      <DependentUpon>Inventario1.1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario1.1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriaPrima.Designer.vb">
+      <DependentUpon>MateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MateriaPrima.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -110,6 +128,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario1.1.resx">
+      <DependentUpon>Inventario1.1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MateriaPrima.resx">
+      <DependentUpon>MateriaPrima.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
