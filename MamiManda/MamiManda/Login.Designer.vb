@@ -38,7 +38,7 @@ Partial Class FrmLogin
         Me.TxtUser.Multiline = True
         Me.TxtUser.Name = "TxtUser"
         Me.TxtUser.Size = New System.Drawing.Size(173, 27)
-        Me.TxtUser.TabIndex = 0
+        Me.TxtUser.TabIndex = 1
         Me.TxtUser.Tag = ""
         Me.TxtUser.Text = "Username"
         '
@@ -50,7 +50,7 @@ Partial Class FrmLogin
         Me.TxtPassword.Multiline = True
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.Size = New System.Drawing.Size(173, 27)
-        Me.TxtPassword.TabIndex = 0
+        Me.TxtPassword.TabIndex = 2
         Me.TxtPassword.Text = "Password"
         '
         'BtnIngresar
@@ -59,7 +59,7 @@ Partial Class FrmLogin
         Me.BtnIngresar.Location = New System.Drawing.Point(359, 115)
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnIngresar.TabIndex = 1
+        Me.BtnIngresar.TabIndex = 3
         Me.BtnIngresar.Text = "Ingresar"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
@@ -69,7 +69,7 @@ Partial Class FrmLogin
         Me.BtnSalir.Location = New System.Drawing.Point(359, 156)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnSalir.TabIndex = 1
+        Me.BtnSalir.TabIndex = 4
         Me.BtnSalir.Text = "Salir"
         Me.BtnSalir.UseVisualStyleBackColor = True
         '
@@ -87,6 +87,7 @@ Partial Class FrmLogin
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio de Sesión"
         Me.ResumeLayout(False)
         Me.PerformLayout()

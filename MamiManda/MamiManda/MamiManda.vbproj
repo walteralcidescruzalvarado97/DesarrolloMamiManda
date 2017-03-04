@@ -79,6 +79,7 @@
     <Compile Include="FrmBuscarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FuncionSha1.vb" />
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
