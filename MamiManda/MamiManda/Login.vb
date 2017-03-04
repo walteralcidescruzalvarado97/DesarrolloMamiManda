@@ -11,7 +11,7 @@ Public Class FrmLogin
 
                 If reader.HasRows Then
                     reader.Read()
-                    'Aqui va el MDI
+                    'Aqui va el MDI, falta crear
                     MsgBox("Bienvenido")
                 Else
                     MsgBox("Usuario y Contrasena invalido")
