@@ -325,4 +325,5 @@ Public Class Usuario
         'txtEmpleado.Text = frm.lsvMostrar.FocusedItem.SubItems(1).Text
     End Sub
 
+
 End Class

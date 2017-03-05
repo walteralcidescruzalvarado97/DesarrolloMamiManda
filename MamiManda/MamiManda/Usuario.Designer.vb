@@ -345,7 +345,7 @@ Partial Class Usuario
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.Location = New System.Drawing.Point(12, 357)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(412, 134)
+        Me.lsvMostrar.Size = New System.Drawing.Size(568, 134)
         Me.lsvMostrar.TabIndex = 57
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
@@ -400,7 +400,7 @@ Partial Class Usuario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(436, 335)
+        Me.ClientSize = New System.Drawing.Size(670, 499)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lsvMostrar)
         Me.Controls.Add(Me.chkVer)
