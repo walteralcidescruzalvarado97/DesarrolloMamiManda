@@ -11,8 +11,6 @@ Public Class Usuario
 
 #Region "Funciones"
 
-
-
     Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal grupbox As Boolean)
         btnInsertar.Enabled = insertar
         btnGuardar.Enabled = guardar
@@ -24,7 +22,7 @@ Public Class Usuario
     Function Validar(Control As Control, Mensaje As String) As Boolean
 
         If Control.Text.Trim = Nothing Then
-            MessageBox.Show(Mensaje, "MamiManda", MessageBoxButtons.OK)
+            ErrorProvider1.SetError(Control, Mensaje)
             Control.Focus()
             Validar = True
         Else
@@ -320,10 +318,38 @@ Public Class Usuario
     End Sub
 
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnEmpleado.Click
-        'Dim frm As New FrmBuscarEmpleado
-        'frm.ShowDialog()
-        'txtEmpleado.Text = frm.lsvMostrar.FocusedItem.SubItems(1).Text
+        FrmBuscarEmpleado.ShowDialog()
     End Sub
+
+
+
+#Region "Limpiar ErrorProvider"
+    Private Sub txtCodUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtCodUsuario.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtUserName_TextChanged(sender As Object, e As EventArgs) Handles txtUserName.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtContrasena_TextChanged(sender As Object, e As EventArgs) Handles txtContrasena.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstado.SelectedIndexChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtEmpleado.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub cboTipoUsuario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipoUsuario.SelectedIndexChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+
+#End Region
 
 
 End Class

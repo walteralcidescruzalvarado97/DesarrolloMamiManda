@@ -22,6 +22,7 @@ Partial Class Usuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Usuario))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCodUsuario = New System.Windows.Forms.TextBox()
@@ -57,8 +58,10 @@ Partial Class Usuario
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTipo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GrupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -394,13 +397,17 @@ Partial Class Usuario
         Me.Label7.TabIndex = 58
         Me.Label7.Text = "Gestión Usuario"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(670, 499)
+        Me.ClientSize = New System.Drawing.Size(601, 335)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lsvMostrar)
         Me.Controls.Add(Me.chkVer)
@@ -423,6 +430,7 @@ Partial Class Usuario
         Me.GrupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -462,4 +470,5 @@ Partial Class Usuario
     Friend WithEvents chTipo As ColumnHeader
     Friend WithEvents chEstado As ColumnHeader
     Friend WithEvents Label7 As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
