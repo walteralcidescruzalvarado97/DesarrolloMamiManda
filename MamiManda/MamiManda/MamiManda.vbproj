@@ -73,16 +73,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
-    <Compile Include="FrmBuscarEmpleado.Designer.vb">
+    <Compile Include="Busquedas\FrmBuscarEmpleado.Designer.vb">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscarEmpleado.vb">
+    <Compile Include="Busquedas\FrmBuscarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuscarUsuario.Designer.vb">
+    <Compile Include="Busquedas\FrmBuscarUsuario.Designer.vb">
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscarUsuario.vb">
+    <Compile Include="Busquedas\FrmBuscarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCliente.Designer.vb">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEmpleado.Designer.vb">
@@ -158,11 +164,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmBuscarEmpleado.resx">
+    <EmbeddedResource Include="Busquedas\FrmBuscarEmpleado.resx">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscarUsuario.resx">
+    <EmbeddedResource Include="Busquedas\FrmBuscarUsuario.resx">
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCliente.resx">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
