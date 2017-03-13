@@ -85,6 +85,18 @@
     <Compile Include="Busquedas\FrmBuscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmBuscarCliente.Designer.vb">
+      <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarProveedor.Designer.vb">
+      <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmCliente.Designer.vb">
       <DependentUpon>FrmCliente.vb</DependentUpon>
     </Compile>
@@ -169,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\FrmBuscarUsuario.resx">
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarProveedor.resx">
+      <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.vb</DependentUpon>
