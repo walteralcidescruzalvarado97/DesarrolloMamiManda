@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Usuario
+Public Class FrmUsuario
 
     Private Sub Usuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarComboboxTipoUsuario()
@@ -253,7 +253,7 @@ Public Class Usuario
         chkVer.Enabled = False
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
 

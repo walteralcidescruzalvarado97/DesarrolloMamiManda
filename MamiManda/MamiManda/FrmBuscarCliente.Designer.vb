@@ -22,6 +22,7 @@ Partial Class FrmBuscarCliente
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBuscarCliente))
         Me.LsvMostrarCliente = New System.Windows.Forms.ListView()
         Me.chRtn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -89,27 +90,30 @@ Partial Class FrmBuscarCliente
         'txtBuscarRtn
         '
         Me.txtBuscarRtn.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBuscarRtn.Location = New System.Drawing.Point(95, 114)
+        Me.txtBuscarRtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarRtn.Location = New System.Drawing.Point(89, 114)
         Me.txtBuscarRtn.Multiline = True
         Me.txtBuscarRtn.Name = "txtBuscarRtn"
-        Me.txtBuscarRtn.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscarRtn.Size = New System.Drawing.Size(314, 29)
         Me.txtBuscarRtn.TabIndex = 87
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(415, 114)
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBuscar.Location = New System.Drawing.Point(409, 114)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(61, 36)
+        Me.btnBuscar.Size = New System.Drawing.Size(61, 29)
         Me.btnBuscar.TabIndex = 86
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(95, 114)
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(89, 114)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscar.Size = New System.Drawing.Size(314, 29)
         Me.txtBuscar.TabIndex = 85
         '
         'GroupBox1
@@ -117,7 +121,7 @@ Partial Class FrmBuscarCliente
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.rbNombre)
         Me.GroupBox1.Controls.Add(Me.rbRtn)
-        Me.GroupBox1.Location = New System.Drawing.Point(95, 58)
+        Me.GroupBox1.Location = New System.Drawing.Point(89, 58)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(381, 50)
         Me.GroupBox1.TabIndex = 84
@@ -151,7 +155,7 @@ Partial Class FrmBuscarCliente
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(190, 21)
+        Me.Label1.Location = New System.Drawing.Point(206, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(152, 25)
         Me.Label1.TabIndex = 83
@@ -161,7 +165,9 @@ Partial Class FrmBuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(570, 339)
         Me.Controls.Add(Me.LsvMostrarCliente)
         Me.Controls.Add(Me.txtBuscarRtn)
@@ -169,7 +175,9 @@ Partial Class FrmBuscarCliente
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
+        Me.DoubleBuffered = True
         Me.Name = "FrmBuscarCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarCliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

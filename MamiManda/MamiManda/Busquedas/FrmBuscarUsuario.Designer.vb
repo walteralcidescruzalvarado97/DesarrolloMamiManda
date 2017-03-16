@@ -42,17 +42,19 @@ Partial Class FrmBuscarUsuario
         'txtBuscarCodigo
         '
         Me.txtBuscarCodigo.BackColor = System.Drawing.SystemColors.Window
+        Me.txtBuscarCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscarCodigo.Location = New System.Drawing.Point(51, 109)
         Me.txtBuscarCodigo.Multiline = True
         Me.txtBuscarCodigo.Name = "txtBuscarCodigo"
-        Me.txtBuscarCodigo.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscarCodigo.Size = New System.Drawing.Size(314, 26)
         Me.txtBuscarCodigo.TabIndex = 11
         '
         'btnBuscar
         '
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscar.Location = New System.Drawing.Point(371, 110)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(61, 36)
+        Me.btnBuscar.Size = New System.Drawing.Size(61, 25)
         Me.btnBuscar.TabIndex = 10
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
@@ -95,10 +97,11 @@ Partial Class FrmBuscarUsuario
         '
         'txtBuscar
         '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(51, 109)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscar.Size = New System.Drawing.Size(314, 26)
         Me.txtBuscar.TabIndex = 8
         '
         'GroupBox1

@@ -38,8 +38,6 @@ Partial Class FrmEmpleado
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.btnAtras = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnInsertar = New System.Windows.Forms.Button()
@@ -140,7 +138,7 @@ Partial Class FrmEmpleado
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(504, 150)
+        Me.Label10.Location = New System.Drawing.Point(535, 151)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 82
@@ -151,7 +149,7 @@ Partial Class FrmEmpleado
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(504, 259)
+        Me.Label13.Location = New System.Drawing.Point(542, 285)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 83
@@ -162,11 +160,14 @@ Partial Class FrmEmpleado
         Me.btnActualizar.BackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.BackgroundImage = CType(resources.GetObject("btnActualizar.BackgroundImage"), System.Drawing.Image)
         Me.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(507, 125)
+        Me.btnActualizar.Location = New System.Drawing.Point(541, 104)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(42, 22)
+        Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
         Me.btnActualizar.TabIndex = 73
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
@@ -175,44 +176,23 @@ Partial Class FrmEmpleado
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(512, 223)
+        Me.btnCancelar.Location = New System.Drawing.Point(550, 249)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 75
         Me.btnCancelar.UseVisualStyleBackColor = False
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(513, 318)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(39, 16)
-        Me.Label14.TabIndex = 81
-        Me.Label14.Text = "Atras"
-        '
-        'btnAtras
-        '
-        Me.btnAtras.BackColor = System.Drawing.Color.Transparent
-        Me.btnAtras.BackgroundImage = CType(resources.GetObject("btnAtras.BackgroundImage"), System.Drawing.Image)
-        Me.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAtras.FlatAppearance.BorderSize = 0
-        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAtras.Location = New System.Drawing.Point(517, 287)
-        Me.btnAtras.Name = "btnAtras"
-        Me.btnAtras.Size = New System.Drawing.Size(35, 28)
-        Me.btnAtras.TabIndex = 76
-        Me.btnAtras.UseVisualStyleBackColor = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(505, 98)
+        Me.Label9.Location = New System.Drawing.Point(541, 85)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(52, 16)
         Me.Label9.TabIndex = 79
@@ -223,7 +203,7 @@ Partial Class FrmEmpleado
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(505, 198)
+        Me.Label11.Location = New System.Drawing.Point(542, 221)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(57, 16)
         Me.Label11.TabIndex = 80
@@ -234,11 +214,14 @@ Partial Class FrmEmpleado
         Me.btnInsertar.BackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.BackgroundImage = CType(resources.GetObject("btnInsertar.BackgroundImage"), System.Drawing.Image)
         Me.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnInsertar.FlatAppearance.BorderSize = 0
+        Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(512, 65)
+        Me.btnInsertar.Location = New System.Drawing.Point(543, 40)
         Me.btnInsertar.Name = "btnInsertar"
-        Me.btnInsertar.Size = New System.Drawing.Size(31, 46)
+        Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
         Me.btnInsertar.TabIndex = 72
         Me.btnInsertar.UseVisualStyleBackColor = False
         '
@@ -247,16 +230,20 @@ Partial Class FrmEmpleado
         Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(512, 170)
+        Me.btnGuardar.Location = New System.Drawing.Point(545, 174)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(37, 25)
+        Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 74
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'GbDatos
         '
+        Me.GbDatos.BackColor = System.Drawing.Color.Transparent
         Me.GbDatos.Controls.Add(Me.lblapellidos)
         Me.GbDatos.Controls.Add(Me.CboSexo)
         Me.GbDatos.Controls.Add(Me.TxtApellido)
@@ -416,6 +403,8 @@ Partial Class FrmEmpleado
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(677, 363)
         Me.Controls.Add(Me.LsvMostrarEmpleado)
         Me.Controls.Add(Me.Label8)
@@ -424,13 +413,12 @@ Partial Class FrmEmpleado
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.btnAtras)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnInsertar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GbDatos)
+        Me.DoubleBuffered = True
         Me.Name = "FrmEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmEmpleado"
@@ -456,8 +444,6 @@ Partial Class FrmEmpleado
     Friend WithEvents Label13 As Label
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents Label14 As Label
-    Friend WithEvents btnAtras As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents btnInsertar As Button

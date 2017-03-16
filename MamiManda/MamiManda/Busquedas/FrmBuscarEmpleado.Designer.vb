@@ -46,7 +46,7 @@ Partial Class FrmBuscarEmpleado
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(133, 9)
+        Me.Label1.Location = New System.Drawing.Point(144, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(181, 25)
         Me.Label1.TabIndex = 0
@@ -88,17 +88,18 @@ Partial Class FrmBuscarEmpleado
         '
         'txtBuscar
         '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(44, 92)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
         Me.txtBuscar.TabIndex = 2
         '
         'lsvMostrar
         '
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chIdEmpleado, Me.chNombre, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chTipoEmpleado, Me.chSexo})
         Me.lsvMostrar.FullRowSelect = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(29, 150)
+        Me.lsvMostrar.Location = New System.Drawing.Point(29, 138)
         Me.lsvMostrar.Name = "lsvMostrar"
         Me.lsvMostrar.Size = New System.Drawing.Size(418, 208)
         Me.lsvMostrar.TabIndex = 3
@@ -140,9 +141,10 @@ Partial Class FrmBuscarEmpleado
         '
         'btnBuscar
         '
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscar.Location = New System.Drawing.Point(364, 93)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(61, 36)
+        Me.btnBuscar.Size = New System.Drawing.Size(61, 26)
         Me.btnBuscar.TabIndex = 4
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
@@ -150,10 +152,11 @@ Partial Class FrmBuscarEmpleado
         'txtBuscarCodigo
         '
         Me.txtBuscarCodigo.BackColor = System.Drawing.SystemColors.Window
+        Me.txtBuscarCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscarCodigo.Location = New System.Drawing.Point(44, 92)
         Me.txtBuscarCodigo.Multiline = True
         Me.txtBuscarCodigo.Name = "txtBuscarCodigo"
-        Me.txtBuscarCodigo.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscarCodigo.Size = New System.Drawing.Size(314, 27)
         Me.txtBuscarCodigo.TabIndex = 5
         '
         'FrmBuscarEmpleado
@@ -162,7 +165,7 @@ Partial Class FrmBuscarEmpleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(475, 370)
+        Me.ClientSize = New System.Drawing.Size(475, 363)
         Me.Controls.Add(Me.txtBuscarCodigo)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.lsvMostrar)

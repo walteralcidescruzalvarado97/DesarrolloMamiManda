@@ -178,7 +178,7 @@ Public Class FrmProveedor
         Limpiar()
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
 
@@ -258,6 +258,7 @@ Public Class FrmProveedor
     Private Sub txtDireccion_TextChanged(sender As Object, e As EventArgs) Handles txtDireccion.TextChanged
         ErrorProvider1.Clear()
     End Sub
+
 #End Region
 
 

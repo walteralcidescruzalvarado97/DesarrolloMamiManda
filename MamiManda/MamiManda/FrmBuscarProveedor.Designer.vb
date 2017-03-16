@@ -22,6 +22,7 @@ Partial Class FrmBuscarProveedor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBuscarProveedor))
         Me.lsvMostrarProveedor = New System.Windows.Forms.ListView()
         Me.chRTN = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -77,27 +78,30 @@ Partial Class FrmBuscarProveedor
         'txtBuscarRtn
         '
         Me.txtBuscarRtn.BackColor = System.Drawing.SystemColors.Window
+        Me.txtBuscarRtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscarRtn.Location = New System.Drawing.Point(89, 113)
         Me.txtBuscarRtn.Multiline = True
         Me.txtBuscarRtn.Name = "txtBuscarRtn"
-        Me.txtBuscarRtn.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscarRtn.Size = New System.Drawing.Size(314, 26)
         Me.txtBuscarRtn.TabIndex = 74
         '
         'btnBuscar
         '
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscar.Location = New System.Drawing.Point(409, 113)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(61, 36)
+        Me.btnBuscar.Size = New System.Drawing.Size(61, 26)
         Me.btnBuscar.TabIndex = 73
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtBuscar
         '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(89, 113)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 37)
+        Me.txtBuscar.Size = New System.Drawing.Size(314, 26)
         Me.txtBuscar.TabIndex = 72
         '
         'GroupBox1
@@ -150,6 +154,8 @@ Partial Class FrmBuscarProveedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(568, 327)
         Me.Controls.Add(Me.lsvMostrarProveedor)
         Me.Controls.Add(Me.txtBuscarRtn)
@@ -157,7 +163,9 @@ Partial Class FrmBuscarProveedor
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
+        Me.DoubleBuffered = True
         Me.Name = "FrmBuscarProveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarProveedor"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

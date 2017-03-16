@@ -316,7 +316,7 @@ Public Class FrmEmpleado
         End If
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) 
         Close()
     End Sub
 End Class
