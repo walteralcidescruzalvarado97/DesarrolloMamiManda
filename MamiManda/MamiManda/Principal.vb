@@ -1,21 +1,21 @@
 ﻿Public Class FrmPrincipal
-    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
+    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) 
         FrmCliente.Show()
     End Sub
 
-    Private Sub BtnProveedor_Click(sender As Object, e As EventArgs) Handles BtnProveedor.Click
+    Private Sub BtnProveedor_Click(sender As Object, e As EventArgs) 
         FrmProveedor.Show()
     End Sub
 
-    Private Sub BtnEmpleados_Click(sender As Object, e As EventArgs) Handles BtnEmpleados.Click
+    Private Sub BtnEmpleados_Click(sender As Object, e As EventArgs) 
         FrmEmpleado.Show()
     End Sub
 
-    Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
+    Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) 
         FrmUsuario.Show()
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) 
         FrmBusqueda.Show()
     End Sub
 End Class

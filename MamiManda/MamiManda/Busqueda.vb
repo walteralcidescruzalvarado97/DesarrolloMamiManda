@@ -1,17 +1,17 @@
 ﻿Public Class FrmBusqueda
-    Private Sub BtnProveedor_Click(sender As Object, e As EventArgs) Handles BtnProveedor.Click
+    Private Sub BtnProveedor_Click(sender As Object, e As EventArgs) 
         FrmBuscarProveedor.Show()
     End Sub
 
-    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
+    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) 
         FrmBuscarCliente.Show()
     End Sub
 
-    Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
+    Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) 
         FrmBuscarUsuario.Show()
     End Sub
 
-    Private Sub BtnEmpleados_Click(sender As Object, e As EventArgs) Handles BtnEmpleados.Click
+    Private Sub BtnEmpleados_Click(sender As Object, e As EventArgs) 
         FrmBuscarEmpleado.Show()
     End Sub
 End Class
