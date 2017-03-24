@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Drawing.Imaging
 Public Class FrmUsuario
 
     Private Sub Usuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -11,12 +13,37 @@ Public Class FrmUsuario
 
 #Region "Funciones"
 
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal grupbox As Boolean)
+    Private Function ImageToByte(ByVal img As Image) As Byte()
+        Dim ms As MemoryStream = New MemoryStream()
+
+        img.Save(ms, Imaging.ImageFormat.Png)
+
+        ms.Close()
+        Dim byteArray As Byte() = ms.ToArray()
+        ms.Dispose()
+
+        Return byteArray
+
+    End Function
+
+    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnInsertar.Enabled = insertar
         btnGuardar.Enabled = guardar
         btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
-        GrupBox1.Enabled = grupbox
+        HabilitarTextBox(valor)
+    End Sub
+
+    Private Sub HabilitarTextBox(ByVal valor As Boolean)
+        txtCodUsuario.Enabled = valor
+        txtUserName.Enabled = valor
+        txtContrasena.Enabled = valor
+        cboEstado.Enabled = valor
+        txtEmpleado.Enabled = valor
+        btnEmpleado.Enabled = valor
+        cboTipoUsuario.Enabled = valor
+        btnAbrir.Enabled = valor
+        btnEliminarFoto.Enabled = valor
     End Sub
 
     Function Validar(Control As Control, Mensaje As String) As Boolean
@@ -35,9 +62,9 @@ Public Class FrmUsuario
         txtUserName.Text = Nothing
         txtEmpleado.Text = Nothing
         txtContrasena.Text = Nothing
+        FotoAgregar.Image = Nothing
         cboEstado.SelectedIndex = -1
         cboTipoUsuario.SelectedIndex = -1
-        chkVer.Enabled = True
     End Sub
 
     Private Function ExisteRegistro() As Boolean
@@ -95,6 +122,14 @@ Public Class FrmUsuario
 
 #Region "Insert,delete"
     Private Sub AgregarUsuario()
+        Dim foto As Byte()
+
+        If FotoAgregar.Image Is Nothing Then
+            foto = Nothing
+        Else
+            foto = ImageToByte(FotoAgregar.Image)
+        End If
+
         If ExisteRegistro() = False Then
             If cnn.State = ConnectionState.Open Then
                 cnn.Close()
@@ -111,6 +146,11 @@ Public Class FrmUsuario
                         .Parameters.Add("@Activo", SqlDbType.Int).Value = cboEstado.SelectedValue
                         .Parameters.Add("@IdEmpleado", SqlDbType.Int).Value = txtEmpleado.Text.Trim
                         .Parameters.Add("@TipoUsuario", SqlDbType.Int).Value = cboTipoUsuario.SelectedValue
+                        If foto Is Nothing Then
+                            .Parameters.Add("@Foto", SqlDbType.Image).Value = DBNull.Value
+                        Else
+                            .Parameters.Add("@Foto", SqlDbType.Image).Value = foto
+                        End If
                         .ExecuteNonQuery()
                         MessageBox.Show("El registro de usuario ha sido agregado", "MamiManda", MessageBoxButtons.OK)
                     End With
@@ -125,6 +165,14 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub ActualizarUsuario()
+
+        Dim foto As Byte()
+
+        If FotoAgregar.Image Is Nothing Then
+            foto = Nothing
+        Else
+            foto = ImageToByte(FotoAgregar.Image)
+        End If
 
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
@@ -142,6 +190,11 @@ Public Class FrmUsuario
                     .Parameters.Add("@Activo", SqlDbType.Int).Value = cboEstado.SelectedValue
                     .Parameters.Add("@IdEmpleado", SqlDbType.Int).Value = txtEmpleado.Text.Trim
                     .Parameters.Add("@TipoUsuario", SqlDbType.Int).Value = cboTipoUsuario.SelectedValue
+                    If foto Is Nothing Then
+                        .Parameters.Add("@Foto", SqlDbType.Image).Value = DBNull.Value
+                    Else
+                        .Parameters.Add("@Foto", SqlDbType.Image).Value = foto
+                    End If
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de usuario ha sido actualizado", "MamiManda", MessageBoxButtons.OK)
                 End With
@@ -180,15 +233,61 @@ Public Class FrmUsuario
                     With Me.lsvMostrar.Items.Add(VerUsuario("IdUsuario").ToString)
                         .SubItems.Add(VerUsuario("UserName").ToString)
                         .SubItems.Add(VerUsuario("Password").ToString)
-                        .SubItems.Add(VerUsuario("Activo").ToString)
+                        If VerUsuario("Activo").ToString = "True" Then
+                            .SubItems.Add("Activo")
+                        Else
+                            .SubItems.Add("Inactivo")
+                        End If
                         .SubItems.Add(VerUsuario("Nombre Completo").ToString)
                         .SubItems.Add(VerUsuario("TipoUsuario").ToString)
                         .SubItems.Add(VerUsuario("IdTipoUsuario").ToString)
                         .SubItems.Add(VerUsuario("IdEmpleado").ToString)
+                        .SubItems.Add(VerUsuario("Foto").ToString)
                     End With
                 End While
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
+            Finally
+                cnn.Close()
+            End Try
+        End Using
+    End Sub
+
+    Private Sub ListarUsuario()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+
+        Using cmd As New SqlCommand
+            Try
+                With cmd
+                    .CommandText = "Sp_ListarUsuario"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
+                    .Connection = cnn
+                End With
+                Dim VerUsuario As SqlDataReader
+                VerUsuario = cmd.ExecuteReader()
+                lsvMostrar.Items.Clear()
+                While VerUsuario.Read = True
+                    With Me.lsvMostrar.Items.Add(VerUsuario("IdUsuario").ToString)
+                        .SubItems.Add(VerUsuario("UserName").ToString)
+                        .SubItems.Add(VerUsuario("Password").ToString)
+                        If VerUsuario("Activo").ToString = "True" Then
+                            .SubItems.Add("Activo")
+                        Else
+                            .SubItems.Add("Inactivo")
+                        End If
+                        .SubItems.Add(VerUsuario("Nombre Completo").ToString)
+                        .SubItems.Add(VerUsuario("TipoUsuario").ToString)
+                        .SubItems.Add(VerUsuario("IdTipoUsuario").ToString)
+                        .SubItems.Add(VerUsuario("IdEmpleado").ToString)
+                        .SubItems.Add(VerUsuario("Foto").ToString)
+                    End With
+                End While
+            Catch ex As Exception
+                MsgBox(ex.Message)
             Finally
                 cnn.Close()
             End Try
@@ -248,9 +347,7 @@ Public Class FrmUsuario
     Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         HabilitarBotones(False, True, False, True, True)
         InvestigarCorrelativo()
-        chkVer.Checked = False
         txtUserName.Focus()
-        chkVer.Enabled = False
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs)
@@ -291,18 +388,8 @@ Public Class FrmUsuario
 
     End Sub
 
-    Private Sub chkVer_CheckedChanged(sender As Object, e As EventArgs) Handles chkVer.CheckedChanged
-        If chkVer.CheckState = CheckState.Checked Then
-            Height = 539
-            CenterToScreen()
-
-        Else
-            Height = 374
-            CenterToScreen()
-        End If
-    End Sub
-
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
+
         Dim var As String = lsvMostrar.FocusedItem.SubItems(3).Text
         If var = "True" Then
             cboEstado.SelectedValue = 1
@@ -314,7 +401,13 @@ Public Class FrmUsuario
         txtContrasena.Text = lsvMostrar.FocusedItem.SubItems(2).Text
         txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(7).Text
         cboTipoUsuario.SelectedValue = lsvMostrar.FocusedItem.SubItems(6).Text
+
+        'Dim strAsBytes() As Byte = New System.Text.UTF8Encoding().GetBytes(lsvMostrar.FocusedItem.SubItems(8).Text)
+        'Dim img As Image = Nothing
+
+        'FotoAgregar.Image = byteArrayToImage(strAsBytes)
         HabilitarBotones(False, False, True, True, True)
+        btnEditar.Enabled = True
     End Sub
 
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnEmpleado.Click
@@ -346,6 +439,32 @@ Public Class FrmUsuario
 
     Private Sub cboTipoUsuario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipoUsuario.SelectedIndexChanged
         ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        ListarUsuario()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        TabControl1.SelectedIndex = 0
+        btnEditar.Enabled = False
+    End Sub
+
+    Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
+        AbrirFoto.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures
+        AbrirFoto.Filter = "Imágenes (*.png, *.jpg)|*.png;*.jpg"
+        AbrirFoto.FileName = "Seleccionar Imagen"
+
+
+        If AbrirFoto.ShowDialog = DialogResult.OK Then
+
+            FotoAgregar.Image = Image.FromFile(AbrirFoto.FileName)
+
+        End If
+    End Sub
+
+    Private Sub btnEliminarFoto_Click(sender As Object, e As EventArgs) Handles btnEliminarFoto.Click
+        FotoAgregar.Image = Nothing
     End Sub
 
 

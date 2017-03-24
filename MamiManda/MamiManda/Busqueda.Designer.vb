@@ -24,14 +24,14 @@ Partial Class FrmBusqueda
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBusqueda))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BtnEmpleados = New System.Windows.Forms.Button()
-        Me.BtnUsuarios = New System.Windows.Forms.Button()
-        Me.BtnClientes = New System.Windows.Forms.Button()
-        Me.BtnProveedor = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BtnEmpleados = New System.Windows.Forms.Button()
+        Me.BtnUsuarios = New System.Windows.Forms.Button()
+        Me.BtnClientes = New System.Windows.Forms.Button()
+        Me.BtnProveedor = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +49,46 @@ Partial Class FrmBusqueda
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(869, 320)
         Me.Panel1.TabIndex = 4
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(489, 259)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(122, 31)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Usuarios"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(670, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(149, 31)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Empleados"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(274, 259)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(113, 31)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Clientes"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(58, 186)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(139, 31)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Proveedor"
         '
         'BtnEmpleados
         '
@@ -109,46 +149,6 @@ Partial Class FrmBusqueda
         Me.BtnProveedor.Size = New System.Drawing.Size(171, 156)
         Me.BtnProveedor.TabIndex = 6
         Me.BtnProveedor.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(489, 259)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(122, 31)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Usuarios"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(670, 188)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 31)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Empleados"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(274, 259)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 31)
-        Me.Label3.TabIndex = 17
-        Me.Label3.Text = "Clientes"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(58, 186)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 31)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Proveedor"
         '
         'FrmBusqueda
         '

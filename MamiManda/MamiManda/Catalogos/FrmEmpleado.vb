@@ -9,143 +9,7 @@ Public Class FrmEmpleado
         CboSexo.Text = Nothing
     End Sub
 
-
-    Private Function ExisteEmpleado() As Boolean
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        Dim Val As Boolean = False
-        cnn.Open()
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ExisteEmpleado"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@CodEmpleado", SqlDbType.NVarChar, 40).Value = TxtCodEmpleado.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim existe As Integer = cmd.ExecuteScalar()
-                If existe = 0 Then
-                Else
-                    Val = True
-                    MessageBox.Show("Ya se encuentra registrado este Empleado", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
-        End Using
-        Return Val
-    End Function
-
-    Private Sub InvestigarCorrelativo()
-
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        Try
-            Dim ListarEmpleado As New SqlCommand("Sp_MostrarCodEmpleadoIdentity", cnn)
-            ListarEmpleado.CommandType = CommandType.StoredProcedure
-            Dim Listarempleados As SqlDataReader
-            cnn.Open()
-            Listarempleados = ListarEmpleado.ExecuteReader
-            If Listarempleados.Read = True Then
-                If Listarempleados("Id") Is DBNull.Value Then
-                    TxtCodEmpleado.Text = 1
-                Else
-                    TxtCodEmpleado.Text = Listarempleados("Id").ToString
-                End If
-            End If
-            cnn.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal grupbox As Boolean)
-        btnInsertar.Enabled = insertar
-        btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
-        btnCancelar.Enabled = cancelar
-        GbDatos.Enabled = grupbox
-    End Sub
-
-    Function Validar(Control As Control, Mensaje As String) As Boolean
-
-        If Control.Text.Trim = Nothing Then
-            MessageBox.Show(Mensaje, "MamiManda", MessageBoxButtons.OK)
-            Control.Focus()
-            Validar = True
-        Else
-            Validar = False
-        End If
-    End Function
-
-    Private Sub Limpiar()
-        TxtCodEmpleado.Text = Nothing
-        TxtNombre.Text = Nothing
-        TxtApellido.Text = Nothing
-        TxtEmail.Text = Nothing
-        TxtTelefono.Text = Nothing
-        TxtDireccion.Text = Nothing
-        CboTipoEmpleado.SelectedIndex = -1
-        CboSexo.SelectedIndex = -1
-        chkVer.Enabled = True
-    End Sub
-
-
-    Private Sub LlenarComboboxTipoEmpleado()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-        Try
-            Using cmd As New SqlCommand
-                With cmd
-                    .CommandText = "SP_LlenarComboTipoEmpleado"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim da As New SqlDataAdapter(cmd)
-                Dim ds As New DataSet
-                da.Fill(ds, "TipoEmpleado")
-                Me.CboTipoEmpleado.DataSource = ds.Tables(0)
-                Me.CboTipoEmpleado.DisplayMember = ds.Tables(0).Columns("TipoEmpleado").ToString
-                Me.CboTipoEmpleado.ValueMember = ds.Tables(0).Columns("IdTipoEmpleado").ToString
-            End Using
-        Catch ex As Exception
-
-        Finally
-            cnn.Close()
-        End Try
-    End Sub
-
-    Private Sub LlenarComboboxSexo()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-        Try
-            Using cmd As New SqlCommand
-                With cmd
-                    .CommandText = "SP_LlenarComboSexo"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim da As New SqlDataAdapter(cmd)
-                Dim ds As New DataSet
-                da.Fill(ds, "Sexo")
-                Me.CboSexo.DataSource = ds.Tables(0)
-                Me.CboSexo.DisplayMember = ds.Tables(0).Columns("Sexo").ToString
-                Me.CboSexo.ValueMember = ds.Tables(0).Columns("IdSexo").ToString
-            End Using
-        Catch ex As Exception
-
-        Finally
-            cnn.Close()
-        End Try
-    End Sub
-
-
+#Region "SCRUD"
     Private Sub AgregarEmpleado()
         If ExisteEmpleado() = False Then
             If cnn.State = ConnectionState.Open Then
@@ -213,6 +77,192 @@ Public Class FrmEmpleado
             cnn.Close()
         End Try
     End Sub
+#End Region
+
+#Region "Funciones"
+
+    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
+        btnInsertar.Enabled = insertar
+        btnGuardar.Enabled = guardar
+        btnActualizar.Enabled = actualizar
+        btnCancelar.Enabled = cancelar
+        HabilitarTextBox(valor)
+    End Sub
+
+    Private Sub HabilitarTextBox(ByVal valor As Boolean)
+        TxtCodEmpleado.Enabled = valor
+        TxtNombre.Enabled = valor
+        TxtApellido.Enabled = valor
+        TxtEmail.Enabled = valor
+        TxtTelefono.Enabled = valor
+        TxtDireccion.Enabled = valor
+        CboSexo.Enabled = valor
+        CboTipoEmpleado.Enabled = valor
+    End Sub
+
+    Private Function ExisteEmpleado() As Boolean
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        Dim Val As Boolean = False
+        cnn.Open()
+        Using cmd As New SqlCommand
+            Try
+                With cmd
+                    .CommandText = "Sp_ExisteEmpleado"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@CodEmpleado", SqlDbType.NVarChar, 40).Value = TxtCodEmpleado.Text.Trim
+                    .Connection = cnn
+                End With
+                Dim existe As Integer = cmd.ExecuteScalar()
+                If existe = 0 Then
+                Else
+                    Val = True
+                    MessageBox.Show("Ya se encuentra registrado este Empleado", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+        Return Val
+    End Function
+
+    Private Sub InvestigarCorrelativo()
+
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        Try
+            Dim ListarEmpleado As New SqlCommand("Sp_MostrarCodEmpleadoIdentity", cnn)
+            ListarEmpleado.CommandType = CommandType.StoredProcedure
+            Dim Listarempleados As SqlDataReader
+            cnn.Open()
+            Listarempleados = ListarEmpleado.ExecuteReader
+            If Listarempleados.Read = True Then
+                If Listarempleados("Id") Is DBNull.Value Then
+                    TxtCodEmpleado.Text = 1
+                Else
+                    TxtCodEmpleado.Text = Listarempleados("Id").ToString
+                End If
+            End If
+            cnn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Function Validar(Control As Control, Mensaje As String) As Boolean
+
+        If Control.Text.Trim = Nothing Then
+            MessageBox.Show(Mensaje, "MamiManda", MessageBoxButtons.OK)
+            Control.Focus()
+            Validar = True
+        Else
+            Validar = False
+        End If
+    End Function
+
+    Private Sub Limpiar()
+        TxtCodEmpleado.Text = Nothing
+        TxtNombre.Text = Nothing
+        TxtApellido.Text = Nothing
+        TxtEmail.Text = Nothing
+        TxtTelefono.Text = Nothing
+        TxtDireccion.Text = Nothing
+        CboTipoEmpleado.SelectedIndex = -1
+        CboSexo.SelectedIndex = -1
+    End Sub
+#End Region
+
+#Region "Llenar"
+
+    Private Sub ListarEmpleado()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+
+        Using cmd As New SqlCommand
+            Try
+                With cmd
+                    .CommandText = "Sp_ListarEmpleado"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
+                    .Connection = cnn
+                End With
+                Dim VerEmpleado As SqlDataReader
+                VerEmpleado = cmd.ExecuteReader()
+                LsvMostrarEmpleado.Items.Clear()
+                While VerEmpleado.Read = True
+                    With Me.LsvMostrarEmpleado.Items.Add(VerEmpleado("IdEmpleado").ToString)
+                        .SubItems.Add(VerEmpleado("Nombre").ToString)
+                        .SubItems.Add(VerEmpleado("Apellido").ToString)
+                        .SubItems.Add(VerEmpleado("EMail").ToString)
+                        .SubItems.Add(VerEmpleado("Telefono").ToString)
+                        .SubItems.Add(VerEmpleado("TipoEmpleado").ToString)
+                        .SubItems.Add(VerEmpleado("Sexo").ToString)
+                        .SubItems.Add(VerEmpleado("Direccion").ToString)
+                    End With
+                End While
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                cnn.Close()
+            End Try
+        End Using
+    End Sub
+
+    Private Sub LlenarComboboxTipoEmpleado()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+        Try
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "SP_LlenarComboTipoEmpleado"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                End With
+                Dim da As New SqlDataAdapter(cmd)
+                Dim ds As New DataSet
+                da.Fill(ds, "TipoEmpleado")
+                Me.CboTipoEmpleado.DataSource = ds.Tables(0)
+                Me.CboTipoEmpleado.DisplayMember = ds.Tables(0).Columns("TipoEmpleado").ToString
+                Me.CboTipoEmpleado.ValueMember = ds.Tables(0).Columns("IdTipoEmpleado").ToString
+            End Using
+        Catch ex As Exception
+
+        Finally
+            cnn.Close()
+        End Try
+    End Sub
+
+    Private Sub LlenarComboboxSexo()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+        Try
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "SP_LlenarComboSexo"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                End With
+                Dim da As New SqlDataAdapter(cmd)
+                Dim ds As New DataSet
+                da.Fill(ds, "Sexo")
+                Me.CboSexo.DataSource = ds.Tables(0)
+                Me.CboSexo.DisplayMember = ds.Tables(0).Columns("Sexo").ToString
+                Me.CboSexo.ValueMember = ds.Tables(0).Columns("IdSexo").ToString
+            End Using
+        Catch ex As Exception
+
+        Finally
+            cnn.Close()
+        End Try
+    End Sub
 
     Private Sub MostrarEmpleado()
         If cnn.State = ConnectionState.Open Then
@@ -236,9 +286,9 @@ Public Class FrmEmpleado
                         .SubItems.Add(VerEmpleado("Apellido").ToString)
                         .SubItems.Add(VerEmpleado("EMail").ToString)
                         .SubItems.Add(VerEmpleado("Telefono").ToString)
-                        .SubItems.Add(VerEmpleado("Direccion").ToString)
                         .SubItems.Add(VerEmpleado("TipoEmpleado").ToString)
                         .SubItems.Add(VerEmpleado("Sexo").ToString)
+                        .SubItems.Add(VerEmpleado("Direccion").ToString)
 
                     End With
                 End While
@@ -249,6 +299,7 @@ Public Class FrmEmpleado
             End Try
         End Using
     End Sub
+#End Region
 
     Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         HabilitarBotones(False, True, False, True, True)
@@ -278,21 +329,11 @@ Public Class FrmEmpleado
         TxtApellido.Text = LsvMostrarEmpleado.FocusedItem.SubItems(2).Text
         TxtEmail.Text = LsvMostrarEmpleado.FocusedItem.SubItems(3).Text
         TxtTelefono.Text = LsvMostrarEmpleado.FocusedItem.SubItems(4).Text
-        TxtDireccion.Text = LsvMostrarEmpleado.FocusedItem.SubItems(5).Text
-        CboTipoEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(6).Text
-        CboSexo.Text = LsvMostrarEmpleado.FocusedItem.SubItems(7).Text
+        TxtDireccion.Text = LsvMostrarEmpleado.FocusedItem.SubItems(7).Text
+        CboTipoEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(5).Text
+        CboSexo.Text = LsvMostrarEmpleado.FocusedItem.SubItems(6).Text
         HabilitarBotones(False, False, True, True, True)
-    End Sub
-
-    Private Sub chkVer_CheckedChanged(sender As Object, e As EventArgs) Handles chkVer.CheckedChanged
-        If chkVer.CheckState = CheckState.Checked Then
-            Height = 562
-
-
-        Else
-            Height = 401
-
-        End If
+        btnEditar.Enabled = True
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -318,5 +359,15 @@ Public Class FrmEmpleado
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) 
         Close()
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        ListarEmpleado()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        TabControl1.SelectedIndex = 0
+        btnEditar.Enabled = False
+        txtBuscar.Text = ""
     End Sub
 End Class

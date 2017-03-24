@@ -12,12 +12,24 @@ Public Class FrmCliente
 
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal grupbox As Boolean)
+    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnInsertar.Enabled = insertar
         btnGuardar.Enabled = guardar
         btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
-        gbDatos.Enabled = grupbox
+        HabilitarTexbox(valor)
+    End Sub
+
+    Private Sub HabilitarTexbox(ByVal valor As Boolean)
+        txtRtn.Enabled = valor
+        txtNombre.Enabled = valor
+        txtApellido.Enabled = valor
+        txtEmail.Enabled = valor
+        mtbTelefono.Enabled = valor
+        txtDireccion.Enabled = valor
+        txtFecha.Enabled = valor
+        cboMunicipio.Enabled = valor
+        cboSexo.Enabled = valor
     End Sub
 
     Private Sub Limpiar()
@@ -30,7 +42,6 @@ Public Class FrmCliente
         txtFecha.Text = Nothing
         cboSexo.Text = Nothing
         cboMunicipio.Text = Nothing
-        chkVer.Enabled = True
     End Sub
 
     Function Validar(Control As Control, Mensaje As String) As Boolean
@@ -93,15 +104,52 @@ Public Class FrmCliente
                         .SubItems.Add(VerCliente("Apellido").ToString)
                         .SubItems.Add(VerCliente("EMail").ToString)
                         .SubItems.Add(VerCliente("Telefono").ToString)
-                        .SubItems.Add(VerCliente("Direccion").ToString)
                         .SubItems.Add(VerCliente("FechaNac").ToString)
                         .SubItems.Add(VerCliente("Sexo").ToString)
+                        .SubItems.Add(VerCliente("Direccion").ToString)
                         .SubItems.Add(VerCliente("Municipio").ToString)
 
                     End With
                 End While
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
+            Finally
+                cnn.Close()
+            End Try
+        End Using
+    End Sub
+
+    Private Sub ListarCliente()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+
+        Using cmd As New SqlCommand
+            Try
+                With cmd
+                    .CommandText = "Sp_ListarCLiente"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
+                    .Connection = cnn
+                End With
+                Dim VerCliente As SqlDataReader
+                VerCliente = cmd.ExecuteReader()
+                LsvMostrarCliente.Items.Clear()
+                While VerCliente.Read = True
+                    With Me.LsvMostrarCliente.Items.Add(VerCliente("RTNCliente").ToString)
+                        .SubItems.Add(VerCliente("Nombre").ToString)
+                        .SubItems.Add(VerCliente("Apellido").ToString)
+                        .SubItems.Add(VerCliente("EMail").ToString)
+                        .SubItems.Add(VerCliente("Telefono").ToString)
+                        .SubItems.Add(VerCliente("FechaNac").ToString)
+                        .SubItems.Add(VerCliente("Sexo").ToString)
+                        .SubItems.Add(VerCliente("Direccion").ToString)
+                        .SubItems.Add(VerCliente("Municipio").ToString)
+                    End With
+                End While
+            Catch ex As Exception
+                MsgBox(ex.Message)
             Finally
                 cnn.Close()
             End Try
@@ -242,13 +290,6 @@ Public Class FrmCliente
     End Sub
 #End Region
 
-    Private Sub chkVer_CheckedChanged_1(sender As Object, e As EventArgs) Handles chkVer.CheckedChanged
-        If chkVer.CheckState = CheckState.Checked Then
-            Height = 653
-        Else
-            Height = 479
-        End If
-    End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(txtRtn, "Debe ingresar un RTN") Then
@@ -268,13 +309,6 @@ Public Class FrmCliente
         End If
     End Sub
 
-    Private Sub chkVer_CheckedChanged(sender As Object, e As EventArgs)
-        If chkVer.CheckState = CheckState.Checked Then
-            Height = 653
-        Else
-            Height = 479
-        End If
-    End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         Close()
@@ -282,7 +316,6 @@ Public Class FrmCliente
 
     Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
         HabilitarBotones(True, False, False, False, False)
-        chkVer.Checked = False
         Limpiar()
     End Sub
 
@@ -314,10 +347,21 @@ Public Class FrmCliente
         txtApellido.Text = LsvMostrarCliente.FocusedItem.SubItems(2).Text
         txtEmail.Text = LsvMostrarCliente.FocusedItem.SubItems(3).Text
         mtbTelefono.Text = LsvMostrarCliente.FocusedItem.SubItems(4).Text
-        txtDireccion.Text = LsvMostrarCliente.FocusedItem.SubItems(5).Text
-        txtFecha.Text = LsvMostrarCliente.FocusedItem.SubItems(6).Text
-        cboSexo.Text = LsvMostrarCliente.FocusedItem.SubItems(7).Text
+        txtDireccion.Text = LsvMostrarCliente.FocusedItem.SubItems(7).Text
+        txtFecha.Text = LsvMostrarCliente.FocusedItem.SubItems(5).Text
+        cboSexo.Text = LsvMostrarCliente.FocusedItem.SubItems(6).Text
         cboMunicipio.Text = LsvMostrarCliente.FocusedItem.SubItems(8).Text
         HabilitarBotones(False, False, True, True, True)
+        btnEditar.Enabled = True
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        TabControl1.SelectedIndex = 0
+        btnEditar.Enabled = False
+        txtBuscar.Text = ""
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        ListarCliente()
     End Sub
 End Class

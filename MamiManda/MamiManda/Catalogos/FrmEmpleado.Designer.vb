@@ -29,11 +29,9 @@ Partial Class FrmEmpleado
         Me.ChApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChDireccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChTipoEmpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.chkVer = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -59,23 +57,33 @@ Partial Class FrmEmpleado
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TPGestionEmpleado = New System.Windows.Forms.TabPage()
+        Me.TPListarEmpleado = New System.Windows.Forms.TabPage()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.GbDatos.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TPGestionEmpleado.SuspendLayout()
+        Me.TPListarEmpleado.SuspendLayout()
         Me.SuspendLayout()
         '
         'LsvMostrarEmpleado
         '
-        Me.LsvMostrarEmpleado.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodEMpleado, Me.ChNombre, Me.ChApellido, Me.ChEmail, Me.ChTelefono, Me.ChDireccion, Me.ChTipoEmpleado, Me.ChSexo})
+        Me.LsvMostrarEmpleado.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodEMpleado, Me.ChNombre, Me.ChApellido, Me.ChEmail, Me.ChTelefono, Me.ChTipoEmpleado, Me.ChSexo})
         Me.LsvMostrarEmpleado.FullRowSelect = True
-        Me.LsvMostrarEmpleado.Location = New System.Drawing.Point(42, 371)
+        Me.LsvMostrarEmpleado.GridLines = True
+        Me.LsvMostrarEmpleado.Location = New System.Drawing.Point(-4, 80)
         Me.LsvMostrarEmpleado.Name = "LsvMostrarEmpleado"
-        Me.LsvMostrarEmpleado.Size = New System.Drawing.Size(603, 149)
+        Me.LsvMostrarEmpleado.Size = New System.Drawing.Size(600, 284)
         Me.LsvMostrarEmpleado.TabIndex = 85
         Me.LsvMostrarEmpleado.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarEmpleado.View = System.Windows.Forms.View.Details
         '
         'ChCodEMpleado
         '
-        Me.ChCodEMpleado.Text = "CodEmpleado"
+        Me.ChCodEMpleado.Text = "Código"
         '
         'ChNombre
         '
@@ -90,21 +98,17 @@ Partial Class FrmEmpleado
         'ChEmail
         '
         Me.ChEmail.Text = "Email"
-        Me.ChEmail.Width = 80
+        Me.ChEmail.Width = 120
         '
         'ChTelefono
         '
         Me.ChTelefono.Text = "Teléfono"
-        '
-        'ChDireccion
-        '
-        Me.ChDireccion.Text = "Dirección"
-        Me.ChDireccion.Width = 80
+        Me.ChTelefono.Width = 75
         '
         'ChTipoEmpleado
         '
-        Me.ChTipoEmpleado.Text = "TipoEmpleado"
-        Me.ChTipoEmpleado.Width = 80
+        Me.ChTipoEmpleado.Text = "Tipo Empleado"
+        Me.ChTipoEmpleado.Width = 100
         '
         'ChSexo
         '
@@ -116,29 +120,18 @@ Partial Class FrmEmpleado
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(260, 29)
+        Me.Label8.Location = New System.Drawing.Point(178, 12)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(188, 25)
         Me.Label8.TabIndex = 84
         Me.Label8.Text = "Gestión Empleado"
-        '
-        'chkVer
-        '
-        Me.chkVer.AutoSize = True
-        Me.chkVer.BackColor = System.Drawing.Color.Transparent
-        Me.chkVer.Location = New System.Drawing.Point(486, 337)
-        Me.chkVer.Name = "chkVer"
-        Me.chkVer.Size = New System.Drawing.Size(66, 17)
-        Me.chkVer.TabIndex = 77
-        Me.chkVer.Text = "Ver todo"
-        Me.chkVer.UseVisualStyleBackColor = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(535, 151)
+        Me.Label10.Location = New System.Drawing.Point(460, 172)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 82
@@ -149,7 +142,7 @@ Partial Class FrmEmpleado
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(542, 285)
+        Me.Label13.Location = New System.Drawing.Point(467, 306)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 83
@@ -165,7 +158,7 @@ Partial Class FrmEmpleado
         Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(541, 104)
+        Me.btnActualizar.Location = New System.Drawing.Point(466, 125)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
         Me.btnActualizar.TabIndex = 73
@@ -181,7 +174,7 @@ Partial Class FrmEmpleado
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(550, 249)
+        Me.btnCancelar.Location = New System.Drawing.Point(475, 270)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 75
@@ -192,7 +185,7 @@ Partial Class FrmEmpleado
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(541, 85)
+        Me.Label9.Location = New System.Drawing.Point(466, 106)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(52, 16)
         Me.Label9.TabIndex = 79
@@ -203,7 +196,7 @@ Partial Class FrmEmpleado
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(542, 221)
+        Me.Label11.Location = New System.Drawing.Point(467, 242)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(57, 16)
         Me.Label11.TabIndex = 80
@@ -219,7 +212,7 @@ Partial Class FrmEmpleado
         Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(543, 40)
+        Me.btnInsertar.Location = New System.Drawing.Point(468, 61)
         Me.btnInsertar.Name = "btnInsertar"
         Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
         Me.btnInsertar.TabIndex = 72
@@ -235,7 +228,7 @@ Partial Class FrmEmpleado
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(545, 174)
+        Me.btnGuardar.Location = New System.Drawing.Point(470, 195)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 74
@@ -260,7 +253,7 @@ Partial Class FrmEmpleado
         Me.GbDatos.Controls.Add(Me.Label5)
         Me.GbDatos.Controls.Add(Me.Label4)
         Me.GbDatos.Controls.Add(Me.TxtTelefono)
-        Me.GbDatos.Location = New System.Drawing.Point(132, 75)
+        Me.GbDatos.Location = New System.Drawing.Point(63, 51)
         Me.GbDatos.Name = "GbDatos"
         Me.GbDatos.Size = New System.Drawing.Size(348, 268)
         Me.GbDatos.TabIndex = 78
@@ -278,6 +271,7 @@ Partial Class FrmEmpleado
         '
         'CboSexo
         '
+        Me.CboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboSexo.FormattingEnabled = True
         Me.CboSexo.Location = New System.Drawing.Point(129, 230)
         Me.CboSexo.Name = "CboSexo"
@@ -293,6 +287,7 @@ Partial Class FrmEmpleado
         '
         'CboTipoEmpleado
         '
+        Me.CboTipoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboTipoEmpleado.FormattingEnabled = True
         Me.CboTipoEmpleado.Location = New System.Drawing.Point(130, 203)
         Me.CboTipoEmpleado.Name = "CboTipoEmpleado"
@@ -398,6 +393,84 @@ Partial Class FrmEmpleado
         Me.TxtTelefono.Size = New System.Drawing.Size(158, 20)
         Me.TxtTelefono.TabIndex = 5
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TPGestionEmpleado)
+        Me.TabControl1.Controls.Add(Me.TPListarEmpleado)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 1)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(603, 386)
+        Me.TabControl1.TabIndex = 86
+        '
+        'TPGestionEmpleado
+        '
+        Me.TPGestionEmpleado.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPGestionEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TPGestionEmpleado.Controls.Add(Me.btnInsertar)
+        Me.TPGestionEmpleado.Controls.Add(Me.GbDatos)
+        Me.TPGestionEmpleado.Controls.Add(Me.Label8)
+        Me.TPGestionEmpleado.Controls.Add(Me.btnGuardar)
+        Me.TPGestionEmpleado.Controls.Add(Me.Label10)
+        Me.TPGestionEmpleado.Controls.Add(Me.Label11)
+        Me.TPGestionEmpleado.Controls.Add(Me.Label13)
+        Me.TPGestionEmpleado.Controls.Add(Me.Label9)
+        Me.TPGestionEmpleado.Controls.Add(Me.btnActualizar)
+        Me.TPGestionEmpleado.Controls.Add(Me.btnCancelar)
+        Me.TPGestionEmpleado.Location = New System.Drawing.Point(4, 22)
+        Me.TPGestionEmpleado.Name = "TPGestionEmpleado"
+        Me.TPGestionEmpleado.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPGestionEmpleado.Size = New System.Drawing.Size(595, 360)
+        Me.TPGestionEmpleado.TabIndex = 0
+        Me.TPGestionEmpleado.Text = "Gestión Empleado"
+        Me.TPGestionEmpleado.UseVisualStyleBackColor = True
+        '
+        'TPListarEmpleado
+        '
+        Me.TPListarEmpleado.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPListarEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TPListarEmpleado.Controls.Add(Me.btnEditar)
+        Me.TPListarEmpleado.Controls.Add(Me.Label12)
+        Me.TPListarEmpleado.Controls.Add(Me.txtBuscar)
+        Me.TPListarEmpleado.Controls.Add(Me.LsvMostrarEmpleado)
+        Me.TPListarEmpleado.Location = New System.Drawing.Point(4, 22)
+        Me.TPListarEmpleado.Name = "TPListarEmpleado"
+        Me.TPListarEmpleado.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPListarEmpleado.Size = New System.Drawing.Size(595, 360)
+        Me.TPListarEmpleado.TabIndex = 1
+        Me.TPListarEmpleado.Text = "Listar Empleado"
+        Me.TPListarEmpleado.UseVisualStyleBackColor = True
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(141, 31)
+        Me.txtBuscar.Multiline = True
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
+        Me.txtBuscar.TabIndex = 86
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(211, 3)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(167, 25)
+        Me.Label12.TabIndex = 87
+        Me.Label12.Text = "Listar Empleado"
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Enabled = False
+        Me.btnEditar.Location = New System.Drawing.Point(514, 51)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEditar.TabIndex = 88
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
+        '
         'FrmEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -405,27 +478,20 @@ Partial Class FrmEmpleado
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(677, 363)
-        Me.Controls.Add(Me.LsvMostrarEmpleado)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.chkVer)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.btnInsertar)
-        Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.GbDatos)
+        Me.ClientSize = New System.Drawing.Size(600, 384)
+        Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.Name = "FrmEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmEmpleado"
         Me.GbDatos.ResumeLayout(False)
         Me.GbDatos.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TPGestionEmpleado.ResumeLayout(False)
+        Me.TPGestionEmpleado.PerformLayout()
+        Me.TPListarEmpleado.ResumeLayout(False)
+        Me.TPListarEmpleado.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -435,11 +501,9 @@ Partial Class FrmEmpleado
     Friend WithEvents ChApellido As ColumnHeader
     Friend WithEvents ChEmail As ColumnHeader
     Friend WithEvents ChTelefono As ColumnHeader
-    Friend WithEvents ChDireccion As ColumnHeader
     Friend WithEvents ChTipoEmpleado As ColumnHeader
     Friend WithEvents ChSexo As ColumnHeader
     Friend WithEvents Label8 As Label
-    Friend WithEvents chkVer As CheckBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents btnActualizar As Button
@@ -465,4 +529,10 @@ Partial Class FrmEmpleado
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtTelefono As TextBox
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TPGestionEmpleado As TabPage
+    Friend WithEvents TPListarEmpleado As TabPage
+    Friend WithEvents Label12 As Label
+    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents btnEditar As Button
 End Class

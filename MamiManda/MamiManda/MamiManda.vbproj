@@ -95,34 +95,34 @@
     <Compile Include="Busquedas\FrmBuscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuscarCliente.Designer.vb">
+    <Compile Include="Busquedas\FrmBuscarCliente.Designer.vb">
       <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscarCliente.vb">
+    <Compile Include="Busquedas\FrmBuscarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuscarProveedor.Designer.vb">
+    <Compile Include="Busquedas\FrmBuscarProveedor.Designer.vb">
       <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscarProveedor.vb">
+    <Compile Include="Busquedas\FrmBuscarProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCliente.Designer.vb">
+    <Compile Include="Catalogos\FrmCliente.Designer.vb">
       <DependentUpon>FrmCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCliente.vb">
+    <Compile Include="Catalogos\FrmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleado.Designer.vb">
+    <Compile Include="Catalogos\FrmEmpleado.Designer.vb">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleado.vb">
+    <Compile Include="Catalogos\FrmEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProveedor.Designer.vb">
+    <Compile Include="Catalogos\FrmProveedor.Designer.vb">
       <DependentUpon>FrmProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmProveedor.vb">
+    <Compile Include="Catalogos\FrmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FuncionSha1.vb" />
@@ -172,10 +172,10 @@
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuario.Designer.vb">
+    <Compile Include="Catalogos\Usuario.Designer.vb">
       <DependentUpon>Usuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.vb">
+    <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Venta.Designer.vb">
@@ -195,19 +195,19 @@
     <EmbeddedResource Include="Busquedas\FrmBuscarUsuario.resx">
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscarCliente.resx">
+    <EmbeddedResource Include="Busquedas\FrmBuscarCliente.resx">
       <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscarProveedor.resx">
+    <EmbeddedResource Include="Busquedas\FrmBuscarProveedor.resx">
       <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCliente.resx">
+    <EmbeddedResource Include="Catalogos\FrmCliente.resx">
       <DependentUpon>FrmCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleado.resx">
+    <EmbeddedResource Include="Catalogos\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProveedor.resx">
+    <EmbeddedResource Include="Catalogos\FrmProveedor.resx">
       <DependentUpon>FrmProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -231,7 +231,7 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuario.resx">
+    <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
@@ -249,6 +249,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,10 +30,8 @@ Partial Class FrmCliente
         Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chDireccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chMunicipio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
         Me.txtFecha = New System.Windows.Forms.TextBox()
@@ -54,7 +52,6 @@ Partial Class FrmCliente
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtRtn = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.chkVer = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -64,63 +61,72 @@ Partial Class FrmCliente
         Me.btnInsertar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TPListar = New System.Windows.Forms.TabPage()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TPListar.SuspendLayout()
         Me.SuspendLayout()
         '
         'LsvMostrarCliente
         '
-        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chFecha, Me.chSexo, Me.chMunicipio})
+        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono, Me.chFecha, Me.chSexo})
         Me.LsvMostrarCliente.FullRowSelect = True
-        Me.LsvMostrarCliente.Location = New System.Drawing.Point(62, 474)
+        Me.LsvMostrarCliente.GridLines = True
+        Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 87)
         Me.LsvMostrarCliente.Name = "LsvMostrarCliente"
-        Me.LsvMostrarCliente.Size = New System.Drawing.Size(541, 139)
+        Me.LsvMostrarCliente.Size = New System.Drawing.Size(600, 341)
         Me.LsvMostrarCliente.TabIndex = 109
         Me.LsvMostrarCliente.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarCliente.View = System.Windows.Forms.View.Details
         '
         'chRtn
         '
-        Me.chRtn.Text = "RtnCLiente"
+        Me.chRtn.Text = "RTN CLiente"
+        Me.chRtn.Width = 120
         '
         'chNombre
         '
         Me.chNombre.Text = "Nombre"
+        Me.chNombre.Width = 80
         '
         'chApellido
         '
         Me.chApellido.Text = "Apellido"
+        Me.chApellido.Width = 80
         '
         'chEmail
         '
         Me.chEmail.Text = "Email"
+        Me.chEmail.Width = 150
         '
         'chTelefono
         '
         Me.chTelefono.Text = "Teléfono"
-        '
-        'chDireccion
-        '
-        Me.chDireccion.Text = "Dirección"
+        Me.chTelefono.Width = 70
         '
         'chFecha
         '
         Me.chFecha.Text = "Fecha"
+        Me.chFecha.Width = 135
         '
         'chSexo
         '
         Me.chSexo.Text = "Sexo"
-        '
-        'chMunicipio
-        '
-        Me.chMunicipio.Text = "Municipio"
+        Me.chSexo.Width = 80
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(264, 4)
+        Me.Label15.Location = New System.Drawing.Point(198, 17)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(159, 25)
         Me.Label15.TabIndex = 108
@@ -147,9 +153,9 @@ Partial Class FrmCliente
         Me.gbDatos.Controls.Add(Me.Label3)
         Me.gbDatos.Controls.Add(Me.txtRtn)
         Me.gbDatos.Controls.Add(Me.Label2)
-        Me.gbDatos.Location = New System.Drawing.Point(98, 43)
+        Me.gbDatos.Location = New System.Drawing.Point(24, 71)
         Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(375, 356)
+        Me.gbDatos.Size = New System.Drawing.Size(445, 356)
         Me.gbDatos.TabIndex = 0
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Proveedor"
@@ -163,6 +169,7 @@ Partial Class FrmCliente
         '
         'cboMunicipio
         '
+        Me.cboMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMunicipio.FormattingEnabled = True
         Me.cboMunicipio.Location = New System.Drawing.Point(128, 321)
         Me.cboMunicipio.Name = "cboMunicipio"
@@ -171,6 +178,7 @@ Partial Class FrmCliente
         '
         'cboSexo
         '
+        Me.cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSexo.FormattingEnabled = True
         Me.cboSexo.Location = New System.Drawing.Point(128, 292)
         Me.cboSexo.Name = "cboSexo"
@@ -302,23 +310,12 @@ Partial Class FrmCliente
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "RTN"
         '
-        'chkVer
-        '
-        Me.chkVer.AutoSize = True
-        Me.chkVer.BackColor = System.Drawing.Color.Transparent
-        Me.chkVer.Location = New System.Drawing.Point(483, 388)
-        Me.chkVer.Name = "chkVer"
-        Me.chkVer.Size = New System.Drawing.Size(66, 17)
-        Me.chkVer.TabIndex = 106
-        Me.chkVer.Text = "Ver todo"
-        Me.chkVer.UseVisualStyleBackColor = False
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(555, 176)
+        Me.Label10.Location = New System.Drawing.Point(522, 197)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 104
@@ -329,7 +326,7 @@ Partial Class FrmCliente
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(558, 304)
+        Me.Label13.Location = New System.Drawing.Point(525, 325)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 105
@@ -345,7 +342,7 @@ Partial Class FrmCliente
         Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(560, 129)
+        Me.btnActualizar.Location = New System.Drawing.Point(527, 150)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
         Me.btnActualizar.TabIndex = 102
@@ -361,7 +358,7 @@ Partial Class FrmCliente
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(566, 268)
+        Me.btnCancelar.Location = New System.Drawing.Point(533, 289)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 103
@@ -372,7 +369,7 @@ Partial Class FrmCliente
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(561, 110)
+        Me.Label8.Location = New System.Drawing.Point(528, 131)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(52, 16)
         Me.Label8.TabIndex = 98
@@ -383,7 +380,7 @@ Partial Class FrmCliente
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(559, 240)
+        Me.Label9.Location = New System.Drawing.Point(526, 261)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 99
@@ -399,7 +396,7 @@ Partial Class FrmCliente
         Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(563, 66)
+        Me.btnInsertar.Location = New System.Drawing.Point(530, 87)
         Me.btnInsertar.Name = "btnInsertar"
         Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
         Me.btnInsertar.TabIndex = 96
@@ -415,7 +412,7 @@ Partial Class FrmCliente
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(563, 200)
+        Me.btnGuardar.Location = New System.Drawing.Point(530, 221)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 97
@@ -425,6 +422,84 @@ Partial Class FrmCliente
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TPListar)
+        Me.TabControl1.Location = New System.Drawing.Point(1, 0)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(604, 457)
+        Me.TabControl1.TabIndex = 110
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage1.Controls.Add(Me.gbDatos)
+        Me.TabPage1.Controls.Add(Me.btnInsertar)
+        Me.TabPage1.Controls.Add(Me.Label15)
+        Me.TabPage1.Controls.Add(Me.btnGuardar)
+        Me.TabPage1.Controls.Add(Me.Label9)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.Label13)
+        Me.TabPage1.Controls.Add(Me.btnCancelar)
+        Me.TabPage1.Controls.Add(Me.btnActualizar)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(596, 431)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Gestión Cliente"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TPListar
+        '
+        Me.TPListar.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPListar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TPListar.Controls.Add(Me.btnEditar)
+        Me.TPListar.Controls.Add(Me.txtBuscar)
+        Me.TPListar.Controls.Add(Me.Label14)
+        Me.TPListar.Controls.Add(Me.LsvMostrarCliente)
+        Me.TPListar.Location = New System.Drawing.Point(4, 22)
+        Me.TPListar.Name = "TPListar"
+        Me.TPListar.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPListar.Size = New System.Drawing.Size(596, 431)
+        Me.TPListar.TabIndex = 1
+        Me.TPListar.Text = "Listar Clientes"
+        Me.TPListar.UseVisualStyleBackColor = True
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Enabled = False
+        Me.btnEditar.Location = New System.Drawing.Point(518, 58)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEditar.TabIndex = 112
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(98, 31)
+        Me.txtBuscar.Multiline = True
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
+        Me.txtBuscar.TabIndex = 111
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(200, 3)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(138, 25)
+        Me.Label14.TabIndex = 110
+        Me.Label14.Text = "Listar Cliente"
+        '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -432,29 +507,22 @@ Partial Class FrmCliente
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(680, 424)
-        Me.Controls.Add(Me.LsvMostrarCliente)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.gbDatos)
-        Me.Controls.Add(Me.chkVer)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.btnInsertar)
-        Me.Controls.Add(Me.btnGuardar)
+        Me.ClientSize = New System.Drawing.Size(606, 458)
+        Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cliente"
         Me.gbDatos.ResumeLayout(False)
         Me.gbDatos.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.TPListar.ResumeLayout(False)
+        Me.TPListar.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -464,10 +532,8 @@ Partial Class FrmCliente
     Friend WithEvents chApellido As ColumnHeader
     Friend WithEvents chEmail As ColumnHeader
     Friend WithEvents chTelefono As ColumnHeader
-    Friend WithEvents chDireccion As ColumnHeader
     Friend WithEvents chFecha As ColumnHeader
     Friend WithEvents chSexo As ColumnHeader
-    Friend WithEvents chMunicipio As ColumnHeader
     Friend WithEvents Label15 As Label
     Friend WithEvents gbDatos As GroupBox
     Friend WithEvents txtFecha As TextBox
@@ -488,7 +554,6 @@ Partial Class FrmCliente
     Friend WithEvents Label3 As Label
     Friend WithEvents txtRtn As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents chkVer As CheckBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents btnActualizar As Button
@@ -498,4 +563,10 @@ Partial Class FrmCliente
     Friend WithEvents btnInsertar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TPListar As TabPage
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents Label14 As Label
 End Class

@@ -47,7 +47,6 @@ Partial Class FrmUsuario
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.chkVer = New System.Windows.Forms.CheckBox()
         Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.chCodUsuario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chUserName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -57,16 +56,30 @@ Partial Class FrmUsuario
         Me.chTipo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.FotoAgregar = New System.Windows.Forms.PictureBox()
+        Me.btnAbrir = New System.Windows.Forms.Button()
+        Me.btnEliminarFoto = New System.Windows.Forms.Button()
+        Me.AbrirFoto = New System.Windows.Forms.OpenFileDialog()
         Me.GrupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(26, 28)
+        Me.Label1.Location = New System.Drawing.Point(166, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 0
@@ -75,14 +88,14 @@ Partial Class FrmUsuario
         'txtCodUsuario
         '
         Me.txtCodUsuario.Enabled = False
-        Me.txtCodUsuario.Location = New System.Drawing.Point(111, 25)
+        Me.txtCodUsuario.Location = New System.Drawing.Point(251, 27)
         Me.txtCodUsuario.Name = "txtCodUsuario"
         Me.txtCodUsuario.Size = New System.Drawing.Size(121, 20)
         Me.txtCodUsuario.TabIndex = 1
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(111, 58)
+        Me.txtUserName.Location = New System.Drawing.Point(251, 60)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(121, 20)
         Me.txtUserName.TabIndex = 3
@@ -91,7 +104,7 @@ Partial Class FrmUsuario
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(6, 61)
+        Me.Label2.Location = New System.Drawing.Point(146, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 13)
         Me.Label2.TabIndex = 2
@@ -99,7 +112,7 @@ Partial Class FrmUsuario
         '
         'txtContrasena
         '
-        Me.txtContrasena.Location = New System.Drawing.Point(111, 91)
+        Me.txtContrasena.Location = New System.Drawing.Point(251, 93)
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.Size = New System.Drawing.Size(121, 20)
         Me.txtContrasena.TabIndex = 5
@@ -108,7 +121,7 @@ Partial Class FrmUsuario
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(41, 94)
+        Me.Label3.Location = New System.Drawing.Point(181, 96)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 4
@@ -118,7 +131,7 @@ Partial Class FrmUsuario
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(65, 127)
+        Me.Label4.Location = New System.Drawing.Point(205, 129)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 6
@@ -126,8 +139,9 @@ Partial Class FrmUsuario
         '
         'cboEstado
         '
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(111, 123)
+        Me.cboEstado.Location = New System.Drawing.Point(251, 125)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.Size = New System.Drawing.Size(121, 21)
         Me.cboEstado.TabIndex = 7
@@ -136,7 +150,7 @@ Partial Class FrmUsuario
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(51, 159)
+        Me.Label5.Location = New System.Drawing.Point(191, 161)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(54, 13)
         Me.Label5.TabIndex = 8
@@ -163,7 +177,7 @@ Partial Class FrmUsuario
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(25, 195)
+        Me.Label6.Location = New System.Drawing.Point(165, 197)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 13)
         Me.Label6.TabIndex = 11
@@ -171,8 +185,9 @@ Partial Class FrmUsuario
         '
         'cboTipoUsuario
         '
+        Me.cboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoUsuario.FormattingEnabled = True
-        Me.cboTipoUsuario.Location = New System.Drawing.Point(111, 192)
+        Me.cboTipoUsuario.Location = New System.Drawing.Point(251, 194)
         Me.cboTipoUsuario.Name = "cboTipoUsuario"
         Me.cboTipoUsuario.Size = New System.Drawing.Size(121, 21)
         Me.cboTipoUsuario.TabIndex = 12
@@ -180,6 +195,9 @@ Partial Class FrmUsuario
         'GrupBox1
         '
         Me.GrupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GrupBox1.Controls.Add(Me.btnEliminarFoto)
+        Me.GrupBox1.Controls.Add(Me.btnAbrir)
+        Me.GrupBox1.Controls.Add(Me.FotoAgregar)
         Me.GrupBox1.Controls.Add(Me.Panel1)
         Me.GrupBox1.Controls.Add(Me.Label1)
         Me.GrupBox1.Controls.Add(Me.cboTipoUsuario)
@@ -192,9 +210,9 @@ Partial Class FrmUsuario
         Me.GrupBox1.Controls.Add(Me.txtContrasena)
         Me.GrupBox1.Controls.Add(Me.cboEstado)
         Me.GrupBox1.Controls.Add(Me.Label4)
-        Me.GrupBox1.Location = New System.Drawing.Point(12, 85)
+        Me.GrupBox1.Location = New System.Drawing.Point(11, 31)
         Me.GrupBox1.Name = "GrupBox1"
-        Me.GrupBox1.Size = New System.Drawing.Size(269, 242)
+        Me.GrupBox1.Size = New System.Drawing.Size(395, 256)
         Me.GrupBox1.TabIndex = 13
         Me.GrupBox1.TabStop = False
         Me.GrupBox1.Text = "Datos de Usuario"
@@ -204,7 +222,7 @@ Partial Class FrmUsuario
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.btnEmpleado)
         Me.Panel1.Controls.Add(Me.txtEmpleado)
-        Me.Panel1.Location = New System.Drawing.Point(111, 158)
+        Me.Panel1.Location = New System.Drawing.Point(251, 160)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(122, 21)
         Me.Panel1.TabIndex = 14
@@ -214,7 +232,7 @@ Partial Class FrmUsuario
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(423, 117)
+        Me.Label8.Location = New System.Drawing.Point(516, 87)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(52, 16)
         Me.Label8.TabIndex = 45
@@ -225,7 +243,7 @@ Partial Class FrmUsuario
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(420, 241)
+        Me.Label9.Location = New System.Drawing.Point(513, 211)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 46
@@ -241,7 +259,7 @@ Partial Class FrmUsuario
         Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(423, 76)
+        Me.btnInsertar.Location = New System.Drawing.Point(516, 46)
         Me.btnInsertar.Name = "btnInsertar"
         Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
         Me.btnInsertar.TabIndex = 43
@@ -257,7 +275,7 @@ Partial Class FrmUsuario
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(424, 200)
+        Me.btnGuardar.Location = New System.Drawing.Point(517, 170)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 44
@@ -268,7 +286,7 @@ Partial Class FrmUsuario
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(417, 181)
+        Me.Label10.Location = New System.Drawing.Point(510, 151)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 53
@@ -279,7 +297,7 @@ Partial Class FrmUsuario
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(418, 301)
+        Me.Label13.Location = New System.Drawing.Point(511, 271)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 54
@@ -295,7 +313,7 @@ Partial Class FrmUsuario
         Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(423, 138)
+        Me.btnActualizar.Location = New System.Drawing.Point(516, 108)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
         Me.btnActualizar.TabIndex = 51
@@ -311,30 +329,20 @@ Partial Class FrmUsuario
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(426, 265)
+        Me.btnCancelar.Location = New System.Drawing.Point(519, 235)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 52
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'chkVer
-        '
-        Me.chkVer.AutoSize = True
-        Me.chkVer.BackColor = System.Drawing.Color.Transparent
-        Me.chkVer.Location = New System.Drawing.Point(288, 309)
-        Me.chkVer.Name = "chkVer"
-        Me.chkVer.Size = New System.Drawing.Size(66, 17)
-        Me.chkVer.TabIndex = 56
-        Me.chkVer.Text = "Ver todo"
-        Me.chkVer.UseVisualStyleBackColor = False
-        '
         'lsvMostrar
         '
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodUsuario, Me.chUserName, Me.chPassword, Me.chEstado, Me.chNombre, Me.chTipo})
         Me.lsvMostrar.FullRowSelect = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(12, 357)
+        Me.lsvMostrar.GridLines = True
+        Me.lsvMostrar.Location = New System.Drawing.Point(0, 84)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(568, 134)
+        Me.lsvMostrar.Size = New System.Drawing.Size(596, 214)
         Me.lsvMostrar.TabIndex = 57
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
@@ -356,28 +364,25 @@ Partial Class FrmUsuario
         '
         'chEstado
         '
-        Me.chEstado.DisplayIndex = 5
         Me.chEstado.Text = "Estado"
-        Me.chEstado.Width = 70
+        Me.chEstado.Width = 80
         '
         'chNombre
         '
-        Me.chNombre.DisplayIndex = 3
         Me.chNombre.Text = "Nombre Completo"
         Me.chNombre.Width = 130
         '
         'chTipo
         '
-        Me.chTipo.DisplayIndex = 4
         Me.chTipo.Text = "Tipo Usuario"
-        Me.chTipo.Width = 80
+        Me.chTipo.Width = 100
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(207, 24)
+        Me.Label7.Location = New System.Drawing.Point(217, 3)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(166, 25)
         Me.Label7.TabIndex = 58
@@ -387,25 +392,125 @@ Partial Class FrmUsuario
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(-3, 1)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(603, 325)
+        Me.TabControl1.TabIndex = 59
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage1.Controls.Add(Me.btnInsertar)
+        Me.TabPage1.Controls.Add(Me.Label7)
+        Me.TabPage1.Controls.Add(Me.GrupBox1)
+        Me.TabPage1.Controls.Add(Me.btnGuardar)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.Label9)
+        Me.TabPage1.Controls.Add(Me.Label13)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.btnActualizar)
+        Me.TabPage1.Controls.Add(Me.btnCancelar)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(595, 299)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Gestión Usuario"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage2.Controls.Add(Me.btnEditar)
+        Me.TabPage2.Controls.Add(Me.Label11)
+        Me.TabPage2.Controls.Add(Me.txtBuscar)
+        Me.TabPage2.Controls.Add(Me.lsvMostrar)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(595, 299)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Listar Usuario"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Enabled = False
+        Me.btnEditar.Location = New System.Drawing.Point(517, 55)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEditar.TabIndex = 88
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(205, 3)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(145, 25)
+        Me.Label11.TabIndex = 87
+        Me.Label11.Text = "Listar Usuario"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(83, 40)
+        Me.txtBuscar.Multiline = True
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(416, 29)
+        Me.txtBuscar.TabIndex = 86
+        '
+        'FotoAgregar
+        '
+        Me.FotoAgregar.BackColor = System.Drawing.Color.Gainsboro
+        Me.FotoAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FotoAgregar.Location = New System.Drawing.Point(20, 27)
+        Me.FotoAgregar.Name = "FotoAgregar"
+        Me.FotoAgregar.Size = New System.Drawing.Size(101, 123)
+        Me.FotoAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FotoAgregar.TabIndex = 48
+        Me.FotoAgregar.TabStop = False
+        '
+        'btnAbrir
+        '
+        Me.btnAbrir.Location = New System.Drawing.Point(20, 153)
+        Me.btnAbrir.Name = "btnAbrir"
+        Me.btnAbrir.Size = New System.Drawing.Size(60, 23)
+        Me.btnAbrir.TabIndex = 49
+        Me.btnAbrir.Text = "Abrir"
+        Me.btnAbrir.UseVisualStyleBackColor = True
+        '
+        'btnEliminarFoto
+        '
+        Me.btnEliminarFoto.Location = New System.Drawing.Point(86, 153)
+        Me.btnEliminarFoto.Name = "btnEliminarFoto"
+        Me.btnEliminarFoto.Size = New System.Drawing.Size(35, 23)
+        Me.btnEliminarFoto.TabIndex = 50
+        Me.btnEliminarFoto.Text = "X"
+        Me.btnEliminarFoto.UseVisualStyleBackColor = True
+        '
+        'AbrirFoto
+        '
+        Me.AbrirFoto.FileName = "OpenFileDialog1"
+        '
         'FrmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(601, 335)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.lsvMostrar)
-        Me.Controls.Add(Me.chkVer)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.btnInsertar)
-        Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.GrupBox1)
+        Me.ClientSize = New System.Drawing.Size(599, 323)
+        Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.Name = "FrmUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -415,8 +520,13 @@ Partial Class FrmUsuario
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -443,7 +553,6 @@ Partial Class FrmUsuario
     Friend WithEvents Label13 As Label
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents chkVer As CheckBox
     Friend WithEvents lsvMostrar As ListView
     Friend WithEvents chCodUsuario As ColumnHeader
     Friend WithEvents chUserName As ColumnHeader
@@ -453,4 +562,14 @@ Partial Class FrmUsuario
     Friend WithEvents chEstado As ColumnHeader
     Friend WithEvents Label7 As Label
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents btnEliminarFoto As Button
+    Friend WithEvents btnAbrir As Button
+    Friend WithEvents FotoAgregar As PictureBox
+    Friend WithEvents AbrirFoto As OpenFileDialog
 End Class

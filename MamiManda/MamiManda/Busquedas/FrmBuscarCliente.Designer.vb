@@ -26,46 +26,48 @@ Partial Class FrmBuscarCliente
         Me.LsvMostrarCliente = New System.Windows.Forms.ListView()
         Me.chRtn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDireccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chMunicipio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.txtBuscarRtn = New System.Windows.Forms.TextBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.rbNombre = New System.Windows.Forms.RadioButton()
-        Me.rbRtn = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1.SuspendLayout()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'LsvMostrarCliente
         '
-        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chFecha, Me.chSexo, Me.chMunicipio})
+        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chFecha, Me.chSexo, Me.chMunicipio})
         Me.LsvMostrarCliente.FullRowSelect = True
-        Me.LsvMostrarCliente.Location = New System.Drawing.Point(23, 178)
+        Me.LsvMostrarCliente.GridLines = True
+        Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 84)
         Me.LsvMostrarCliente.Name = "LsvMostrarCliente"
-        Me.LsvMostrarCliente.Size = New System.Drawing.Size(524, 139)
+        Me.LsvMostrarCliente.Size = New System.Drawing.Size(821, 254)
         Me.LsvMostrarCliente.TabIndex = 88
         Me.LsvMostrarCliente.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarCliente.View = System.Windows.Forms.View.Details
         '
         'chRtn
         '
-        Me.chRtn.Text = "RtnCLiente"
-        Me.chRtn.Width = 80
+        Me.chRtn.Text = "RTN CLiente"
+        Me.chRtn.Width = 100
         '
         'chNombre
         '
-        Me.chNombre.Text = "Nombre Completo"
+        Me.chNombre.Text = "Nombre "
         Me.chNombre.Width = 80
+        '
+        'chApellido
+        '
+        Me.chApellido.Text = "Apellido"
         '
         'chEmail
         '
         Me.chEmail.Text = "Email"
+        Me.chEmail.Width = 100
         '
         'chTelefono
         '
@@ -74,92 +76,58 @@ Partial Class FrmBuscarCliente
         'chDireccion
         '
         Me.chDireccion.Text = "Dirección"
+        Me.chDireccion.Width = 120
         '
         'chFecha
         '
         Me.chFecha.Text = "Fecha"
+        Me.chFecha.Width = 137
         '
         'chSexo
         '
         Me.chSexo.Text = "Sexo"
+        Me.chSexo.Width = 70
         '
         'chMunicipio
         '
         Me.chMunicipio.Text = "Municipio"
-        '
-        'txtBuscarRtn
-        '
-        Me.txtBuscarRtn.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBuscarRtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscarRtn.Location = New System.Drawing.Point(89, 114)
-        Me.txtBuscarRtn.Multiline = True
-        Me.txtBuscarRtn.Name = "txtBuscarRtn"
-        Me.txtBuscarRtn.Size = New System.Drawing.Size(314, 29)
-        Me.txtBuscarRtn.TabIndex = 87
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscar.Location = New System.Drawing.Point(409, 114)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(61, 29)
-        Me.btnBuscar.TabIndex = 86
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.chMunicipio.Width = 90
         '
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(89, 114)
+        Me.txtBuscar.Location = New System.Drawing.Point(179, 37)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 29)
+        Me.txtBuscar.Size = New System.Drawing.Size(416, 29)
         Me.txtBuscar.TabIndex = 85
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.rbNombre)
-        Me.GroupBox1.Controls.Add(Me.rbRtn)
-        Me.GroupBox1.Location = New System.Drawing.Point(89, 58)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(381, 50)
-        Me.GroupBox1.TabIndex = 84
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Opciones de búsqueda"
-        '
-        'rbNombre
-        '
-        Me.rbNombre.AutoSize = True
-        Me.rbNombre.Location = New System.Drawing.Point(221, 20)
-        Me.rbNombre.Name = "rbNombre"
-        Me.rbNombre.Size = New System.Drawing.Size(111, 17)
-        Me.rbNombre.TabIndex = 1
-        Me.rbNombre.TabStop = True
-        Me.rbNombre.Text = "Nombre empleado"
-        Me.rbNombre.UseVisualStyleBackColor = True
-        '
-        'rbRtn
-        '
-        Me.rbRtn.AutoSize = True
-        Me.rbRtn.Location = New System.Drawing.Point(42, 19)
-        Me.rbRtn.Name = "rbRtn"
-        Me.rbRtn.Size = New System.Drawing.Size(91, 17)
-        Me.rbRtn.TabIndex = 0
-        Me.rbRtn.TabStop = True
-        Me.rbRtn.Text = "Rtn empleado"
-        Me.rbRtn.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(206, 21)
+        Me.Label1.Location = New System.Drawing.Point(308, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(152, 25)
         Me.Label1.TabIndex = 83
         Me.Label1.Text = "Buscar Cliente"
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAgregar.BackgroundImage = CType(resources.GetObject("btnAgregar.BackgroundImage"), System.Drawing.Image)
+        Me.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAgregar.FlatAppearance.BorderSize = 0
+        Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Location = New System.Drawing.Point(778, 45)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(30, 33)
+        Me.btnAgregar.TabIndex = 89
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'FrmBuscarCliente
         '
@@ -168,19 +136,15 @@ Partial Class FrmBuscarCliente
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(570, 339)
+        Me.ClientSize = New System.Drawing.Size(820, 339)
+        Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.LsvMostrarCliente)
-        Me.Controls.Add(Me.txtBuscarRtn)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBuscar)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.Name = "FrmBuscarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarCliente"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -195,11 +159,8 @@ Partial Class FrmBuscarCliente
     Friend WithEvents chFecha As ColumnHeader
     Friend WithEvents chSexo As ColumnHeader
     Friend WithEvents chMunicipio As ColumnHeader
-    Friend WithEvents txtBuscarRtn As TextBox
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents rbNombre As RadioButton
-    Friend WithEvents rbRtn As RadioButton
     Friend WithEvents Label1 As Label
+    Friend WithEvents chApellido As ColumnHeader
+    Friend WithEvents btnAgregar As Button
 End Class
