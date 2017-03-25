@@ -28,12 +28,12 @@ Partial Class FrmBuscarEmpleado
         Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.chIdEmpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDireccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTipoEmpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -78,6 +78,11 @@ Partial Class FrmBuscarEmpleado
         Me.chNombre.Text = "Nombre"
         Me.chNombre.Width = 80
         '
+        'chApellido
+        '
+        Me.chApellido.Text = "Apellido"
+        Me.chApellido.Width = 100
+        '
         'chEmail
         '
         Me.chEmail.Text = "Email"
@@ -101,11 +106,6 @@ Partial Class FrmBuscarEmpleado
         '
         Me.chSexo.Text = "Sexo"
         Me.chSexo.Width = 70
-        '
-        'chApellido
-        '
-        Me.chApellido.Text = "Apellido"
-        Me.chApellido.Width = 100
         '
         'btnAgregar
         '

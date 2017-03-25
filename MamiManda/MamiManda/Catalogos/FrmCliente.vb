@@ -342,6 +342,10 @@ Public Class FrmCliente
     End Sub
 
     Private Sub LsvMostrarCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LsvMostrarCliente.SelectedIndexChanged
+        btnEditar.Enabled = True
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         txtRtn.Text = LsvMostrarCliente.FocusedItem.SubItems(0).Text
         txtNombre.Text = LsvMostrarCliente.FocusedItem.SubItems(1).Text
         txtApellido.Text = LsvMostrarCliente.FocusedItem.SubItems(2).Text
@@ -352,16 +356,14 @@ Public Class FrmCliente
         cboSexo.Text = LsvMostrarCliente.FocusedItem.SubItems(6).Text
         cboMunicipio.Text = LsvMostrarCliente.FocusedItem.SubItems(8).Text
         HabilitarBotones(False, False, True, True, True)
-        btnEditar.Enabled = True
-    End Sub
 
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        btnEditar.Enabled = False
         ListarCliente()
     End Sub
 End Class

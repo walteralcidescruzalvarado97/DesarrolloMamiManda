@@ -25,7 +25,7 @@ Public Class FrmEmpleado
                         .Parameters.Add("@Nombre", SqlDbType.NVarChar).Value = TxtNombre.Text.Trim
                         .Parameters.Add("@Apellido", SqlDbType.NVarChar).Value = TxtApellido.Text.Trim
                         .Parameters.Add("@Email", SqlDbType.VarChar).Value = TxtEmail.Text.Trim
-                        .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = TxtTelefono.Text.Trim
+                        .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = mtbTelefono.Text.Trim
                         .Parameters.Add("@Direccion", SqlDbType.NVarChar).Value = TxtDireccion.Text.Trim
                         .Parameters.Add("@TipoEmpleado", SqlDbType.Int).Value = CboTipoEmpleado.SelectedValue
                         .Parameters.Add("@Sexo", SqlDbType.Int).Value = CboSexo.SelectedValue
@@ -58,7 +58,7 @@ Public Class FrmEmpleado
                     .Parameters.Add("@Nombre", SqlDbType.NVarChar).Value = TxtNombre.Text.Trim
                     .Parameters.Add("@Apellido", SqlDbType.NVarChar).Value = TxtApellido.Text.Trim
                     .Parameters.Add("@Email", SqlDbType.VarChar).Value = TxtEmail.Text.Trim
-                    .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = TxtTelefono.Text.Trim
+                    .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = mtbTelefono.Text.Trim
                     .Parameters.Add("@Direccion", SqlDbType.NVarChar).Value = TxtDireccion.Text.Trim
                     .Parameters.Add("@TipoEmpleado", SqlDbType.Int).Value = CboTipoEmpleado.SelectedValue
                     .Parameters.Add("@Sexo", SqlDbType.Int).Value = CboSexo.SelectedValue
@@ -90,11 +90,11 @@ Public Class FrmEmpleado
     End Sub
 
     Private Sub HabilitarTextBox(ByVal valor As Boolean)
-        TxtCodEmpleado.Enabled = valor
+        TxtCodEmpleado.Enabled = False
         TxtNombre.Enabled = valor
         TxtApellido.Enabled = valor
         TxtEmail.Enabled = valor
-        TxtTelefono.Enabled = valor
+        mtbTelefono.Enabled = valor
         TxtDireccion.Enabled = valor
         CboSexo.Enabled = valor
         CboTipoEmpleado.Enabled = valor
@@ -167,7 +167,7 @@ Public Class FrmEmpleado
         TxtNombre.Text = Nothing
         TxtApellido.Text = Nothing
         TxtEmail.Text = Nothing
-        TxtTelefono.Text = Nothing
+        mtbTelefono.Text = Nothing
         TxtDireccion.Text = Nothing
         CboTipoEmpleado.SelectedIndex = -1
         CboSexo.SelectedIndex = -1
@@ -310,7 +310,7 @@ Public Class FrmEmpleado
         If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
         ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
         ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
-        ElseIf Validar(TxtTelefono, "Debe ingresar unnúmero de teléfono") Then
+        ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
         ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
         ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
         ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
@@ -322,17 +322,7 @@ Public Class FrmEmpleado
         End If
     End Sub
 
-    Private Sub LsvMostrarEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LsvMostrarEmpleado.SelectedIndexChanged
-
-        TxtCodEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(0).Text
-        TxtNombre.Text = LsvMostrarEmpleado.FocusedItem.SubItems(1).Text
-        TxtApellido.Text = LsvMostrarEmpleado.FocusedItem.SubItems(2).Text
-        TxtEmail.Text = LsvMostrarEmpleado.FocusedItem.SubItems(3).Text
-        TxtTelefono.Text = LsvMostrarEmpleado.FocusedItem.SubItems(4).Text
-        TxtDireccion.Text = LsvMostrarEmpleado.FocusedItem.SubItems(7).Text
-        CboTipoEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(5).Text
-        CboSexo.Text = LsvMostrarEmpleado.FocusedItem.SubItems(6).Text
-        HabilitarBotones(False, False, True, True, True)
+    Private Sub LsvMostrarEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs)
         btnEditar.Enabled = True
     End Sub
 
@@ -345,7 +335,7 @@ Public Class FrmEmpleado
         If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
         ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
         ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
-        ElseIf Validar(TxtTelefono, "Debe ingresar unnúmero de teléfono") Then
+        ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
         ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
         ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
         ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
@@ -362,12 +352,27 @@ Public Class FrmEmpleado
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        btnEditar.Enabled = False
         ListarEmpleado()
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        TxtCodEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(0).Text
+        TxtNombre.Text = LsvMostrarEmpleado.FocusedItem.SubItems(1).Text
+        TxtApellido.Text = LsvMostrarEmpleado.FocusedItem.SubItems(2).Text
+        TxtEmail.Text = LsvMostrarEmpleado.FocusedItem.SubItems(3).Text
+        mtbTelefono.Text = LsvMostrarEmpleado.FocusedItem.SubItems(4).Text
+        TxtDireccion.Text = LsvMostrarEmpleado.FocusedItem.SubItems(7).Text
+        CboTipoEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(5).Text
+        CboSexo.Text = LsvMostrarEmpleado.FocusedItem.SubItems(6).Text
+        HabilitarBotones(False, False, True, True, True)
+
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""
+    End Sub
+
+    Private Sub LsvMostrarEmpleado_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles LsvMostrarEmpleado.SelectedIndexChanged
+        btnEditar.Enabled = True
     End Sub
 End Class

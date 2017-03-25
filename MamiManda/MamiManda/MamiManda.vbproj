@@ -125,6 +125,12 @@
     <Compile Include="Catalogos\FrmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busquedas\FrmBuscarMateriaPrima.Designer.vb">
+      <DependentUpon>FrmBuscarMateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\FrmBuscarMateriaPrima.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FuncionSha1.vb" />
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
@@ -145,10 +151,10 @@
     <Compile Include="Inventario1.1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MateriaPrima.Designer.vb">
-      <DependentUpon>MateriaPrima.vb</DependentUpon>
+    <Compile Include="Catalogos\FrmMateriaPrima.Designer.vb">
+      <DependentUpon>FrmMateriaPrima.vb</DependentUpon>
     </Compile>
-    <Compile Include="MateriaPrima.vb">
+    <Compile Include="Catalogos\FrmMateriaPrima.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -210,6 +216,9 @@
     <EmbeddedResource Include="Catalogos\FrmProveedor.resx">
       <DependentUpon>FrmProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\FrmBuscarMateriaPrima.resx">
+      <DependentUpon>FrmBuscarMateriaPrima.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -219,8 +228,8 @@
     <EmbeddedResource Include="Inventario1.1.resx">
       <DependentUpon>Inventario1.1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MateriaPrima.resx">
-      <DependentUpon>MateriaPrima.vb</DependentUpon>
+    <EmbeddedResource Include="Catalogos\FrmMateriaPrima.resx">
+      <DependentUpon>FrmMateriaPrima.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

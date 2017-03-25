@@ -35,7 +35,7 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub HabilitarTextBox(ByVal valor As Boolean)
-        txtCodUsuario.Enabled = valor
+        txtCodUsuario.Enabled = False
         txtUserName.Enabled = valor
         txtContrasena.Enabled = valor
         cboEstado.Enabled = valor
@@ -390,23 +390,14 @@ Public Class FrmUsuario
 
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
 
-        Dim var As String = lsvMostrar.FocusedItem.SubItems(3).Text
-        If var = "True" Then
-            cboEstado.SelectedValue = 1
-        Else
-            cboEstado.SelectedValue = 0
-        End If
-        txtCodUsuario.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        txtUserName.Text = lsvMostrar.FocusedItem.SubItems(1).Text
-        txtContrasena.Text = lsvMostrar.FocusedItem.SubItems(2).Text
-        txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(7).Text
-        cboTipoUsuario.SelectedValue = lsvMostrar.FocusedItem.SubItems(6).Text
+
+
 
         'Dim strAsBytes() As Byte = New System.Text.UTF8Encoding().GetBytes(lsvMostrar.FocusedItem.SubItems(8).Text)
         'Dim img As Image = Nothing
 
         'FotoAgregar.Image = byteArrayToImage(strAsBytes)
-        HabilitarBotones(False, False, True, True, True)
+
         btnEditar.Enabled = True
     End Sub
 
@@ -442,10 +433,26 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        btnEditar.Enabled = False
         ListarUsuario()
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        txtCodUsuario.Text = lsvMostrar.FocusedItem.SubItems(0).Text
+        txtUserName.Text = lsvMostrar.FocusedItem.SubItems(1).Text
+        txtContrasena.Text = lsvMostrar.FocusedItem.SubItems(2).Text
+        txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(7).Text
+        cboTipoUsuario.SelectedValue = lsvMostrar.FocusedItem.SubItems(6).Text
+
+        Dim var As String = lsvMostrar.FocusedItem.SubItems(3).Text
+        If var = "True" Then
+            cboEstado.SelectedValue = 1
+        Else
+            cboEstado.SelectedValue = 0
+        End If
+
+        HabilitarBotones(False, False, True, True, True)
+
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
     End Sub

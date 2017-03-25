@@ -289,17 +289,11 @@ Public Class FrmProveedor
 #End Region
 
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
-        txtRtn.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        txtNombre.Text = lsvMostrar.FocusedItem.SubItems(1).Text
-        txtApellido.Text = lsvMostrar.FocusedItem.SubItems(2).Text
-        txtEmail.Text = lsvMostrar.FocusedItem.SubItems(3).Text
-        mtbTelefono.Text = lsvMostrar.FocusedItem.SubItems(4).Text
-        txtDireccion.Text = lsvMostrar.FocusedItem.SubItems(5).Text
-        HabilitarBotones(False, False, True, True, True)
         btnEditar.Enabled = True
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        btnEditar.Enabled = False
 
         If txtBuscar.Text = "" Then
             MostrarProveedor()
@@ -309,6 +303,14 @@ Public Class FrmProveedor
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        txtRtn.Text = lsvMostrar.FocusedItem.SubItems(0).Text
+        txtNombre.Text = lsvMostrar.FocusedItem.SubItems(1).Text
+        txtApellido.Text = lsvMostrar.FocusedItem.SubItems(2).Text
+        txtEmail.Text = lsvMostrar.FocusedItem.SubItems(3).Text
+        mtbTelefono.Text = lsvMostrar.FocusedItem.SubItems(4).Text
+        txtDireccion.Text = lsvMostrar.FocusedItem.SubItems(5).Text
+        HabilitarBotones(False, False, True, True, True)
+
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""

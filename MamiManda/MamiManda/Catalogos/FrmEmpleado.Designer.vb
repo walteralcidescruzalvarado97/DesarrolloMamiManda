@@ -23,14 +23,6 @@ Partial Class FrmEmpleado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEmpleado))
-        Me.LsvMostrarEmpleado = New System.Windows.Forms.ListView()
-        Me.ChCodEMpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChTipoEmpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -41,6 +33,7 @@ Partial Class FrmEmpleado
         Me.btnInsertar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GbDatos = New System.Windows.Forms.GroupBox()
+        Me.mtbTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.lblapellidos = New System.Windows.Forms.Label()
         Me.CboSexo = New System.Windows.Forms.ComboBox()
         Me.TxtApellido = New System.Windows.Forms.TextBox()
@@ -56,64 +49,25 @@ Partial Class FrmEmpleado
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TPGestionEmpleado = New System.Windows.Forms.TabPage()
         Me.TPListarEmpleado = New System.Windows.Forms.TabPage()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.LsvMostrarEmpleado = New System.Windows.Forms.ListView()
+        Me.ChCodEMpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChTipoEmpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnEditar = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GbDatos.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TPGestionEmpleado.SuspendLayout()
         Me.TPListarEmpleado.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'LsvMostrarEmpleado
-        '
-        Me.LsvMostrarEmpleado.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodEMpleado, Me.ChNombre, Me.ChApellido, Me.ChEmail, Me.ChTelefono, Me.ChTipoEmpleado, Me.ChSexo})
-        Me.LsvMostrarEmpleado.FullRowSelect = True
-        Me.LsvMostrarEmpleado.GridLines = True
-        Me.LsvMostrarEmpleado.Location = New System.Drawing.Point(-4, 80)
-        Me.LsvMostrarEmpleado.Name = "LsvMostrarEmpleado"
-        Me.LsvMostrarEmpleado.Size = New System.Drawing.Size(600, 284)
-        Me.LsvMostrarEmpleado.TabIndex = 85
-        Me.LsvMostrarEmpleado.UseCompatibleStateImageBehavior = False
-        Me.LsvMostrarEmpleado.View = System.Windows.Forms.View.Details
-        '
-        'ChCodEMpleado
-        '
-        Me.ChCodEMpleado.Text = "Código"
-        '
-        'ChNombre
-        '
-        Me.ChNombre.Text = "Nombre "
-        Me.ChNombre.Width = 80
-        '
-        'ChApellido
-        '
-        Me.ChApellido.Text = "Apellido"
-        Me.ChApellido.Width = 80
-        '
-        'ChEmail
-        '
-        Me.ChEmail.Text = "Email"
-        Me.ChEmail.Width = 120
-        '
-        'ChTelefono
-        '
-        Me.ChTelefono.Text = "Teléfono"
-        Me.ChTelefono.Width = 75
-        '
-        'ChTipoEmpleado
-        '
-        Me.ChTipoEmpleado.Text = "Tipo Empleado"
-        Me.ChTipoEmpleado.Width = 100
-        '
-        'ChSexo
-        '
-        Me.ChSexo.Text = "Sexo"
-        Me.ChSexo.Width = 80
         '
         'Label8
         '
@@ -237,6 +191,7 @@ Partial Class FrmEmpleado
         'GbDatos
         '
         Me.GbDatos.BackColor = System.Drawing.Color.Transparent
+        Me.GbDatos.Controls.Add(Me.mtbTelefono)
         Me.GbDatos.Controls.Add(Me.lblapellidos)
         Me.GbDatos.Controls.Add(Me.CboSexo)
         Me.GbDatos.Controls.Add(Me.TxtApellido)
@@ -252,13 +207,20 @@ Partial Class FrmEmpleado
         Me.GbDatos.Controls.Add(Me.TxtEmail)
         Me.GbDatos.Controls.Add(Me.Label5)
         Me.GbDatos.Controls.Add(Me.Label4)
-        Me.GbDatos.Controls.Add(Me.TxtTelefono)
         Me.GbDatos.Location = New System.Drawing.Point(63, 51)
         Me.GbDatos.Name = "GbDatos"
-        Me.GbDatos.Size = New System.Drawing.Size(348, 268)
+        Me.GbDatos.Size = New System.Drawing.Size(348, 303)
         Me.GbDatos.TabIndex = 78
         Me.GbDatos.TabStop = False
         Me.GbDatos.Text = "Datos del Empleado"
+        '
+        'mtbTelefono
+        '
+        Me.mtbTelefono.Location = New System.Drawing.Point(130, 145)
+        Me.mtbTelefono.Mask = "9999-9999"
+        Me.mtbTelefono.Name = "mtbTelefono"
+        Me.mtbTelefono.Size = New System.Drawing.Size(157, 20)
+        Me.mtbTelefono.TabIndex = 18
         '
         'lblapellidos
         '
@@ -273,7 +235,7 @@ Partial Class FrmEmpleado
         '
         Me.CboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboSexo.FormattingEnabled = True
-        Me.CboSexo.Location = New System.Drawing.Point(129, 230)
+        Me.CboSexo.Location = New System.Drawing.Point(129, 259)
         Me.CboSexo.Name = "CboSexo"
         Me.CboSexo.Size = New System.Drawing.Size(126, 21)
         Me.CboSexo.TabIndex = 16
@@ -289,7 +251,7 @@ Partial Class FrmEmpleado
         '
         Me.CboTipoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboTipoEmpleado.FormattingEnabled = True
-        Me.CboTipoEmpleado.Location = New System.Drawing.Point(130, 203)
+        Me.CboTipoEmpleado.Location = New System.Drawing.Point(130, 232)
         Me.CboTipoEmpleado.Name = "CboTipoEmpleado"
         Me.CboTipoEmpleado.Size = New System.Drawing.Size(125, 21)
         Me.CboTipoEmpleado.TabIndex = 7
@@ -314,7 +276,7 @@ Partial Class FrmEmpleado
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(91, 232)
+        Me.Label7.Location = New System.Drawing.Point(91, 261)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(31, 13)
         Me.Label7.TabIndex = 12
@@ -339,7 +301,7 @@ Partial Class FrmEmpleado
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(48, 206)
+        Me.Label6.Location = New System.Drawing.Point(48, 235)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(75, 13)
         Me.Label6.TabIndex = 10
@@ -357,8 +319,9 @@ Partial Class FrmEmpleado
         'TxtDireccion
         '
         Me.TxtDireccion.Location = New System.Drawing.Point(129, 174)
+        Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
-        Me.TxtDireccion.Size = New System.Drawing.Size(158, 20)
+        Me.TxtDireccion.Size = New System.Drawing.Size(158, 49)
         Me.TxtDireccion.TabIndex = 6
         '
         'TxtEmail
@@ -385,13 +348,6 @@ Partial Class FrmEmpleado
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Teléfono"
-        '
-        'TxtTelefono
-        '
-        Me.TxtTelefono.Location = New System.Drawing.Point(129, 145)
-        Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(158, 20)
-        Me.TxtTelefono.TabIndex = 5
         '
         'TabControl1
         '
@@ -429,10 +385,10 @@ Partial Class FrmEmpleado
         '
         Me.TPListarEmpleado.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
         Me.TPListarEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TPListarEmpleado.Controls.Add(Me.LsvMostrarEmpleado)
         Me.TPListarEmpleado.Controls.Add(Me.btnEditar)
         Me.TPListarEmpleado.Controls.Add(Me.Label12)
         Me.TPListarEmpleado.Controls.Add(Me.txtBuscar)
-        Me.TPListarEmpleado.Controls.Add(Me.LsvMostrarEmpleado)
         Me.TPListarEmpleado.Location = New System.Drawing.Point(4, 22)
         Me.TPListarEmpleado.Name = "TPListarEmpleado"
         Me.TPListarEmpleado.Padding = New System.Windows.Forms.Padding(3)
@@ -441,14 +397,61 @@ Partial Class FrmEmpleado
         Me.TPListarEmpleado.Text = "Listar Empleado"
         Me.TPListarEmpleado.UseVisualStyleBackColor = True
         '
-        'txtBuscar
+        'LsvMostrarEmpleado
         '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(141, 31)
-        Me.txtBuscar.Multiline = True
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
-        Me.txtBuscar.TabIndex = 86
+        Me.LsvMostrarEmpleado.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodEMpleado, Me.ChNombre, Me.ChApellido, Me.ChEmail, Me.ChTelefono, Me.ChTipoEmpleado, Me.ChSexo})
+        Me.LsvMostrarEmpleado.FullRowSelect = True
+        Me.LsvMostrarEmpleado.GridLines = True
+        Me.LsvMostrarEmpleado.Location = New System.Drawing.Point(0, 80)
+        Me.LsvMostrarEmpleado.Name = "LsvMostrarEmpleado"
+        Me.LsvMostrarEmpleado.Size = New System.Drawing.Size(600, 284)
+        Me.LsvMostrarEmpleado.TabIndex = 90
+        Me.LsvMostrarEmpleado.UseCompatibleStateImageBehavior = False
+        Me.LsvMostrarEmpleado.View = System.Windows.Forms.View.Details
+        '
+        'ChCodEMpleado
+        '
+        Me.ChCodEMpleado.Text = "Código"
+        '
+        'ChNombre
+        '
+        Me.ChNombre.Text = "Nombre "
+        Me.ChNombre.Width = 80
+        '
+        'ChApellido
+        '
+        Me.ChApellido.Text = "Apellido"
+        Me.ChApellido.Width = 80
+        '
+        'ChEmail
+        '
+        Me.ChEmail.Text = "Email"
+        Me.ChEmail.Width = 120
+        '
+        'ChTelefono
+        '
+        Me.ChTelefono.Text = "Teléfono"
+        Me.ChTelefono.Width = 75
+        '
+        'ChTipoEmpleado
+        '
+        Me.ChTipoEmpleado.Text = "Tipo Empleado"
+        Me.ChTipoEmpleado.Width = 100
+        '
+        'ChSexo
+        '
+        Me.ChSexo.Text = "Sexo"
+        Me.ChSexo.Width = 80
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Enabled = False
+        Me.btnEditar.Location = New System.Drawing.Point(514, 51)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEditar.TabIndex = 88
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -461,15 +464,14 @@ Partial Class FrmEmpleado
         Me.Label12.TabIndex = 87
         Me.Label12.Text = "Listar Empleado"
         '
-        'btnEditar
+        'txtBuscar
         '
-        Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(514, 51)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditar.TabIndex = 88
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.UseVisualStyleBackColor = True
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(141, 31)
+        Me.txtBuscar.Multiline = True
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
+        Me.txtBuscar.TabIndex = 86
         '
         'FrmEmpleado
         '
@@ -494,15 +496,6 @@ Partial Class FrmEmpleado
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents LsvMostrarEmpleado As ListView
-    Friend WithEvents ChCodEMpleado As ColumnHeader
-    Friend WithEvents ChNombre As ColumnHeader
-    Friend WithEvents ChApellido As ColumnHeader
-    Friend WithEvents ChEmail As ColumnHeader
-    Friend WithEvents ChTelefono As ColumnHeader
-    Friend WithEvents ChTipoEmpleado As ColumnHeader
-    Friend WithEvents ChSexo As ColumnHeader
     Friend WithEvents Label8 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label13 As Label
@@ -528,11 +521,19 @@ Partial Class FrmEmpleado
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TPGestionEmpleado As TabPage
     Friend WithEvents TPListarEmpleado As TabPage
     Friend WithEvents Label12 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents btnEditar As Button
+    Friend WithEvents mtbTelefono As MaskedTextBox
+    Friend WithEvents LsvMostrarEmpleado As ListView
+    Friend WithEvents ChCodEMpleado As ColumnHeader
+    Friend WithEvents ChNombre As ColumnHeader
+    Friend WithEvents ChApellido As ColumnHeader
+    Friend WithEvents ChEmail As ColumnHeader
+    Friend WithEvents ChTelefono As ColumnHeader
+    Friend WithEvents ChTipoEmpleado As ColumnHeader
+    Friend WithEvents ChSexo As ColumnHeader
 End Class

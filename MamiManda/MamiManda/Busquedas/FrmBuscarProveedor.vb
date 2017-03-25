@@ -84,4 +84,13 @@ Public Class FrmBuscarProveedor
         FrmProveedor.Show()
         Close()
     End Sub
+
+    Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub lsvMostrar_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lsvMostrar.MouseDoubleClick
+        FrmMateriaPrima.TxtRtnProveedor.Text = lsvMostrar.FocusedItem.SubItems(0).Text
+        Close()
+    End Sub
 End Class
