@@ -82,6 +82,36 @@
     <Compile Include="Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busquedas\FrmBuscarInventario.Designer.vb">
+      <DependentUpon>FrmBuscarInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\FrmBuscarInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAgregarMateria.Designer.vb">
+      <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAgregarMateria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmPresentacionProducto.Designer.vb">
+      <DependentUpon>FrmPresentacionProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmPresentacionProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmProduccion.Designer.vb">
+      <DependentUpon>FrmProduccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmProduccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmReceta.Designer.vb">
+      <DependentUpon>FrmReceta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmReceta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conexion.vb" />
     <Compile Include="Busquedas\FrmBuscarEmpleado.Designer.vb">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
@@ -139,10 +169,10 @@
       <DependentUpon>Login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventario.Designer.vb">
+    <Compile Include="Catalogos\Inventario.Designer.vb">
       <DependentUpon>Inventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inventario.vb">
+    <Compile Include="Catalogos\Inventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventario1.1.Designer.vb">
@@ -198,6 +228,9 @@
     <EmbeddedResource Include="Busquedas\FrmBuscarEmpleado.resx">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\FrmBuscarInventario.resx">
+      <DependentUpon>FrmBuscarInventario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\FrmBuscarUsuario.resx">
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,11 +240,20 @@
     <EmbeddedResource Include="Busquedas\FrmBuscarProveedor.resx">
       <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\FrmAgregarMateria.resx">
+      <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmCliente.resx">
       <DependentUpon>FrmCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\FrmPresentacionProducto.resx">
+      <DependentUpon>FrmPresentacionProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\FrmProduccion.resx">
+      <DependentUpon>FrmProduccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmProveedor.resx">
       <DependentUpon>FrmProveedor.vb</DependentUpon>
@@ -219,10 +261,13 @@
     <EmbeddedResource Include="Busquedas\FrmBuscarMateriaPrima.resx">
       <DependentUpon>FrmBuscarMateriaPrima.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\FrmReceta.resx">
+      <DependentUpon>FrmReceta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventario.resx">
+    <EmbeddedResource Include="Catalogos\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario1.1.resx">

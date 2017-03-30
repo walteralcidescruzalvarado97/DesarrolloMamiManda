@@ -86,7 +86,7 @@ Public Class FrmBuscarEmpleado
     End Sub
 
     Private Sub lsvMostrar_DoubleClick(sender As Object, e As EventArgs) Handles lsvMostrar.DoubleClick
-        FrmUsuario.txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(1).Text
+        FrmUsuario.txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(0).Text
         Close()
     End Sub
 

@@ -6,8 +6,8 @@ Public Class FrmCliente
         LlenarComboboxSexo()
         LlenarComboboxMunicipio()
         MostrarCliente()
-        cboSexo.Text = Nothing
-        cboMunicipio.Text = Nothing
+        cboSexo.SelectedIndex = -1
+        cboMunicipio.SelectedIndex = -1
     End Sub
 
 

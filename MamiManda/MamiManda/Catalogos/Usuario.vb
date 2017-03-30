@@ -8,6 +8,7 @@ Public Class FrmUsuario
         LLenarComboEstado()
         HabilitarBotones(True, False, False, False, False)
         Limpiar()
+
         MostrarUsuario()
     End Sub
 
@@ -62,7 +63,7 @@ Public Class FrmUsuario
         txtUserName.Text = Nothing
         txtEmpleado.Text = Nothing
         txtContrasena.Text = Nothing
-        FotoAgregar.Image = Nothing
+        FotoAgregar.Image = Image.FromFile("../../Resources/silueta.png")
         cboEstado.SelectedIndex = -1
         cboTipoUsuario.SelectedIndex = -1
     End Sub
@@ -253,6 +254,7 @@ Public Class FrmUsuario
         End Using
     End Sub
 
+
     Private Sub ListarUsuario()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
@@ -390,14 +392,6 @@ Public Class FrmUsuario
 
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
 
-
-
-
-        'Dim strAsBytes() As Byte = New System.Text.UTF8Encoding().GetBytes(lsvMostrar.FocusedItem.SubItems(8).Text)
-        'Dim img As Image = Nothing
-
-        'FotoAgregar.Image = byteArrayToImage(strAsBytes)
-
         btnEditar.Enabled = True
     End Sub
 
@@ -443,35 +437,47 @@ Public Class FrmUsuario
         txtContrasena.Text = lsvMostrar.FocusedItem.SubItems(2).Text
         txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(7).Text
         cboTipoUsuario.SelectedValue = lsvMostrar.FocusedItem.SubItems(6).Text
-
         Dim var As String = lsvMostrar.FocusedItem.SubItems(3).Text
         If var = "True" Then
             cboEstado.SelectedValue = 1
         Else
             cboEstado.SelectedValue = 0
         End If
+        MostrarImagen()
 
         HabilitarBotones(False, False, True, True, True)
 
+
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
+    End Sub
+
+    Private Sub MostrarImagen()
+        Dim connection As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=BakerySystem;Integrated Security=True")
+        Dim command As New SqlCommand("SELECT Foto FROM Usuario where IdUsuario = @var", connection)
+        command.Parameters.Add("@var", SqlDbType.VarChar).Value = lsvMostrar.FocusedItem.SubItems(0).Text
+
+        Dim table As New DataTable()
+        Dim adapter As New SqlDataAdapter(command)
+        adapter.Fill(table)
+
+        Dim img() As Byte
+            img = table.Rows(0)(0)
+            Dim ms As New MemoryStream(img)
+        FotoAgregar.Image = Image.FromStream(ms)
     End Sub
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
         AbrirFoto.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyPictures
         AbrirFoto.Filter = "Imágenes (*.png, *.jpg)|*.png;*.jpg"
         AbrirFoto.FileName = "Seleccionar Imagen"
-
-
         If AbrirFoto.ShowDialog = DialogResult.OK Then
-
             FotoAgregar.Image = Image.FromFile(AbrirFoto.FileName)
-
         End If
     End Sub
 
     Private Sub btnEliminarFoto_Click(sender As Object, e As EventArgs) Handles btnEliminarFoto.Click
-        FotoAgregar.Image = Nothing
+        FotoAgregar.Image = Image.FromFile("../../Resources/silueta.png")
     End Sub
 
 

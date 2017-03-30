@@ -1,13 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FrmMateriaPrima
+    Dim existencia As Integer
+
     Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         HabilitarBotones(False, True, False, True, True)
         InvestigarCorrelativo()
-
-
-        TxtExistenciaMinima.Text = 30
-        TxtExistencia.Text = 100
     End Sub
 
     Private Sub InvestigarCorrelativo()
@@ -74,8 +72,7 @@ Public Class FrmMateriaPrima
                         .Connection = cnn
                         .Parameters.Add("@NombreMateriaPrima", SqlDbType.NVarChar).Value = TxtNombreMateriaPrima.Text.Trim
                         .Parameters.Add("@ExistenciaMinima", SqlDbType.Int).Value = TxtExistenciaMinima.Text.Trim
-                        .Parameters.Add("@Existencia", SqlDbType.Int).Value = TxtExistencia.Text.Trim
-                        .Parameters.Add("@Cantidad", SqlDbType.Int).Value = TxtCantidad.Text.Trim
+                        .Parameters.Add("@Existencia", SqlDbType.Int).Value = 0
                         .Parameters.Add("@PrecioCostoM", SqlDbType.Money).Value = TxtPrecio.Text.Trim
                         .Parameters.Add("@Fecha", SqlDbType.Date).Value = TxtFecha.Text.Trim
                         .Parameters.Add("@UnidadMedida", SqlDbType.Int).Value = CboUnidadMedida.SelectedValue
@@ -107,8 +104,7 @@ Public Class FrmMateriaPrima
                     .Parameters.Add("@IdMateriPrima", SqlDbType.Int).Value = TxtIdMateriaPrima.Text.Trim
                     .Parameters.Add("@NombreMateriaPrima", SqlDbType.NVarChar).Value = TxtNombreMateriaPrima.Text.Trim
                     .Parameters.Add("@ExistenciaMinima", SqlDbType.Int).Value = TxtExistenciaMinima.Text.Trim
-                    .Parameters.Add("@Existencia", SqlDbType.Int).Value = TxtExistencia.Text.Trim
-                    .Parameters.Add("@Cantidad", SqlDbType.Int).Value = TxtCantidad.Text.Trim
+                    .Parameters.Add("@Existencia", SqlDbType.Int).Value = existencia
                     .Parameters.Add("@PrecioCostoM", SqlDbType.Money).Value = TxtPrecio.Text.Trim
                     .Parameters.Add("@Fecha", SqlDbType.Date).Value = TxtFecha.Text.Trim
                     .Parameters.Add("@UnidadMedida", SqlDbType.Int).Value = CboUnidadMedida.SelectedValue
@@ -178,12 +174,11 @@ Public Class FrmMateriaPrima
                         .SubItems.Add(VerMateriaPrima("NombreMateriaPrima").ToString)
                         .SubItems.Add(VerMateriaPrima("ExistenciaMinima").ToString)
                         .SubItems.Add(VerMateriaPrima("Existencia").ToString)
-                        .SubItems.Add(VerMateriaPrima("Cantidad").ToString)
-                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
                         .SubItems.Add(VerMateriaPrima("Fecha").ToString)
                         .SubItems.Add(VerMateriaPrima("Medida").ToString)
+                        .SubItems.Add(VerMateriaPrima("Nombre").ToString)
                         .SubItems.Add(VerMateriaPrima("RtnProveedor").ToString)
-
+                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -216,11 +211,11 @@ Public Class FrmMateriaPrima
                         .SubItems.Add(VerMateriaPrima("NombreMateriaPrima").ToString)
                         .SubItems.Add(VerMateriaPrima("ExistenciaMinima").ToString)
                         .SubItems.Add(VerMateriaPrima("Existencia").ToString)
-                        .SubItems.Add(VerMateriaPrima("Cantidad").ToString)
-                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
                         .SubItems.Add(VerMateriaPrima("Fecha").ToString)
                         .SubItems.Add(VerMateriaPrima("Medida").ToString)
+                        .SubItems.Add(VerMateriaPrima("Nombre").ToString)
                         .SubItems.Add(VerMateriaPrima("RtnProveedor").ToString)
+                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -242,13 +237,11 @@ Public Class FrmMateriaPrima
     Private Sub HabilitarTextBox(ByVal valor As Boolean)
         TxtIdMateriaPrima.Enabled = False
         TxtNombreMateriaPrima.Enabled = valor
-        TxtExistenciaMinima.Enabled = False
-        TxtExistencia.Enabled = False
-        TxtCantidad.Enabled = valor
+        TxtExistenciaMinima.Enabled = valor
         TxtPrecio.Enabled = valor
         TxtFecha.Enabled = valor
         CboUnidadMedida.Enabled = valor
-        TxtRtnProveedor.Enabled = False
+        TxtRtnProveedor.Enabled = valor
         btnProveedor.Enabled = valor
 
     End Sub
@@ -277,15 +270,15 @@ Public Class FrmMateriaPrima
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(TxtNombreMateriaPrima, "Debe ingresar un nombre de materia prima") Then
-        ElseIf Validar(TxtCantidad, "Debe ingresar la cantidad") Then
         ElseIf Validar(TxtPrecio, "Debe ingresar el precio") Then
-        ElseIf Validar(txtfecha, "Debe ingresar ula fecha") Then
+        ElseIf Validar(TxtFecha, "Debe ingresar ula fecha") Then
         ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
         ElseIf Validar(TxtRtnProveedor, "Debe seleccionar el rtn del proveedor") Then
         Else
             AgregarMateriaPrima()
             HabilitarBotones(True, False, False, False, False)
             Limpiar()
+            MostrarMateriaPrima()
         End If
     End Sub
 
@@ -293,8 +286,6 @@ Public Class FrmMateriaPrima
         TxtIdMateriaPrima.Text = Nothing
         TxtNombreMateriaPrima.Text = Nothing
         TxtExistenciaMinima.Text = Nothing
-        TxtExistencia.Text = Nothing
-        TxtCantidad.Text = Nothing
         TxtPrecio.Text = Nothing
         TxtFecha.Text = Nothing
         CboUnidadMedida.SelectedIndex = -1
@@ -308,7 +299,6 @@ Public Class FrmMateriaPrima
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         If Validar(TxtNombreMateriaPrima, "Debe ingresar un nombre de materia prima") Then
-        ElseIf Validar(TxtCantidad, "Debe ingresar la cantidad") Then
         ElseIf Validar(TxtPrecio, "Debe ingresar el precio") Then
         ElseIf Validar(TxtFecha, "Debe ingresar ula fecha") Then
         ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
@@ -330,14 +320,11 @@ Public Class FrmMateriaPrima
         TxtIdMateriaPrima.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
         TxtNombreMateriaPrima.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
         TxtExistenciaMinima.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(2).Text
-        TxtExistencia.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(3).Text
-        TxtCantidad.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(4).Text
-        TxtPrecio.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(5).Text
-        TxtFecha.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(6).Text
-        CboUnidadMedida.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(7).Text
-        TxtRtnProveedor.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(8).Text
-
-
+        existencia = LsvMostrarMateriaPrima.FocusedItem.SubItems(3).Text
+        TxtFecha.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(4).Text
+        CboUnidadMedida.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(5).Text
+        TxtRtnProveedor.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(7).Text
+        TxtPrecio.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(8).Text
         HabilitarBotones(False, False, True, True, True)
 
         TabControl1.SelectedIndex = 0
@@ -348,4 +335,5 @@ Public Class FrmMateriaPrima
     Private Sub LsvMostrarMateriaPrima_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LsvMostrarMateriaPrima.SelectedIndexChanged
         btnEditar.Enabled = True
     End Sub
+
 End Class

@@ -39,10 +39,6 @@ Partial Class FrmMateriaPrima
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtCantidad = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtExistencia = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtExistenciaMinima = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtNombreMateriaPrima = New System.Windows.Forms.TextBox()
@@ -61,14 +57,12 @@ Partial Class FrmMateriaPrima
         Me.ChNombreMateriaPrima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChExistenciaMinima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChExistencia = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChRTNProveedor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChMedida = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChProveedor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.ChCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChMedida = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChPrecio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -103,7 +97,7 @@ Partial Class FrmMateriaPrima
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(681, 363)
+        Me.TabPage1.Size = New System.Drawing.Size(733, 363)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión Materia Prima"
         '
@@ -160,10 +154,6 @@ Partial Class FrmMateriaPrima
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.TxtPrecio)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TxtCantidad)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TxtExistencia)
-        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TxtExistenciaMinima)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.TxtNombreMateriaPrima)
@@ -172,7 +162,7 @@ Partial Class FrmMateriaPrima
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(58, 37)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(385, 313)
+        Me.GroupBox1.Size = New System.Drawing.Size(385, 290)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos materia prima"
@@ -181,7 +171,7 @@ Partial Class FrmMateriaPrima
         '
         Me.Panel1.Controls.Add(Me.btnProveedor)
         Me.Panel1.Controls.Add(Me.TxtRtnProveedor)
-        Me.Panel1.Location = New System.Drawing.Point(172, 251)
+        Me.Panel1.Location = New System.Drawing.Point(172, 199)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(141, 20)
         Me.Panel1.TabIndex = 19
@@ -207,15 +197,15 @@ Partial Class FrmMateriaPrima
         '
         Me.CboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboUnidadMedida.FormattingEnabled = True
-        Me.CboUnidadMedida.Location = New System.Drawing.Point(172, 224)
+        Me.CboUnidadMedida.Location = New System.Drawing.Point(172, 172)
         Me.CboUnidadMedida.Name = "CboUnidadMedida"
-        Me.CboUnidadMedida.Size = New System.Drawing.Size(121, 21)
+        Me.CboUnidadMedida.Size = New System.Drawing.Size(146, 21)
         Me.CboUnidadMedida.TabIndex = 18
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(90, 255)
+        Me.Label14.Location = New System.Drawing.Point(90, 203)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(76, 13)
         Me.Label14.TabIndex = 16
@@ -224,7 +214,7 @@ Partial Class FrmMateriaPrima
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(73, 226)
+        Me.Label12.Location = New System.Drawing.Point(73, 174)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(93, 13)
         Me.Label12.TabIndex = 14
@@ -232,15 +222,15 @@ Partial Class FrmMateriaPrima
         '
         'TxtFecha
         '
-        Me.TxtFecha.Location = New System.Drawing.Point(172, 197)
+        Me.TxtFecha.Location = New System.Drawing.Point(172, 145)
         Me.TxtFecha.Name = "TxtFecha"
-        Me.TxtFecha.Size = New System.Drawing.Size(123, 20)
+        Me.TxtFecha.Size = New System.Drawing.Size(146, 20)
         Me.TxtFecha.TabIndex = 13
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(127, 200)
+        Me.Label8.Location = New System.Drawing.Point(127, 148)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 12
@@ -248,59 +238,25 @@ Partial Class FrmMateriaPrima
         '
         'TxtPrecio
         '
-        Me.TxtPrecio.Location = New System.Drawing.Point(172, 171)
+        Me.TxtPrecio.Location = New System.Drawing.Point(172, 119)
         Me.TxtPrecio.Name = "TxtPrecio"
-        Me.TxtPrecio.Size = New System.Drawing.Size(95, 20)
+        Me.TxtPrecio.Size = New System.Drawing.Size(146, 20)
         Me.TxtPrecio.TabIndex = 11
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(100, 171)
+        Me.Label7.Location = New System.Drawing.Point(100, 119)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(66, 13)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Precio costo"
         '
-        'TxtCantidad
-        '
-        Me.TxtCantidad.Location = New System.Drawing.Point(172, 145)
-        Me.TxtCantidad.Name = "TxtCantidad"
-        Me.TxtCantidad.Size = New System.Drawing.Size(95, 20)
-        Me.TxtCantidad.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(117, 148)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Cantidad"
-        '
-        'TxtExistencia
-        '
-        Me.TxtExistencia.Enabled = False
-        Me.TxtExistencia.Location = New System.Drawing.Point(172, 119)
-        Me.TxtExistencia.Name = "TxtExistencia"
-        Me.TxtExistencia.Size = New System.Drawing.Size(95, 20)
-        Me.TxtExistencia.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(111, 122)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 13)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Existencia"
-        '
         'TxtExistenciaMinima
         '
-        Me.TxtExistenciaMinima.Enabled = False
         Me.TxtExistenciaMinima.Location = New System.Drawing.Point(172, 93)
         Me.TxtExistenciaMinima.Name = "TxtExistenciaMinima"
-        Me.TxtExistenciaMinima.Size = New System.Drawing.Size(95, 20)
+        Me.TxtExistenciaMinima.Size = New System.Drawing.Size(146, 20)
         Me.TxtExistenciaMinima.TabIndex = 5
         '
         'Label4
@@ -333,7 +289,7 @@ Partial Class FrmMateriaPrima
         Me.TxtIdMateriaPrima.Enabled = False
         Me.TxtIdMateriaPrima.Location = New System.Drawing.Point(172, 41)
         Me.TxtIdMateriaPrima.Name = "TxtIdMateriaPrima"
-        Me.TxtIdMateriaPrima.Size = New System.Drawing.Size(95, 20)
+        Me.TxtIdMateriaPrima.Size = New System.Drawing.Size(146, 20)
         Me.TxtIdMateriaPrima.TabIndex = 1
         '
         'Label2
@@ -437,40 +393,49 @@ Partial Class FrmMateriaPrima
         '
         'LsvMostrarMateriaPrima
         '
-        Me.LsvMostrarMateriaPrima.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChIdMateriaPrima, Me.ChNombreMateriaPrima, Me.ChExistenciaMinima, Me.ChExistencia, Me.ChCantidad, Me.ChPrecio, Me.ChFecha, Me.ChMedida, Me.ChRTNProveedor})
+        Me.LsvMostrarMateriaPrima.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChIdMateriaPrima, Me.ChNombreMateriaPrima, Me.ChExistenciaMinima, Me.ChExistencia, Me.ChFecha, Me.ChMedida, Me.ChProveedor})
         Me.LsvMostrarMateriaPrima.FullRowSelect = True
         Me.LsvMostrarMateriaPrima.GridLines = True
         Me.LsvMostrarMateriaPrima.Location = New System.Drawing.Point(0, 83)
         Me.LsvMostrarMateriaPrima.Name = "LsvMostrarMateriaPrima"
-        Me.LsvMostrarMateriaPrima.Size = New System.Drawing.Size(718, 284)
+        Me.LsvMostrarMateriaPrima.Size = New System.Drawing.Size(727, 284)
         Me.LsvMostrarMateriaPrima.TabIndex = 93
         Me.LsvMostrarMateriaPrima.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarMateriaPrima.View = System.Windows.Forms.View.Details
         '
         'ChIdMateriaPrima
         '
-        Me.ChIdMateriaPrima.Text = "IdMateriaPrima"
+        Me.ChIdMateriaPrima.Text = "Código"
         Me.ChIdMateriaPrima.Width = 84
         '
         'ChNombreMateriaPrima
         '
-        Me.ChNombreMateriaPrima.Text = "Nombre Materia Prima"
+        Me.ChNombreMateriaPrima.Text = "Materia Prima"
         Me.ChNombreMateriaPrima.Width = 120
         '
         'ChExistenciaMinima
         '
-        Me.ChExistenciaMinima.Text = "ExistenciaMinima"
-        Me.ChExistenciaMinima.Width = 92
+        Me.ChExistenciaMinima.Text = "Existencia Minima"
+        Me.ChExistenciaMinima.Width = 100
         '
         'ChExistencia
         '
         Me.ChExistencia.Text = "Existencia"
-        Me.ChExistencia.Width = 72
         '
-        'ChRTNProveedor
+        'ChFecha
         '
-        Me.ChRTNProveedor.Text = "RtnProveedor"
-        Me.ChRTNProveedor.Width = 78
+        Me.ChFecha.Text = "Fecha"
+        Me.ChFecha.Width = 138
+        '
+        'ChMedida
+        '
+        Me.ChMedida.Text = "Medida"
+        Me.ChMedida.Width = 100
+        '
+        'ChProveedor
+        '
+        Me.ChProveedor.Text = "Proveedor"
+        Me.ChProveedor.Width = 120
         '
         'btnEditar
         '
@@ -501,22 +466,6 @@ Partial Class FrmMateriaPrima
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
         Me.txtBuscar.TabIndex = 90
-        '
-        'ChCantidad
-        '
-        Me.ChCantidad.Text = "Cantidad"
-        '
-        'ChFecha
-        '
-        Me.ChFecha.Text = "Fecha"
-        '
-        'ChMedida
-        '
-        Me.ChMedida.Text = "Medida"
-        '
-        'ChPrecio
-        '
-        Me.ChPrecio.Text = "PrecioCostoM"
         '
         'FrmMateriaPrima
         '
@@ -555,10 +504,6 @@ Partial Class FrmMateriaPrima
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtPrecio As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TxtCantidad As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TxtExistencia As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents TxtExistenciaMinima As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtNombreMateriaPrima As TextBox
@@ -583,9 +528,7 @@ Partial Class FrmMateriaPrima
     Friend WithEvents ChNombreMateriaPrima As ColumnHeader
     Friend WithEvents ChExistenciaMinima As ColumnHeader
     Friend WithEvents ChExistencia As ColumnHeader
-    Friend WithEvents ChRTNProveedor As ColumnHeader
-    Friend WithEvents ChCantidad As ColumnHeader
-    Friend WithEvents ChPrecio As ColumnHeader
+    Friend WithEvents ChProveedor As ColumnHeader
     Friend WithEvents ChFecha As ColumnHeader
     Friend WithEvents ChMedida As ColumnHeader
 End Class

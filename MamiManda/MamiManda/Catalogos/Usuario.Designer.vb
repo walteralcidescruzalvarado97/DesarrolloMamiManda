@@ -38,6 +38,9 @@ Partial Class FrmUsuario
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cboTipoUsuario = New System.Windows.Forms.ComboBox()
         Me.GrupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnEliminarFoto = New System.Windows.Forms.Button()
+        Me.btnAbrir = New System.Windows.Forms.Button()
+        Me.FotoAgregar = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -62,17 +65,14 @@ Partial Class FrmUsuario
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.FotoAgregar = New System.Windows.Forms.PictureBox()
-        Me.btnAbrir = New System.Windows.Forms.Button()
-        Me.btnEliminarFoto = New System.Windows.Forms.Button()
         Me.AbrirFoto = New System.Windows.Forms.OpenFileDialog()
         Me.GrupBox1.SuspendLayout()
+        CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -216,6 +216,36 @@ Partial Class FrmUsuario
         Me.GrupBox1.TabIndex = 13
         Me.GrupBox1.TabStop = False
         Me.GrupBox1.Text = "Datos de Usuario"
+        '
+        'btnEliminarFoto
+        '
+        Me.btnEliminarFoto.Location = New System.Drawing.Point(86, 153)
+        Me.btnEliminarFoto.Name = "btnEliminarFoto"
+        Me.btnEliminarFoto.Size = New System.Drawing.Size(35, 23)
+        Me.btnEliminarFoto.TabIndex = 50
+        Me.btnEliminarFoto.Text = "X"
+        Me.btnEliminarFoto.UseVisualStyleBackColor = True
+        '
+        'btnAbrir
+        '
+        Me.btnAbrir.Location = New System.Drawing.Point(20, 153)
+        Me.btnAbrir.Name = "btnAbrir"
+        Me.btnAbrir.Size = New System.Drawing.Size(60, 23)
+        Me.btnAbrir.TabIndex = 49
+        Me.btnAbrir.Text = "Abrir"
+        Me.btnAbrir.UseVisualStyleBackColor = True
+        '
+        'FotoAgregar
+        '
+        Me.FotoAgregar.BackColor = System.Drawing.Color.Gainsboro
+        Me.FotoAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FotoAgregar.InitialImage = Nothing
+        Me.FotoAgregar.Location = New System.Drawing.Point(20, 27)
+        Me.FotoAgregar.Name = "FotoAgregar"
+        Me.FotoAgregar.Size = New System.Drawing.Size(101, 123)
+        Me.FotoAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FotoAgregar.TabIndex = 48
+        Me.FotoAgregar.TabStop = False
         '
         'Panel1
         '
@@ -470,35 +500,6 @@ Partial Class FrmUsuario
         Me.txtBuscar.Size = New System.Drawing.Size(416, 29)
         Me.txtBuscar.TabIndex = 86
         '
-        'FotoAgregar
-        '
-        Me.FotoAgregar.BackColor = System.Drawing.Color.Gainsboro
-        Me.FotoAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FotoAgregar.Location = New System.Drawing.Point(20, 27)
-        Me.FotoAgregar.Name = "FotoAgregar"
-        Me.FotoAgregar.Size = New System.Drawing.Size(101, 123)
-        Me.FotoAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.FotoAgregar.TabIndex = 48
-        Me.FotoAgregar.TabStop = False
-        '
-        'btnAbrir
-        '
-        Me.btnAbrir.Location = New System.Drawing.Point(20, 153)
-        Me.btnAbrir.Name = "btnAbrir"
-        Me.btnAbrir.Size = New System.Drawing.Size(60, 23)
-        Me.btnAbrir.TabIndex = 49
-        Me.btnAbrir.Text = "Abrir"
-        Me.btnAbrir.UseVisualStyleBackColor = True
-        '
-        'btnEliminarFoto
-        '
-        Me.btnEliminarFoto.Location = New System.Drawing.Point(86, 153)
-        Me.btnEliminarFoto.Name = "btnEliminarFoto"
-        Me.btnEliminarFoto.Size = New System.Drawing.Size(35, 23)
-        Me.btnEliminarFoto.TabIndex = 50
-        Me.btnEliminarFoto.Text = "X"
-        Me.btnEliminarFoto.UseVisualStyleBackColor = True
-        '
         'AbrirFoto
         '
         Me.AbrirFoto.FileName = "OpenFileDialog1"
@@ -517,6 +518,7 @@ Partial Class FrmUsuario
         Me.Text = "Gestión Usuario"
         Me.GrupBox1.ResumeLayout(False)
         Me.GrupBox1.PerformLayout()
+        CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -525,7 +527,6 @@ Partial Class FrmUsuario
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
