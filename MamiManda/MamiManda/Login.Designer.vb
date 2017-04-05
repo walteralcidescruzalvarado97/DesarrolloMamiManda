@@ -33,25 +33,24 @@ Partial Class FrmLogin
         '
         Me.TxtUser.BackColor = System.Drawing.SystemColors.Window
         Me.TxtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUser.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TxtUser.ForeColor = System.Drawing.Color.Black
         Me.TxtUser.Location = New System.Drawing.Point(124, 93)
         Me.TxtUser.Multiline = True
         Me.TxtUser.Name = "TxtUser"
         Me.TxtUser.Size = New System.Drawing.Size(173, 27)
         Me.TxtUser.TabIndex = 1
         Me.TxtUser.Tag = ""
-        Me.TxtUser.Text = "Username"
         '
         'TxtPassword
         '
         Me.TxtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPassword.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TxtPassword.ForeColor = System.Drawing.Color.Black
         Me.TxtPassword.Location = New System.Drawing.Point(124, 172)
         Me.TxtPassword.Multiline = True
         Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(173, 27)
         Me.TxtPassword.TabIndex = 2
-        Me.TxtPassword.Text = "Password"
         '
         'BtnIngresar
         '
