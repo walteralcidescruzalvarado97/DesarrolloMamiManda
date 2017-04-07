@@ -186,7 +186,7 @@ Public Class FrmPresentacionProducto
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
                     .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodInventario.Text.Trim
                     .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = cboPresentacion.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = 2
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de presentación ha sido guardado", "MamiManda", MessageBoxButtons.OK)
                 End With
@@ -215,7 +215,7 @@ Public Class FrmPresentacionProducto
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
                     .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodInventario.Text.Trim
                     .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = cboPresentacion.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = 2
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de presentación ha sido actualizado", "MamiManda", MessageBoxButtons.OK)
                 End With

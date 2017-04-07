@@ -23,6 +23,7 @@ Public Class FrmLogin
                     reader.Read()
                     FrmPrincipal.Show()
                     Me.Close()
+                    FrmPrincipal.LblId.Text = String.Format("{0}", reader.GetValue(0))
                     FrmPrincipal.LblUser.Text = String.Format("{0} {1}", reader.GetValue(2), reader.GetValue(3))
                     Dim imagen As New System.IO.MemoryStream(DirectCast(reader("Foto"), [Byte]()))
                     Dim ObjImagen As Image = Image.FromStream(imagen)

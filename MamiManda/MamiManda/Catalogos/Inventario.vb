@@ -195,7 +195,7 @@ Public Class FrmInventario
                         .Parameters.Add("@ExistenciaMinima", SqlDbType.Decimal).Value = txtExistenciaMinima.Text.Trim
                         .Parameters.Add("@Existencia", SqlDbType.Decimal).Value = 0
                         .Parameters.Add("@IdTamano", SqlDbType.Int).Value = cboTamano.SelectedValue
-                        .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = 2
+                        .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                         .ExecuteNonQuery()
                         MessageBox.Show("El producto ha sido agregado", "MamiManda", MessageBoxButtons.OK)
                     End With
@@ -226,7 +226,7 @@ Public Class FrmInventario
                     .Parameters.Add("@ExistenciaMinima", SqlDbType.Decimal).Value = txtExistenciaMinima.Text.Trim
                     .Parameters.Add("@Existencia", SqlDbType.Decimal).Value = 0
                     .Parameters.Add("@IdTamano", SqlDbType.Int).Value = cboTamano.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = 2
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de inventario ha sido actualizado", "MamiManda", MessageBoxButtons.OK)
                 End With
