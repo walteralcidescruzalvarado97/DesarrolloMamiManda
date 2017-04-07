@@ -52,7 +52,7 @@ Partial Class FrmProduccion
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(163, 9)
+        Me.Label1.Location = New System.Drawing.Point(37, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(120, 25)
         Me.Label1.TabIndex = 93
@@ -68,9 +68,9 @@ Partial Class FrmProduccion
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCantidad)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 58)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 71)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(312, 135)
+        Me.GroupBox1.Size = New System.Drawing.Size(312, 124)
         Me.GroupBox1.TabIndex = 94
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
@@ -227,7 +227,7 @@ Partial Class FrmProduccion
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChProducto, Me.ChMateria})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(26, 196)
+        Me.lsvMostrar.Location = New System.Drawing.Point(26, 204)
         Me.lsvMostrar.Name = "lsvMostrar"
         Me.lsvMostrar.Size = New System.Drawing.Size(312, 131)
         Me.lsvMostrar.TabIndex = 103
@@ -248,7 +248,7 @@ Partial Class FrmProduccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(476, 347)
         Me.Controls.Add(Me.lsvMostrar)

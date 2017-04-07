@@ -74,7 +74,7 @@ Partial Class FrmEmpleado
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(178, 12)
+        Me.Label8.Location = New System.Drawing.Point(34, 27)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(188, 25)
         Me.Label8.TabIndex = 84
@@ -207,7 +207,7 @@ Partial Class FrmEmpleado
         Me.GbDatos.Controls.Add(Me.TxtEmail)
         Me.GbDatos.Controls.Add(Me.Label5)
         Me.GbDatos.Controls.Add(Me.Label4)
-        Me.GbDatos.Location = New System.Drawing.Point(63, 51)
+        Me.GbDatos.Location = New System.Drawing.Point(39, 70)
         Me.GbDatos.Name = "GbDatos"
         Me.GbDatos.Size = New System.Drawing.Size(348, 303)
         Me.GbDatos.TabIndex = 78
@@ -356,12 +356,12 @@ Partial Class FrmEmpleado
         Me.TabControl1.Location = New System.Drawing.Point(0, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(603, 386)
+        Me.TabControl1.Size = New System.Drawing.Size(603, 395)
         Me.TabControl1.TabIndex = 86
         '
         'TPGestionEmpleado
         '
-        Me.TPGestionEmpleado.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPGestionEmpleado.BackgroundImage = CType(resources.GetObject("TPGestionEmpleado.BackgroundImage"), System.Drawing.Image)
         Me.TPGestionEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TPGestionEmpleado.Controls.Add(Me.btnInsertar)
         Me.TPGestionEmpleado.Controls.Add(Me.GbDatos)
@@ -376,14 +376,14 @@ Partial Class FrmEmpleado
         Me.TPGestionEmpleado.Location = New System.Drawing.Point(4, 22)
         Me.TPGestionEmpleado.Name = "TPGestionEmpleado"
         Me.TPGestionEmpleado.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPGestionEmpleado.Size = New System.Drawing.Size(595, 360)
+        Me.TPGestionEmpleado.Size = New System.Drawing.Size(595, 369)
         Me.TPGestionEmpleado.TabIndex = 0
         Me.TPGestionEmpleado.Text = "Gestión Empleado"
         Me.TPGestionEmpleado.UseVisualStyleBackColor = True
         '
         'TPListarEmpleado
         '
-        Me.TPListarEmpleado.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPListarEmpleado.BackgroundImage = CType(resources.GetObject("TPListarEmpleado.BackgroundImage"), System.Drawing.Image)
         Me.TPListarEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TPListarEmpleado.Controls.Add(Me.LsvMostrarEmpleado)
         Me.TPListarEmpleado.Controls.Add(Me.btnEditar)
@@ -392,7 +392,7 @@ Partial Class FrmEmpleado
         Me.TPListarEmpleado.Location = New System.Drawing.Point(4, 22)
         Me.TPListarEmpleado.Name = "TPListarEmpleado"
         Me.TPListarEmpleado.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPListarEmpleado.Size = New System.Drawing.Size(595, 360)
+        Me.TPListarEmpleado.Size = New System.Drawing.Size(595, 369)
         Me.TPListarEmpleado.TabIndex = 1
         Me.TPListarEmpleado.Text = "Listar Empleado"
         Me.TPListarEmpleado.UseVisualStyleBackColor = True
@@ -402,9 +402,9 @@ Partial Class FrmEmpleado
         Me.LsvMostrarEmpleado.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodEMpleado, Me.ChNombre, Me.ChApellido, Me.ChEmail, Me.ChTelefono, Me.ChTipoEmpleado, Me.ChSexo})
         Me.LsvMostrarEmpleado.FullRowSelect = True
         Me.LsvMostrarEmpleado.GridLines = True
-        Me.LsvMostrarEmpleado.Location = New System.Drawing.Point(0, 80)
+        Me.LsvMostrarEmpleado.Location = New System.Drawing.Point(-3, 121)
         Me.LsvMostrarEmpleado.Name = "LsvMostrarEmpleado"
-        Me.LsvMostrarEmpleado.Size = New System.Drawing.Size(600, 284)
+        Me.LsvMostrarEmpleado.Size = New System.Drawing.Size(600, 246)
         Me.LsvMostrarEmpleado.TabIndex = 90
         Me.LsvMostrarEmpleado.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarEmpleado.View = System.Windows.Forms.View.Details
@@ -446,7 +446,7 @@ Partial Class FrmEmpleado
         'btnEditar
         '
         Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(514, 51)
+        Me.btnEditar.Location = New System.Drawing.Point(463, 78)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 88
@@ -458,7 +458,7 @@ Partial Class FrmEmpleado
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(211, 3)
+        Me.Label12.Location = New System.Drawing.Point(49, 28)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(167, 25)
         Me.Label12.TabIndex = 87
@@ -467,7 +467,7 @@ Partial Class FrmEmpleado
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(141, 31)
+        Me.txtBuscar.Location = New System.Drawing.Point(134, 75)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
@@ -480,7 +480,7 @@ Partial Class FrmEmpleado
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(600, 384)
+        Me.ClientSize = New System.Drawing.Size(600, 390)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.Name = "FrmEmpleado"

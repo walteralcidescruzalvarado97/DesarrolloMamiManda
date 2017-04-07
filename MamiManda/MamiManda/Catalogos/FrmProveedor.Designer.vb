@@ -179,7 +179,7 @@ Partial Class FrmProveedor
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(164, 3)
+        Me.Label1.Location = New System.Drawing.Point(47, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(191, 25)
         Me.Label1.TabIndex = 65
@@ -343,7 +343,7 @@ Partial Class FrmProveedor
         '
         'TPListarProveedor
         '
-        Me.TPListarProveedor.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPListarProveedor.BackgroundImage = CType(resources.GetObject("TPListarProveedor.BackgroundImage"), System.Drawing.Image)
         Me.TPListarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TPListarProveedor.Controls.Add(Me.btnEditar)
         Me.TPListarProveedor.Controls.Add(Me.txtBuscar)
@@ -360,7 +360,7 @@ Partial Class FrmProveedor
         'btnEditar
         '
         Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(471, 53)
+        Me.btnEditar.Location = New System.Drawing.Point(454, 74)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 82
@@ -370,7 +370,7 @@ Partial Class FrmProveedor
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(73, 31)
+        Me.txtBuscar.Location = New System.Drawing.Point(68, 72)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
@@ -381,7 +381,7 @@ Partial Class FrmProveedor
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(176, 3)
+        Me.Label11.Location = New System.Drawing.Point(35, 28)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(170, 25)
         Me.Label11.TabIndex = 79
@@ -392,9 +392,9 @@ Partial Class FrmProveedor
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRTN, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(0, 82)
+        Me.lsvMostrar.Location = New System.Drawing.Point(0, 112)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(549, 278)
+        Me.lsvMostrar.Size = New System.Drawing.Size(549, 248)
         Me.lsvMostrar.TabIndex = 78
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details

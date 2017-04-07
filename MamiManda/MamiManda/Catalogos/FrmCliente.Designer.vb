@@ -79,9 +79,9 @@ Partial Class FrmCliente
         Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono, Me.chFecha, Me.chSexo})
         Me.LsvMostrarCliente.FullRowSelect = True
         Me.LsvMostrarCliente.GridLines = True
-        Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 87)
+        Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 134)
         Me.LsvMostrarCliente.Name = "LsvMostrarCliente"
-        Me.LsvMostrarCliente.Size = New System.Drawing.Size(600, 341)
+        Me.LsvMostrarCliente.Size = New System.Drawing.Size(600, 297)
         Me.LsvMostrarCliente.TabIndex = 109
         Me.LsvMostrarCliente.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarCliente.View = System.Windows.Forms.View.Details
@@ -126,7 +126,7 @@ Partial Class FrmCliente
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(198, 17)
+        Me.Label15.Location = New System.Drawing.Point(45, 35)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(159, 25)
         Me.Label15.TabIndex = 108
@@ -315,7 +315,7 @@ Partial Class FrmCliente
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(522, 197)
+        Me.Label10.Location = New System.Drawing.Point(512, 200)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 104
@@ -326,7 +326,7 @@ Partial Class FrmCliente
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(525, 325)
+        Me.Label13.Location = New System.Drawing.Point(515, 328)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 105
@@ -342,7 +342,7 @@ Partial Class FrmCliente
         Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(527, 150)
+        Me.btnActualizar.Location = New System.Drawing.Point(517, 153)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
         Me.btnActualizar.TabIndex = 102
@@ -358,7 +358,7 @@ Partial Class FrmCliente
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(533, 289)
+        Me.btnCancelar.Location = New System.Drawing.Point(523, 292)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 103
@@ -369,7 +369,7 @@ Partial Class FrmCliente
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(528, 131)
+        Me.Label8.Location = New System.Drawing.Point(518, 134)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(52, 16)
         Me.Label8.TabIndex = 98
@@ -380,7 +380,7 @@ Partial Class FrmCliente
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(526, 261)
+        Me.Label9.Location = New System.Drawing.Point(516, 264)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 99
@@ -396,7 +396,7 @@ Partial Class FrmCliente
         Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(530, 87)
+        Me.btnInsertar.Location = New System.Drawing.Point(520, 90)
         Me.btnInsertar.Name = "btnInsertar"
         Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
         Me.btnInsertar.TabIndex = 96
@@ -412,7 +412,7 @@ Partial Class FrmCliente
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(530, 221)
+        Me.btnGuardar.Location = New System.Drawing.Point(520, 224)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 97
@@ -434,7 +434,7 @@ Partial Class FrmCliente
         '
         'TabPage1
         '
-        Me.TabPage1.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage1.Controls.Add(Me.gbDatos)
         Me.TabPage1.Controls.Add(Me.btnInsertar)
@@ -456,7 +456,7 @@ Partial Class FrmCliente
         '
         'TPListar
         '
-        Me.TPListar.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPListar.BackgroundImage = CType(resources.GetObject("TPListar.BackgroundImage"), System.Drawing.Image)
         Me.TPListar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TPListar.Controls.Add(Me.btnEditar)
         Me.TPListar.Controls.Add(Me.txtBuscar)
@@ -473,7 +473,7 @@ Partial Class FrmCliente
         'btnEditar
         '
         Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(518, 58)
+        Me.btnEditar.Location = New System.Drawing.Point(485, 90)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 112
@@ -483,7 +483,7 @@ Partial Class FrmCliente
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(98, 31)
+        Me.txtBuscar.Location = New System.Drawing.Point(96, 88)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
@@ -494,7 +494,7 @@ Partial Class FrmCliente
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(200, 3)
+        Me.Label14.Location = New System.Drawing.Point(57, 35)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(138, 25)
         Me.Label14.TabIndex = 110

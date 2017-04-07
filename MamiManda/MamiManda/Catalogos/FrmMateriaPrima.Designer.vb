@@ -83,6 +83,8 @@ Partial Class FrmMateriaPrima
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage1.Controls.Add(Me.btnInsertar)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.btnGuardar)
@@ -120,8 +122,9 @@ Partial Class FrmMateriaPrima
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(154, 14)
+        Me.Label1.Location = New System.Drawing.Point(46, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(187, 20)
         Me.Label1.TabIndex = 2
@@ -160,9 +163,9 @@ Partial Class FrmMateriaPrima
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.TxtIdMateriaPrima)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(58, 37)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 70)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(385, 290)
+        Me.GroupBox1.Size = New System.Drawing.Size(385, 271)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos materia prima"
@@ -380,6 +383,8 @@ Partial Class FrmMateriaPrima
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage2.Controls.Add(Me.LsvMostrarMateriaPrima)
         Me.TabPage2.Controls.Add(Me.btnEditar)
         Me.TabPage2.Controls.Add(Me.Label15)
@@ -396,9 +401,9 @@ Partial Class FrmMateriaPrima
         Me.LsvMostrarMateriaPrima.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChIdMateriaPrima, Me.ChNombreMateriaPrima, Me.ChExistenciaMinima, Me.ChExistencia, Me.ChFecha, Me.ChMedida, Me.ChProveedor})
         Me.LsvMostrarMateriaPrima.FullRowSelect = True
         Me.LsvMostrarMateriaPrima.GridLines = True
-        Me.LsvMostrarMateriaPrima.Location = New System.Drawing.Point(0, 83)
+        Me.LsvMostrarMateriaPrima.Location = New System.Drawing.Point(0, 114)
         Me.LsvMostrarMateriaPrima.Name = "LsvMostrarMateriaPrima"
-        Me.LsvMostrarMateriaPrima.Size = New System.Drawing.Size(727, 284)
+        Me.LsvMostrarMateriaPrima.Size = New System.Drawing.Size(727, 249)
         Me.LsvMostrarMateriaPrima.TabIndex = 93
         Me.LsvMostrarMateriaPrima.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarMateriaPrima.View = System.Windows.Forms.View.Details
@@ -440,7 +445,7 @@ Partial Class FrmMateriaPrima
         'btnEditar
         '
         Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(574, 54)
+        Me.btnEditar.Location = New System.Drawing.Point(526, 73)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 92
@@ -452,7 +457,7 @@ Partial Class FrmMateriaPrima
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(257, 6)
+        Me.Label15.Location = New System.Drawing.Point(58, 28)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(204, 25)
         Me.Label15.TabIndex = 91
@@ -461,7 +466,7 @@ Partial Class FrmMateriaPrima
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(198, 34)
+        Me.txtBuscar.Location = New System.Drawing.Point(198, 71)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(314, 27)

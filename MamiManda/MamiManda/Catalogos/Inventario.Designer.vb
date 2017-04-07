@@ -205,7 +205,7 @@ Partial Class FrmInventario
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(164, 3)
+        Me.Label1.Location = New System.Drawing.Point(41, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(186, 25)
         Me.Label1.TabIndex = 65
@@ -321,7 +321,7 @@ Partial Class FrmInventario
         '
         'TPListarInventario
         '
-        Me.TPListarInventario.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TPListarInventario.BackgroundImage = CType(resources.GetObject("TPListarInventario.BackgroundImage"), System.Drawing.Image)
         Me.TPListarInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TPListarInventario.Controls.Add(Me.btnEditar)
         Me.TPListarInventario.Controls.Add(Me.txtBuscar)
@@ -338,7 +338,7 @@ Partial Class FrmInventario
         'btnEditar
         '
         Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(471, 53)
+        Me.btnEditar.Location = New System.Drawing.Point(467, 75)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 82
@@ -348,7 +348,7 @@ Partial Class FrmInventario
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(73, 31)
+        Me.txtBuscar.Location = New System.Drawing.Point(73, 74)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
@@ -359,7 +359,7 @@ Partial Class FrmInventario
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(176, 3)
+        Me.Label11.Location = New System.Drawing.Point(68, 25)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(165, 25)
         Me.Label11.TabIndex = 79
@@ -370,9 +370,9 @@ Partial Class FrmInventario
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodInventario, Me.chNombre, Me.chExistenciaMaxima, Me.chExistenciaMinima, Me.chExistencia, Me.chTamano})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(0, 82)
+        Me.lsvMostrar.Location = New System.Drawing.Point(0, 114)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(588, 270)
+        Me.lsvMostrar.Size = New System.Drawing.Size(588, 239)
         Me.lsvMostrar.TabIndex = 78
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details

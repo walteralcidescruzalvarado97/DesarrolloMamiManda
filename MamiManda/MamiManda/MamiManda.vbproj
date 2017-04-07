@@ -175,12 +175,6 @@
     <Compile Include="Catalogos\Inventario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventario1.1.Designer.vb">
-      <DependentUpon>Inventario1.1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Inventario1.1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Catalogos\FrmMateriaPrima.Designer.vb">
       <DependentUpon>FrmMateriaPrima.vb</DependentUpon>
     </Compile>
@@ -269,9 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inventario1.1.resx">
-      <DependentUpon>Inventario1.1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmMateriaPrima.resx">
       <DependentUpon>FrmMateriaPrima.vb</DependentUpon>

@@ -69,7 +69,7 @@ Partial Class FrmReceta
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(181, 3)
+        Me.Label1.Location = New System.Drawing.Point(39, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 25)
         Me.Label1.TabIndex = 66
@@ -95,7 +95,7 @@ Partial Class FrmReceta
         '
         'txtCodMateria
         '
-        Me.txtCodMateria.Location = New System.Drawing.Point(130, 56)
+        Me.txtCodMateria.Location = New System.Drawing.Point(130, 47)
         Me.txtCodMateria.Name = "txtCodMateria"
         Me.txtCodMateria.Size = New System.Drawing.Size(132, 20)
         Me.txtCodMateria.TabIndex = 70
@@ -104,7 +104,7 @@ Partial Class FrmReceta
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(17, 59)
+        Me.Label3.Location = New System.Drawing.Point(17, 50)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(107, 13)
         Me.Label3.TabIndex = 69
@@ -112,7 +112,7 @@ Partial Class FrmReceta
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(130, 98)
+        Me.txtCantidad.Location = New System.Drawing.Point(130, 76)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
         Me.txtCantidad.TabIndex = 72
@@ -121,7 +121,7 @@ Partial Class FrmReceta
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(75, 101)
+        Me.Label4.Location = New System.Drawing.Point(75, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 71
@@ -194,16 +194,16 @@ Partial Class FrmReceta
         Me.GroupBox1.Controls.Add(Me.txtCodMateria)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCantidad)
-        Me.GroupBox1.Location = New System.Drawing.Point(42, 35)
+        Me.GroupBox1.Location = New System.Drawing.Point(44, 67)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(335, 158)
+        Me.GroupBox1.Size = New System.Drawing.Size(335, 141)
         Me.GroupBox1.TabIndex = 92
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
         '
         'btnEditar
         '
-        Me.btnEditar.Location = New System.Drawing.Point(187, 129)
+        Me.btnEditar.Location = New System.Drawing.Point(187, 105)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 76
@@ -212,7 +212,7 @@ Partial Class FrmReceta
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(106, 129)
+        Me.btnAgregar.Location = New System.Drawing.Point(106, 105)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 75
@@ -221,7 +221,7 @@ Partial Class FrmReceta
         '
         'btnMateriaPrima
         '
-        Me.btnMateriaPrima.Location = New System.Drawing.Point(268, 55)
+        Me.btnMateriaPrima.Location = New System.Drawing.Point(268, 46)
         Me.btnMateriaPrima.Name = "btnMateriaPrima"
         Me.btnMateriaPrima.Size = New System.Drawing.Size(26, 20)
         Me.btnMateriaPrima.TabIndex = 74
@@ -249,7 +249,7 @@ Partial Class FrmReceta
         '
         'TabPage1
         '
-        Me.TabPage1.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage1.Controls.Add(Me.lsvMostrar)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -271,7 +271,7 @@ Partial Class FrmReceta
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChProducto, Me.ChMateria, Me.ChCantidad, Me.ChMedida})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(35, 213)
+        Me.lsvMostrar.Location = New System.Drawing.Point(26, 214)
         Me.lsvMostrar.Name = "lsvMostrar"
         Me.lsvMostrar.Size = New System.Drawing.Size(416, 131)
         Me.lsvMostrar.TabIndex = 93
@@ -300,7 +300,7 @@ Partial Class FrmReceta
         '
         'TabPage2
         '
-        Me.TabPage2.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage2.Controls.Add(Me.btnEditarListar)
         Me.TabPage2.Controls.Add(Me.Label5)
@@ -317,7 +317,7 @@ Partial Class FrmReceta
         'btnEditarListar
         '
         Me.btnEditarListar.Enabled = False
-        Me.btnEditarListar.Location = New System.Drawing.Point(401, 66)
+        Me.btnEditarListar.Location = New System.Drawing.Point(394, 82)
         Me.btnEditarListar.Name = "btnEditarListar"
         Me.btnEditarListar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditarListar.TabIndex = 97
@@ -329,7 +329,7 @@ Partial Class FrmReceta
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(176, 3)
+        Me.Label5.Location = New System.Drawing.Point(32, 27)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(139, 25)
         Me.Label5.TabIndex = 96
@@ -338,7 +338,7 @@ Partial Class FrmReceta
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(95, 31)
+        Me.txtBuscar.Location = New System.Drawing.Point(95, 78)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(287, 29)
@@ -349,9 +349,9 @@ Partial Class FrmReceta
         Me.lsvMostrarListar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.lsvMostrarListar.FullRowSelect = True
         Me.lsvMostrarListar.GridLines = True
-        Me.lsvMostrarListar.Location = New System.Drawing.Point(0, 95)
+        Me.lsvMostrarListar.Location = New System.Drawing.Point(0, 120)
         Me.lsvMostrarListar.Name = "lsvMostrarListar"
-        Me.lsvMostrarListar.Size = New System.Drawing.Size(482, 259)
+        Me.lsvMostrarListar.Size = New System.Drawing.Size(482, 234)
         Me.lsvMostrarListar.TabIndex = 94
         Me.lsvMostrarListar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrarListar.View = System.Windows.Forms.View.Details
