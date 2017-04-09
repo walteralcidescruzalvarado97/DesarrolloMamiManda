@@ -1,17 +1,35 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmReceta
+    Implements IForm
+    Implements IForm2
+    Implements IReceta
     Dim err As Integer = 0
+
+    Public Sub ObtenerDato(dato As String) Implements IForm.ObtenerDato
+        txtCodProducto.Text = dato
+    End Sub
+
+    Public Sub ObtenerNombre(Nombre As String) Implements IForm2.ObtenerNombre
+        'txtCodMateria.Text = Nombre
+    End Sub
+
+    Public Sub ObtenerCodReceta(Codigo As String) Implements IReceta.ObtenerCodReceta
+        txtCodMateria.Text = Codigo
+    End Sub
+
     Private Sub FrmReceta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False, False)
         ListarReceta()
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
-        FrmBuscarInventario.ShowDialog()
+        Dim BuscarInventario As New FrmBuscarInventario
+        BuscarInventario.Show(Me)
     End Sub
 
     Private Sub btnMateriaPrima_Click(sender As Object, e As EventArgs) Handles btnMateriaPrima.Click
-        FrmBuscarMateriaPrima.ShowDialog()
+        Dim BuscarMateriaPrima As New FrmBuscarMateriaPrima
+        BuscarMateriaPrima.Show(Me)
     End Sub
 
 #Region "Funciones"

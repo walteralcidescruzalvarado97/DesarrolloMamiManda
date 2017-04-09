@@ -87,11 +87,17 @@ Public Class FrmBuscarMateriaPrima
     End Sub
 
     Private Sub LsvMostrarMateriaPrima_DoubleClick(sender As Object, e As EventArgs) Handles LsvMostrarMateriaPrima.DoubleClick
-        FrmReceta.txtCodMateria.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
-
         FrmAgregarMateria.txtCodMateria.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
         FrmAgregarMateria.txtMateria.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
         FrmAgregarMateria.txtMedida.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(6).Text
+
+        Dim Codigo As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
+        Dim InstanciaIReceta As IReceta = CType(Me.Owner, IReceta)
+
+        If InstanciaIReceta IsNot Nothing Then
+            InstanciaIReceta.ObtenerCodReceta(Codigo)
+        End If
+
         Close()
     End Sub
 End Class

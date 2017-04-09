@@ -129,7 +129,7 @@ Partial Class FrmPresentacionProducto
         '
         'btnInventario
         '
-        Me.btnInventario.Location = New System.Drawing.Point(310, 51)
+        Me.btnInventario.Location = New System.Drawing.Point(285, 51)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(27, 20)
         Me.btnInventario.TabIndex = 16
@@ -224,7 +224,7 @@ Partial Class FrmPresentacionProducto
         Me.txtCodInventario.Enabled = False
         Me.txtCodInventario.Location = New System.Drawing.Point(135, 51)
         Me.txtCodInventario.Name = "txtCodInventario"
-        Me.txtCodInventario.Size = New System.Drawing.Size(177, 20)
+        Me.txtCodInventario.Size = New System.Drawing.Size(152, 20)
         Me.txtCodInventario.TabIndex = 3
         '
         'Label3

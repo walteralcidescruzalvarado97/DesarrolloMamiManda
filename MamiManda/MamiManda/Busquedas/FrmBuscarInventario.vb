@@ -86,13 +86,19 @@ Public Class FrmBuscarInventario
     End Sub
 
     Private Sub lsvMostrar_DoubleClick(sender As Object, e As EventArgs) Handles lsvMostrar.DoubleClick
-        FrmReceta.txtCodProducto.Text = lsvMostrar.FocusedItem.SubItems(0).Text
+        Dim Dato As String = lsvMostrar.FocusedItem.SubItems(0).Text
+        Dim Nombre As String = lsvMostrar.FocusedItem.SubItems(1).Text
+        Dim InstanciaForm As IForm = CType(Me.Owner, IForm)
+        Dim InstanciaForm2 As IForm2 = CType(Me.Owner, IForm2)
 
-        FrmProduccion.txtCodProducto.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        FrmProduccion.txtProducto.Text = lsvMostrar.FocusedItem.SubItems(1).Text
+        If InstanciaForm IsNot Nothing Then
+            InstanciaForm.ObtenerDato(Dato)
+        End If
 
-        FrmPresentacionProducto.txtCodInventario.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        FrmPresentacionProducto.txtNombre.Text = lsvMostrar.FocusedItem.SubItems(1).Text
+        If InstanciaForm2 IsNot Nothing Then
+            InstanciaForm2.ObtenerNombre(Nombre)
+        End If
+
         Close()
     End Sub
 End Class

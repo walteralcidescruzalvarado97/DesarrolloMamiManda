@@ -86,7 +86,14 @@ Public Class FrmBuscarEmpleado
     End Sub
 
     Private Sub lsvMostrar_DoubleClick(sender As Object, e As EventArgs) Handles lsvMostrar.DoubleClick
-        FrmUsuario.txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(0).Text
+        Dim Dato As String = lsvMostrar.FocusedItem.SubItems(1).Text
+
+        Dim InstanciaForm As IForm = CType(Me.Owner, IForm)
+
+        If InstanciaForm IsNot Nothing Then
+            InstanciaForm.ObtenerDato(Dato)
+        End If
+
         Close()
     End Sub
 
@@ -94,6 +101,4 @@ Public Class FrmBuscarEmpleado
         FrmEmpleado.Show()
         Close()
     End Sub
-
-
 End Class

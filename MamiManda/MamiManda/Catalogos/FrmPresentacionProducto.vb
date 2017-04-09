@@ -1,5 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmPresentacionProducto
+    Implements IForm
+    Implements IForm2
+
+    Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
+        txtCodInventario.Text = cuenta
+    End Sub
+
+    Public Sub ObtenerNombre(Nombre As String) Implements IForm2.ObtenerNombre
+        txtNombre.Text = Nombre
+    End Sub
+
     Private Sub FrmPresentacionProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False, False)
         LlenarComboboxTipoPresentacion()
@@ -269,7 +280,8 @@ Public Class FrmPresentacionProducto
     End Sub
 
     Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
-        FrmBuscarInventario.ShowDialog()
+        Dim BuscarInventario As New FrmBuscarInventario
+        BuscarInventario.Show(Me)
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged

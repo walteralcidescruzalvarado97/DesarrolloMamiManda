@@ -1,7 +1,12 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FrmMateriaPrima
+    Implements IForm
     Dim existencia As Integer
+
+    Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
+        TxtRtnProveedor.Text = cuenta
+    End Sub
 
     Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         HabilitarBotones(False, True, False, True, True)
@@ -265,7 +270,8 @@ Public Class FrmMateriaPrima
     End Sub
 
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
-        FrmBuscarProveedor.ShowDialog()
+        Dim BuscarProveedor As New FrmBuscarProveedor
+        BuscarProveedor.Show(Me)
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click

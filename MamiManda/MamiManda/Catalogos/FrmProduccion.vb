@@ -1,5 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmProduccion
+    Implements IForm
+    Implements IForm2
+
+    Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
+        txtCodProducto.Text = cuenta
+    End Sub
+
+    Public Sub ObtenerNombre(Nombre As String) Implements IForm2.ObtenerNombre
+        txtProducto.Text = Nombre
+    End Sub
+
     Private Sub FrmProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False)
         Limpiar()
@@ -230,7 +241,9 @@ Public Class FrmProduccion
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
-        FrmBuscarInventario.ShowDialog()
+        Dim BuscarInventario As New FrmBuscarInventario
+        BuscarInventario.Show(Me)
+
         MostrarReceta()
     End Sub
 End Class

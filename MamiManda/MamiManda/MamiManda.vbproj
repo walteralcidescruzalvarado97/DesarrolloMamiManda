@@ -52,6 +52,7 @@
     <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -76,10 +77,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Busqueda.Designer.vb">
-      <DependentUpon>Busqueda.vb</DependentUpon>
+    <Compile Include="Busquedas\FrmBusqueda.Designer.vb">
+      <DependentUpon>FrmBusqueda.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda.vb">
+    <Compile Include="Busquedas\FrmBusqueda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Busquedas\FrmBuscarInventario.Designer.vb">
@@ -112,7 +113,7 @@
     <Compile Include="Catalogos\FrmReceta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Conexion.vb" />
+    <Compile Include="Modulos\Conexion.vb" />
     <Compile Include="Busquedas\FrmBuscarEmpleado.Designer.vb">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
     </Compile>
@@ -161,12 +162,21 @@
     <Compile Include="Busquedas\FrmBuscarMateriaPrima.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FuncionSha1.vb" />
-    <Compile Include="Login.vb">
+    <Compile Include="FrmConfiguracion.Designer.vb">
+      <DependentUpon>FrmConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfiguracion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="Modulos\FuncionSha1.vb" />
+    <Compile Include="Interfaces\IForm.vb" />
+    <Compile Include="Interfaces\IForm2.vb" />
+    <Compile Include="Interfaces\IReceta.vb" />
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catalogos\Inventario.Designer.vb">
@@ -196,10 +206,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Principal.Designer.vb">
-      <DependentUpon>Principal.vb</DependentUpon>
+    <Compile Include="FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Principal.vb">
+    <Compile Include="FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catalogos\Usuario.Designer.vb">
@@ -216,8 +226,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Busqueda.resx">
-      <DependentUpon>Busqueda.vb</DependentUpon>
+    <EmbeddedResource Include="Busquedas\FrmBusqueda.resx">
+      <DependentUpon>FrmBusqueda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\FrmBuscarEmpleado.resx">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
@@ -258,8 +268,11 @@
     <EmbeddedResource Include="Catalogos\FrmReceta.resx">
       <DependentUpon>FrmReceta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="FrmConfiguracion.resx">
+      <DependentUpon>FrmConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
@@ -274,8 +287,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.vb</DependentUpon>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>

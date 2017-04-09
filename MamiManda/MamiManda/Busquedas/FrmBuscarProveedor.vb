@@ -85,12 +85,14 @@ Public Class FrmBuscarProveedor
         Close()
     End Sub
 
-    Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
-
-    End Sub
-
     Private Sub lsvMostrar_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lsvMostrar.MouseDoubleClick
-        FrmMateriaPrima.TxtRtnProveedor.Text = lsvMostrar.FocusedItem.SubItems(0).Text
+        Dim Dato As String = lsvMostrar.FocusedItem.SubItems(0).Text
+
+        Dim InstanciaForm As IForm = CType(Me.Owner, IForm)
+
+        If InstanciaForm IsNot Nothing Then
+            InstanciaForm.ObtenerDato(Dato)
+        End If
         Close()
     End Sub
 End Class

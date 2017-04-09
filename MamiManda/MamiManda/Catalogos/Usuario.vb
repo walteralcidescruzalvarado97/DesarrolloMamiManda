@@ -3,6 +3,13 @@ Imports System.IO
 Imports System.Drawing.Imaging
 Public Class FrmUsuario
 
+    Implements IForm
+
+    Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
+        txtEmpleado.Text = cuenta
+    End Sub
+
+
     Private Sub Usuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarComboboxTipoUsuario()
         LLenarComboEstado()
@@ -396,7 +403,8 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnEmpleado.Click
-        FrmBuscarEmpleado.ShowDialog()
+        Dim BuscarEmpleado As New FrmBuscarEmpleado
+        BuscarEmpleado.Show(Me)
     End Sub
 
 
