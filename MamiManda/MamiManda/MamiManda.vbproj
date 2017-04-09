@@ -218,6 +218,12 @@
     <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Splash_BakerySystem.Designer.vb">
+      <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Splash_BakerySystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Venta.Designer.vb">
       <DependentUpon>Venta.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash_BakerySystem.resx">
+      <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.vb</DependentUpon>
