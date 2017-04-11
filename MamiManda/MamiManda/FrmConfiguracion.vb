@@ -71,7 +71,5 @@ Public Class FrmConfiguracion
             txtUsername.Text = Replace(n, " ", "")
             txtPassword.Text = Replace(c(3), "Password=", "")
         End If
-
-
     End Sub
 End Class
