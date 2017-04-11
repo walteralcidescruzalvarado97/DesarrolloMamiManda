@@ -77,4 +77,8 @@
     Private Sub BtnOpciones_Click(sender As Object, e As EventArgs) Handles BtnOpciones.Click
         FrmConfiguracion.ShowDialog()
     End Sub
+
+    Private Sub BtnLogAuditoria_Click(sender As Object, e As EventArgs) Handles BtnLogAuditoria.Click
+        LogAuditoria.ShowDialog()
+    End Sub
 End Class

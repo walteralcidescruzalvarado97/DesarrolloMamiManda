@@ -93,6 +93,7 @@ Partial Class FrmPrincipal
         Me.PbUser = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.LblId = New System.Windows.Forms.Label()
+        Me.BtnLogAuditoria = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.PbUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -129,6 +130,7 @@ Partial Class FrmPrincipal
         Me.TileVentas.BackgroundImage = CType(resources.GetObject("TileVentas.BackgroundImage"), System.Drawing.Image)
         Me.TileVentas.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft
         Me.TileVentas.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
+        Me.TileVentas.CurrentFrameIndex = 1
         TileItemElement1.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI Light", 17.0!)
         TileItemElement1.Appearance.Hovered.Options.UseFont = True
         TileItemElement1.Appearance.Hovered.Options.UseTextOptions = True
@@ -680,6 +682,9 @@ Partial Class FrmPrincipal
         '
         'TilePresentacionProducto
         '
+        Me.TilePresentacionProducto.BackgroundImage = CType(resources.GetObject("TilePresentacionProducto.BackgroundImage"), System.Drawing.Image)
+        Me.TilePresentacionProducto.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter
+        Me.TilePresentacionProducto.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch
         TileItemElement27.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI Light", 21.25!)
         TileItemElement27.Appearance.Hovered.Options.UseFont = True
         TileItemElement27.Appearance.Hovered.Options.UseTextOptions = True
@@ -698,7 +703,7 @@ Partial Class FrmPrincipal
         TileItemElement27.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
         TileItemElement27.ImageLocation = New System.Drawing.Point(2, 2)
         TileItemElement27.MaxWidth = 198
-        TileItemElement27.Text = "Header"
+        TileItemElement27.Text = "Presentación"
         TileItemElement27.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
         TileItemElement27.TextLocation = New System.Drawing.Point(96, 2)
         TileItemElement28.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI", 11.25!)
@@ -719,7 +724,7 @@ Partial Class FrmPrincipal
         TileItemElement28.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
         TileItemElement28.ImageLocation = New System.Drawing.Point(2, 2)
         TileItemElement28.MaxWidth = 198
-        TileItemElement28.Text = "The quick brown fox jumps over the lazy dog."
+        TileItemElement28.Text = "Aquí puedes gestionar todas las Presentaciones de productos "
         TileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
         TileItemElement28.TextLocation = New System.Drawing.Point(96, 35)
         TileItemElement29.Appearance.Hovered.Font = New System.Drawing.Font("Tahoma", 10.3125!)
@@ -729,7 +734,7 @@ Partial Class FrmPrincipal
         TileItemElement29.Appearance.Selected.Font = New System.Drawing.Font("Tahoma", 10.3125!)
         TileItemElement29.Appearance.Selected.Options.UseFont = True
         TileItemElement29.Image = CType(resources.GetObject("TileItemElement29.Image"), System.Drawing.Image)
-        TileItemElement29.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
+        TileItemElement29.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft
         TileItemElement29.ImageLocation = New System.Drawing.Point(7, 12)
         TileItemElement29.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
         TileItemElement29.ImageSize = New System.Drawing.Size(79, 80)
@@ -784,6 +789,7 @@ Partial Class FrmPrincipal
         Me.TileClientes.BackgroundImage = CType(resources.GetObject("TileClientes.BackgroundImage"), System.Drawing.Image)
         Me.TileClientes.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter
         Me.TileClientes.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
+        Me.TileClientes.CurrentFrameIndex = 1
         TileItemElement32.Text = "Clientes"
         Me.TileClientes.Elements.Add(TileItemElement32)
         TileItemFrame6.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollDown
@@ -842,6 +848,7 @@ Partial Class FrmPrincipal
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.BtnCerrarSesion)
         Me.Panel3.Controls.Add(Me.BtnCambiarUsuario)
+        Me.Panel3.Controls.Add(Me.BtnLogAuditoria)
         Me.Panel3.Controls.Add(Me.BtnOpciones)
         Me.Panel3.Controls.Add(Me.BtnBuscar)
         Me.Panel3.Controls.Add(Me.BtnMenu)
@@ -861,7 +868,7 @@ Partial Class FrmPrincipal
         Me.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCerrarSesion.ForeColor = System.Drawing.Color.White
-        Me.BtnCerrarSesion.Location = New System.Drawing.Point(-1, 360)
+        Me.BtnCerrarSesion.Location = New System.Drawing.Point(-1, 401)
         Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
         Me.BtnCerrarSesion.Size = New System.Drawing.Size(232, 32)
         Me.BtnCerrarSesion.TabIndex = 4
@@ -876,7 +883,7 @@ Partial Class FrmPrincipal
         Me.BtnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCambiarUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCambiarUsuario.ForeColor = System.Drawing.Color.White
-        Me.BtnCambiarUsuario.Location = New System.Drawing.Point(-2, 315)
+        Me.BtnCambiarUsuario.Location = New System.Drawing.Point(-2, 357)
         Me.BtnCambiarUsuario.Name = "BtnCambiarUsuario"
         Me.BtnCambiarUsuario.Size = New System.Drawing.Size(232, 32)
         Me.BtnCambiarUsuario.TabIndex = 4
@@ -990,6 +997,21 @@ Partial Class FrmPrincipal
         Me.LblId.TabIndex = 12
         Me.LblId.Text = "Id"
         '
+        'BtnLogAuditoria
+        '
+        Me.BtnLogAuditoria.BackColor = System.Drawing.Color.Transparent
+        Me.BtnLogAuditoria.FlatAppearance.BorderSize = 0
+        Me.BtnLogAuditoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnLogAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLogAuditoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLogAuditoria.ForeColor = System.Drawing.Color.White
+        Me.BtnLogAuditoria.Location = New System.Drawing.Point(-6, 311)
+        Me.BtnLogAuditoria.Name = "BtnLogAuditoria"
+        Me.BtnLogAuditoria.Size = New System.Drawing.Size(236, 32)
+        Me.BtnLogAuditoria.TabIndex = 4
+        Me.BtnLogAuditoria.Text = "LogAuditoría"
+        Me.BtnLogAuditoria.UseVisualStyleBackColor = False
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1039,4 +1061,5 @@ Partial Class FrmPrincipal
     Friend WithEvents PbUser As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents LblId As Label
+    Friend WithEvents BtnLogAuditoria As Button
 End Class
