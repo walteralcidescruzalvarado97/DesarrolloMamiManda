@@ -1,8 +1,9 @@
 ﻿Imports System.Data.SqlClient
+Imports MamiManda
 Public Class FrmReceta
     Implements IForm
     Implements IForm2
-    Implements IReceta
+    Implements IAgregarMateria
     Dim err As Integer = 0
 
     Public Sub ObtenerDato(dato As String) Implements IForm.ObtenerDato
@@ -13,8 +14,16 @@ Public Class FrmReceta
         'txtCodMateria.Text = Nombre
     End Sub
 
-    Public Sub ObtenerCodReceta(Codigo As String) Implements IReceta.ObtenerCodReceta
+    Public Sub ObtenerCodReceta(Codigo As String) Implements IAgregarMateria.ObtenerCodReceta
         txtCodMateria.Text = Codigo
+    End Sub
+
+    Public Sub ObtenerMateria(Materia As String) Implements IAgregarMateria.ObtenerMateria
+        'Se debe dejar vacia y con el llamado para que funcione la interfaz
+    End Sub
+
+    Public Sub ObtenerMedida(Medida As String) Implements IAgregarMateria.ObtenerMedida
+        'Se debe dejar vacia y con el llamado para que funcione la interfaz
     End Sub
 
     Private Sub FrmReceta_Load(sender As Object, e As EventArgs) Handles MyBase.Load

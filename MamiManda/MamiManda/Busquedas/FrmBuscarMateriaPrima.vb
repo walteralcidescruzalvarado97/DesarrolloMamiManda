@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+
+
 Public Class FrmBuscarMateriaPrima
     Private Sub FrmBuscarMateriaPrima_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarTodoMateriaPrima()
@@ -87,17 +89,18 @@ Public Class FrmBuscarMateriaPrima
     End Sub
 
     Private Sub LsvMostrarMateriaPrima_DoubleClick(sender As Object, e As EventArgs) Handles LsvMostrarMateriaPrima.DoubleClick
-        FrmAgregarMateria.txtCodMateria.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
-        FrmAgregarMateria.txtMateria.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
-        FrmAgregarMateria.txtMedida.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(6).Text
-
         Dim Codigo As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
-        Dim InstanciaIReceta As IReceta = CType(Me.Owner, IReceta)
+        Dim Materia As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
+        Dim Medida As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(6).Text
 
-        If InstanciaIReceta IsNot Nothing Then
-            InstanciaIReceta.ObtenerCodReceta(Codigo)
+        Dim InstanciaIAgregarMateria As IAgregarMateria = CType(Me.Owner, IAgregarMateria)
+
+        If InstanciaIAgregarMateria IsNot Nothing Then
+            InstanciaIAgregarMateria.ObtenerCodReceta(Codigo)
+            InstanciaIAgregarMateria.ObtenerMateria(Materia)
+            InstanciaIAgregarMateria.ObtenerMedida(Medida)
         End If
-
         Close()
     End Sub
+
 End Class

@@ -85,4 +85,14 @@ Public Class FrmBuscarCliente
         FrmCliente.Show()
         Close()
     End Sub
+
+    Private Sub LsvMostrarCliente_DoubleClick(sender As Object, e As EventArgs) Handles LsvMostrarCliente.DoubleClick
+        Dim Codigo As String = LsvMostrarCliente.FocusedItem.SubItems(0).Text
+        Dim InstanciaICliente As ICliente = CType(Me.Owner, ICliente)
+
+        If InstanciaICliente IsNot Nothing Then
+            InstanciaICliente.ObtenerCodCliente(Codigo)
+        End If
+        Close()
+    End Sub
 End Class

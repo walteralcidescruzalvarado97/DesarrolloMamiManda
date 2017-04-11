@@ -3,9 +3,7 @@ Public Class FrmInventario
     Private Sub FrmInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False, False)
         Limpiar()
-        LlenarComboboxTamano()
         MostrarInventario()
-        cboTamano.SelectedIndex = -1
     End Sub
 
 #Region "Funciones"
@@ -22,7 +20,6 @@ Public Class FrmInventario
         txtNombre.Enabled = valor
         txtExistenciaMaxima.Enabled = valor
         txtExistenciaMinima.Enabled = valor
-        cboTamano.Enabled = valor
     End Sub
 
     Private Sub Limpiar()
@@ -30,7 +27,6 @@ Public Class FrmInventario
         txtNombre.Text = Nothing
         txtExistenciaMaxima.Text = Nothing
         txtExistenciaMinima.Text = Nothing
-        cboTamano.SelectedIndex = -1
     End Sub
 
     Function Validar(Control As Control, Mensaje As String) As Boolean
@@ -46,31 +42,6 @@ Public Class FrmInventario
 #End Region
 
 #Region "Llenar"
-    Private Sub LlenarComboboxTamano()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-        Try
-            Using cmd As New SqlCommand
-                With cmd
-                    .CommandText = "SP_LLenarComboTamano"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim da As New SqlDataAdapter(cmd)
-                Dim ds As New DataSet
-                da.Fill(ds, "Sexo")
-                Me.cboTamano.DataSource = ds.Tables(0)
-                Me.cboTamano.DisplayMember = ds.Tables(0).Columns("Tamano").ToString
-                Me.cboTamano.ValueMember = ds.Tables(0).Columns("IdTamano").ToString
-            End Using
-        Catch ex As Exception
-
-        Finally
-            cnn.Close()
-        End Try
-    End Sub
 
     Private Sub MostrarInventario()
         If cnn.State = ConnectionState.Open Then
@@ -94,9 +65,7 @@ Public Class FrmInventario
                         .SubItems.Add(VerInventario("ExistenciaMaxima").ToString)
                         .SubItems.Add(VerInventario("ExistenciaMinima").ToString)
                         .SubItems.Add(VerInventario("Existencia").ToString)
-                        .SubItems.Add(VerInventario("Tamano").ToString)
                         .SubItems.Add(VerInventario("IdUsuario").ToString)
-                        .SubItems.Add(VerInventario("IdTamano").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -130,9 +99,7 @@ Public Class FrmInventario
                         .SubItems.Add(VerInventario("ExistenciaMaxima").ToString)
                         .SubItems.Add(VerInventario("ExistenciaMinima").ToString)
                         .SubItems.Add(VerInventario("Existencia").ToString)
-                        .SubItems.Add(VerInventario("Tamano").ToString)
                         .SubItems.Add(VerInventario("IdUsuario").ToString)
-                        .SubItems.Add(VerInventario("IdTamano").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -194,7 +161,6 @@ Public Class FrmInventario
                         .Parameters.Add("@ExistenciaMaxima", SqlDbType.Decimal).Value = txtExistenciaMaxima.Text.Trim
                         .Parameters.Add("@ExistenciaMinima", SqlDbType.Decimal).Value = txtExistenciaMinima.Text.Trim
                         .Parameters.Add("@Existencia", SqlDbType.Decimal).Value = 0
-                        .Parameters.Add("@IdTamano", SqlDbType.Int).Value = cboTamano.SelectedValue
                         .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                         .ExecuteNonQuery()
                         MessageBox.Show("El producto ha sido agregado", "MamiManda", MessageBoxButtons.OK)
@@ -225,7 +191,6 @@ Public Class FrmInventario
                     .Parameters.Add("@ExistenciaMaxima", SqlDbType.Decimal).Value = txtExistenciaMaxima.Text.Trim
                     .Parameters.Add("@ExistenciaMinima", SqlDbType.Decimal).Value = txtExistenciaMinima.Text.Trim
                     .Parameters.Add("@Existencia", SqlDbType.Decimal).Value = 0
-                    .Parameters.Add("@IdTamano", SqlDbType.Int).Value = cboTamano.SelectedValue
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de inventario ha sido actualizado", "MamiManda", MessageBoxButtons.OK)
@@ -259,7 +224,6 @@ Public Class FrmInventario
         ElseIf Validar(txtNombre, "Debe ingresar un nombre del producto") Then
         ElseIf Validar(txtExistenciaMaxima, "Debe ingresar la existencia máxima") Then
         ElseIf Validar(txtExistenciaMinima, "Debe ingresar la existencia mínima") Then
-        ElseIf Validar(cboTamano, "Debe seleccionar un tamaño") Then
         Else
             AgregarInventario()
             HabilitarBotones(True, False, False, False, False)
@@ -272,7 +236,6 @@ Public Class FrmInventario
         If Validar(txtNombre, "Debe ingresar un nombre del producto") Then
         ElseIf Validar(txtExistenciaMaxima, "Debe ingresar la existencia máxima") Then
         ElseIf Validar(txtExistenciaMinima, "Debe ingresar la existencia mínima") Then
-        ElseIf Validar(cboTamano, "Debe seleccionar un tamaño") Then
         Else
             ActualizarInventario()
             HabilitarBotones(True, False, False, False, False)
@@ -286,7 +249,6 @@ Public Class FrmInventario
         txtNombre.Text = lsvMostrar.FocusedItem.SubItems(1).Text
         txtExistenciaMaxima.Text = lsvMostrar.FocusedItem.SubItems(2).Text
         txtExistenciaMinima.Text = lsvMostrar.FocusedItem.SubItems(3).Text
-        cboTamano.SelectedValue = lsvMostrar.FocusedItem.SubItems(7).Text
         HabilitarBotones(False, False, True, True, True)
 
         TabControl1.SelectedIndex = 0

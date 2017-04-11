@@ -1,5 +1,9 @@
 ﻿Imports System.Data.SqlClient
+Imports MamiManda
+
 Public Class FrmAgregarMateria
+    Implements IAgregarMateria
+
     Private Sub FrmAgregarMateria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False)
     End Sub
@@ -88,7 +92,20 @@ Public Class FrmAgregarMateria
     End Sub
 
     Private Sub btnMateria_Click(sender As Object, e As EventArgs) Handles btnMateria.Click
-        FrmBuscarMateriaPrima.ShowDialog()
+        Dim BuscarMateriaPrima As New FrmBuscarMateriaPrima
+        BuscarMateriaPrima.Show(Me)
         txtCantidad.Focus()
+    End Sub
+
+    Public Sub ObtenerCodReceta(Codigo As String) Implements IAgregarMateria.ObtenerCodReceta
+        txtCodMateria.Text = Codigo
+    End Sub
+
+    Public Sub ObtenerMateria(Materia As String) Implements IAgregarMateria.ObtenerMateria
+        txtMateria.Text = Materia
+    End Sub
+
+    Public Sub ObtenerMedida(Medida As String) Implements IAgregarMateria.ObtenerMedida
+        txtMedida.Text = Medida
     End Sub
 End Class

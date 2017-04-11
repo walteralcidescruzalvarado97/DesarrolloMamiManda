@@ -26,9 +26,7 @@ Public Class FrmBuscarInventario
                         .SubItems.Add(VerInventario("ExistenciaMaxima").ToString)
                         .SubItems.Add(VerInventario("ExistenciaMinima").ToString)
                         .SubItems.Add(VerInventario("Existencia").ToString)
-                        .SubItems.Add(VerInventario("Tamano").ToString)
                         .SubItems.Add(VerInventario("IdUsuario").ToString)
-                        .SubItems.Add(VerInventario("IdTamano").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -62,9 +60,7 @@ Public Class FrmBuscarInventario
                         .SubItems.Add(VerInventario("ExistenciaMaxima").ToString)
                         .SubItems.Add(VerInventario("ExistenciaMinima").ToString)
                         .SubItems.Add(VerInventario("Existencia").ToString)
-                        .SubItems.Add(VerInventario("Tamano").ToString)
                         .SubItems.Add(VerInventario("IdUsuario").ToString)
-                        .SubItems.Add(VerInventario("IdTamano").ToString)
                     End With
                 End While
             Catch ex As Exception

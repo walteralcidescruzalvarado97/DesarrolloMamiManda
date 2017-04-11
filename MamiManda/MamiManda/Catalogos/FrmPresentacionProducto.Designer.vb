@@ -40,8 +40,6 @@ Partial Class FrmPresentacionProducto
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCodInventario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtCodPresentacion = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnInsertar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -56,13 +54,13 @@ Partial Class FrmPresentacionProducto
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lsvMostrar = New System.Windows.Forms.ListView()
-        Me.ChCod = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTipo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioMAyorista = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioDEtalle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioCOsto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.chUnidades = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabControl1.SuspendLayout()
         Me.TPGestionPresentacion.SuspendLayout()
         Me.gbDatos.SuspendLayout()
@@ -118,8 +116,6 @@ Partial Class FrmPresentacionProducto
         Me.gbDatos.Controls.Add(Me.Label4)
         Me.gbDatos.Controls.Add(Me.txtCodInventario)
         Me.gbDatos.Controls.Add(Me.Label3)
-        Me.gbDatos.Controls.Add(Me.txtCodPresentacion)
-        Me.gbDatos.Controls.Add(Me.Label2)
         Me.gbDatos.Location = New System.Drawing.Point(55, 75)
         Me.gbDatos.Name = "gbDatos"
         Me.gbDatos.Size = New System.Drawing.Size(358, 223)
@@ -235,24 +231,6 @@ Partial Class FrmPresentacionProducto
         Me.Label3.Size = New System.Drawing.Size(90, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Código Inventario"
-        '
-        'txtCodPresentacion
-        '
-        Me.txtCodPresentacion.Enabled = False
-        Me.txtCodPresentacion.Location = New System.Drawing.Point(135, 25)
-        Me.txtCodPresentacion.MaxLength = 4
-        Me.txtCodPresentacion.Name = "txtCodPresentacion"
-        Me.txtCodPresentacion.Size = New System.Drawing.Size(177, 20)
-        Me.txtCodPresentacion.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(105, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Código Presentacion"
         '
         'Label1
         '
@@ -421,7 +399,7 @@ Partial Class FrmPresentacionProducto
         '
         'lsvMostrar
         '
-        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCod, Me.chNombre, Me.chTipo, Me.chPrecioMAyorista, Me.chPrecioDEtalle, Me.chPrecioCOsto})
+        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chNombre, Me.chTipo, Me.chUnidades, Me.chPrecioMAyorista, Me.chPrecioDEtalle, Me.chPrecioCOsto})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
         Me.lsvMostrar.Location = New System.Drawing.Point(0, 111)
@@ -431,38 +409,39 @@ Partial Class FrmPresentacionProducto
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
         '
-        'ChCod
-        '
-        Me.ChCod.Text = "Código"
-        '
         'chNombre
         '
         Me.chNombre.Text = "Nombre Producto"
-        Me.chNombre.Width = 125
+        Me.chNombre.Width = 135
         '
         'chTipo
         '
         Me.chTipo.Text = "Tipo Presentación"
-        Me.chTipo.Width = 100
+        Me.chTipo.Width = 115
         '
         'chPrecioMAyorista
         '
         Me.chPrecioMAyorista.Text = "Precio Mayorista"
-        Me.chPrecioMAyorista.Width = 100
+        Me.chPrecioMAyorista.Width = 90
         '
         'chPrecioDEtalle
         '
         Me.chPrecioDEtalle.Text = "Precio Detalle"
-        Me.chPrecioDEtalle.Width = 100
+        Me.chPrecioDEtalle.Width = 80
         '
         'chPrecioCOsto
         '
         Me.chPrecioCOsto.Text = "Precio Costo"
-        Me.chPrecioCOsto.Width = 100
+        Me.chPrecioCOsto.Width = 80
         '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
+        '
+        'chUnidades
+        '
+        Me.chUnidades.Text = "Unidades"
+        Me.chUnidades.Width = 80
         '
         'FrmPresentacionProducto
         '
@@ -497,8 +476,6 @@ Partial Class FrmPresentacionProducto
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCodInventario As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtCodPresentacion As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btnInsertar As Button
     Friend WithEvents btnGuardar As Button
@@ -513,7 +490,6 @@ Partial Class FrmPresentacionProducto
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents lsvMostrar As ListView
-    Friend WithEvents ChCod As ColumnHeader
     Friend WithEvents chNombre As ColumnHeader
     Friend WithEvents chTipo As ColumnHeader
     Friend WithEvents chPrecioMAyorista As ColumnHeader
@@ -527,4 +503,5 @@ Partial Class FrmPresentacionProducto
     Friend WithEvents txtPreMayorista As TextBox
     Friend WithEvents cboPresentacion As ComboBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents chUnidades As ColumnHeader
 End Class

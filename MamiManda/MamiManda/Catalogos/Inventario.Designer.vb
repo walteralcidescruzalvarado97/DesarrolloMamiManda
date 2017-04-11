@@ -27,8 +27,6 @@ Partial Class FrmInventario
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TPGestionInventario = New System.Windows.Forms.TabPage()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
-        Me.cboTamano = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtExistenciaMinima = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtExistenciaMaxima = New System.Windows.Forms.TextBox()
@@ -56,7 +54,6 @@ Partial Class FrmInventario
         Me.chExistenciaMaxima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chExistenciaMinima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chExistencia = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTamano = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TPGestionInventario.SuspendLayout()
@@ -100,8 +97,6 @@ Partial Class FrmInventario
         'gbDatos
         '
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
-        Me.gbDatos.Controls.Add(Me.cboTamano)
-        Me.gbDatos.Controls.Add(Me.Label6)
         Me.gbDatos.Controls.Add(Me.txtExistenciaMinima)
         Me.gbDatos.Controls.Add(Me.Label5)
         Me.gbDatos.Controls.Add(Me.txtExistenciaMaxima)
@@ -116,24 +111,6 @@ Partial Class FrmInventario
         Me.gbDatos.TabIndex = 66
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos "
-        '
-        'cboTamano
-        '
-        Me.cboTamano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTamano.FormattingEnabled = True
-        Me.cboTamano.Location = New System.Drawing.Point(118, 174)
-        Me.cboTamano.Name = "cboTamano"
-        Me.cboTamano.Size = New System.Drawing.Size(177, 21)
-        Me.cboTamano.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(68, 177)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(46, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Tamaño"
         '
         'txtExistenciaMinima
         '
@@ -367,7 +344,7 @@ Partial Class FrmInventario
         '
         'lsvMostrar
         '
-        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodInventario, Me.chNombre, Me.chExistenciaMaxima, Me.chExistenciaMinima, Me.chExistencia, Me.chTamano})
+        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodInventario, Me.chNombre, Me.chExistenciaMaxima, Me.chExistenciaMinima, Me.chExistencia})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
         Me.lsvMostrar.Location = New System.Drawing.Point(0, 114)
@@ -380,32 +357,27 @@ Partial Class FrmInventario
         'chCodInventario
         '
         Me.chCodInventario.Text = "Código Inventario"
-        Me.chCodInventario.Width = 95
+        Me.chCodInventario.Width = 110
         '
         'chNombre
         '
         Me.chNombre.Text = "Nombre Producto"
-        Me.chNombre.Width = 125
+        Me.chNombre.Width = 120
         '
         'chExistenciaMaxima
         '
         Me.chExistenciaMaxima.Text = "Existencia Máxima"
-        Me.chExistenciaMaxima.Width = 100
+        Me.chExistenciaMaxima.Width = 120
         '
         'chExistenciaMinima
         '
         Me.chExistenciaMinima.Text = "Existencia Mínima"
-        Me.chExistenciaMinima.Width = 100
+        Me.chExistenciaMinima.Width = 120
         '
         'chExistencia
         '
         Me.chExistencia.Text = "Existencia"
-        Me.chExistencia.Width = 70
-        '
-        'chTamano
-        '
-        Me.chTamano.Text = "Tamaño"
-        Me.chTamano.Width = 95
+        Me.chExistencia.Width = 120
         '
         'ErrorProvider1
         '
@@ -438,7 +410,6 @@ Partial Class FrmInventario
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TPGestionInventario As TabPage
     Friend WithEvents gbDatos As GroupBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents txtExistenciaMinima As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtExistenciaMaxima As TextBox
@@ -466,7 +437,5 @@ Partial Class FrmInventario
     Friend WithEvents chExistenciaMaxima As ColumnHeader
     Friend WithEvents chExistenciaMinima As ColumnHeader
     Friend WithEvents chExistencia As ColumnHeader
-    Friend WithEvents cboTamano As ComboBox
-    Friend WithEvents chTamano As ColumnHeader
     Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

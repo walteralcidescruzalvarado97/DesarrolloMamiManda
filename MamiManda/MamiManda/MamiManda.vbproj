@@ -77,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busquedas\FrmBuscarPresentacion.Designer.vb">
+      <DependentUpon>FrmBuscarPresentacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\FrmBuscarPresentacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Busquedas\FrmBusqueda.Designer.vb">
       <DependentUpon>FrmBusqueda.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="Catalogos\FrmReceta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Interfaces\IAgregarMateria.vb" />
+    <Compile Include="Interfaces\ICliente.vb" />
+    <Compile Include="Interfaces\IPresentacion.vb" />
     <Compile Include="Modulos\Conexion.vb" />
     <Compile Include="Busquedas\FrmBuscarEmpleado.Designer.vb">
       <DependentUpon>FrmBuscarEmpleado.vb</DependentUpon>
@@ -171,7 +180,6 @@
     <Compile Include="Modulos\FuncionSha1.vb" />
     <Compile Include="Interfaces\IForm.vb" />
     <Compile Include="Interfaces\IForm2.vb" />
-    <Compile Include="Interfaces\IReceta.vb" />
     <Compile Include="FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +240,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Busquedas\FrmBuscarPresentacion.resx">
+      <DependentUpon>FrmBuscarPresentacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\FrmBusqueda.resx">
       <DependentUpon>FrmBusqueda.vb</DependentUpon>
     </EmbeddedResource>

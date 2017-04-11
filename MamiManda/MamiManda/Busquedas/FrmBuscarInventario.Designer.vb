@@ -31,7 +31,6 @@ Partial Class FrmBuscarInventario
         Me.chExistenciaMaxima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chExistenciaMinima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chExistencia = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTamano = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -57,7 +56,7 @@ Partial Class FrmBuscarInventario
         '
         'lsvMostrar
         '
-        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodInventario, Me.chNombre, Me.chExistenciaMaxima, Me.chExistenciaMinima, Me.chExistencia, Me.chTamano})
+        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodInventario, Me.chNombre, Me.chExistenciaMaxima, Me.chExistenciaMinima, Me.chExistencia})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
         Me.lsvMostrar.Location = New System.Drawing.Point(-2, 110)
@@ -80,22 +79,17 @@ Partial Class FrmBuscarInventario
         'chExistenciaMaxima
         '
         Me.chExistenciaMaxima.Text = "Existencia Máxima"
-        Me.chExistenciaMaxima.Width = 100
+        Me.chExistenciaMaxima.Width = 120
         '
         'chExistenciaMinima
         '
         Me.chExistenciaMinima.Text = "Existencia Mínima"
-        Me.chExistenciaMinima.Width = 100
+        Me.chExistenciaMinima.Width = 120
         '
         'chExistencia
         '
         Me.chExistencia.Text = "Existencia"
-        Me.chExistencia.Width = 70
-        '
-        'chTamano
-        '
-        Me.chTamano.Text = "Tamaño"
-        Me.chTamano.Width = 95
+        Me.chExistencia.Width = 120
         '
         'btnAgregar
         '
@@ -141,6 +135,5 @@ Partial Class FrmBuscarInventario
     Friend WithEvents chExistenciaMaxima As ColumnHeader
     Friend WithEvents chExistenciaMinima As ColumnHeader
     Friend WithEvents chExistencia As ColumnHeader
-    Friend WithEvents chTamano As ColumnHeader
     Friend WithEvents btnAgregar As Button
 End Class

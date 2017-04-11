@@ -36,7 +36,6 @@ Public Class FrmPresentacionProducto
     End Sub
 
     Private Sub Limpiar()
-        txtCodPresentacion.Text = Nothing
         txtCodInventario.Text = Nothing
         txtNombre.Text = Nothing
         txtPreMayorista.Text = Nothing
@@ -58,29 +57,6 @@ Public Class FrmPresentacionProducto
 #End Region
 
 #Region "Llenar"
-    Private Sub InvestigarCorrelativo()
-
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        Try
-            Dim ListarPresentacion As New SqlCommand("Sp_MostrarCodPresentacionIdentity", cnn)
-            ListarPresentacion.CommandType = CommandType.StoredProcedure
-            Dim ListarPresentaciones As SqlDataReader
-            cnn.Open()
-            ListarPresentaciones = ListarPresentacion.ExecuteReader
-            If ListarPresentaciones.Read = True Then
-                If ListarPresentaciones("Id") Is DBNull.Value Then
-                    txtCodPresentacion.Text = 1
-                Else
-                    txtCodPresentacion.Text = ListarPresentaciones("Id").ToString
-                End If
-            End If
-            cnn.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
 
     Private Sub LlenarComboboxTipoPresentacion()
         If cnn.State = ConnectionState.Open Then
@@ -125,9 +101,9 @@ Public Class FrmPresentacionProducto
                 VerEmpleado = cmd.ExecuteReader()
                 lsvMostrar.Items.Clear()
                 While VerEmpleado.Read = True
-                    With Me.lsvMostrar.Items.Add(VerEmpleado("IdPresentacionProducto").ToString)
-                        .SubItems.Add(VerEmpleado("NombreProducto").ToString)
+                    With Me.lsvMostrar.Items.Add(VerEmpleado("NombreProducto").ToString)
                         .SubItems.Add(VerEmpleado("TipoPresentacion").ToString)
+                        .SubItems.Add(VerEmpleado("Unidades").ToString)
                         .SubItems.Add(VerEmpleado("PrecioMayorista").ToString)
                         .SubItems.Add(VerEmpleado("PrecioDetalle").ToString)
                         .SubItems.Add(VerEmpleado("PrecioCosto").ToString)
@@ -161,9 +137,9 @@ Public Class FrmPresentacionProducto
                 VerEmpleado = cmd.ExecuteReader()
                 lsvMostrar.Items.Clear()
                 While VerEmpleado.Read = True
-                    With Me.lsvMostrar.Items.Add(VerEmpleado("IdPresentacionProducto").ToString)
-                        .SubItems.Add(VerEmpleado("NombreProducto").ToString)
+                    With Me.lsvMostrar.Items.Add(VerEmpleado("NombreProducto").ToString)
                         .SubItems.Add(VerEmpleado("TipoPresentacion").ToString)
+                        .SubItems.Add(VerEmpleado("Unidades").ToString)
                         .SubItems.Add(VerEmpleado("PrecioMayorista").ToString)
                         .SubItems.Add(VerEmpleado("PrecioDetalle").ToString)
                         .SubItems.Add(VerEmpleado("PrecioCosto").ToString)
@@ -220,7 +196,6 @@ Public Class FrmPresentacionProducto
                     .CommandText = "Sp_ActualizarPresentacion"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
-                    .Parameters.Add("@IdPresentacionProducto", SqlDbType.Int).Value = txtCodPresentacion.Text.Trim
                     .Parameters.Add("@PrecioMayorista", SqlDbType.Money).Value = txtPreMayorista.Text.Trim
                     .Parameters.Add("@PrecioDetalle", SqlDbType.Money).Value = txtPreDetalle.Text.Trim
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
@@ -242,7 +217,6 @@ Public Class FrmPresentacionProducto
 
     Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         HabilitarBotones(False, True, False, True, True)
-        InvestigarCorrelativo()
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -290,8 +264,7 @@ Public Class FrmPresentacionProducto
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        txtCodPresentacion.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        txtNombre.Text = lsvMostrar.FocusedItem.SubItems(1).Text
+        txtNombre.Text = lsvMostrar.FocusedItem.SubItems(0).Text
         txtCodInventario.Text = lsvMostrar.FocusedItem.SubItems(6).Text
         cboPresentacion.SelectedValue = lsvMostrar.FocusedItem.SubItems(7).Text
         txtPreMayorista.Text = lsvMostrar.FocusedItem.SubItems(3).Text
