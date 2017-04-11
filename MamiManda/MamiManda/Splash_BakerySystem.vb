@@ -39,7 +39,7 @@
             LblInitial.Text = "Load Complete. Open Program"
         ElseIf i = 20 Then
             FrmLogin.Show()
-            Me.Close()
+            Me.Hide()
         End If
 
         i += 1

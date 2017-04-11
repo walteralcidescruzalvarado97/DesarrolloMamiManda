@@ -69,8 +69,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.\SQLEXPRESS;Initial Catalog=BakerySystem;User ID=cornelio;Password=1"& _ 
-            "23")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NR53VFJ;Initial Catalog=qef;User ID=Usuario;Password=123")>  _
         Public ReadOnly Property Conexion() As String
             Get
                 Return CType(Me("Conexion"),String)
