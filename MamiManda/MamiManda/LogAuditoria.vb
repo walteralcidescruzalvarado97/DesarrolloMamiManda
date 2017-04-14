@@ -27,7 +27,7 @@ Public Class LogAuditoria
                         .SubItems.Add(VerLog("IdUsuario").ToString)
                         .SubItems.Add(VerLog("Descripcion").ToString)
                         .SubItems.Add(VerLog("TipoTransaccion").ToString)
-                        .SubItems.Add(VerLog("Fecha").ToString)
+                        .SubItems.Add(VerLog("Fecha"))
                     End With
                 End While
             Catch ex As Exception

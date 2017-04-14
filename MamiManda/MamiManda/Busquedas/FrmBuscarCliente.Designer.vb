@@ -142,9 +142,11 @@ Partial Class FrmBuscarCliente
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmBuscarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmBuscarCliente"
+        Me.Text = "Buscar Cliente"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

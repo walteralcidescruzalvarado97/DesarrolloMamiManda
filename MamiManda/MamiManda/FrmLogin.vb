@@ -21,13 +21,17 @@ Public Class FrmLogin
 
                 If reader.HasRows Then
                     reader.Read()
+                    Dim name As String = reader("Nombre")
+                    Dim username As String() = name.Split(" ")
+                    Dim name2 As String = reader("Apellido")
+                    Dim username2 As String() = name2.Split(" ")
                     FrmPrincipal.Show()
-                    Me.Close()
                     FrmPrincipal.LblId.Text = String.Format("{0}", reader.GetValue(0))
-                    FrmPrincipal.LblUser.Text = String.Format("{0} {1}", reader.GetValue(2), reader.GetValue(3))
+                    FrmPrincipal.LblUser.Text = String.Format("{0} {1}", username(0), username2(0))
                     Dim imagen As New System.IO.MemoryStream(DirectCast(reader("Foto"), [Byte]()))
                     Dim ObjImagen As Image = Image.FromStream(imagen)
                     FrmPrincipal.PbUser.BackgroundImage = ObjImagen
+                    Me.Close()
                 Else
                     MsgBox("Usuario y Contrasena invalido")
                 End If

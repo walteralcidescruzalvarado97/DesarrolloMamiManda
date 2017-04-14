@@ -22,6 +22,7 @@ Partial Class FrmBuscarPresentacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBuscarPresentacion))
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lsvMostrar = New System.Windows.Forms.ListView()
@@ -47,7 +48,7 @@ Partial Class FrmBuscarPresentacion
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(43, 3)
+        Me.Label11.Location = New System.Drawing.Point(202, 14)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(197, 25)
         Me.Label11.TabIndex = 84
@@ -99,11 +100,17 @@ Partial Class FrmBuscarPresentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 340)
         Me.Controls.Add(Me.lsvMostrar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label11)
+        Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmBuscarPresentacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarPresentacion"
         Me.ResumeLayout(False)
         Me.PerformLayout()

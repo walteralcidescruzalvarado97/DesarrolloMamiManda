@@ -29,9 +29,8 @@ Partial Class FrmMateriaPrima
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnProveedor = New System.Windows.Forms.Button()
         Me.TxtRtnProveedor = New System.Windows.Forms.TextBox()
+        Me.btnProveedor = New System.Windows.Forms.Button()
         Me.CboUnidadMedida = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -66,7 +65,6 @@ Partial Class FrmMateriaPrima
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,7 +72,7 @@ Partial Class FrmMateriaPrima
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(-5, -2)
+        Me.TabControl1.Location = New System.Drawing.Point(-5, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(741, 389)
@@ -123,10 +121,10 @@ Partial Class FrmMateriaPrima
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(46, 30)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(46, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(187, 20)
+        Me.Label1.Size = New System.Drawing.Size(193, 24)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Gestión Materia Prima"
         '
@@ -149,7 +147,8 @@ Partial Class FrmMateriaPrima
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.Panel1)
+        Me.GroupBox1.Controls.Add(Me.TxtRtnProveedor)
+        Me.GroupBox1.Controls.Add(Me.btnProveedor)
         Me.GroupBox1.Controls.Add(Me.CboUnidadMedida)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.Label12)
@@ -170,31 +169,28 @@ Partial Class FrmMateriaPrima
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos materia prima"
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.btnProveedor)
-        Me.Panel1.Controls.Add(Me.TxtRtnProveedor)
-        Me.Panel1.Location = New System.Drawing.Point(172, 199)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(141, 20)
-        Me.Panel1.TabIndex = 19
-        '
-        'btnProveedor
-        '
-        Me.btnProveedor.Location = New System.Drawing.Point(119, 0)
-        Me.btnProveedor.Name = "btnProveedor"
-        Me.btnProveedor.Size = New System.Drawing.Size(22, 20)
-        Me.btnProveedor.TabIndex = 18
-        Me.btnProveedor.Text = "..."
-        Me.btnProveedor.UseVisualStyleBackColor = True
-        '
         'TxtRtnProveedor
         '
         Me.TxtRtnProveedor.Enabled = False
-        Me.TxtRtnProveedor.Location = New System.Drawing.Point(0, 0)
+        Me.TxtRtnProveedor.Location = New System.Drawing.Point(172, 200)
         Me.TxtRtnProveedor.Name = "TxtRtnProveedor"
-        Me.TxtRtnProveedor.Size = New System.Drawing.Size(123, 20)
+        Me.TxtRtnProveedor.Size = New System.Drawing.Size(146, 20)
         Me.TxtRtnProveedor.TabIndex = 17
+        '
+        'btnProveedor
+        '
+        Me.btnProveedor.BackgroundImage = CType(resources.GetObject("btnProveedor.BackgroundImage"), System.Drawing.Image)
+        Me.btnProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnProveedor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnProveedor.FlatAppearance.BorderSize = 0
+        Me.btnProveedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProveedor.Location = New System.Drawing.Point(324, 198)
+        Me.btnProveedor.Name = "btnProveedor"
+        Me.btnProveedor.Size = New System.Drawing.Size(26, 23)
+        Me.btnProveedor.TabIndex = 18
+        Me.btnProveedor.UseVisualStyleBackColor = True
         '
         'CboUnidadMedida
         '
@@ -430,7 +426,7 @@ Partial Class FrmMateriaPrima
         'ChFecha
         '
         Me.ChFecha.Text = "Fecha"
-        Me.ChFecha.Width = 138
+        Me.ChFecha.Width = 131
         '
         'ChMedida
         '
@@ -481,15 +477,16 @@ Partial Class FrmMateriaPrima
         Me.ClientSize = New System.Drawing.Size(716, 384)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmMateriaPrima"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MateriaPrima"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
@@ -523,7 +520,6 @@ Partial Class FrmMateriaPrima
     Friend WithEvents Label9 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents CboUnidadMedida As ComboBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btnProveedor As Button
     Friend WithEvents btnEditar As Button
     Friend WithEvents Label15 As Label

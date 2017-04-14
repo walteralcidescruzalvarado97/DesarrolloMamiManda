@@ -281,7 +281,7 @@ Public Class Venta
                     .Parameters.Add("@IdTipoDocumento", SqlDbType.Int).Value = cboEstado.SelectedValue
                     .Parameters.Add("@RTNCliente", SqlDbType.NVarChar).Value = txtCliente.Text
                     .Parameters.Add("@IdTipoFactura", SqlDbType.Int).Value = cboTipoFactura.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = 2 'FrmPrincipal.LblId.Text
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                     .ExecuteNonQuery()
                 End With
             End Using
@@ -415,4 +415,5 @@ Public Class Venta
 
         End If
     End Sub
+
 End Class

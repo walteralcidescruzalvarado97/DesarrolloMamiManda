@@ -135,6 +135,8 @@ Partial Class FrmBuscarEmpleado
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmBuscarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Empleado"

@@ -313,10 +313,10 @@ Partial Class FrmProveedor
         '
         Me.TabControl1.Controls.Add(Me.TPGestionProveedor)
         Me.TabControl1.Controls.Add(Me.TPListarProveedor)
-        Me.TabControl1.Location = New System.Drawing.Point(1, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(-4, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(557, 386)
+        Me.TabControl1.Size = New System.Drawing.Size(566, 389)
         Me.TabControl1.TabIndex = 69
         '
         'TPGestionProveedor
@@ -337,7 +337,7 @@ Partial Class FrmProveedor
         Me.TPGestionProveedor.Location = New System.Drawing.Point(4, 22)
         Me.TPGestionProveedor.Name = "TPGestionProveedor"
         Me.TPGestionProveedor.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPGestionProveedor.Size = New System.Drawing.Size(549, 360)
+        Me.TPGestionProveedor.Size = New System.Drawing.Size(558, 363)
         Me.TPGestionProveedor.TabIndex = 0
         Me.TPGestionProveedor.Text = "Gestión Proveedor"
         '
@@ -352,7 +352,7 @@ Partial Class FrmProveedor
         Me.TPListarProveedor.Location = New System.Drawing.Point(4, 22)
         Me.TPListarProveedor.Name = "TPListarProveedor"
         Me.TPListarProveedor.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPListarProveedor.Size = New System.Drawing.Size(549, 360)
+        Me.TPListarProveedor.Size = New System.Drawing.Size(558, 363)
         Me.TPListarProveedor.TabIndex = 1
         Me.TPListarProveedor.Text = "Listar Proveedores"
         Me.TPListarProveedor.UseVisualStyleBackColor = True
@@ -394,7 +394,7 @@ Partial Class FrmProveedor
         Me.lsvMostrar.GridLines = True
         Me.lsvMostrar.Location = New System.Drawing.Point(0, 112)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(549, 248)
+        Me.lsvMostrar.Size = New System.Drawing.Size(558, 251)
         Me.lsvMostrar.TabIndex = 78
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
@@ -417,12 +417,12 @@ Partial Class FrmProveedor
         'chEmail
         '
         Me.chEmail.Text = "Email"
-        Me.chEmail.Width = 125
+        Me.chEmail.Width = 129
         '
         'chTelefono
         '
         Me.chTelefono.Text = "Telefono"
-        Me.chTelefono.Width = 100
+        Me.chTelefono.Width = 104
         '
         'FrmProveedor
         '
@@ -433,6 +433,8 @@ Partial Class FrmProveedor
         Me.ClientSize = New System.Drawing.Size(558, 384)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proveedor"

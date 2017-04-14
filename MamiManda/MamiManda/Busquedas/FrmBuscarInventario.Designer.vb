@@ -111,14 +111,16 @@ Partial Class FrmBuscarInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(586, 380)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lsvMostrar)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmBuscarInventario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Producto"

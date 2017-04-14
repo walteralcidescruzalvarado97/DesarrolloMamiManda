@@ -38,7 +38,7 @@ Partial Class FrmBuscarProveedor
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(185, 48)
+        Me.txtBuscar.Location = New System.Drawing.Point(176, 49)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(314, 26)
@@ -49,7 +49,7 @@ Partial Class FrmBuscarProveedor
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(256, 9)
+        Me.Label1.Location = New System.Drawing.Point(251, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(184, 25)
         Me.Label1.TabIndex = 70
@@ -126,6 +126,8 @@ Partial Class FrmBuscarProveedor
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmBuscarProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarProveedor"

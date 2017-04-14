@@ -38,7 +38,7 @@ Partial Class LogAuditoria
         Me.LsvLogAuditoria.GridLines = True
         Me.LsvLogAuditoria.Location = New System.Drawing.Point(12, 97)
         Me.LsvLogAuditoria.Name = "LsvLogAuditoria"
-        Me.LsvLogAuditoria.Size = New System.Drawing.Size(697, 336)
+        Me.LsvLogAuditoria.Size = New System.Drawing.Size(697, 332)
         Me.LsvLogAuditoria.TabIndex = 1
         Me.LsvLogAuditoria.UseCompatibleStateImageBehavior = False
         Me.LsvLogAuditoria.View = System.Windows.Forms.View.Details
@@ -61,23 +61,23 @@ Partial Class LogAuditoria
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Acción"
-        Me.ColumnHeader4.Width = 106
+        Me.ColumnHeader4.Width = 105
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Fecha"
-        Me.ColumnHeader5.Width = 100
+        Me.ColumnHeader5.Width = 105
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(62, 29)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(62, 33)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(186, 31)
+        Me.Label1.Size = New System.Drawing.Size(166, 31)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Log Auditoria"
+        Me.Label1.Text = "LogAuditoría"
         '
         'LogAuditoria
         '
@@ -90,6 +90,7 @@ Partial Class LogAuditoria
         Me.Controls.Add(Me.LsvLogAuditoria)
         Me.DoubleBuffered = True
         Me.Name = "LogAuditoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LogAuditoria"
         Me.ResumeLayout(False)
         Me.PerformLayout()

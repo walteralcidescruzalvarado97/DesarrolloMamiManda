@@ -66,10 +66,10 @@ Partial Class FrmInventario
         '
         Me.TabControl1.Controls.Add(Me.TPGestionInventario)
         Me.TabControl1.Controls.Add(Me.TPListarInventario)
-        Me.TabControl1.Location = New System.Drawing.Point(-8, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(-5, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(596, 378)
+        Me.TabControl1.Size = New System.Drawing.Size(596, 381)
         Me.TabControl1.TabIndex = 70
         '
         'TPGestionInventario
@@ -90,7 +90,7 @@ Partial Class FrmInventario
         Me.TPGestionInventario.Location = New System.Drawing.Point(4, 22)
         Me.TPGestionInventario.Name = "TPGestionInventario"
         Me.TPGestionInventario.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPGestionInventario.Size = New System.Drawing.Size(588, 352)
+        Me.TPGestionInventario.Size = New System.Drawing.Size(588, 355)
         Me.TPGestionInventario.TabIndex = 0
         Me.TPGestionInventario.Text = "Gestión Inventario"
         '
@@ -307,7 +307,7 @@ Partial Class FrmInventario
         Me.TPListarInventario.Location = New System.Drawing.Point(4, 22)
         Me.TPListarInventario.Name = "TPListarInventario"
         Me.TPListarInventario.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPListarInventario.Size = New System.Drawing.Size(588, 352)
+        Me.TPListarInventario.Size = New System.Drawing.Size(588, 355)
         Me.TPListarInventario.TabIndex = 1
         Me.TPListarInventario.Text = "Listar Inventario"
         Me.TPListarInventario.UseVisualStyleBackColor = True

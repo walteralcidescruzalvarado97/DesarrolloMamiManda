@@ -85,7 +85,7 @@ Partial Class FrmBuscarUsuario
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(164, 9)
+        Me.Label1.Location = New System.Drawing.Point(173, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(159, 25)
         Me.Label1.TabIndex = 6
@@ -119,6 +119,8 @@ Partial Class FrmBuscarUsuario
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmBuscarUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Usuario"

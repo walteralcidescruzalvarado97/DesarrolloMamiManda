@@ -79,9 +79,9 @@ Partial Class FrmCliente
         Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono, Me.chFecha, Me.chSexo})
         Me.LsvMostrarCliente.FullRowSelect = True
         Me.LsvMostrarCliente.GridLines = True
-        Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 134)
+        Me.LsvMostrarCliente.Location = New System.Drawing.Point(1, 134)
         Me.LsvMostrarCliente.Name = "LsvMostrarCliente"
-        Me.LsvMostrarCliente.Size = New System.Drawing.Size(600, 297)
+        Me.LsvMostrarCliente.Size = New System.Drawing.Size(610, 302)
         Me.LsvMostrarCliente.TabIndex = 109
         Me.LsvMostrarCliente.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarCliente.View = System.Windows.Forms.View.Details
@@ -155,14 +155,14 @@ Partial Class FrmCliente
         Me.gbDatos.Controls.Add(Me.Label2)
         Me.gbDatos.Location = New System.Drawing.Point(24, 71)
         Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(445, 356)
+        Me.gbDatos.Size = New System.Drawing.Size(445, 353)
         Me.gbDatos.TabIndex = 0
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Proveedor"
         '
         'txtFecha
         '
-        Me.txtFecha.Location = New System.Drawing.Point(128, 266)
+        Me.txtFecha.Location = New System.Drawing.Point(128, 262)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(121, 20)
         Me.txtFecha.TabIndex = 20
@@ -171,7 +171,7 @@ Partial Class FrmCliente
         '
         Me.cboMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMunicipio.FormattingEnabled = True
-        Me.cboMunicipio.Location = New System.Drawing.Point(128, 321)
+        Me.cboMunicipio.Location = New System.Drawing.Point(128, 317)
         Me.cboMunicipio.Name = "cboMunicipio"
         Me.cboMunicipio.Size = New System.Drawing.Size(121, 21)
         Me.cboMunicipio.TabIndex = 19
@@ -180,7 +180,7 @@ Partial Class FrmCliente
         '
         Me.cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSexo.FormattingEnabled = True
-        Me.cboSexo.Location = New System.Drawing.Point(128, 292)
+        Me.cboSexo.Location = New System.Drawing.Point(128, 288)
         Me.cboSexo.Name = "cboSexo"
         Me.cboSexo.Size = New System.Drawing.Size(121, 21)
         Me.cboSexo.TabIndex = 18
@@ -188,7 +188,7 @@ Partial Class FrmCliente
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(70, 324)
+        Me.Label12.Location = New System.Drawing.Point(70, 320)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(52, 13)
         Me.Label12.TabIndex = 16
@@ -197,7 +197,7 @@ Partial Class FrmCliente
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(87, 295)
+        Me.Label11.Location = New System.Drawing.Point(87, 291)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(31, 13)
         Me.Label11.TabIndex = 14
@@ -206,7 +206,7 @@ Partial Class FrmCliente
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 269)
+        Me.Label1.Location = New System.Drawing.Point(14, 265)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(108, 13)
         Me.Label1.TabIndex = 12
@@ -426,10 +426,10 @@ Partial Class FrmCliente
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TPListar)
-        Me.TabControl1.Location = New System.Drawing.Point(1, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(-5, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(604, 457)
+        Me.TabControl1.Size = New System.Drawing.Size(615, 465)
         Me.TabControl1.TabIndex = 110
         '
         'TabPage1
@@ -449,7 +449,7 @@ Partial Class FrmCliente
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(596, 431)
+        Me.TabPage1.Size = New System.Drawing.Size(607, 439)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión Cliente"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -465,7 +465,7 @@ Partial Class FrmCliente
         Me.TPListar.Location = New System.Drawing.Point(4, 22)
         Me.TPListar.Name = "TPListar"
         Me.TPListar.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPListar.Size = New System.Drawing.Size(596, 431)
+        Me.TPListar.Size = New System.Drawing.Size(607, 439)
         Me.TPListar.TabIndex = 1
         Me.TPListar.Text = "Listar Clientes"
         Me.TPListar.UseVisualStyleBackColor = True
@@ -510,7 +510,9 @@ Partial Class FrmCliente
         Me.ClientSize = New System.Drawing.Size(606, 458)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "FrmCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cliente"

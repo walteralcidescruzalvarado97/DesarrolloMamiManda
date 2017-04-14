@@ -41,7 +41,6 @@ Partial Class FrmUsuario
         Me.btnEliminarFoto = New System.Windows.Forms.Button()
         Me.btnAbrir = New System.Windows.Forms.Button()
         Me.FotoAgregar = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnInsertar = New System.Windows.Forms.Button()
@@ -68,7 +67,6 @@ Partial Class FrmUsuario
         Me.AbrirFoto = New System.Windows.Forms.OpenFileDialog()
         Me.GrupBox1.SuspendLayout()
         CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -158,26 +156,31 @@ Partial Class FrmUsuario
         '
         'txtEmpleado
         '
-        Me.txtEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtEmpleado.Location = New System.Drawing.Point(1, 4)
+        Me.txtEmpleado.Location = New System.Drawing.Point(251, 156)
         Me.txtEmpleado.Name = "txtEmpleado"
-        Me.txtEmpleado.Size = New System.Drawing.Size(102, 13)
+        Me.txtEmpleado.Size = New System.Drawing.Size(121, 20)
         Me.txtEmpleado.TabIndex = 9
         '
         'btnEmpleado
         '
-        Me.btnEmpleado.Location = New System.Drawing.Point(100, 0)
+        Me.btnEmpleado.BackgroundImage = CType(resources.GetObject("btnEmpleado.BackgroundImage"), System.Drawing.Image)
+        Me.btnEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEmpleado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEmpleado.FlatAppearance.BorderSize = 0
+        Me.btnEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmpleado.Location = New System.Drawing.Point(378, 154)
         Me.btnEmpleado.Name = "btnEmpleado"
-        Me.btnEmpleado.Size = New System.Drawing.Size(22, 20)
+        Me.btnEmpleado.Size = New System.Drawing.Size(26, 23)
         Me.btnEmpleado.TabIndex = 10
-        Me.btnEmpleado.Text = "..."
         Me.btnEmpleado.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(165, 197)
+        Me.Label6.Location = New System.Drawing.Point(165, 190)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 13)
         Me.Label6.TabIndex = 11
@@ -187,7 +190,7 @@ Partial Class FrmUsuario
         '
         Me.cboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoUsuario.FormattingEnabled = True
-        Me.cboTipoUsuario.Location = New System.Drawing.Point(251, 194)
+        Me.cboTipoUsuario.Location = New System.Drawing.Point(251, 187)
         Me.cboTipoUsuario.Name = "cboTipoUsuario"
         Me.cboTipoUsuario.Size = New System.Drawing.Size(121, 21)
         Me.cboTipoUsuario.TabIndex = 12
@@ -195,10 +198,11 @@ Partial Class FrmUsuario
         'GrupBox1
         '
         Me.GrupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GrupBox1.Controls.Add(Me.txtEmpleado)
+        Me.GrupBox1.Controls.Add(Me.btnEmpleado)
         Me.GrupBox1.Controls.Add(Me.btnEliminarFoto)
         Me.GrupBox1.Controls.Add(Me.btnAbrir)
         Me.GrupBox1.Controls.Add(Me.FotoAgregar)
-        Me.GrupBox1.Controls.Add(Me.Panel1)
         Me.GrupBox1.Controls.Add(Me.Label1)
         Me.GrupBox1.Controls.Add(Me.cboTipoUsuario)
         Me.GrupBox1.Controls.Add(Me.txtCodUsuario)
@@ -210,29 +214,41 @@ Partial Class FrmUsuario
         Me.GrupBox1.Controls.Add(Me.txtContrasena)
         Me.GrupBox1.Controls.Add(Me.cboEstado)
         Me.GrupBox1.Controls.Add(Me.Label4)
-        Me.GrupBox1.Location = New System.Drawing.Point(11, 61)
+        Me.GrupBox1.Location = New System.Drawing.Point(24, 57)
         Me.GrupBox1.Name = "GrupBox1"
-        Me.GrupBox1.Size = New System.Drawing.Size(395, 226)
+        Me.GrupBox1.Size = New System.Drawing.Size(442, 226)
         Me.GrupBox1.TabIndex = 13
         Me.GrupBox1.TabStop = False
         Me.GrupBox1.Text = "Datos de Usuario"
         '
         'btnEliminarFoto
         '
-        Me.btnEliminarFoto.Location = New System.Drawing.Point(85, 150)
+        Me.btnEliminarFoto.BackgroundImage = CType(resources.GetObject("btnEliminarFoto.BackgroundImage"), System.Drawing.Image)
+        Me.btnEliminarFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEliminarFoto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminarFoto.FlatAppearance.BorderSize = 0
+        Me.btnEliminarFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnEliminarFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminarFoto.Location = New System.Drawing.Point(79, 150)
         Me.btnEliminarFoto.Name = "btnEliminarFoto"
-        Me.btnEliminarFoto.Size = New System.Drawing.Size(35, 23)
+        Me.btnEliminarFoto.Size = New System.Drawing.Size(33, 30)
         Me.btnEliminarFoto.TabIndex = 50
-        Me.btnEliminarFoto.Text = "X"
         Me.btnEliminarFoto.UseVisualStyleBackColor = True
         '
         'btnAbrir
         '
-        Me.btnAbrir.Location = New System.Drawing.Point(19, 150)
+        Me.btnAbrir.BackgroundImage = CType(resources.GetObject("btnAbrir.BackgroundImage"), System.Drawing.Image)
+        Me.btnAbrir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnAbrir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAbrir.FlatAppearance.BorderSize = 0
+        Me.btnAbrir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnAbrir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAbrir.Location = New System.Drawing.Point(29, 150)
         Me.btnAbrir.Name = "btnAbrir"
-        Me.btnAbrir.Size = New System.Drawing.Size(60, 23)
+        Me.btnAbrir.Size = New System.Drawing.Size(33, 30)
         Me.btnAbrir.TabIndex = 49
-        Me.btnAbrir.Text = "Abrir"
         Me.btnAbrir.UseVisualStyleBackColor = True
         '
         'FotoAgregar
@@ -246,22 +262,12 @@ Partial Class FrmUsuario
         Me.FotoAgregar.TabIndex = 48
         Me.FotoAgregar.TabStop = False
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.btnEmpleado)
-        Me.Panel1.Controls.Add(Me.txtEmpleado)
-        Me.Panel1.Location = New System.Drawing.Point(251, 160)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(122, 21)
-        Me.Panel1.TabIndex = 14
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(465, 88)
+        Me.Label8.Location = New System.Drawing.Point(520, 72)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(52, 16)
         Me.Label8.TabIndex = 45
@@ -272,7 +278,7 @@ Partial Class FrmUsuario
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(462, 212)
+        Me.Label9.Location = New System.Drawing.Point(517, 196)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 46
@@ -288,7 +294,7 @@ Partial Class FrmUsuario
         Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(465, 47)
+        Me.btnInsertar.Location = New System.Drawing.Point(520, 31)
         Me.btnInsertar.Name = "btnInsertar"
         Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
         Me.btnInsertar.TabIndex = 43
@@ -304,7 +310,7 @@ Partial Class FrmUsuario
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(466, 171)
+        Me.btnGuardar.Location = New System.Drawing.Point(521, 155)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 44
@@ -315,7 +321,7 @@ Partial Class FrmUsuario
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(459, 152)
+        Me.Label10.Location = New System.Drawing.Point(514, 136)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 53
@@ -326,7 +332,7 @@ Partial Class FrmUsuario
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(460, 272)
+        Me.Label13.Location = New System.Drawing.Point(515, 256)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 54
@@ -342,7 +348,7 @@ Partial Class FrmUsuario
         Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(465, 109)
+        Me.btnActualizar.Location = New System.Drawing.Point(520, 93)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
         Me.btnActualizar.TabIndex = 51
@@ -358,7 +364,7 @@ Partial Class FrmUsuario
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(468, 236)
+        Me.btnCancelar.Location = New System.Drawing.Point(523, 220)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 52
@@ -425,10 +431,10 @@ Partial Class FrmUsuario
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(-3, 1)
+        Me.TabControl1.Location = New System.Drawing.Point(-4, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(603, 325)
+        Me.TabControl1.Size = New System.Drawing.Size(611, 328)
         Me.TabControl1.TabIndex = 59
         '
         'TabPage1
@@ -448,7 +454,7 @@ Partial Class FrmUsuario
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(595, 299)
+        Me.TabPage1.Size = New System.Drawing.Size(603, 302)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión Usuario"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -518,8 +524,6 @@ Partial Class FrmUsuario
         Me.GrupBox1.ResumeLayout(False)
         Me.GrupBox1.PerformLayout()
         CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -544,7 +548,6 @@ Partial Class FrmUsuario
     Friend WithEvents Label6 As Label
     Friend WithEvents cboTipoUsuario As ComboBox
     Friend WithEvents GrupBox1 As GroupBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents btnInsertar As Button

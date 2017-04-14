@@ -1,4 +1,5 @@
-﻿Public Class FrmPrincipal
+﻿Imports System.Data.SqlClient
+Public Class FrmPrincipal
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BtnMenu2.Hide()
         Panel3.Width = 227
@@ -42,8 +43,8 @@
     End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
-        Me.Close()
         FrmLogin.Show()
+        Me.Close()
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click

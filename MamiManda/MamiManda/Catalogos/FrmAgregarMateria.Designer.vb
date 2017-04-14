@@ -194,11 +194,17 @@ Partial Class FrmAgregarMateria
         '
         'btnMateria
         '
-        Me.btnMateria.Location = New System.Drawing.Point(263, 29)
+        Me.btnMateria.BackgroundImage = CType(resources.GetObject("btnMateria.BackgroundImage"), System.Drawing.Image)
+        Me.btnMateria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMateria.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMateria.FlatAppearance.BorderSize = 0
+        Me.btnMateria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnMateria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMateria.Location = New System.Drawing.Point(263, 27)
         Me.btnMateria.Name = "btnMateria"
-        Me.btnMateria.Size = New System.Drawing.Size(26, 20)
+        Me.btnMateria.Size = New System.Drawing.Size(26, 23)
         Me.btnMateria.TabIndex = 73
-        Me.btnMateria.Text = "..."
         Me.btnMateria.UseVisualStyleBackColor = True
         '
         'txtCodMateria
@@ -256,6 +262,8 @@ Partial Class FrmAgregarMateria
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmAgregarMateria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar Materia Prima"

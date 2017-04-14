@@ -56,11 +56,11 @@ Partial Class FrmPresentacionProducto
         Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTipo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chUnidades = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioMAyorista = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioDEtalle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioCOsto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.chUnidades = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabControl1.SuspendLayout()
         Me.TPGestionPresentacion.SuspendLayout()
         Me.gbDatos.SuspendLayout()
@@ -72,10 +72,10 @@ Partial Class FrmPresentacionProducto
         '
         Me.TabControl1.Controls.Add(Me.TPGestionPresentacion)
         Me.TabControl1.Controls.Add(Me.TPListarPresentacion)
-        Me.TabControl1.Location = New System.Drawing.Point(2, 2)
+        Me.TabControl1.Location = New System.Drawing.Point(-4, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(596, 378)
+        Me.TabControl1.Size = New System.Drawing.Size(607, 381)
         Me.TabControl1.TabIndex = 71
         '
         'TPGestionPresentacion
@@ -96,7 +96,7 @@ Partial Class FrmPresentacionProducto
         Me.TPGestionPresentacion.Location = New System.Drawing.Point(4, 22)
         Me.TPGestionPresentacion.Name = "TPGestionPresentacion"
         Me.TPGestionPresentacion.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPGestionPresentacion.Size = New System.Drawing.Size(588, 352)
+        Me.TPGestionPresentacion.Size = New System.Drawing.Size(599, 355)
         Me.TPGestionPresentacion.TabIndex = 0
         Me.TPGestionPresentacion.Text = "Gestión Inventario"
         '
@@ -125,11 +125,17 @@ Partial Class FrmPresentacionProducto
         '
         'btnInventario
         '
-        Me.btnInventario.Location = New System.Drawing.Point(285, 51)
+        Me.btnInventario.BackgroundImage = CType(resources.GetObject("btnInventario.BackgroundImage"), System.Drawing.Image)
+        Me.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInventario.FlatAppearance.BorderSize = 0
+        Me.btnInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventario.Location = New System.Drawing.Point(293, 49)
         Me.btnInventario.Name = "btnInventario"
-        Me.btnInventario.Size = New System.Drawing.Size(27, 20)
+        Me.btnInventario.Size = New System.Drawing.Size(26, 23)
         Me.btnInventario.TabIndex = 16
-        Me.btnInventario.Text = "..."
         Me.btnInventario.UseVisualStyleBackColor = True
         '
         'txtPreCosto
@@ -362,7 +368,7 @@ Partial Class FrmPresentacionProducto
         Me.TPListarPresentacion.Location = New System.Drawing.Point(4, 22)
         Me.TPListarPresentacion.Name = "TPListarPresentacion"
         Me.TPListarPresentacion.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPListarPresentacion.Size = New System.Drawing.Size(588, 352)
+        Me.TPListarPresentacion.Size = New System.Drawing.Size(599, 355)
         Me.TPListarPresentacion.TabIndex = 1
         Me.TPListarPresentacion.Text = "Listar Inventario"
         Me.TPListarPresentacion.UseVisualStyleBackColor = True
@@ -404,7 +410,7 @@ Partial Class FrmPresentacionProducto
         Me.lsvMostrar.GridLines = True
         Me.lsvMostrar.Location = New System.Drawing.Point(0, 111)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(588, 241)
+        Me.lsvMostrar.Size = New System.Drawing.Size(599, 248)
         Me.lsvMostrar.TabIndex = 78
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
@@ -419,6 +425,11 @@ Partial Class FrmPresentacionProducto
         Me.chTipo.Text = "Tipo Presentación"
         Me.chTipo.Width = 115
         '
+        'chUnidades
+        '
+        Me.chUnidades.Text = "Unidades"
+        Me.chUnidades.Width = 80
+        '
         'chPrecioMAyorista
         '
         Me.chPrecioMAyorista.Text = "Precio Mayorista"
@@ -427,21 +438,16 @@ Partial Class FrmPresentacionProducto
         'chPrecioDEtalle
         '
         Me.chPrecioDEtalle.Text = "Precio Detalle"
-        Me.chPrecioDEtalle.Width = 80
+        Me.chPrecioDEtalle.Width = 84
         '
         'chPrecioCOsto
         '
         Me.chPrecioCOsto.Text = "Precio Costo"
-        Me.chPrecioCOsto.Width = 80
+        Me.chPrecioCOsto.Width = 88
         '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
-        '
-        'chUnidades
-        '
-        Me.chUnidades.Text = "Unidades"
-        Me.chUnidades.Width = 80
         '
         'FrmPresentacionProducto
         '
@@ -452,6 +458,8 @@ Partial Class FrmPresentacionProducto
         Me.ClientSize = New System.Drawing.Size(596, 378)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmPresentacionProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Presentacion Producto"

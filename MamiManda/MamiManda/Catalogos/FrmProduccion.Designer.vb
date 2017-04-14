@@ -95,11 +95,17 @@ Partial Class FrmProduccion
         '
         'btnProducto
         '
-        Me.btnProducto.Location = New System.Drawing.Point(263, 29)
+        Me.btnProducto.BackgroundImage = CType(resources.GetObject("btnProducto.BackgroundImage"), System.Drawing.Image)
+        Me.btnProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnProducto.FlatAppearance.BorderSize = 0
+        Me.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProducto.Location = New System.Drawing.Point(263, 27)
         Me.btnProducto.Name = "btnProducto"
-        Me.btnProducto.Size = New System.Drawing.Size(26, 20)
+        Me.btnProducto.Size = New System.Drawing.Size(26, 23)
         Me.btnProducto.TabIndex = 73
-        Me.btnProducto.Text = "..."
         Me.btnProducto.UseVisualStyleBackColor = True
         '
         'txtCodProducto
@@ -261,6 +267,8 @@ Partial Class FrmProduccion
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmProduccion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Producción"

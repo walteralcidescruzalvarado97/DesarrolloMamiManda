@@ -175,7 +175,7 @@ Partial Class FrmReceta
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(411, 116)
+        Me.btnCancelar.Location = New System.Drawing.Point(412, 116)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 87
@@ -221,30 +221,42 @@ Partial Class FrmReceta
         '
         'btnMateriaPrima
         '
-        Me.btnMateriaPrima.Location = New System.Drawing.Point(268, 46)
+        Me.btnMateriaPrima.BackgroundImage = CType(resources.GetObject("btnMateriaPrima.BackgroundImage"), System.Drawing.Image)
+        Me.btnMateriaPrima.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMateriaPrima.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMateriaPrima.FlatAppearance.BorderSize = 0
+        Me.btnMateriaPrima.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnMateriaPrima.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnMateriaPrima.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMateriaPrima.Location = New System.Drawing.Point(268, 45)
         Me.btnMateriaPrima.Name = "btnMateriaPrima"
-        Me.btnMateriaPrima.Size = New System.Drawing.Size(26, 20)
+        Me.btnMateriaPrima.Size = New System.Drawing.Size(26, 23)
         Me.btnMateriaPrima.TabIndex = 74
-        Me.btnMateriaPrima.Text = "..."
         Me.btnMateriaPrima.UseVisualStyleBackColor = True
         '
         'btnProducto
         '
-        Me.btnProducto.Location = New System.Drawing.Point(268, 16)
+        Me.btnProducto.BackgroundImage = CType(resources.GetObject("btnProducto.BackgroundImage"), System.Drawing.Image)
+        Me.btnProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnProducto.FlatAppearance.BorderSize = 0
+        Me.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProducto.Location = New System.Drawing.Point(268, 14)
         Me.btnProducto.Name = "btnProducto"
-        Me.btnProducto.Size = New System.Drawing.Size(26, 20)
+        Me.btnProducto.Size = New System.Drawing.Size(26, 23)
         Me.btnProducto.TabIndex = 73
-        Me.btnProducto.Text = "..."
         Me.btnProducto.UseVisualStyleBackColor = True
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(-3, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(-4, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(490, 380)
+        Me.TabControl1.Size = New System.Drawing.Size(495, 380)
         Me.TabControl1.TabIndex = 93
         '
         'TabPage1
@@ -261,7 +273,7 @@ Partial Class FrmReceta
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(482, 354)
+        Me.TabPage1.Size = New System.Drawing.Size(487, 354)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión Receta"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -309,7 +321,7 @@ Partial Class FrmReceta
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(482, 354)
+        Me.TabPage2.Size = New System.Drawing.Size(487, 354)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Listar Recetas"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -351,7 +363,7 @@ Partial Class FrmReceta
         Me.lsvMostrarListar.GridLines = True
         Me.lsvMostrarListar.Location = New System.Drawing.Point(0, 120)
         Me.lsvMostrarListar.Name = "lsvMostrarListar"
-        Me.lsvMostrarListar.Size = New System.Drawing.Size(482, 234)
+        Me.lsvMostrarListar.Size = New System.Drawing.Size(491, 238)
         Me.lsvMostrarListar.TabIndex = 94
         Me.lsvMostrarListar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrarListar.View = System.Windows.Forms.View.Details
@@ -389,6 +401,8 @@ Partial Class FrmReceta
         Me.ClientSize = New System.Drawing.Size(486, 378)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FrmReceta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Receta"
