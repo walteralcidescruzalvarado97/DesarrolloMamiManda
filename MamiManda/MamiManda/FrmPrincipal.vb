@@ -82,4 +82,8 @@ Public Class FrmPrincipal
     Private Sub BtnLogAuditoria_Click(sender As Object, e As EventArgs) Handles BtnLogAuditoria.Click
         LogAuditoria.ShowDialog()
     End Sub
+
+    Private Sub TileFacturas_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileFacturas.ItemClick
+        FrmHistorialVentas.Show()
+    End Sub
 End Class

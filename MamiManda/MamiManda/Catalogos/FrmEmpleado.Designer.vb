@@ -50,6 +50,7 @@ Partial Class FrmEmpleado
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TPGestionEmpleado = New System.Windows.Forms.TabPage()
+        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.TPListarEmpleado = New System.Windows.Forms.TabPage()
         Me.LsvMostrarEmpleado = New System.Windows.Forms.ListView()
         Me.ChCodEMpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -62,7 +63,6 @@ Partial Class FrmEmpleado
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.GbDatos.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TPGestionEmpleado.SuspendLayout()
@@ -365,6 +365,22 @@ Partial Class FrmEmpleado
         Me.TPGestionEmpleado.Text = "Gestión Empleado"
         Me.TPGestionEmpleado.UseVisualStyleBackColor = True
         '
+        'btnInsertar
+        '
+        Me.btnInsertar.BackColor = System.Drawing.Color.Transparent
+        Me.btnInsertar.BackgroundImage = CType(resources.GetObject("btnInsertar.BackgroundImage"), System.Drawing.Image)
+        Me.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInsertar.FlatAppearance.BorderSize = 0
+        Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInsertar.Location = New System.Drawing.Point(468, 61)
+        Me.btnInsertar.Name = "btnInsertar"
+        Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
+        Me.btnInsertar.TabIndex = 72
+        Me.btnInsertar.UseVisualStyleBackColor = False
+        '
         'TPListarEmpleado
         '
         Me.TPListarEmpleado.BackgroundImage = CType(resources.GetObject("TPListarEmpleado.BackgroundImage"), System.Drawing.Image)
@@ -457,22 +473,6 @@ Partial Class FrmEmpleado
         Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
         Me.txtBuscar.TabIndex = 86
         '
-        'btnInsertar
-        '
-        Me.btnInsertar.BackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.BackgroundImage = CType(resources.GetObject("btnInsertar.BackgroundImage"), System.Drawing.Image)
-        Me.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInsertar.FlatAppearance.BorderSize = 0
-        Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(468, 61)
-        Me.btnInsertar.Name = "btnInsertar"
-        Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
-        Me.btnInsertar.TabIndex = 72
-        Me.btnInsertar.UseVisualStyleBackColor = False
-        '
         'FrmEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -484,6 +484,7 @@ Partial Class FrmEmpleado
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

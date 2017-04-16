@@ -89,6 +89,7 @@ Partial Class LogAuditoria
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LsvLogAuditoria)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LogAuditoria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LogAuditoria"

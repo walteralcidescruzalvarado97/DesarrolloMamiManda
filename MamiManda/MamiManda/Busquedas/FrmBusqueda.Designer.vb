@@ -157,6 +157,7 @@ Partial Class FrmBusqueda
         Me.Controls.Add(Me.BtnClientes)
         Me.Controls.Add(Me.BtnProveedor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmBusqueda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

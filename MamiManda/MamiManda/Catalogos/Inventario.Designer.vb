@@ -392,6 +392,7 @@ Partial Class FrmInventario
         Me.ClientSize = New System.Drawing.Size(586, 376)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmInventario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventario"

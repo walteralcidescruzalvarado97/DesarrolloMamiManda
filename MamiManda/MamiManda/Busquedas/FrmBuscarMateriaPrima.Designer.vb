@@ -143,6 +143,7 @@ Partial Class FrmBuscarMateriaPrima
         Me.Controls.Add(Me.txtBuscar)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmBuscarMateriaPrima"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

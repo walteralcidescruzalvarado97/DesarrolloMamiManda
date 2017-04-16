@@ -162,6 +162,7 @@ Partial Class FrmConfiguracion
         Me.ClientSize = New System.Drawing.Size(400, 300)
         Me.Controls.Add(Me.gbConnConfig)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmConfiguracion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmConfiguracion"

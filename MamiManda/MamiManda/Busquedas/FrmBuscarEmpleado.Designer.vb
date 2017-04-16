@@ -136,6 +136,7 @@ Partial Class FrmBuscarEmpleado
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmBuscarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

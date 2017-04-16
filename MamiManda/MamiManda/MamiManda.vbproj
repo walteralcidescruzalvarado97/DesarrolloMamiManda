@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Imagen1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -117,6 +120,12 @@
       <DependentUpon>FrmReceta.vb</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\FrmReceta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistorialVentas.Designer.vb">
+      <DependentUpon>FrmHistorialVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistorialVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogAuditoria.Designer.vb">
@@ -294,6 +303,9 @@
     <EmbeddedResource Include="FrmConfiguracion.resx">
       <DependentUpon>FrmConfiguracion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistorialVentas.resx">
+      <DependentUpon>FrmHistorialVentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogAuditoria.resx">
       <DependentUpon>LogAuditoria.vb</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +352,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagen1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
