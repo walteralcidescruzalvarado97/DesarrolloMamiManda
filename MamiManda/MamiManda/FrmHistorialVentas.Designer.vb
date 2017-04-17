@@ -25,6 +25,12 @@ Partial Class FrmHistorialVentas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmHistorialVentas))
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.LsvMostrarVentas = New System.Windows.Forms.ListView()
+        Me.chCodigo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chCliente = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chTipoDocumento = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chTipoFactura = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chUsuario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -39,6 +45,7 @@ Partial Class FrmHistorialVentas
         '
         'LsvMostrarVentas
         '
+        Me.LsvMostrarVentas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodigo, Me.chCliente, Me.chFecha, Me.chTipoDocumento, Me.chTipoFactura, Me.chUsuario})
         Me.LsvMostrarVentas.FullRowSelect = True
         Me.LsvMostrarVentas.GridLines = True
         Me.LsvMostrarVentas.Location = New System.Drawing.Point(12, 147)
@@ -47,6 +54,36 @@ Partial Class FrmHistorialVentas
         Me.LsvMostrarVentas.TabIndex = 112
         Me.LsvMostrarVentas.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarVentas.View = System.Windows.Forms.View.Details
+        '
+        'chCodigo
+        '
+        Me.chCodigo.Text = "Código Factura"
+        Me.chCodigo.Width = 85
+        '
+        'chCliente
+        '
+        Me.chCliente.Text = "Cliente"
+        Me.chCliente.Width = 110
+        '
+        'chFecha
+        '
+        Me.chFecha.Text = "Fecha"
+        Me.chFecha.Width = 120
+        '
+        'chTipoDocumento
+        '
+        Me.chTipoDocumento.Text = "Tipo Documento"
+        Me.chTipoDocumento.Width = 100
+        '
+        'chTipoFactura
+        '
+        Me.chTipoFactura.Text = "Tipo Factura"
+        Me.chTipoFactura.Width = 100
+        '
+        'chUsuario
+        '
+        Me.chUsuario.Text = "Usuario"
+        Me.chUsuario.Width = 90
         '
         'Label15
         '
@@ -84,4 +121,10 @@ Partial Class FrmHistorialVentas
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents LsvMostrarVentas As ListView
     Friend WithEvents Label15 As Label
+    Friend WithEvents chCodigo As ColumnHeader
+    Friend WithEvents chCliente As ColumnHeader
+    Friend WithEvents chFecha As ColumnHeader
+    Friend WithEvents chTipoDocumento As ColumnHeader
+    Friend WithEvents chTipoFactura As ColumnHeader
+    Friend WithEvents chUsuario As ColumnHeader
 End Class

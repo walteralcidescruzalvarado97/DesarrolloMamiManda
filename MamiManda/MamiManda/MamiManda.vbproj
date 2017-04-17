@@ -122,6 +122,12 @@
     <Compile Include="Catalogos\FrmReceta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmDetalleFactura.Designer.vb">
+      <DependentUpon>FrmDetalleFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetalleFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmHistorialVentas.Designer.vb">
       <DependentUpon>FrmHistorialVentas.vb</DependentUpon>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConfiguracion.resx">
       <DependentUpon>FrmConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetalleFactura.resx">
+      <DependentUpon>FrmDetalleFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHistorialVentas.resx">
       <DependentUpon>FrmHistorialVentas.vb</DependentUpon>

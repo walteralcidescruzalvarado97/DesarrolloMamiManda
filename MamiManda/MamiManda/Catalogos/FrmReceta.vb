@@ -173,6 +173,8 @@ Public Class FrmReceta
                     .ExecuteNonQuery()
                 End With
             End Using
+
+            err = 0
         Catch ex As Exception
             If ex.ToString.Contains("clave duplicada") Then
                 MessageBox.Show("Ya se encuentra registrado este ingrediente", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -229,9 +231,10 @@ Public Class FrmReceta
         ElseIf Validar(txtCantidad, "Debe ingresar la cantidad de materia prima") Then
         Else
             AgregarIngrediente()
+            MostrarReceta()
+            ListarReceta()
             If err = 0 Then
                 HabilitarBotones(False, True, False, True, True)
-                MostrarReceta()
                 Limpiar()
             Else
                 err = 0

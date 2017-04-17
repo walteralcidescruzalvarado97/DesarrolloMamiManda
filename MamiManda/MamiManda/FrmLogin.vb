@@ -49,10 +49,8 @@ Public Class FrmLogin
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         My.Settings.ConexionTemporal = My.Settings.Conexion
         My.Settings.Save()
-
-
         If Conexion() = False Then
-            FrmConfiguracion.ShowDialog()
+            FrmConfiguracion.Show()
         End If
     End Sub
 

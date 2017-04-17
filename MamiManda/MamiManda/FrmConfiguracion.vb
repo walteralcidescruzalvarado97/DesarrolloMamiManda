@@ -50,7 +50,16 @@ Public Class FrmConfiguracion
 
 
         Catch ex As Exception
-            MessageBox.Show(ex.ToString, "Error en la conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If ex.ToString.Contains("No se encontró el servidor") Then
+                MessageBox.Show("El nombre o direccion del servidor no es correcto", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+            If ex.ToString.Contains("No se puede abrir la base de datos") Then
+                MessageBox.Show("El nombre de la base de datos es incoreccto", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+            If ex.ToString.Contains("Error de inicio de sesión del usuario") Then
+                MessageBox.Show("El nombre de usuario o contraseña para la base de datos es incorecto", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
             EC = Estado_Conexion.NoEstablecida
             lblConnStatus.Text = "Error en la conexión"
         Finally

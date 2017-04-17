@@ -98,7 +98,7 @@ Partial Class FrmPresentacionProducto
         Me.TPGestionPresentacion.Padding = New System.Windows.Forms.Padding(3)
         Me.TPGestionPresentacion.Size = New System.Drawing.Size(599, 355)
         Me.TPGestionPresentacion.TabIndex = 0
-        Me.TPGestionPresentacion.Text = "Gestión Inventario"
+        Me.TPGestionPresentacion.Text = "Presentacion Producto"
         '
         'gbDatos
         '
@@ -370,7 +370,7 @@ Partial Class FrmPresentacionProducto
         Me.TPListarPresentacion.Padding = New System.Windows.Forms.Padding(3)
         Me.TPListarPresentacion.Size = New System.Drawing.Size(599, 355)
         Me.TPListarPresentacion.TabIndex = 1
-        Me.TPListarPresentacion.Text = "Listar Inventario"
+        Me.TPListarPresentacion.Text = "Listar Presentación"
         Me.TPListarPresentacion.UseVisualStyleBackColor = True
         '
         'btnEditar

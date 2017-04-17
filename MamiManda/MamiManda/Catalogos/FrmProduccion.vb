@@ -204,7 +204,7 @@ Public Class FrmProduccion
             If cantidadMateria * txtCantidad.Text > existencia Then
                 valor = 0
                 MsgBox("No hay suficiente: " + nombreMateria)
-            ElseIf cantidadMateria * txtCantidad.Text >= existenciaMinima Then
+            ElseIf existencia - (cantidadMateria * txtCantidad.Text) <= existenciaMinima Then
                 MsgBox("El ingrediente: " + nombreMateria + " ha llegado a su existencia mínima")
             Else
             End If
@@ -243,7 +243,9 @@ Public Class FrmProduccion
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
         Dim BuscarInventario As New FrmBuscarInventario
         BuscarInventario.Show(Me)
+    End Sub
 
+    Private Sub txtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles txtCodProducto.TextChanged
         MostrarReceta()
     End Sub
 End Class
