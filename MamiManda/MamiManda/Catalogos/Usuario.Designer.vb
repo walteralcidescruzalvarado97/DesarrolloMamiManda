@@ -254,6 +254,7 @@ Partial Class FrmUsuario
         'FotoAgregar
         '
         Me.FotoAgregar.BackColor = System.Drawing.Color.Transparent
+        Me.FotoAgregar.Image = Global.MamiManda.My.Resources.Resources.silueta
         Me.FotoAgregar.InitialImage = Nothing
         Me.FotoAgregar.Location = New System.Drawing.Point(13, 27)
         Me.FotoAgregar.Name = "FotoAgregar"

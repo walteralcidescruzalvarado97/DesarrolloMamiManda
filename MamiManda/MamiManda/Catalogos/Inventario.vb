@@ -36,6 +36,7 @@ Public Class FrmInventario
             Control.Focus()
             Validar = True
         Else
+            ErrorProvider1.SetError(Control, "")
             Validar = False
         End If
     End Function

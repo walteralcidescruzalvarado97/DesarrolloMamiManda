@@ -70,7 +70,8 @@ Public Class FrmUsuario
         txtUserName.Text = Nothing
         txtEmpleado.Text = Nothing
         txtContrasena.Text = Nothing
-        FotoAgregar.Image = Image.FromFile("../../Resources/silueta.png")
+        'FotoAgregar.Image = Image.FromFile("../../Resources/silueta.png")
+        FotoAgregar.Image = My.Resources.silueta
         cboEstado.SelectedIndex = -1
         cboTipoUsuario.SelectedIndex = -1
     End Sub
@@ -461,8 +462,12 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub MostrarImagen()
-        Dim connection As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=BakerySystem;Integrated Security=True")
-        Dim command As New SqlCommand("SELECT Foto FROM Usuario where IdUsuario = @var", connection)
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+        'Dim connection As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=BakerySystem;Integrated Security=True")
+        Dim command As New SqlCommand("SELECT Foto FROM Usuario where IdUsuario = @var", cnn)
         command.Parameters.Add("@var", SqlDbType.VarChar).Value = lsvMostrar.FocusedItem.SubItems(0).Text
 
         Dim table As New DataTable()
@@ -470,8 +475,8 @@ Public Class FrmUsuario
         adapter.Fill(table)
 
         Dim img() As Byte
-            img = table.Rows(0)(0)
-            Dim ms As New MemoryStream(img)
+        img = table.Rows(0)(0)
+        Dim ms As New MemoryStream(img)
         FotoAgregar.Image = Image.FromStream(ms)
     End Sub
 
@@ -485,7 +490,8 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub btnEliminarFoto_Click(sender As Object, e As EventArgs) Handles btnEliminarFoto.Click
-        FotoAgregar.Image = Image.FromFile("../../Resources/silueta.png")
+        'FotoAgregar.Image = Image.FromFile(My.Resources.silueta.ToBitmap())
+        FotoAgregar.Image = My.Resources.silueta
     End Sub
 
 

@@ -366,4 +366,12 @@ Public Class FrmCliente
         btnEditar.Enabled = False
         ListarCliente()
     End Sub
+
+    Private Sub txtRtn_TextChanged(sender As Object, e As EventArgs) Handles txtRtn.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
 End Class

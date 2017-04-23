@@ -108,4 +108,20 @@ Public Class FrmAgregarMateria
     Public Sub ObtenerMedida(Medida As String) Implements IAgregarMateria.ObtenerMedida
         txtMedida.Text = Medida
     End Sub
+
+    Private Sub txtCodMateria_TextChanged(sender As Object, e As EventArgs) Handles txtCodMateria.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtMateria_TextChanged(sender As Object, e As EventArgs) Handles txtMateria.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtMedida_TextChanged(sender As Object, e As EventArgs) Handles txtMedida.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
 End Class

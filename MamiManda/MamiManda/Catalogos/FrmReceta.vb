@@ -283,5 +283,14 @@ Public Class FrmReceta
 
     Private Sub txtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles txtCodProducto.TextChanged
         MostrarReceta()
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCodMateria_TextChanged(sender As Object, e As EventArgs) Handles txtCodMateria.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+        ErrorProvider1.Clear()
     End Sub
 End Class

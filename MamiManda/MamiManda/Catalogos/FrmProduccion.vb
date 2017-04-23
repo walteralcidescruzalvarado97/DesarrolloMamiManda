@@ -45,6 +45,7 @@ Public Class FrmProduccion
             Control.Focus()
             Validar = True
         Else
+            ErrorProvider1.SetError(Control, "")
             Validar = False
         End If
     End Function
@@ -247,5 +248,14 @@ Public Class FrmProduccion
 
     Private Sub txtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles txtCodProducto.TextChanged
         MostrarReceta()
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtProducto_TextChanged(sender As Object, e As EventArgs) Handles txtProducto.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+        ErrorProvider1.Clear()
     End Sub
 End Class

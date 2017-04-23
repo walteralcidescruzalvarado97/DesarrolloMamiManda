@@ -46,6 +46,8 @@ Public Class FrmConfiguracion
             My.Settings.ConexionTemporal = nuevaCadenaConexion
             My.Settings.Save()
             cnn = New SqlConnection(My.Settings.ConexionTemporal)
+            FrmLogin.Show()
+            Me.Close()
 
 
 
