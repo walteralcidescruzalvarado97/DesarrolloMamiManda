@@ -260,4 +260,22 @@ Public Class FrmInventario
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
         btnEditar.Enabled = True
     End Sub
+
+    Private Sub txtAlfabetico(e)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtExistenciaMaxima_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtExistenciaMaxima.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub txtExistenciaMinima_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtExistenciaMinima.KeyPress
+        txtAlfabetico(e)
+    End Sub
 End Class

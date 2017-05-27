@@ -281,4 +281,30 @@ Public Class FrmPresentacionProducto
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
         btnEditar.Enabled = True
     End Sub
+
+    Private Function txtNumerico(ByVal txtControl As TextBox, ByVal caracter As Char, ByVal decimales As Boolean) As Boolean
+        If (Char.IsNumber(caracter, 0) = True) Or caracter = Convert.ToChar(8) Or caracter = "." Then
+            If caracter = "." Then
+                If decimales = True Then
+                    If txtControl.Text.IndexOf(".") <> -1 Then Return True
+                Else : Return True
+                End If
+            End If
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Private Sub txtPreMayorista_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPreMayorista.KeyPress
+        e.Handled = txtNumerico(txtPreMayorista, e.KeyChar, True)
+    End Sub
+
+    Private Sub txtPreDetalle_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPreDetalle.KeyPress
+        e.Handled = txtNumerico(txtPreDetalle, e.KeyChar, True)
+    End Sub
+
+    Private Sub txtPreCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPreCosto.KeyPress
+        e.Handled = txtNumerico(txtPreCosto, e.KeyChar, True)
+    End Sub
 End Class

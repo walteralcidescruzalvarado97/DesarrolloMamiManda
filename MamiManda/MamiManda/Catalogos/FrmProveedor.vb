@@ -316,4 +316,32 @@ Public Class FrmProveedor
         btnEditar.Enabled = False
         txtBuscar.Text = ""
     End Sub
+
+    Private Sub txtAlfabetico(e)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub txtApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtApellido.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub mtbTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 End Class

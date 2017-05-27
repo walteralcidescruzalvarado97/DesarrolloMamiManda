@@ -375,4 +375,32 @@ Public Class FrmEmpleado
     Private Sub LsvMostrarEmpleado_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles LsvMostrarEmpleado.SelectedIndexChanged
         btnEditar.Enabled = True
     End Sub
+
+    Private Sub txtAlfabetico(e)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub TxtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub TxtApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtApellido.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub mtbTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 End Class

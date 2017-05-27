@@ -246,7 +246,6 @@ Public Class FrmMateriaPrima
         TxtPrecio.Enabled = valor
         TxtFecha.Enabled = valor
         CboUnidadMedida.Enabled = valor
-        TxtRtnProveedor.Enabled = valor
         btnProveedor.Enabled = valor
 
     End Sub
@@ -276,6 +275,7 @@ Public Class FrmMateriaPrima
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(TxtNombreMateriaPrima, "Debe ingresar un nombre de materia prima") Then
+        ElseIf Validar(TxtExistenciaMinima, "Debe ingresar la existencia minima") Then
         ElseIf Validar(TxtPrecio, "Debe ingresar el precio") Then
         ElseIf Validar(TxtFecha, "Debe ingresar ula fecha") Then
         ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
@@ -342,4 +342,31 @@ Public Class FrmMateriaPrima
         btnEditar.Enabled = True
     End Sub
 
+    Private Function txtNumerico(ByVal txtControl As TextBox, ByVal caracter As Char, ByVal decimales As Boolean) As Boolean
+        If (Char.IsNumber(caracter, 0) = True) Or caracter = Convert.ToChar(8) Or caracter = "." Then
+            If caracter = "." Then
+                If decimales = True Then
+                    If txtControl.Text.IndexOf(".") <> -1 Then Return True
+                Else : Return True
+                End If
+            End If
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Private Sub TxtExistenciaMinima_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtExistenciaMinima.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPrecio.KeyPress
+        e.Handled = txtNumerico(TxtPrecio, e.KeyChar, True)
+    End Sub
 End Class

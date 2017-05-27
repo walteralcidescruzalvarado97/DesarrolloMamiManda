@@ -27,7 +27,7 @@ Public Class FrmCliente
         txtEmail.Enabled = valor
         mtbTelefono.Enabled = valor
         txtDireccion.Enabled = valor
-        txtFecha.Enabled = valor
+        dtpFecha.Enabled = valor
         cboMunicipio.Enabled = valor
         cboSexo.Enabled = valor
     End Sub
@@ -39,7 +39,6 @@ Public Class FrmCliente
         txtEmail.Text = Nothing
         mtbTelefono.Text = Nothing
         txtDireccion.Text = Nothing
-        txtFecha.Text = Nothing
         cboSexo.Text = Nothing
         cboMunicipio.Text = Nothing
     End Sub
@@ -236,7 +235,7 @@ Public Class FrmCliente
                         .Parameters.Add("@Email", SqlDbType.VarChar).Value = txtEmail.Text.Trim
                         .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = mtbTelefono.Text.Trim
                         .Parameters.Add("@Direccion", SqlDbType.NVarChar).Value = txtDireccion.Text.Trim
-                        .Parameters.Add("@Fecha", SqlDbType.Date).Value = txtFecha.Text.Trim
+                        .Parameters.Add("@Fecha", SqlDbType.Date).Value = dtpFecha.Value
                         .Parameters.Add("@Sexo", SqlDbType.Int).Value = cboSexo.SelectedValue
                         .Parameters.Add("@Municipio", SqlDbType.Int).Value = cboMunicipio.SelectedValue
                         .ExecuteNonQuery()
@@ -270,7 +269,7 @@ Public Class FrmCliente
                     .Parameters.Add("@Email", SqlDbType.VarChar).Value = txtEmail.Text.Trim
                     .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = mtbTelefono.Text.Trim
                     .Parameters.Add("@Direccion", SqlDbType.NVarChar).Value = txtDireccion.Text.Trim
-                    .Parameters.Add("@Fecha", SqlDbType.Date).Value = txtFecha.Text.Trim
+                    .Parameters.Add("@Fecha", SqlDbType.Date).Value = dtpFecha.Value
                     .Parameters.Add("@Sexo", SqlDbType.Int).Value = cboSexo.SelectedValue
                     .Parameters.Add("@Municipio", SqlDbType.Int).Value = cboMunicipio.SelectedValue
                     .ExecuteNonQuery()
@@ -298,7 +297,6 @@ Public Class FrmCliente
         ElseIf Validar(txtEmail, "Debe seleccionar un Email") Then
         ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
         ElseIf Validar(txtDireccion, "Debe ingresar una dirección") Then
-        ElseIf Validar(txtFecha, "Debe ingresar la fecha") Then
         ElseIf Validar(cboSexo, "Debe seleccionar un sexo") Then
         ElseIf Validar(cboMunicipio, "Debe seleccionar un municipio") Then
         Else
@@ -330,7 +328,6 @@ Public Class FrmCliente
         ElseIf Validar(txtEmail, "Debe seleccionar un Email") Then
         ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
         ElseIf Validar(txtDireccion, "Debe ingresar una dirección") Then
-        ElseIf Validar(txtFecha, "Debe ingresar la fecha") Then
         ElseIf Validar(cboSexo, "Debe seleccionar un sexo") Then
         ElseIf Validar(cboMunicipio, "Debe seleccionar un municipio") Then
         Else
@@ -352,7 +349,7 @@ Public Class FrmCliente
         txtEmail.Text = LsvMostrarCliente.FocusedItem.SubItems(3).Text
         mtbTelefono.Text = LsvMostrarCliente.FocusedItem.SubItems(4).Text
         txtDireccion.Text = LsvMostrarCliente.FocusedItem.SubItems(7).Text
-        txtFecha.Text = LsvMostrarCliente.FocusedItem.SubItems(5).Text
+        dtpFecha.Text = LsvMostrarCliente.FocusedItem.SubItems(5).Text
         cboSexo.Text = LsvMostrarCliente.FocusedItem.SubItems(6).Text
         cboMunicipio.Text = LsvMostrarCliente.FocusedItem.SubItems(8).Text
         HabilitarBotones(False, False, True, True, True)
@@ -373,5 +370,57 @@ Public Class FrmCliente
 
     Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
         ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtApellido_TextChanged(sender As Object, e As EventArgs) Handles txtApellido.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtDireccion_TextChanged(sender As Object, e As EventArgs) Handles txtDireccion.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtFecha_TextChanged(sender As Object, e As EventArgs)
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub cboSexo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSexo.SelectedIndexChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub mtbTelefono_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtbTelefono.MaskInputRejected
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub txtAlfabetico(e)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub txtApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtApellido.KeyPress
+        txtAlfabetico(e)
+    End Sub
+
+    Private Sub mtbTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class

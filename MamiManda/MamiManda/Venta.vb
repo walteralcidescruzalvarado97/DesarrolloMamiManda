@@ -26,7 +26,6 @@ Public Class Venta
     End Sub
 
     Private Sub HabilitarTexbox(ByVal valor As Boolean)
-        txtCliente.Enabled = valor
         btnBuscarCliente.Enabled = valor
         cboTipoFactura.Enabled = valor
         cboEstado.Enabled = valor
@@ -80,6 +79,10 @@ Public Class Venta
         ElseIf Validar(cboTipoFactura, "Debe seleccionar un tipo de factura") Then
         ElseIf Validar(cboEstado, "Debe seleccionar un tipo de documento") Then
         Else
+            If lsvMostrar.Items.Count <= 0 Then
+                MessageBox.Show("No se han ingresado productos a facturar", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
             HabilitarBotones(True, False, False, False)
             AgregarFactura()
             AgregarDetalle()
@@ -416,4 +419,63 @@ Public Class Venta
         End If
     End Sub
 
+    Private Sub txtCliente_TextChanged(sender As Object, e As EventArgs) Handles txtCliente.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub cboTipoFactura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipoFactura.SelectedIndexChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstado.SelectedIndexChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles txtCodProducto.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtPresentacion_TextChanged(sender As Object, e As EventArgs) Handles txtPresentacion.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtUnidad_TextChanged(sender As Object, e As EventArgs) Handles txtUnidad.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtPrecio_TextChanged(sender As Object, e As EventArgs) Handles txtPrecio.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
+        e.Handled = txtNumerico(txtPrecio, e.KeyChar, True)
+    End Sub
+
+    Private Function txtNumerico(ByVal txtControl As TextBox, ByVal caracter As Char, ByVal decimales As Boolean) As Boolean
+        If (Char.IsNumber(caracter, 0) = True) Or caracter = Convert.ToChar(8) Or caracter = "." Then
+            If caracter = "." Then
+                If decimales = True Then
+                    If txtControl.Text.IndexOf(".") <> -1 Then Return True
+                Else : Return True
+                End If
+            End If
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 End Class

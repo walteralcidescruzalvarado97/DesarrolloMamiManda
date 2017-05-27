@@ -34,7 +34,6 @@ Partial Class FrmCliente
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
-        Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.cboMunicipio = New System.Windows.Forms.ComboBox()
         Me.cboSexo = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -67,6 +66,7 @@ Partial Class FrmCliente
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -135,7 +135,7 @@ Partial Class FrmCliente
         'gbDatos
         '
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
-        Me.gbDatos.Controls.Add(Me.txtFecha)
+        Me.gbDatos.Controls.Add(Me.dtpFecha)
         Me.gbDatos.Controls.Add(Me.cboMunicipio)
         Me.gbDatos.Controls.Add(Me.cboSexo)
         Me.gbDatos.Controls.Add(Me.Label12)
@@ -159,13 +159,6 @@ Partial Class FrmCliente
         Me.gbDatos.TabIndex = 0
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Proveedor"
-        '
-        'txtFecha
-        '
-        Me.txtFecha.Location = New System.Drawing.Point(128, 262)
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(121, 20)
-        Me.txtFecha.TabIndex = 20
         '
         'cboMunicipio
         '
@@ -500,6 +493,13 @@ Partial Class FrmCliente
         Me.Label14.TabIndex = 110
         Me.Label14.Text = "Listar Cliente"
         '
+        'dtpFecha
+        '
+        Me.dtpFecha.Location = New System.Drawing.Point(130, 257)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(175, 20)
+        Me.dtpFecha.TabIndex = 20
+        '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -539,7 +539,6 @@ Partial Class FrmCliente
     Friend WithEvents chSexo As ColumnHeader
     Friend WithEvents Label15 As Label
     Friend WithEvents gbDatos As GroupBox
-    Friend WithEvents txtFecha As TextBox
     Friend WithEvents cboMunicipio As ComboBox
     Friend WithEvents cboSexo As ComboBox
     Friend WithEvents Label12 As Label
@@ -572,4 +571,5 @@ Partial Class FrmCliente
     Friend WithEvents btnEditar As Button
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents dtpFecha As DateTimePicker
 End Class

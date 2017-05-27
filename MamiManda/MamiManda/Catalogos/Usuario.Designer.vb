@@ -156,6 +156,7 @@ Partial Class FrmUsuario
         '
         'txtEmpleado
         '
+        Me.txtEmpleado.Enabled = False
         Me.txtEmpleado.Location = New System.Drawing.Point(251, 156)
         Me.txtEmpleado.Name = "txtEmpleado"
         Me.txtEmpleado.Size = New System.Drawing.Size(121, 20)

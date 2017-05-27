@@ -95,6 +95,7 @@ Partial Class FrmReceta
         '
         'txtCodMateria
         '
+        Me.txtCodMateria.Enabled = False
         Me.txtCodMateria.Location = New System.Drawing.Point(130, 47)
         Me.txtCodMateria.Name = "txtCodMateria"
         Me.txtCodMateria.Size = New System.Drawing.Size(132, 20)

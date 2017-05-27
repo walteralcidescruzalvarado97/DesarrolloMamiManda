@@ -51,8 +51,6 @@ Public Class FrmReceta
     End Sub
 
     Private Sub HabilitarTexbox(ByVal valor As Boolean)
-        txtCodProducto.Enabled = False
-        txtCodMateria.Enabled = valor
         txtCantidad.Enabled = valor
         btnMateriaPrima.Enabled = valor
         btnProducto.Enabled = valor
@@ -292,5 +290,23 @@ Public Class FrmReceta
 
     Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
         ErrorProvider1.Clear()
+    End Sub
+
+    Private Function txtNumerico(ByVal txtControl As TextBox, ByVal caracter As Char, ByVal decimales As Boolean) As Boolean
+        If (Char.IsNumber(caracter, 0) = True) Or caracter = Convert.ToChar(8) Or caracter = "." Then
+            If caracter = "." Then
+                If decimales = True Then
+                    If txtControl.Text.IndexOf(".") <> -1 Then Return True
+                Else : Return True
+                End If
+            End If
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
+        e.Handled = txtNumerico(txtCantidad, e.KeyChar, True)
     End Sub
 End Class

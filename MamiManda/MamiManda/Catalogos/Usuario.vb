@@ -47,7 +47,6 @@ Public Class FrmUsuario
         txtUserName.Enabled = valor
         txtContrasena.Enabled = valor
         cboEstado.Enabled = valor
-        txtEmpleado.Enabled = valor
         btnEmpleado.Enabled = valor
         cboTipoUsuario.Enabled = valor
         btnAbrir.Enabled = valor
