@@ -306,11 +306,23 @@ Public Class FrmEmpleado
         InvestigarCorrelativo()
     End Sub
 
+    Function ValidateEmail(ByVal email As String) As Boolean
+        Dim emailRegex As New System.Text.RegularExpressions.Regex(
+        "^(?<user>[^@]+)@(?<host>.+)$")
+        Dim emailMatch As System.Text.RegularExpressions.Match =
+       emailRegex.Match(email)
+        Return emailMatch.Success
+    End Function
+
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
         ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
         ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
-        ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
+        ElseIf ValidateEmail(TxtEmail.Text) = False Then
+            MessageBox.Show("Debe ingresar un correo válido", "MamiManda", MessageBoxButtons.OK)
+        ElseIf Validar(mtbTelefono, "Debe ingresar un número de teléfono") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            MessageBox.Show("Debe ingresar un número de teléfono válido", "MamiManda", MessageBoxButtons.OK)
         ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
         ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
         ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
@@ -335,7 +347,11 @@ Public Class FrmEmpleado
         If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
         ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
         ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
-        ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
+        ElseIf ValidateEmail(TxtEmail.Text) = False Then
+            MessageBox.Show("Debe ingresar un correo válido", "MamiManda", MessageBoxButtons.OK)
+        ElseIf Validar(mtbTelefono, "Debe ingresar un número de teléfono") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            MessageBox.Show("Debe ingresar un número de teléfono válido", "MamiManda", MessageBoxButtons.OK)
         ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
         ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
         ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
@@ -394,7 +410,7 @@ Public Class FrmEmpleado
         txtAlfabetico(e)
     End Sub
 
-    Private Sub mtbTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
+    Private Sub mtbTelefono_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -402,5 +418,9 @@ Public Class FrmEmpleado
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub mtbTelefono_TextChanged(sender As Object, e As EventArgs) Handles mtbTelefono.TextChanged
+
     End Sub
 End Class

@@ -34,6 +34,7 @@ Partial Class FrmConfiguracion
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.gbConnConfig.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,9 +52,9 @@ Partial Class FrmConfiguracion
         Me.gbConnConfig.Controls.Add(Me.Label3)
         Me.gbConnConfig.Controls.Add(Me.Label2)
         Me.gbConnConfig.Controls.Add(Me.Label1)
-        Me.gbConnConfig.Location = New System.Drawing.Point(12, 12)
+        Me.gbConnConfig.Location = New System.Drawing.Point(51, 56)
         Me.gbConnConfig.Name = "gbConnConfig"
-        Me.gbConnConfig.Size = New System.Drawing.Size(379, 268)
+        Me.gbConnConfig.Size = New System.Drawing.Size(368, 257)
         Me.gbConnConfig.TabIndex = 8
         Me.gbConnConfig.TabStop = False
         '
@@ -153,13 +154,25 @@ Partial Class FrmConfiguracion
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Servidor"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(16, 24)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(228, 25)
+        Me.Label11.TabIndex = 80
+        Me.Label11.Text = "Configuración servidor"
+        '
         'FrmConfiguracion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(400, 300)
+        Me.ClientSize = New System.Drawing.Size(470, 325)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.gbConnConfig)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -169,6 +182,7 @@ Partial Class FrmConfiguracion
         Me.gbConnConfig.ResumeLayout(False)
         Me.gbConnConfig.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -183,4 +197,5 @@ Partial Class FrmConfiguracion
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label11 As Label
 End Class

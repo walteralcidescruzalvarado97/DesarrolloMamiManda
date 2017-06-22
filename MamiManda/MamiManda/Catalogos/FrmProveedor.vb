@@ -227,12 +227,26 @@ Public Class FrmProveedor
         Close()
     End Sub
 
+    Function ValidateEmail(ByVal email As String) As Boolean
+        Dim emailRegex As New System.Text.RegularExpressions.Regex(
+        "^(?<user>[^@]+)@(?<host>.+)$")
+        Dim emailMatch As System.Text.RegularExpressions.Match =
+       emailRegex.Match(email)
+        Return emailMatch.Success
+    End Function
+
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(txtRtn, "Debe ingresar el RTN del proveedor") Then
+        ElseIf txtRtn.TextLength < 16 Then
+            ErrorProvider1.SetError(txtRtn, "Debe ingresar un RTN válido")
         ElseIf Validar(txtNombre, "Debe ingresar el nombre del proveedor") Then
         ElseIf Validar(txtApellido, "Debe ingresar el apellido del proveedor") Then
         ElseIf Validar(txtEmail, "Debe ingresar el email del proveedor") Then
+        ElseIf ValidateEmail(txtEmail.Text) = False Then
+            ErrorProvider1.SetError(txtEmail, "Debe ingresar un email válido")
         ElseIf Validar(mtbTelefono, "Debe ingresar el telefono del proveedor") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            ErrorProvider1.SetError(mtbTelefono, "Debe ingresar un teléfono válido")
         ElseIf Validar(txtDireccion, "Debe ingresar la dirección del proveedor") Then
         Else
             AgregarProveedor()
@@ -250,7 +264,11 @@ Public Class FrmProveedor
         ElseIf Validar(txtNombre, "Debe ingresar el nombre del proveedor") Then
         ElseIf Validar(txtApellido, "Debe ingresar el apellido del proveedor") Then
         ElseIf Validar(txtEmail, "Debe ingresar el email del proveedor") Then
+        ElseIf ValidateEmail(txtEmail.Text) = False Then
+            ErrorProvider1.SetError(txtEmail, "Debe ingresar un email válido")
         ElseIf Validar(mtbTelefono, "Debe ingresar el telefono del proveedor") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            ErrorProvider1.SetError(mtbTelefono, "Debe ingresar un teléfono válido")
         ElseIf Validar(txtDireccion, "Debe ingresar la dirección del proveedor") Then
         Else
             ActualizarProveedor()
@@ -277,7 +295,7 @@ Public Class FrmProveedor
         ErrorProvider1.Clear()
     End Sub
 
-    Private Sub mtbTelefono_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtbTelefono.MaskInputRejected
+    Private Sub mtbTelefono_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
         ErrorProvider1.Clear()
     End Sub
 
@@ -315,6 +333,7 @@ Public Class FrmProveedor
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""
+        txtRtn.Enabled = False
     End Sub
 
     Private Sub txtAlfabetico(e)
@@ -335,7 +354,7 @@ Public Class FrmProveedor
         txtAlfabetico(e)
     End Sub
 
-    Private Sub mtbTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
+    Private Sub mtbTelefono_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles mtbTelefono.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then

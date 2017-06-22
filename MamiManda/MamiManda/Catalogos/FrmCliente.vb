@@ -289,13 +289,26 @@ Public Class FrmCliente
     End Sub
 #End Region
 
+    Function ValidateEmail(ByVal email As String) As Boolean
+        Dim emailRegex As New System.Text.RegularExpressions.Regex(
+        "^(?<user>[^@]+)@(?<host>.+)$")
+        Dim emailMatch As System.Text.RegularExpressions.Match =
+       emailRegex.Match(email)
+        Return emailMatch.Success
+    End Function
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(txtRtn, "Debe ingresar un RTN") Then
+        ElseIf txtRtn.TextLength < 16 Then
+            ErrorProvider1.SetError(txtRtn, "Debe ingresar un RTN válido")
         ElseIf Validar(txtNombre, "Debe ingresar un nombre de empleado") Then
         ElseIf Validar(txtApellido, "Debe ingresar un apellido") Then
         ElseIf Validar(txtEmail, "Debe seleccionar un Email") Then
+        ElseIf ValidateEmail(txtEmail.Text) = False Then
+            ErrorProvider1.SetError(txtEmail, "Debe ingresar un correo válido")
         ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            ErrorProvider1.SetError(mtbTelefono, "Debe ingresar un número de teléfono válido")
         ElseIf Validar(txtDireccion, "Debe ingresar una dirección") Then
         ElseIf Validar(cboSexo, "Debe seleccionar un sexo") Then
         ElseIf Validar(cboMunicipio, "Debe seleccionar un municipio") Then
@@ -326,7 +339,11 @@ Public Class FrmCliente
         ElseIf Validar(txtNombre, "Debe ingresar un nombre de empleado") Then
         ElseIf Validar(txtApellido, "Debe ingresar un apellido") Then
         ElseIf Validar(txtEmail, "Debe seleccionar un Email") Then
+        ElseIf ValidateEmail(txtEmail.Text) = False Then
+            ErrorProvider1.SetError(txtEmail, "Debe ingresar un correo válido")
         ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            ErrorProvider1.SetError(mtbTelefono, "Debe ingresar un número de teléfono válido")
         ElseIf Validar(txtDireccion, "Debe ingresar una dirección") Then
         ElseIf Validar(cboSexo, "Debe seleccionar un sexo") Then
         ElseIf Validar(cboMunicipio, "Debe seleccionar un municipio") Then
@@ -357,6 +374,7 @@ Public Class FrmCliente
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""
+        txtRtn.Enabled = False
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
@@ -392,7 +410,7 @@ Public Class FrmCliente
         ErrorProvider1.Clear()
     End Sub
 
-    Private Sub mtbTelefono_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtbTelefono.MaskInputRejected
+    Private Sub mtbTelefono_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
         ErrorProvider1.Clear()
     End Sub
 
@@ -422,5 +440,9 @@ Public Class FrmCliente
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub mtbTelefono_TextChanged(sender As Object, e As EventArgs) Handles mtbTelefono.TextChanged
+        ErrorProvider1.Clear()
     End Sub
 End Class

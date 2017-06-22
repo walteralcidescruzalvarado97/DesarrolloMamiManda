@@ -276,6 +276,8 @@ Public Class FrmPresentacionProducto
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""
+        btnInventario.Enabled = False
+        cboPresentacion.Enabled = False
     End Sub
 
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged

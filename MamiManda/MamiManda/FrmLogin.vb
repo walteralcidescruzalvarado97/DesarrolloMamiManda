@@ -33,12 +33,18 @@ Public Class FrmLogin
                         FrmPrincipal.Show()
                         FrmPrincipal.LblId.Text = String.Format("{0}", reader.GetValue(0))
                         FrmPrincipal.LblUser.Text = String.Format("{0} {1}", username(0), username2(0))
-                        Dim imagen As New System.IO.MemoryStream(DirectCast(reader("Foto"), [Byte]()))
-                        Dim ObjImagen As Image = Image.FromStream(imagen)
-                        FrmPrincipal.PbUser.BackgroundImage = ObjImagen
+
+                        If IsDBNull(reader("Foto")) Then
+                        Else
+                            Dim imagen As New System.IO.MemoryStream(DirectCast(reader("Foto"), [Byte]()))
+                            Dim ObjImagen As Image = Image.FromStream(imagen)
+
+                            FrmPrincipal.PbUser.BackgroundImage = ObjImagen
+                        End If
+
                         Me.Close()
-                    Else
-                        MsgBox("Usuario y Contrasena invalido")
+                        Else
+                            MsgBox("Usuario y Contrasena invalido")
                     End If
                 End Using
 

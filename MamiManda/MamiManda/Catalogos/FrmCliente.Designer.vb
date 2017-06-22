@@ -34,6 +34,8 @@ Partial Class FrmCliente
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
+        Me.mtbTelefono = New System.Windows.Forms.TextBox()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.cboMunicipio = New System.Windows.Forms.ComboBox()
         Me.cboSexo = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -41,7 +43,6 @@ Partial Class FrmCliente
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.mtbTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -66,7 +67,6 @@ Partial Class FrmCliente
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -135,6 +135,7 @@ Partial Class FrmCliente
         'gbDatos
         '
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
+        Me.gbDatos.Controls.Add(Me.mtbTelefono)
         Me.gbDatos.Controls.Add(Me.dtpFecha)
         Me.gbDatos.Controls.Add(Me.cboMunicipio)
         Me.gbDatos.Controls.Add(Me.cboSexo)
@@ -143,7 +144,6 @@ Partial Class FrmCliente
         Me.gbDatos.Controls.Add(Me.Label1)
         Me.gbDatos.Controls.Add(Me.txtDireccion)
         Me.gbDatos.Controls.Add(Me.Label7)
-        Me.gbDatos.Controls.Add(Me.mtbTelefono)
         Me.gbDatos.Controls.Add(Me.Label6)
         Me.gbDatos.Controls.Add(Me.txtEmail)
         Me.gbDatos.Controls.Add(Me.Label5)
@@ -159,6 +159,21 @@ Partial Class FrmCliente
         Me.gbDatos.TabIndex = 0
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Proveedor"
+        '
+        'mtbTelefono
+        '
+        Me.mtbTelefono.Location = New System.Drawing.Point(128, 173)
+        Me.mtbTelefono.MaxLength = 8
+        Me.mtbTelefono.Name = "mtbTelefono"
+        Me.mtbTelefono.Size = New System.Drawing.Size(177, 20)
+        Me.mtbTelefono.TabIndex = 21
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Location = New System.Drawing.Point(130, 257)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(175, 20)
+        Me.dtpFecha.TabIndex = 20
         '
         'cboMunicipio
         '
@@ -222,14 +237,6 @@ Partial Class FrmCliente
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Dirección"
         '
-        'mtbTelefono
-        '
-        Me.mtbTelefono.Location = New System.Drawing.Point(128, 173)
-        Me.mtbTelefono.Mask = "9999-9999"
-        Me.mtbTelefono.Name = "mtbTelefono"
-        Me.mtbTelefono.Size = New System.Drawing.Size(177, 20)
-        Me.mtbTelefono.TabIndex = 9
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -290,6 +297,7 @@ Partial Class FrmCliente
         'txtRtn
         '
         Me.txtRtn.Location = New System.Drawing.Point(130, 28)
+        Me.txtRtn.MaxLength = 16
         Me.txtRtn.Name = "txtRtn"
         Me.txtRtn.Size = New System.Drawing.Size(177, 20)
         Me.txtRtn.TabIndex = 0
@@ -493,13 +501,6 @@ Partial Class FrmCliente
         Me.Label14.TabIndex = 110
         Me.Label14.Text = "Listar Cliente"
         '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(130, 257)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(175, 20)
-        Me.dtpFecha.TabIndex = 20
-        '
         'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -546,7 +547,6 @@ Partial Class FrmCliente
     Friend WithEvents Label1 As Label
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents mtbTelefono As MaskedTextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label5 As Label
@@ -572,4 +572,5 @@ Partial Class FrmCliente
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents dtpFecha As DateTimePicker
+    Friend WithEvents mtbTelefono As TextBox
 End Class

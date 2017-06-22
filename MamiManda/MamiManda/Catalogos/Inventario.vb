@@ -221,11 +221,19 @@ Public Class FrmInventario
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim minima As Integer = txtExistenciaMinima.Text
+        Dim maxima As Integer = txtExistenciaMaxima.Text
+
+
         If Validar(txtCodInventario, "Debe ingresar el código del producto") Then
+        ElseIf txtCodInventario.TextLength < 4 Then
+            ErrorProvider1.SetError(txtCodInventario, "Debe ingredar un código válido")
         ElseIf Validar(txtNombre, "Debe ingresar un nombre del producto") Then
         ElseIf Validar(txtExistenciaMaxima, "Debe ingresar la existencia máxima") Then
         ElseIf Validar(txtExistenciaMinima, "Debe ingresar la existencia mínima") Then
-        Else
+        ElseIf maxima <= minima Then
+            MessageBox.Show("La existencia máxima debe ser mayor a la mínima", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf maxima > minima Then
             AgregarInventario()
             HabilitarBotones(True, False, False, False, False)
             Limpiar()
@@ -234,10 +242,15 @@ Public Class FrmInventario
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim minima As Integer = txtExistenciaMinima.Text
+        Dim maxima As Integer = txtExistenciaMaxima.Text
+
         If Validar(txtNombre, "Debe ingresar un nombre del producto") Then
         ElseIf Validar(txtExistenciaMaxima, "Debe ingresar la existencia máxima") Then
         ElseIf Validar(txtExistenciaMinima, "Debe ingresar la existencia mínima") Then
-        Else
+        ElseIf maxima <= minima Then
+            MessageBox.Show("La existencia máxima debe ser mayor a la mínima", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf maxima > minima Then
             ActualizarInventario()
             HabilitarBotones(True, False, False, False, False)
             Limpiar()
@@ -255,6 +268,7 @@ Public Class FrmInventario
         TabControl1.SelectedIndex = 0
         btnEditar.Enabled = False
         txtBuscar.Text = ""
+        txtCodInventario.Enabled = False
     End Sub
 
     Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
@@ -277,5 +291,19 @@ Public Class FrmInventario
 
     Private Sub txtExistenciaMinima_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtExistenciaMinima.KeyPress
         txtAlfabetico(e)
+    End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = False
+        End If
     End Sub
 End Class

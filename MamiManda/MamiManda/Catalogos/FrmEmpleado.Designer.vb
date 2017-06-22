@@ -32,7 +32,7 @@ Partial Class FrmEmpleado
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GbDatos = New System.Windows.Forms.GroupBox()
-        Me.mtbTelefono = New System.Windows.Forms.MaskedTextBox()
+        Me.mtbTelefono = New System.Windows.Forms.TextBox()
         Me.lblapellidos = New System.Windows.Forms.Label()
         Me.CboSexo = New System.Windows.Forms.ComboBox()
         Me.TxtApellido = New System.Windows.Forms.TextBox()
@@ -201,9 +201,9 @@ Partial Class FrmEmpleado
         'mtbTelefono
         '
         Me.mtbTelefono.Location = New System.Drawing.Point(130, 145)
-        Me.mtbTelefono.Mask = "9999-9999"
+        Me.mtbTelefono.MaxLength = 8
         Me.mtbTelefono.Name = "mtbTelefono"
-        Me.mtbTelefono.Size = New System.Drawing.Size(157, 20)
+        Me.mtbTelefono.Size = New System.Drawing.Size(158, 20)
         Me.mtbTelefono.TabIndex = 18
         '
         'lblapellidos
@@ -311,6 +311,7 @@ Partial Class FrmEmpleado
         'TxtEmail
         '
         Me.TxtEmail.Location = New System.Drawing.Point(129, 119)
+        Me.TxtEmail.MaxLength = 1000
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(158, 20)
         Me.TxtEmail.TabIndex = 4
@@ -529,7 +530,6 @@ Partial Class FrmEmpleado
     Friend WithEvents Label12 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents btnEditar As Button
-    Friend WithEvents mtbTelefono As MaskedTextBox
     Friend WithEvents LsvMostrarEmpleado As ListView
     Friend WithEvents ChCodEMpleado As ColumnHeader
     Friend WithEvents ChNombre As ColumnHeader
@@ -539,4 +539,5 @@ Partial Class FrmEmpleado
     Friend WithEvents ChTipoEmpleado As ColumnHeader
     Friend WithEvents ChSexo As ColumnHeader
     Friend WithEvents btnInsertar As Button
+    Friend WithEvents mtbTelefono As TextBox
 End Class

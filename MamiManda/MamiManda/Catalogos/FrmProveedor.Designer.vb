@@ -36,7 +36,6 @@ Partial Class FrmProveedor
         Me.gbDatos = New System.Windows.Forms.GroupBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.mtbTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -59,6 +58,7 @@ Partial Class FrmProveedor
         Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.mtbTelefono = New System.Windows.Forms.TextBox()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -188,9 +188,9 @@ Partial Class FrmProveedor
         'gbDatos
         '
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
+        Me.gbDatos.Controls.Add(Me.mtbTelefono)
         Me.gbDatos.Controls.Add(Me.txtDireccion)
         Me.gbDatos.Controls.Add(Me.Label7)
-        Me.gbDatos.Controls.Add(Me.mtbTelefono)
         Me.gbDatos.Controls.Add(Me.Label6)
         Me.gbDatos.Controls.Add(Me.txtEmail)
         Me.gbDatos.Controls.Add(Me.Label5)
@@ -223,14 +223,6 @@ Partial Class FrmProveedor
         Me.Label7.Size = New System.Drawing.Size(52, 13)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Dirección"
-        '
-        'mtbTelefono
-        '
-        Me.mtbTelefono.Location = New System.Drawing.Point(68, 173)
-        Me.mtbTelefono.Mask = "9999-9999"
-        Me.mtbTelefono.Name = "mtbTelefono"
-        Me.mtbTelefono.Size = New System.Drawing.Size(177, 20)
-        Me.mtbTelefono.TabIndex = 9
         '
         'Label6
         '
@@ -292,6 +284,7 @@ Partial Class FrmProveedor
         'txtRtn
         '
         Me.txtRtn.Location = New System.Drawing.Point(70, 28)
+        Me.txtRtn.MaxLength = 16
         Me.txtRtn.Name = "txtRtn"
         Me.txtRtn.Size = New System.Drawing.Size(177, 20)
         Me.txtRtn.TabIndex = 1
@@ -424,6 +417,14 @@ Partial Class FrmProveedor
         Me.chTelefono.Text = "Telefono"
         Me.chTelefono.Width = 104
         '
+        'mtbTelefono
+        '
+        Me.mtbTelefono.Location = New System.Drawing.Point(70, 172)
+        Me.mtbTelefono.MaxLength = 8
+        Me.mtbTelefono.Name = "mtbTelefono"
+        Me.mtbTelefono.Size = New System.Drawing.Size(177, 20)
+        Me.mtbTelefono.TabIndex = 12
+        '
         'FrmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -467,7 +468,6 @@ Partial Class FrmProveedor
     Friend WithEvents Label2 As Label
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents mtbTelefono As MaskedTextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label5 As Label
@@ -486,4 +486,5 @@ Partial Class FrmProveedor
     Friend WithEvents Label11 As Label
     Friend WithEvents chApellido As ColumnHeader
     Friend WithEvents btnEditar As Button
+    Friend WithEvents mtbTelefono As TextBox
 End Class

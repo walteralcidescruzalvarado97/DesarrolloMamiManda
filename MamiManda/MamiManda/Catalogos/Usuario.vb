@@ -194,7 +194,7 @@ Public Class FrmUsuario
                     .Connection = cnn
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = txtCodUsuario.Text.Trim
                     .Parameters.Add("@UserName", SqlDbType.NVarChar).Value = txtUserName.Text.Trim
-                    .Parameters.Add("@Password", SqlDbType.NVarChar).Value = txtContrasena.Text.Trim
+                    .Parameters.Add("@Password", SqlDbType.NVarChar).Value = SHA1(txtContrasena.Text.Trim)
                     .Parameters.Add("@Activo", SqlDbType.Int).Value = cboEstado.SelectedValue
                     .Parameters.Add("@IdEmpleado", SqlDbType.Int).Value = txtEmpleado.Text.Trim
                     .Parameters.Add("@TipoUsuario", SqlDbType.Int).Value = cboTipoUsuario.SelectedValue
@@ -442,7 +442,6 @@ Public Class FrmUsuario
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         txtCodUsuario.Text = lsvMostrar.FocusedItem.SubItems(0).Text
         txtUserName.Text = lsvMostrar.FocusedItem.SubItems(1).Text
-        txtContrasena.Text = lsvMostrar.FocusedItem.SubItems(2).Text
         txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(7).Text
         cboTipoUsuario.SelectedValue = lsvMostrar.FocusedItem.SubItems(6).Text
         Dim var As String = lsvMostrar.FocusedItem.SubItems(3).Text
@@ -473,10 +472,15 @@ Public Class FrmUsuario
         Dim adapter As New SqlDataAdapter(command)
         adapter.Fill(table)
 
-        Dim img() As Byte
-        img = table.Rows(0)(0)
-        Dim ms As New MemoryStream(img)
-        FotoAgregar.Image = Image.FromStream(ms)
+        If IsDBNull(table.Rows(0)(0)) Then
+        Else
+            Dim img() As Byte
+            img = table.Rows(0)(0)
+            Dim ms As New MemoryStream(img)
+            FotoAgregar.Image = Image.FromStream(ms)
+        End If
+
+
     End Sub
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
