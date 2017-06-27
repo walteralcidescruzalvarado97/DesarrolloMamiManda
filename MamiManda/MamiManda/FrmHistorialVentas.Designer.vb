@@ -32,25 +32,28 @@ Partial Class FrmHistorialVentas
         Me.chTipoFactura = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chUsuario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.chSubtotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chIsv = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(116, 101)
+        Me.txtBuscar.Location = New System.Drawing.Point(213, 102)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
+        Me.txtBuscar.Size = New System.Drawing.Size(403, 26)
         Me.txtBuscar.TabIndex = 113
         '
         'LsvMostrarVentas
         '
-        Me.LsvMostrarVentas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodigo, Me.chCliente, Me.chFecha, Me.chTipoDocumento, Me.chTipoFactura, Me.chUsuario})
+        Me.LsvMostrarVentas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodigo, Me.chCliente, Me.chFecha, Me.chTipoDocumento, Me.chTipoFactura, Me.chSubtotal, Me.chIsv, Me.chTotal, Me.chUsuario})
         Me.LsvMostrarVentas.FullRowSelect = True
         Me.LsvMostrarVentas.GridLines = True
         Me.LsvMostrarVentas.Location = New System.Drawing.Point(12, 147)
         Me.LsvMostrarVentas.Name = "LsvMostrarVentas"
-        Me.LsvMostrarVentas.Size = New System.Drawing.Size(610, 302)
+        Me.LsvMostrarVentas.Size = New System.Drawing.Size(828, 302)
         Me.LsvMostrarVentas.TabIndex = 112
         Me.LsvMostrarVentas.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarVentas.View = System.Windows.Forms.View.Details
@@ -90,11 +93,26 @@ Partial Class FrmHistorialVentas
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(63, 39)
+        Me.Label15.Location = New System.Drawing.Point(90, 37)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(163, 25)
         Me.Label15.TabIndex = 114
         Me.Label15.Text = "Historial Ventas"
+        '
+        'chSubtotal
+        '
+        Me.chSubtotal.Text = "Subtotal"
+        Me.chSubtotal.Width = 75
+        '
+        'chIsv
+        '
+        Me.chIsv.Text = "ISV"
+        Me.chIsv.Width = 75
+        '
+        'chTotal
+        '
+        Me.chTotal.Text = "Total"
+        Me.chTotal.Width = 75
         '
         'FrmHistorialVentas
         '
@@ -102,7 +120,7 @@ Partial Class FrmHistorialVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(644, 468)
+        Me.ClientSize = New System.Drawing.Size(852, 468)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.LsvMostrarVentas)
@@ -127,4 +145,7 @@ Partial Class FrmHistorialVentas
     Friend WithEvents chTipoDocumento As ColumnHeader
     Friend WithEvents chTipoFactura As ColumnHeader
     Friend WithEvents chUsuario As ColumnHeader
+    Friend WithEvents chSubtotal As ColumnHeader
+    Friend WithEvents chIsv As ColumnHeader
+    Friend WithEvents chTotal As ColumnHeader
 End Class

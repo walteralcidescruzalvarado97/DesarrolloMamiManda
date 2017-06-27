@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Public Class XtraReport1
+Partial Public Class ReportePresentacionProductos
     Inherits DevExpress.XtraReports.UI.XtraReport
 
     'XtraReport overrides dispose to clean up the component list.
@@ -21,7 +21,7 @@ Partial Public Class XtraReport1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim StoredProcQuery1 As DevExpress.DataAccess.Sql.StoredProcQuery = New DevExpress.DataAccess.Sql.StoredProcQuery()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(XtraReport1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportePresentacionProductos))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
@@ -49,14 +49,6 @@ Partial Public Class XtraReport1
         Me.XrTableCell14 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell15 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell16 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell17 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell18 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell19 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell20 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell21 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell22 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell23 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.PageFooterBand1 = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
@@ -66,17 +58,15 @@ Partial Public Class XtraReport1
         Me.FieldCaption = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
         Me.Detail.Dpi = 100.0!
-        Me.Detail.HeightF = 23.0!
+        Me.Detail.HeightF = 33.00001!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -101,8 +91,8 @@ Partial Public Class XtraReport1
         '
         Me.SqlDataSource1.ConnectionName = "MamiManda.My.MySettings.Conexion"
         Me.SqlDataSource1.Name = "SqlDataSource1"
-        StoredProcQuery1.Name = "Sp_RptMostrarClientes"
-        StoredProcQuery1.StoredProcName = "Sp_RptMostrarClientes"
+        StoredProcQuery1.Name = "Sp_RptMostrarPresentacion"
+        StoredProcQuery1.StoredProcName = "Sp_RptMostrarPresentacion"
         Me.SqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() {StoredProcQuery1})
         Me.SqlDataSource1.ResultSchemaSerializable = resources.GetString("SqlDataSource1.ResultSchemaSerializable")
         '
@@ -154,7 +144,7 @@ Partial Public Class XtraReport1
         '
         Me.XrTable2.AnchorVertical = CType((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top Or DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom), DevExpress.XtraReports.UI.VerticalAnchorStyles)
         Me.XrTable2.Dpi = 100.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.999985!, 10.00001!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow4})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(637.0!, 23.0!)
@@ -189,197 +179,127 @@ Partial Public Class XtraReport1
         '
         'XrTableRow3
         '
-        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9, Me.XrTableCell11, Me.XrTableCell13, Me.XrTableCell15, Me.XrTableCell17, Me.XrTableCell19, Me.XrTableCell21, Me.XrTableCell23})
+        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9, Me.XrTableCell11, Me.XrTableCell13, Me.XrTableCell15})
         Me.XrTableRow3.Dpi = 100.0!
         Me.XrTableRow3.Name = "XrTableRow3"
         Me.XrTableRow3.Weight = 1.0R
         '
         'XrTableRow4
         '
-        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell12, Me.XrTableCell14, Me.XrTableCell16, Me.XrTableCell18, Me.XrTableCell20, Me.XrTableCell22, Me.XrTableCell24})
+        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell12, Me.XrTableCell14, Me.XrTableCell16})
         Me.XrTableRow4.Dpi = 100.0!
         Me.XrTableRow4.Name = "XrTableRow4"
         Me.XrTableRow4.Weight = 1.0R
         '
         'XrTableCell7
         '
+        Me.XrTableCell7.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.XrTableCell7.CanGrow = False
         Me.XrTableCell7.Dpi = 100.0!
         Me.XrTableCell7.Name = "XrTableCell7"
         Me.XrTableCell7.StyleName = "FieldCaption"
-        Me.XrTableCell7.Text = "Apellido"
+        Me.XrTableCell7.StylePriority.UseBackColor = False
+        Me.XrTableCell7.Text = "Nombre Producto"
         Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell7.Weight = 32.0R
+        Me.XrTableCell7.Weight = 127.43955028300383R
         '
         'XrTableCell8
         '
         Me.XrTableCell8.CanGrow = False
-        Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.Apellido")})
+        Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarPresentacion.NombreProducto")})
         Me.XrTableCell8.Dpi = 100.0!
         Me.XrTableCell8.Name = "XrTableCell8"
         Me.XrTableCell8.StyleName = "DataField"
         Me.XrTableCell8.Text = "XrTableCell8"
-        Me.XrTableCell8.Weight = 32.0R
+        Me.XrTableCell8.Weight = 127.43954266558637R
         '
         'XrTableCell9
         '
+        Me.XrTableCell9.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.XrTableCell9.CanGrow = False
         Me.XrTableCell9.Dpi = 100.0!
         Me.XrTableCell9.Name = "XrTableCell9"
         Me.XrTableCell9.StyleName = "FieldCaption"
-        Me.XrTableCell9.Text = "Direccion"
+        Me.XrTableCell9.StylePriority.UseBackColor = False
+        Me.XrTableCell9.Text = "Tipo Presentación"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell9.Weight = 37.5R
+        Me.XrTableCell9.Weight = 157.56044971699618R
         '
         'XrTableCell10
         '
         Me.XrTableCell10.CanGrow = False
-        Me.XrTableCell10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.Direccion")})
+        Me.XrTableCell10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarPresentacion.TipoPresentacion")})
         Me.XrTableCell10.Dpi = 100.0!
         Me.XrTableCell10.Name = "XrTableCell10"
         Me.XrTableCell10.StyleName = "DataField"
         Me.XrTableCell10.Text = "XrTableCell10"
-        Me.XrTableCell10.Weight = 37.5R
+        Me.XrTableCell10.Weight = 157.56045733441363R
         '
         'XrTableCell11
         '
+        Me.XrTableCell11.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.XrTableCell11.CanGrow = False
         Me.XrTableCell11.Dpi = 100.0!
         Me.XrTableCell11.Name = "XrTableCell11"
         Me.XrTableCell11.StyleName = "FieldCaption"
-        Me.XrTableCell11.Text = "EMail"
+        Me.XrTableCell11.StylePriority.UseBackColor = False
+        Me.XrTableCell11.Text = "Precio Costo"
         Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell11.Weight = 21.5R
+        Me.XrTableCell11.Weight = 117.60047095761382R
         '
         'XrTableCell12
         '
         Me.XrTableCell12.CanGrow = False
-        Me.XrTableCell12.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.EMail")})
+        Me.XrTableCell12.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarPresentacion.PrecioCosto")})
         Me.XrTableCell12.Dpi = 100.0!
         Me.XrTableCell12.Name = "XrTableCell12"
         Me.XrTableCell12.StyleName = "DataField"
         Me.XrTableCell12.Text = "XrTableCell12"
-        Me.XrTableCell12.Weight = 21.5R
+        Me.XrTableCell12.Weight = 117.60047095761382R
         '
         'XrTableCell13
         '
+        Me.XrTableCell13.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.XrTableCell13.CanGrow = False
         Me.XrTableCell13.Dpi = 100.0!
         Me.XrTableCell13.Name = "XrTableCell13"
         Me.XrTableCell13.StyleName = "FieldCaption"
-        Me.XrTableCell13.Text = "Fecha Nac"
+        Me.XrTableCell13.StylePriority.UseBackColor = False
+        Me.XrTableCell13.Text = "Precio Mayorista"
         Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell13.Weight = 41.0R
+        Me.XrTableCell13.Weight = 120.39952904238618R
         '
         'XrTableCell14
         '
         Me.XrTableCell14.CanGrow = False
-        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.FechaNac")})
+        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarPresentacion.PrecioMayorista")})
         Me.XrTableCell14.Dpi = 100.0!
         Me.XrTableCell14.Name = "XrTableCell14"
         Me.XrTableCell14.StyleName = "DataField"
         Me.XrTableCell14.Text = "XrTableCell14"
-        Me.XrTableCell14.Weight = 41.0R
+        Me.XrTableCell14.Weight = 120.39952904238618R
         '
         'XrTableCell15
         '
+        Me.XrTableCell15.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.XrTableCell15.CanGrow = False
         Me.XrTableCell15.Dpi = 100.0!
         Me.XrTableCell15.Name = "XrTableCell15"
         Me.XrTableCell15.StyleName = "FieldCaption"
-        Me.XrTableCell15.Text = "Id Municipio"
+        Me.XrTableCell15.StylePriority.UseBackColor = False
+        Me.XrTableCell15.Text = "Precio Detalle"
         Me.XrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell15.Weight = 48.0R
+        Me.XrTableCell15.Weight = 113.0R
         '
         'XrTableCell16
         '
         Me.XrTableCell16.CanGrow = False
-        Me.XrTableCell16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.IdMunicipio")})
+        Me.XrTableCell16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarPresentacion.PrecioDetalle")})
         Me.XrTableCell16.Dpi = 100.0!
         Me.XrTableCell16.Name = "XrTableCell16"
         Me.XrTableCell16.StyleName = "DataField"
         Me.XrTableCell16.Text = "XrTableCell16"
-        Me.XrTableCell16.Weight = 48.0R
-        '
-        'XrTableCell17
-        '
-        Me.XrTableCell17.CanGrow = False
-        Me.XrTableCell17.Dpi = 100.0!
-        Me.XrTableCell17.Name = "XrTableCell17"
-        Me.XrTableCell17.StyleName = "FieldCaption"
-        Me.XrTableCell17.Text = "Id Sexo"
-        Me.XrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell17.Weight = 29.0R
-        '
-        'XrTableCell18
-        '
-        Me.XrTableCell18.CanGrow = False
-        Me.XrTableCell18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.IdSexo")})
-        Me.XrTableCell18.Dpi = 100.0!
-        Me.XrTableCell18.Name = "XrTableCell18"
-        Me.XrTableCell18.StyleName = "DataField"
-        Me.XrTableCell18.Text = "XrTableCell18"
-        Me.XrTableCell18.Weight = 29.0R
-        '
-        'XrTableCell19
-        '
-        Me.XrTableCell19.CanGrow = False
-        Me.XrTableCell19.Dpi = 100.0!
-        Me.XrTableCell19.Name = "XrTableCell19"
-        Me.XrTableCell19.StyleName = "FieldCaption"
-        Me.XrTableCell19.Text = "Nombre"
-        Me.XrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell19.Weight = 31.0R
-        '
-        'XrTableCell20
-        '
-        Me.XrTableCell20.CanGrow = False
-        Me.XrTableCell20.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.Nombre")})
-        Me.XrTableCell20.Dpi = 100.0!
-        Me.XrTableCell20.Name = "XrTableCell20"
-        Me.XrTableCell20.StyleName = "DataField"
-        Me.XrTableCell20.Text = "XrTableCell20"
-        Me.XrTableCell20.Weight = 31.0R
-        '
-        'XrTableCell21
-        '
-        Me.XrTableCell21.CanGrow = False
-        Me.XrTableCell21.Dpi = 100.0!
-        Me.XrTableCell21.Name = "XrTableCell21"
-        Me.XrTableCell21.StyleName = "FieldCaption"
-        Me.XrTableCell21.Text = "RTNCliente"
-        Me.XrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell21.Weight = 43.5R
-        '
-        'XrTableCell22
-        '
-        Me.XrTableCell22.CanGrow = False
-        Me.XrTableCell22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.RTNCliente")})
-        Me.XrTableCell22.Dpi = 100.0!
-        Me.XrTableCell22.Name = "XrTableCell22"
-        Me.XrTableCell22.StyleName = "DataField"
-        Me.XrTableCell22.Text = "XrTableCell22"
-        Me.XrTableCell22.Weight = 43.5R
-        '
-        'XrTableCell23
-        '
-        Me.XrTableCell23.CanGrow = False
-        Me.XrTableCell23.Dpi = 100.0!
-        Me.XrTableCell23.Name = "XrTableCell23"
-        Me.XrTableCell23.StyleName = "FieldCaption"
-        Me.XrTableCell23.Text = "Telefono"
-        Me.XrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell23.Weight = 34.0R
-        '
-        'XrTableCell24
-        '
-        Me.XrTableCell24.CanGrow = False
-        Me.XrTableCell24.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_RptMostrarClientes.Telefono")})
-        Me.XrTableCell24.Dpi = 100.0!
-        Me.XrTableCell24.Name = "XrTableCell24"
-        Me.XrTableCell24.StyleName = "DataField"
-        Me.XrTableCell24.Text = "XrTableCell24"
-        Me.XrTableCell24.Weight = 34.0R
+        Me.XrTableCell16.Weight = 113.0R
         '
         'PageFooterBand1
         '
@@ -413,18 +333,22 @@ Partial Public Class XtraReport1
         '
         Me.ReportHeaderBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1})
         Me.ReportHeaderBand1.Dpi = 100.0!
-        Me.ReportHeaderBand1.HeightF = 61.0!
+        Me.ReportHeaderBand1.HeightF = 53.0!
         Me.ReportHeaderBand1.Name = "ReportHeaderBand1"
         '
         'XrLabel1
         '
+        Me.XrLabel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.XrLabel1.Dpi = 100.0!
         Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 6.0!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(638.0!, 43.0!)
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(638.0!, 35.0!)
         Me.XrLabel1.StyleName = "Title"
-        Me.XrLabel1.Text = "Reporte de Clientes"
+        Me.XrLabel1.StylePriority.UseBackColor = False
+        Me.XrLabel1.StylePriority.UseTextAlignment = False
+        Me.XrLabel1.Text = "Reporte Presentación Producto"
+        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
         'Title
         '
@@ -432,8 +356,8 @@ Partial Public Class XtraReport1
         Me.Title.BorderColor = System.Drawing.Color.Black
         Me.Title.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.Title.BorderWidth = 1.0!
-        Me.Title.Font = New System.Drawing.Font("Tahoma", 24.0!, System.Drawing.FontStyle.Bold)
-        Me.Title.ForeColor = System.Drawing.Color.Teal
+        Me.Title.Font = New System.Drawing.Font("Times New Roman", 21.0!)
+        Me.Title.ForeColor = System.Drawing.Color.Black
         Me.Title.Name = "Title"
         '
         'FieldCaption
@@ -442,7 +366,7 @@ Partial Public Class XtraReport1
         Me.FieldCaption.BorderColor = System.Drawing.Color.Black
         Me.FieldCaption.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.FieldCaption.BorderWidth = 1.0!
-        Me.FieldCaption.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.FieldCaption.Font = New System.Drawing.Font("Times New Roman", 10.0!)
         Me.FieldCaption.ForeColor = System.Drawing.Color.Black
         Me.FieldCaption.Name = "FieldCaption"
         '
@@ -452,7 +376,7 @@ Partial Public Class XtraReport1
         Me.PageInfo.BorderColor = System.Drawing.Color.Black
         Me.PageInfo.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.PageInfo.BorderWidth = 1.0!
-        Me.PageInfo.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.PageInfo.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.PageInfo.ForeColor = System.Drawing.Color.Black
         Me.PageInfo.Name = "PageInfo"
         '
@@ -462,23 +386,22 @@ Partial Public Class XtraReport1
         Me.DataField.BorderColor = System.Drawing.Color.Black
         Me.DataField.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.DataField.BorderWidth = 1.0!
-        Me.DataField.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.DataField.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.DataField.ForeColor = System.Drawing.Color.Black
         Me.DataField.Name = "DataField"
         Me.DataField.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         '
-        'XtraReport1
+        'ReportePresentacionProductos
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.PageHeaderBand1, Me.PageFooterBand1, Me.ReportHeaderBand1})
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.SqlDataSource1})
-        Me.DataMember = "Sp_RptMostrarClientes"
+        Me.DataMember = "Sp_RptMostrarPresentacion"
         Me.DataSource = Me.SqlDataSource1
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.Title, Me.FieldCaption, Me.PageInfo, Me.DataField})
         Me.Version = "16.1"
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -492,10 +415,6 @@ Partial Public Class XtraReport1
     Friend WithEvents XrTableCell12 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell14 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell16 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell18 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell20 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell22 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell24 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents SqlDataSource1 As DevExpress.DataAccess.Sql.SqlDataSource
     Friend WithEvents PageHeaderBand1 As DevExpress.XtraReports.UI.PageHeaderBand
     Friend WithEvents XrTable1 As DevExpress.XtraReports.UI.XRTable
@@ -505,10 +424,6 @@ Partial Public Class XtraReport1
     Friend WithEvents XrTableCell11 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell13 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell15 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell17 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell19 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell21 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell23 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow1 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell1 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
@@ -526,5 +441,4 @@ Partial Public Class XtraReport1
     Friend WithEvents FieldCaption As DevExpress.XtraReports.UI.XRControlStyle
     Friend WithEvents PageInfo As DevExpress.XtraReports.UI.XRControlStyle
     Friend WithEvents DataField As DevExpress.XtraReports.UI.XRControlStyle
-    Friend WithEvents BindingSource1 As BindingSource
 End Class

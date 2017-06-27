@@ -24,6 +24,9 @@ Public Class FrmHistorialVentas
                         .SubItems.Add(VerFactura("Fecha").ToString)
                         .SubItems.Add(VerFactura("TipoDocumento").ToString)
                         .SubItems.Add(VerFactura("TipoFactura").ToString)
+                        .SubItems.Add(VerFactura("Subtotal").ToString)
+                        .SubItems.Add(VerFactura("ISV").ToString)
+                        .SubItems.Add(VerFactura("Total").ToString)
                         .SubItems.Add(VerFactura("UserName").ToString)
                     End With
                 End While

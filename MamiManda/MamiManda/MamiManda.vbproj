@@ -307,6 +307,48 @@
     <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\ReporteClientes.Designer.vb">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteClientes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.Designer.vb">
+      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFacturas.Designer.vb">
+      <DependentUpon>ReporteFacturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteFacturas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteInventario.Designer.vb">
+      <DependentUpon>ReporteInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteInventario.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteMateriaPrima.Designer.vb">
+      <DependentUpon>ReporteMateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteMateriaPrima.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePresentacionProductos.Designer.vb">
+      <DependentUpon>ReportePresentacionProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePresentacionProductos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteProveedores.Designer.vb">
+      <DependentUpon>ReporteProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteProveedores.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Splash_BakerySystem.Designer.vb">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
     </Compile>
@@ -318,12 +360,6 @@
     </Compile>
     <Compile Include="Venta.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraReport1.Designer.vb">
-      <DependentUpon>XtraReport1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="XtraReport1.vb">
-      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -406,14 +442,32 @@
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteClientes.resx">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteFacturas.resx">
+      <DependentUpon>ReporteFacturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteInventario.resx">
+      <DependentUpon>ReporteInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteMateriaPrima.resx">
+      <DependentUpon>ReporteMateriaPrima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePresentacionProductos.resx">
+      <DependentUpon>ReportePresentacionProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteProveedores.resx">
+      <DependentUpon>ReporteProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash_BakerySystem.resx">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XtraReport1.resx">
-      <DependentUpon>XtraReport1.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
