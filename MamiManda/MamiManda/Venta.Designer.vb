@@ -382,6 +382,7 @@ Partial Class Venta
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(196, 20)
         Me.dtpFecha.TabIndex = 15
+        Me.dtpFecha.Visible = False
         '
         'lsvMostrar
         '
