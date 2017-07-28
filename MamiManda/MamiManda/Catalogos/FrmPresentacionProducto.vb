@@ -16,6 +16,11 @@ Public Class FrmPresentacionProducto
         LlenarComboboxTipoPresentacion()
         Limpiar()
         MostrarPresentacion()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Presentacion")
     End Sub
 
 #Region "Funciones"

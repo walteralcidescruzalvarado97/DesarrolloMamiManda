@@ -61,6 +61,11 @@ Public Class FrmLogin
     End Sub
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Login")
+
 
         My.Settings.ConexionTemporal = My.Settings.Conexion
         My.Settings.Save()

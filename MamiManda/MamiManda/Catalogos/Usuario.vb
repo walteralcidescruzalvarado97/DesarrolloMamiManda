@@ -17,6 +17,11 @@ Public Class FrmUsuario
         Limpiar()
 
         MostrarUsuario()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Usuario")
     End Sub
 
 #Region "Funciones"

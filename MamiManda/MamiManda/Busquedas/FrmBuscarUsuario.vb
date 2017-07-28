@@ -2,6 +2,10 @@
 Public Class FrmBuscarUsuario
     Private Sub FrmBuscarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarUsuario()
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "BUsuario")
     End Sub
 
 #Region "Llenar"

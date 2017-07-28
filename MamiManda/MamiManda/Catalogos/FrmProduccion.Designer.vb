@@ -43,6 +43,7 @@ Partial Class FrmProduccion
         Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.ChProducto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChMateria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -268,9 +269,11 @@ Partial Class FrmProduccion
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmProduccion"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Producción"
         Me.GroupBox1.ResumeLayout(False)
@@ -300,4 +303,5 @@ Partial Class FrmProduccion
     Friend WithEvents lsvMostrar As ListView
     Friend WithEvents ChProducto As ColumnHeader
     Friend WithEvents ChMateria As ColumnHeader
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

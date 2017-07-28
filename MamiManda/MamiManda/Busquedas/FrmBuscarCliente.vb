@@ -75,6 +75,10 @@ Public Class FrmBuscarCliente
 
     Private Sub FrmBusquedaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarTodoCliente()
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "BCliente")
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged

@@ -34,6 +34,7 @@ Partial Class FrmProveedor
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
+        Me.mtbTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -58,7 +59,7 @@ Partial Class FrmProveedor
         Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.mtbTelefono = New System.Windows.Forms.TextBox()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -206,6 +207,14 @@ Partial Class FrmProveedor
         Me.gbDatos.TabIndex = 66
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Proveedor"
+        '
+        'mtbTelefono
+        '
+        Me.mtbTelefono.Location = New System.Drawing.Point(70, 172)
+        Me.mtbTelefono.MaxLength = 8
+        Me.mtbTelefono.Name = "mtbTelefono"
+        Me.mtbTelefono.Size = New System.Drawing.Size(177, 20)
+        Me.mtbTelefono.TabIndex = 12
         '
         'txtDireccion
         '
@@ -417,14 +426,6 @@ Partial Class FrmProveedor
         Me.chTelefono.Text = "Telefono"
         Me.chTelefono.Width = 104
         '
-        'mtbTelefono
-        '
-        Me.mtbTelefono.Location = New System.Drawing.Point(70, 172)
-        Me.mtbTelefono.MaxLength = 8
-        Me.mtbTelefono.Name = "mtbTelefono"
-        Me.mtbTelefono.Size = New System.Drawing.Size(177, 20)
-        Me.mtbTelefono.TabIndex = 12
-        '
         'FrmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -435,9 +436,11 @@ Partial Class FrmProveedor
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmProveedor"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proveedor"
         Me.gbDatos.ResumeLayout(False)
@@ -487,4 +490,5 @@ Partial Class FrmProveedor
     Friend WithEvents chApellido As ColumnHeader
     Friend WithEvents btnEditar As Button
     Friend WithEvents mtbTelefono As TextBox
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

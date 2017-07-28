@@ -35,6 +35,7 @@ Partial Class FrmBuscarEmpleado
         Me.chTipoEmpleado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'Label1
@@ -136,9 +137,11 @@ Partial Class FrmBuscarEmpleado
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmBuscarEmpleado"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Empleado"
         Me.ResumeLayout(False)
@@ -158,4 +161,5 @@ Partial Class FrmBuscarEmpleado
     Public WithEvents lsvMostrar As ListView
     Friend WithEvents chApellido As ColumnHeader
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

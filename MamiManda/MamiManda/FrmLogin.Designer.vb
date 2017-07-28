@@ -29,6 +29,7 @@ Partial Class FrmLogin
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -92,10 +93,12 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.TxtUser)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmLogin"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio de Sesión"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -109,4 +112,5 @@ Partial Class FrmLogin
     Friend WithEvents BtnIngresar As Button
     Friend WithEvents BtnSalir As Button
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

@@ -35,6 +35,7 @@ Partial Class FrmConfiguracion
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.gbConnConfig.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -175,8 +176,10 @@ Partial Class FrmConfiguracion
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.gbConnConfig)
         Me.DoubleBuffered = True
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmConfiguracion"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmConfiguracion"
         Me.gbConnConfig.ResumeLayout(False)
@@ -198,4 +201,5 @@ Partial Class FrmConfiguracion
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

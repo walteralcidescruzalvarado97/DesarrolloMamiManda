@@ -57,6 +57,7 @@ Partial Class FrmReceta
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -403,9 +404,11 @@ Partial Class FrmReceta
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmReceta"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Receta"
         Me.GroupBox1.ResumeLayout(False)
@@ -453,4 +456,5 @@ Partial Class FrmReceta
     Friend WithEvents Label5 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

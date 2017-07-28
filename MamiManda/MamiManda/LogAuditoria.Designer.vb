@@ -30,6 +30,7 @@ Partial Class LogAuditoria
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'LsvLogAuditoria
@@ -89,8 +90,10 @@ Partial Class LogAuditoria
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LsvLogAuditoria)
         Me.DoubleBuffered = True
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LogAuditoria"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LogAuditoria"
         Me.ResumeLayout(False)
@@ -105,4 +108,5 @@ Partial Class LogAuditoria
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents Label1 As Label
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

@@ -4,6 +4,11 @@ Public Class FrmInventario
         HabilitarBotones(True, False, False, False, False)
         Limpiar()
         MostrarInventario()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Inventario")
     End Sub
 
 #Region "Funciones"

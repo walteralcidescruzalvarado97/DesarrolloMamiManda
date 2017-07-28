@@ -8,6 +8,11 @@ Public Class FrmCliente
         MostrarCliente()
         cboSexo.SelectedIndex = -1
         cboMunicipio.SelectedIndex = -1
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Cliente")
     End Sub
 
 
@@ -444,5 +449,9 @@ Public Class FrmCliente
 
     Private Sub mtbTelefono_TextChanged(sender As Object, e As EventArgs) Handles mtbTelefono.TextChanged
         ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+
     End Sub
 End Class

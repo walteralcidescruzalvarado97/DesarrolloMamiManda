@@ -99,6 +99,7 @@
     <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -114,11 +115,14 @@
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -194,6 +198,7 @@
     <Compile Include="FrmHistorialVentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HTMLHelpClass.vb" />
     <Compile Include="LogAuditoria.Designer.vb">
       <DependentUpon>LogAuditoria.vb</DependentUpon>
     </Compile>
@@ -349,6 +354,12 @@
     <Compile Include="Reportes\ReporteProveedores.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\ReporteX.Designer.vb">
+      <DependentUpon>ReporteX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteX.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Splash_BakerySystem.Designer.vb">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
     </Compile>
@@ -463,6 +474,9 @@
     <EmbeddedResource Include="Reportes\ReporteProveedores.resx">
       <DependentUpon>ReporteProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteX.resx">
+      <DependentUpon>ReporteX.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash_BakerySystem.resx">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +486,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MamiManda_TemporaryKey.pfx" />
+    <Content Include="ManualAyuda.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -3,9 +3,12 @@
 Public Class FrmBuscarProveedor
     Private Sub FrmBuscarProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarTodoProveedor()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "BProveedor")
     End Sub
-
-
 
     Private Sub MostrarTodoProveedor()
         If cnn.State = ConnectionState.Open Then

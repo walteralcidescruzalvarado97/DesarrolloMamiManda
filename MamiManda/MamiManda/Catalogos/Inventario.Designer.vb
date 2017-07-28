@@ -55,6 +55,7 @@ Partial Class FrmInventario
         Me.chExistenciaMinima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chExistencia = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.TabControl1.SuspendLayout()
         Me.TPGestionInventario.SuspendLayout()
         Me.gbDatos.SuspendLayout()
@@ -392,8 +393,10 @@ Partial Class FrmInventario
         Me.ClientSize = New System.Drawing.Size(586, 376)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmInventario"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventario"
         Me.TabControl1.ResumeLayout(False)
@@ -439,4 +442,5 @@ Partial Class FrmInventario
     Friend WithEvents chExistenciaMinima As ColumnHeader
     Friend WithEvents chExistencia As ColumnHeader
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

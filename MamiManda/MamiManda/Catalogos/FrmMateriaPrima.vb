@@ -266,6 +266,11 @@ Public Class FrmMateriaPrima
         MostrarMateriaPrima()
         HabilitarBotones(True, False, False, False, False)
         CboUnidadMedida.Text = Nothing
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "MateriaPrima")
     End Sub
 
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click

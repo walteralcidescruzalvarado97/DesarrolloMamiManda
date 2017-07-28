@@ -30,11 +30,12 @@ Partial Class FrmHistorialVentas
         Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTipoDocumento = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTipoFactura = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chUsuario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.chSubtotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chIsv = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chUsuario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'txtBuscar
@@ -83,6 +84,21 @@ Partial Class FrmHistorialVentas
         Me.chTipoFactura.Text = "Tipo Factura"
         Me.chTipoFactura.Width = 100
         '
+        'chSubtotal
+        '
+        Me.chSubtotal.Text = "Subtotal"
+        Me.chSubtotal.Width = 75
+        '
+        'chIsv
+        '
+        Me.chIsv.Text = "ISV"
+        Me.chIsv.Width = 75
+        '
+        'chTotal
+        '
+        Me.chTotal.Text = "Total"
+        Me.chTotal.Width = 75
+        '
         'chUsuario
         '
         Me.chUsuario.Text = "Usuario"
@@ -99,21 +115,6 @@ Partial Class FrmHistorialVentas
         Me.Label15.TabIndex = 114
         Me.Label15.Text = "Historial Ventas"
         '
-        'chSubtotal
-        '
-        Me.chSubtotal.Text = "Subtotal"
-        Me.chSubtotal.Width = 75
-        '
-        'chIsv
-        '
-        Me.chIsv.Text = "ISV"
-        Me.chIsv.Width = 75
-        '
-        'chTotal
-        '
-        Me.chTotal.Text = "Total"
-        Me.chTotal.Width = 75
-        '
         'FrmHistorialVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -126,9 +127,11 @@ Partial Class FrmHistorialVentas
         Me.Controls.Add(Me.LsvMostrarVentas)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmHistorialVentas"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Historial Ventas"
         Me.ResumeLayout(False)
@@ -148,4 +151,5 @@ Partial Class FrmHistorialVentas
     Friend WithEvents chSubtotal As ColumnHeader
     Friend WithEvents chIsv As ColumnHeader
     Friend WithEvents chTotal As ColumnHeader
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

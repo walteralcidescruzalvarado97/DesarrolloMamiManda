@@ -42,6 +42,7 @@ Partial Class FrmAgregarMateria
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -263,9 +264,11 @@ Partial Class FrmAgregarMateria
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmAgregarMateria"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar Materia Prima"
         Me.GroupBox1.ResumeLayout(False)
@@ -294,4 +297,5 @@ Partial Class FrmAgregarMateria
     Friend WithEvents Label5 As Label
     Friend WithEvents txtMedida As TextBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

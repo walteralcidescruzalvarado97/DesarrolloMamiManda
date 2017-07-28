@@ -11,9 +11,13 @@ Public Class Venta
 
     Private Sub Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False)
-        LlenarComboTipoDocumento()
-        LlenarComboTipoFactura()
         Limpiar()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Ventas")
+        btnNuevo.Focus()
     End Sub
 
 #Region "Funciones"
@@ -27,8 +31,6 @@ Public Class Venta
 
     Private Sub HabilitarTexbox(ByVal valor As Boolean)
         btnBuscarCliente.Enabled = valor
-        cboTipoFactura.Enabled = valor
-        cboEstado.Enabled = valor
         dtpFecha.Enabled = valor
         txtCantidad.Enabled = valor
         txtPrecio.Enabled = valor
@@ -39,8 +41,6 @@ Public Class Venta
     Private Sub Limpiar()
         txtCodFactura.Text = Nothing
         txtCliente.Text = Nothing
-        cboEstado.SelectedIndex = -1
-        cboTipoFactura.SelectedIndex = -1
         txtSubTotal.Text = Nothing
         txtIsv.Text = Nothing
         txtTotal.Text = Nothing
@@ -71,13 +71,12 @@ Public Class Venta
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         HabilitarBotones(False, True, True, True)
         InvestigarCorrelativo()
+        btnBuscarCliente.Focus()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         If Validar(txtCliente, "Debe ingresar el código del cliente") Then
-        ElseIf Validar(cboTipoFactura, "Debe seleccionar un tipo de factura") Then
-        ElseIf Validar(cboEstado, "Debe seleccionar un tipo de documento") Then
         Else
             If lsvMostrar.Items.Count <= 0 Then
                 MessageBox.Show("No se han ingresado productos a facturar", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -101,6 +100,9 @@ Public Class Venta
     Private Sub btnBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnBuscarCliente.Click
         Dim BuscarCliente As New FrmBuscarCliente
         BuscarCliente.Show(Me)
+        btnBuscarProducto.Focus()
+        BuscarCliente.Focus()
+
     End Sub
 
     Public Sub ObtenerCodCliente(Codigo As String) Implements ICliente.ObtenerCodCliente
@@ -110,56 +112,6 @@ Public Class Venta
 #End Region
 
 #Region "Llenar"
-
-    Private Sub LlenarComboTipoFactura()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-        Try
-            Using cmd As New SqlCommand
-                With cmd
-                    .CommandText = "Sp_LLenarComboTipoFactura"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim da As New SqlDataAdapter(cmd)
-                Dim ds As New DataSet
-                da.Fill(ds, "TipoFactura")
-                Me.cboTipoFactura.DataSource = ds.Tables(0)
-                Me.cboTipoFactura.DisplayMember = ds.Tables(0).Columns("TipoFactura").ToString
-                Me.cboTipoFactura.ValueMember = ds.Tables(0).Columns("IdTipoFactura").ToString
-            End Using
-        Catch ex As Exception
-        Finally
-            cnn.Close()
-        End Try
-    End Sub
-
-    Private Sub LlenarComboTipoDocumento()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-        Try
-            Using cmd As New SqlCommand
-                With cmd
-                    .CommandText = "Sp_LLenarComboTipoDocumento"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim da As New SqlDataAdapter(cmd)
-                Dim ds As New DataSet
-                da.Fill(ds, "TipoDocumento")
-                Me.cboEstado.DataSource = ds.Tables(0)
-                Me.cboEstado.DisplayMember = ds.Tables(0).Columns("TipoDocumento").ToString
-                Me.cboEstado.ValueMember = ds.Tables(0).Columns("IdTipoDocumento").ToString
-            End Using
-        Catch ex As Exception
-        Finally
-            cnn.Close()
-        End Try
-    End Sub
 
     Private Sub InvestigarCorrelativo()
 
@@ -281,9 +233,7 @@ Public Class Venta
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
                     .Parameters.Add("@Fecha", SqlDbType.Date).Value = dtpFecha.Value
-                    .Parameters.Add("@IdTipoDocumento", SqlDbType.Int).Value = cboEstado.SelectedValue
                     .Parameters.Add("@RTNCliente", SqlDbType.NVarChar).Value = txtCliente.Text
-                    .Parameters.Add("@IdTipoFactura", SqlDbType.Int).Value = cboTipoFactura.SelectedValue
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
                     .ExecuteNonQuery()
                 End With
@@ -299,6 +249,8 @@ Public Class Venta
     Private Sub btnBuscarProducto_Click(sender As Object, e As EventArgs) Handles btnBuscarProducto.Click
         Dim BuscarProducto As New FrmBuscarPresentacion
         BuscarProducto.Show(Me)
+        txtCantidad.Focus()
+        BuscarProducto.Focus()
     End Sub
 
     Public Sub ObtenerCodProducto(Codigo As String) Implements IPresentacion.ObtenerCodProducto
@@ -414,20 +366,22 @@ Public Class Venta
                 RestarProducto()
                 LimpiarArticulos()
                 registro = 1
+                btnBuscarProducto.Focus()
             End If
 
         End If
+
     End Sub
 
     Private Sub txtCliente_TextChanged(sender As Object, e As EventArgs) Handles txtCliente.TextChanged
         ErrorProvider1.Clear()
     End Sub
 
-    Private Sub cboTipoFactura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipoFactura.SelectedIndexChanged
+    Private Sub cboTipoFactura_SelectedIndexChanged(sender As Object, e As EventArgs)
         ErrorProvider1.Clear()
     End Sub
 
-    Private Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstado.SelectedIndexChanged
+    Private Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs)
         ErrorProvider1.Clear()
     End Sub
 
@@ -478,4 +432,5 @@ Public Class Venta
             Return True
         End If
     End Function
+
 End Class

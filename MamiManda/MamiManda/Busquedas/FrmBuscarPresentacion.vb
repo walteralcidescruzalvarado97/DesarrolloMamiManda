@@ -2,6 +2,7 @@
 Public Class FrmBuscarPresentacion
     Private Sub FrmBuscarPresentacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListarPresentacion()
+        txtBuscar.Focus()
     End Sub
 
 #Region "Llenar"
@@ -74,5 +75,9 @@ Public Class FrmBuscarPresentacion
             InstanciaIProducto.ObtenerExistencia(Existencia)
         End If
         Close()
+    End Sub
+
+    Private Sub lsvMostrar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles lsvMostrar.KeyPress
+
     End Sub
 End Class

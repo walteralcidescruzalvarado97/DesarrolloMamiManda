@@ -61,6 +61,7 @@ Partial Class FrmPresentacionProducto
         Me.chPrecioDEtalle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPrecioCOsto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.TabControl1.SuspendLayout()
         Me.TPGestionPresentacion.SuspendLayout()
         Me.gbDatos.SuspendLayout()
@@ -459,9 +460,11 @@ Partial Class FrmPresentacionProducto
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmPresentacionProducto"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Presentacion Producto"
         Me.TabControl1.ResumeLayout(False)
@@ -513,4 +516,5 @@ Partial Class FrmPresentacionProducto
     Friend WithEvents cboPresentacion As ComboBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents chUnidades As ColumnHeader
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

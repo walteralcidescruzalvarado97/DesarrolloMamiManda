@@ -47,15 +47,10 @@ Partial Class Venta
         Me.gbDatos = New System.Windows.Forms.GroupBox()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.txtCliente = New System.Windows.Forms.TextBox()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.label3 = New System.Windows.Forms.Label()
-        Me.label4 = New System.Windows.Forms.Label()
         Me.txtCodFactura = New System.Windows.Forms.TextBox()
-        Me.cboTipoFactura = New System.Windows.Forms.ComboBox()
-        Me.cboEstado = New System.Windows.Forms.ComboBox()
-        Me.label2 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.ChCod = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -72,6 +67,7 @@ Partial Class Venta
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.lblNombreProducto = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.gbArticulos.SuspendLayout()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,10 +84,10 @@ Partial Class Venta
         Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Location = New System.Drawing.Point(981, 92)
+        Me.btnNuevo.Location = New System.Drawing.Point(204, 558)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(47, 43)
-        Me.btnNuevo.TabIndex = 65
+        Me.btnNuevo.TabIndex = 0
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'btnGuardar
@@ -104,10 +100,10 @@ Partial Class Venta
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(983, 188)
+        Me.btnGuardar.Location = New System.Drawing.Point(360, 558)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
-        Me.btnGuardar.TabIndex = 66
+        Me.btnGuardar.TabIndex = 5
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'Label9
@@ -115,7 +111,7 @@ Partial Class Venta
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(979, 231)
+        Me.Label9.Location = New System.Drawing.Point(356, 601)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 68
@@ -126,7 +122,7 @@ Partial Class Venta
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(981, 134)
+        Me.Label8.Location = New System.Drawing.Point(204, 600)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(48, 16)
         Me.Label8.TabIndex = 67
@@ -137,7 +133,7 @@ Partial Class Venta
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(979, 331)
+        Me.Label13.Location = New System.Drawing.Point(514, 599)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 72
@@ -153,10 +149,10 @@ Partial Class Venta
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(987, 295)
+        Me.btnCancelar.Location = New System.Drawing.Point(522, 563)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
-        Me.btnCancelar.TabIndex = 70
+        Me.btnCancelar.TabIndex = 6
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'gbArticulos
@@ -176,10 +172,10 @@ Partial Class Venta
         Me.gbArticulos.Controls.Add(Me.lblCodPresentacion)
         Me.gbArticulos.Controls.Add(Me.label7)
         Me.gbArticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbArticulos.Location = New System.Drawing.Point(24, 269)
+        Me.gbArticulos.Location = New System.Drawing.Point(24, 176)
         Me.gbArticulos.Name = "gbArticulos"
-        Me.gbArticulos.Size = New System.Drawing.Size(936, 55)
-        Me.gbArticulos.TabIndex = 74
+        Me.gbArticulos.Size = New System.Drawing.Size(936, 72)
+        Me.gbArticulos.TabIndex = 2
         Me.gbArticulos.TabStop = False
         Me.gbArticulos.Text = "Articulos"
         '
@@ -187,7 +183,7 @@ Partial Class Venta
         '
         Me.txtUnidad.BackColor = System.Drawing.SystemColors.Window
         Me.txtUnidad.Enabled = False
-        Me.txtUnidad.Location = New System.Drawing.Point(488, 21)
+        Me.txtUnidad.Location = New System.Drawing.Point(467, 28)
         Me.txtUnidad.Name = "txtUnidad"
         Me.txtUnidad.Size = New System.Drawing.Size(81, 20)
         Me.txtUnidad.TabIndex = 22
@@ -196,7 +192,7 @@ Partial Class Venta
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(434, 24)
+        Me.Label5.Location = New System.Drawing.Point(409, 32)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 21
@@ -206,7 +202,7 @@ Partial Class Venta
         '
         Me.txtPresentacion.BackColor = System.Drawing.SystemColors.Window
         Me.txtPresentacion.Enabled = False
-        Me.txtPresentacion.Location = New System.Drawing.Point(314, 21)
+        Me.txtPresentacion.Location = New System.Drawing.Point(305, 28)
         Me.txtPresentacion.Name = "txtPresentacion"
         Me.txtPresentacion.Size = New System.Drawing.Size(100, 20)
         Me.txtPresentacion.TabIndex = 20
@@ -215,7 +211,7 @@ Partial Class Venta
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(239, 23)
+        Me.Label14.Location = New System.Drawing.Point(230, 31)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(69, 13)
         Me.Label14.TabIndex = 19
@@ -230,25 +226,25 @@ Partial Class Venta
         Me.btnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarProducto.Location = New System.Drawing.Point(195, 19)
+        Me.btnBuscarProducto.Location = New System.Drawing.Point(189, 25)
         Me.btnBuscarProducto.Name = "btnBuscarProducto"
         Me.btnBuscarProducto.Size = New System.Drawing.Size(26, 23)
-        Me.btnBuscarProducto.TabIndex = 18
+        Me.btnBuscarProducto.TabIndex = 2
         Me.btnBuscarProducto.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(855, 18)
+        Me.btnAgregar.Location = New System.Drawing.Point(843, 27)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 5
+        Me.btnAgregar.TabIndex = 4
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'txtPrecio
         '
         Me.txtPrecio.BackColor = System.Drawing.SystemColors.Window
-        Me.txtPrecio.Location = New System.Drawing.Point(618, 21)
+        Me.txtPrecio.Location = New System.Drawing.Point(601, 29)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(81, 20)
         Me.txtPrecio.TabIndex = 17
@@ -257,7 +253,7 @@ Partial Class Venta
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(580, 24)
+        Me.Label1.Location = New System.Drawing.Point(558, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 16
@@ -266,16 +262,16 @@ Partial Class Venta
         'txtCantidad
         '
         Me.txtCantidad.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCantidad.Location = New System.Drawing.Point(764, 21)
+        Me.txtCantidad.Location = New System.Drawing.Point(748, 29)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(81, 20)
-        Me.txtCantidad.TabIndex = 15
+        Me.txtCantidad.TabIndex = 3
         '
         'label6
         '
         Me.label6.AutoSize = True
         Me.label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label6.Location = New System.Drawing.Point(709, 24)
+        Me.label6.Location = New System.Drawing.Point(693, 32)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(49, 13)
         Me.label6.TabIndex = 14
@@ -285,7 +281,7 @@ Partial Class Venta
         '
         Me.txtCodProducto.BackColor = System.Drawing.SystemColors.Window
         Me.txtCodProducto.Enabled = False
-        Me.txtCodProducto.Location = New System.Drawing.Point(109, 21)
+        Me.txtCodProducto.Location = New System.Drawing.Point(102, 27)
         Me.txtCodProducto.Name = "txtCodProducto"
         Me.txtCodProducto.Size = New System.Drawing.Size(81, 20)
         Me.txtCodProducto.TabIndex = 13
@@ -305,7 +301,7 @@ Partial Class Venta
         '
         Me.label7.AutoSize = True
         Me.label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label7.Location = New System.Drawing.Point(17, 25)
+        Me.label7.Location = New System.Drawing.Point(10, 31)
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(86, 13)
         Me.label7.TabIndex = 12
@@ -316,20 +312,14 @@ Partial Class Venta
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
         Me.gbDatos.Controls.Add(Me.btnBuscarCliente)
         Me.gbDatos.Controls.Add(Me.txtCliente)
-        Me.gbDatos.Controls.Add(Me.dtpFecha)
         Me.gbDatos.Controls.Add(Me.label3)
-        Me.gbDatos.Controls.Add(Me.label4)
         Me.gbDatos.Controls.Add(Me.txtCodFactura)
-        Me.gbDatos.Controls.Add(Me.cboTipoFactura)
-        Me.gbDatos.Controls.Add(Me.cboEstado)
-        Me.gbDatos.Controls.Add(Me.label2)
         Me.gbDatos.Controls.Add(Me.Label11)
-        Me.gbDatos.Controls.Add(Me.Label12)
         Me.gbDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbDatos.Location = New System.Drawing.Point(24, 129)
+        Me.gbDatos.Location = New System.Drawing.Point(24, 113)
         Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(936, 134)
-        Me.gbDatos.TabIndex = 73
+        Me.gbDatos.Size = New System.Drawing.Size(599, 57)
+        Me.gbDatos.TabIndex = 1
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Factura"
         '
@@ -342,47 +332,30 @@ Partial Class Venta
         Me.btnBuscarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(279, 58)
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(442, 23)
         Me.btnBuscarCliente.Name = "btnBuscarCliente"
         Me.btnBuscarCliente.Size = New System.Drawing.Size(26, 23)
-        Me.btnBuscarCliente.TabIndex = 19
+        Me.btnBuscarCliente.TabIndex = 1
         Me.btnBuscarCliente.UseVisualStyleBackColor = True
         '
         'txtCliente
         '
         Me.txtCliente.BackColor = System.Drawing.SystemColors.Window
         Me.txtCliente.Enabled = False
-        Me.txtCliente.Location = New System.Drawing.Point(102, 60)
+        Me.txtCliente.Location = New System.Drawing.Point(265, 25)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(171, 20)
         Me.txtCliente.TabIndex = 10
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(492, 23)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(196, 20)
-        Me.dtpFecha.TabIndex = 3
         '
         'label3
         '
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label3.Location = New System.Drawing.Point(57, 63)
+        Me.label3.Location = New System.Drawing.Point(220, 28)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(39, 13)
         Me.label3.TabIndex = 4
         Me.label3.Text = "Cliente"
-        '
-        'label4
-        '
-        Me.label4.AutoSize = True
-        Me.label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label4.Location = New System.Drawing.Point(29, 93)
-        Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(67, 13)
-        Me.label4.TabIndex = 6
-        Me.label4.Text = "Tipo Factura"
         '
         'txtCodFactura
         '
@@ -391,37 +364,7 @@ Partial Class Venta
         Me.txtCodFactura.Location = New System.Drawing.Point(102, 25)
         Me.txtCodFactura.Name = "txtCodFactura"
         Me.txtCodFactura.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodFactura.TabIndex = 1
-        '
-        'cboTipoFactura
-        '
-        Me.cboTipoFactura.BackColor = System.Drawing.SystemColors.Window
-        Me.cboTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTipoFactura.FormattingEnabled = True
-        Me.cboTipoFactura.Location = New System.Drawing.Point(102, 90)
-        Me.cboTipoFactura.Name = "cboTipoFactura"
-        Me.cboTipoFactura.Size = New System.Drawing.Size(171, 21)
-        Me.cboTipoFactura.TabIndex = 7
-        '
-        'cboEstado
-        '
-        Me.cboEstado.BackColor = System.Drawing.SystemColors.Window
-        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(492, 57)
-        Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(148, 21)
-        Me.cboEstado.TabIndex = 9
-        '
-        'label2
-        '
-        Me.label2.AutoSize = True
-        Me.label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.Location = New System.Drawing.Point(449, 29)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(37, 13)
-        Me.label2.TabIndex = 2
-        Me.label2.Text = "Fecha"
+        Me.txtCodFactura.TabIndex = 0
         '
         'Label11
         '
@@ -433,24 +376,21 @@ Partial Class Venta
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Código Factura"
         '
-        'Label12
+        'dtpFecha
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(449, 60)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(40, 13)
-        Me.Label12.TabIndex = 8
-        Me.Label12.Text = "Estado"
+        Me.dtpFecha.Location = New System.Drawing.Point(758, 27)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(196, 20)
+        Me.dtpFecha.TabIndex = 15
         '
         'lsvMostrar
         '
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCod, Me.chNombre, Me.chTipo, Me.chPrecio, Me.chCantidad, Me.chTotal})
         Me.lsvMostrar.FullRowSelect = True
         Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(24, 341)
+        Me.lsvMostrar.Location = New System.Drawing.Point(24, 254)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(936, 197)
+        Me.lsvMostrar.Size = New System.Drawing.Size(936, 284)
         Me.lsvMostrar.TabIndex = 79
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
@@ -572,8 +512,10 @@ Partial Class Venta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1055, 631)
+        Me.ClientSize = New System.Drawing.Size(979, 631)
+        Me.Controls.Add(Me.gbDatos)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.lblNombreProducto)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label17)
@@ -583,7 +525,6 @@ Partial Class Venta
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.lsvMostrar)
         Me.Controls.Add(Me.gbArticulos)
-        Me.Controls.Add(Me.gbDatos)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.Label9)
@@ -592,9 +533,11 @@ Partial Class Venta
         Me.Controls.Add(Me.btnCancelar)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Venta"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Venta"
         Me.gbArticulos.ResumeLayout(False)
@@ -628,14 +571,9 @@ Partial Class Venta
     Public WithEvents txtCliente As TextBox
     Private WithEvents dtpFecha As DateTimePicker
     Private WithEvents label3 As Label
-    Private WithEvents label4 As Label
     Private WithEvents txtCodFactura As TextBox
-    Private WithEvents cboTipoFactura As ComboBox
-    Private WithEvents cboEstado As ComboBox
-    Private WithEvents label2 As Label
     Private WithEvents lblCodPresentacion As Label
     Private WithEvents Label11 As Label
-    Private WithEvents Label12 As Label
     Private WithEvents Label14 As Label
     Private WithEvents txtPresentacion As TextBox
     Friend WithEvents lsvMostrar As ListView
@@ -656,4 +594,5 @@ Partial Class Venta
     Private WithEvents Label5 As Label
     Friend WithEvents lblNombreProducto As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

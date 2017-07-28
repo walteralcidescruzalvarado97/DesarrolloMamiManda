@@ -63,6 +63,7 @@ Partial Class FrmEmpleado
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GbDatos.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TPGestionEmpleado.SuspendLayout()
@@ -485,9 +486,11 @@ Partial Class FrmEmpleado
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmEmpleado"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleado"
         Me.GbDatos.ResumeLayout(False)
@@ -540,4 +543,5 @@ Partial Class FrmEmpleado
     Friend WithEvents ChSexo As ColumnHeader
     Friend WithEvents btnInsertar As Button
     Friend WithEvents mtbTelefono As TextBox
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

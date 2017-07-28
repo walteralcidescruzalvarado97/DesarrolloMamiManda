@@ -7,6 +7,11 @@ Public Class FrmEmpleado
         MostrarEmpleado()
         CboTipoEmpleado.Text = Nothing
         CboSexo.Text = Nothing
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Empleado")
     End Sub
 
 #Region "SCRUD"

@@ -72,6 +72,10 @@ Public Class FrmConfiguracion
     End Sub
     Private Sub FrmConfiguracion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Configuracion")
 
         Dim cadena As String = My.Settings.ConexionTemporal.ToString
         If cadena <> String.Empty Then

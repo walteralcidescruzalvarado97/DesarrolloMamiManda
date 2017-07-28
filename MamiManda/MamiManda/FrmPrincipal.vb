@@ -3,6 +3,11 @@ Public Class FrmPrincipal
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BtnMenu2.Hide()
         Panel3.Width = 227
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "MAMIMANDA")
     End Sub
 
     Private Sub BtnMenu2_Click(sender As Object, e As EventArgs) Handles BtnMenu2.Click

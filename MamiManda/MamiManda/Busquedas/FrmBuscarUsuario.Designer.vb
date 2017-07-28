@@ -32,6 +32,7 @@ Partial Class FrmBuscarUsuario
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'lsvMostrar
@@ -138,4 +139,5 @@ Partial Class FrmBuscarUsuario
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

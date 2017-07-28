@@ -64,9 +64,11 @@ Partial Class FrmCliente
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TPListar = New System.Windows.Forms.TabPage()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.gbDatos.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -459,6 +461,7 @@ Partial Class FrmCliente
         '
         Me.TPListar.BackgroundImage = CType(resources.GetObject("TPListar.BackgroundImage"), System.Drawing.Image)
         Me.TPListar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TPListar.Controls.Add(Me.btnReporte)
         Me.TPListar.Controls.Add(Me.btnEditar)
         Me.TPListar.Controls.Add(Me.txtBuscar)
         Me.TPListar.Controls.Add(Me.Label14)
@@ -470,6 +473,15 @@ Partial Class FrmCliente
         Me.TPListar.TabIndex = 1
         Me.TPListar.Text = "Listar Clientes"
         Me.TPListar.UseVisualStyleBackColor = True
+        '
+        'btnReporte
+        '
+        Me.btnReporte.Location = New System.Drawing.Point(485, 61)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(75, 23)
+        Me.btnReporte.TabIndex = 113
+        Me.btnReporte.Text = "Reporte"
+        Me.btnReporte.UseVisualStyleBackColor = True
         '
         'btnEditar
         '
@@ -573,4 +585,6 @@ Partial Class FrmCliente
     Friend WithEvents Label14 As Label
     Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents mtbTelefono As TextBox
+    Friend WithEvents btnReporte As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

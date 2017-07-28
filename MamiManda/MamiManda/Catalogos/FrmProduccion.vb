@@ -14,6 +14,11 @@ Public Class FrmProduccion
     Private Sub FrmProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False)
         Limpiar()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Produccion")
     End Sub
 
 #Region "Funciones"
@@ -104,41 +109,6 @@ Public Class FrmProduccion
             cnn.Close()
         End Try
     End Sub
-
-    'Private Sub VerificarMateriaPrima(ByVal inventario As String, ByVal materia As Integer)
-    '    If cnn.State = ConnectionState.Open Then
-    '        cnn.Close()
-    '    End If
-    '    cnn.Open()
-    '    Try
-    '        Using cmd As New SqlCommand
-    '            With cmd
-    '                .CommandText = "Sp_VerificarExistencia"
-    '                .CommandType = CommandType.StoredProcedure
-    '                .Connection = cnn
-    '                .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = inventario
-    '                .Parameters.Add("@IdMateriaPrima", SqlDbType.Int).Value = materia
-    '                .ExecuteNonQuery()
-    '            End With
-    '            Dim VerIngrediente As SqlDataReader
-    '            VerIngrediente = cmd.ExecuteReader()
-
-
-    '            While VerReceta.Read = True
-    '                With Me.lsvMostrar.Items.Add(VerReceta("NombreProducto").ToString)
-    '                    .SubItems.Add(VerReceta("NombreMateriaPrima").ToString)
-    '                    .SubItems.Add(VerReceta("IdInventario").ToString)
-    '                    .SubItems.Add(VerReceta("IdMateriaPrima").ToString)
-    '                End With
-    '            End While
-    '        End Using
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    Finally
-    '        cnn.Close()
-    '    End Try
-    'End Sub
-
 
 #End Region
 

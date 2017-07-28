@@ -11,7 +11,7 @@ Public Class FrmReceta
     End Sub
 
     Public Sub ObtenerNombre(Nombre As String) Implements IForm2.ObtenerNombre
-        'txtCodMateria.Text = Nombre
+
     End Sub
 
     Public Sub ObtenerCodReceta(Codigo As String) Implements IAgregarMateria.ObtenerCodReceta
@@ -19,16 +19,21 @@ Public Class FrmReceta
     End Sub
 
     Public Sub ObtenerMateria(Materia As String) Implements IAgregarMateria.ObtenerMateria
-        'Se debe dejar vacia y con el llamado para que funcione la interfaz
+
     End Sub
 
     Public Sub ObtenerMedida(Medida As String) Implements IAgregarMateria.ObtenerMedida
-        'Se debe dejar vacia y con el llamado para que funcione la interfaz
+
     End Sub
 
     Private Sub FrmReceta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarBotones(True, False, False, False, False)
         ListarReceta()
+
+        Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
+        HelpProvider1.HelpNamespace = chmFilePath
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
+        HelpProvider1.SetHelpKeyword(Me, "Receta")
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click

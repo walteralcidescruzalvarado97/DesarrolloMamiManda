@@ -41,7 +41,7 @@ Partial Class FrmBuscarPresentacion
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
-        Me.txtBuscar.TabIndex = 85
+        Me.txtBuscar.TabIndex = 0
         '
         'Label11
         '
@@ -62,7 +62,7 @@ Partial Class FrmBuscarPresentacion
         Me.lsvMostrar.Location = New System.Drawing.Point(12, 87)
         Me.lsvMostrar.Name = "lsvMostrar"
         Me.lsvMostrar.Size = New System.Drawing.Size(588, 241)
-        Me.lsvMostrar.TabIndex = 86
+        Me.lsvMostrar.TabIndex = 1
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details
         '

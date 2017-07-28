@@ -65,6 +65,7 @@ Partial Class FrmUsuario
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.AbrirFoto = New System.Windows.Forms.OpenFileDialog()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GrupBox1.SuspendLayout()
         CType(Me.FotoAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -520,8 +521,10 @@ Partial Class FrmUsuario
         Me.ClientSize = New System.Drawing.Size(599, 323)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmUsuario"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión Usuario"
         Me.GrupBox1.ResumeLayout(False)
@@ -578,4 +581,5 @@ Partial Class FrmUsuario
     Friend WithEvents btnAbrir As Button
     Friend WithEvents FotoAgregar As PictureBox
     Friend WithEvents AbrirFoto As OpenFileDialog
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

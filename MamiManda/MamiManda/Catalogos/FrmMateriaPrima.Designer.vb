@@ -62,6 +62,7 @@ Partial Class FrmMateriaPrima
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -478,9 +479,11 @@ Partial Class FrmMateriaPrima
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmMateriaPrima"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MateriaPrima"
         Me.TabControl1.ResumeLayout(False)
@@ -533,4 +536,5 @@ Partial Class FrmMateriaPrima
     Friend WithEvents ChProveedor As ColumnHeader
     Friend WithEvents ChFecha As ColumnHeader
     Friend WithEvents ChMedida As ColumnHeader
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class
