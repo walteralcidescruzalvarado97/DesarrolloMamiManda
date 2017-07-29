@@ -72,7 +72,7 @@
     <ApplicationIcon>Imagen1.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -185,6 +185,14 @@
     </Compile>
     <Compile Include="Catalogos\FrmReceta.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dsBakerySystem.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBakerySystem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBakerySystem.vb">
+      <DependentUpon>dsBakerySystem.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmDetalleFactura.Designer.vb">
       <DependentUpon>FrmDetalleFactura.vb</DependentUpon>
@@ -312,6 +320,42 @@
     <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteCliente.Designer.vb">
+      <DependentUpon>FrmReporteCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteEmpleado.Designer.vb">
+      <DependentUpon>FrmReporteEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteInventario.Designer.vb">
+      <DependentUpon>FrmReporteInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteMateriaPrima.Designer.vb">
+      <DependentUpon>FrmReporteMateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteMateriaPrima.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReportePresentacionProducto.Designer.vb">
+      <DependentUpon>FrmReportePresentacionProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReportePresentacionProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteProveedor.Designer.vb">
+      <DependentUpon>FrmReporteProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\ReporteClientes.Designer.vb">
       <DependentUpon>ReporteClientes.vb</DependentUpon>
     </Compile>
@@ -359,6 +403,42 @@
     </Compile>
     <Compile Include="Reportes\ReporteX.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptCliente.Designer.vb">
+      <DependentUpon>RptCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptCliente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptEmpleado.Designer.vb">
+      <DependentUpon>RptEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptEmpleado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptInventario.Designer.vb">
+      <DependentUpon>RptInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptInventario.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptMateriaPrima.Designer.vb">
+      <DependentUpon>RptMateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptMateriaPrima.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptPresentacionProducto.Designer.vb">
+      <DependentUpon>RptPresentacionProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptPresentacionProducto.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptProveedor.Designer.vb">
+      <DependentUpon>RptProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptProveedor.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Splash_BakerySystem.Designer.vb">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
@@ -453,6 +533,24 @@
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteCliente.resx">
+      <DependentUpon>FrmReporteCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteEmpleado.resx">
+      <DependentUpon>FrmReporteEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteInventario.resx">
+      <DependentUpon>FrmReporteInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteMateriaPrima.resx">
+      <DependentUpon>FrmReporteMateriaPrima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReportePresentacionProducto.resx">
+      <DependentUpon>FrmReportePresentacionProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteProveedor.resx">
+      <DependentUpon>FrmReporteProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteClientes.resx">
       <DependentUpon>ReporteClientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +575,24 @@
     <EmbeddedResource Include="Reportes\ReporteX.resx">
       <DependentUpon>ReporteX.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptCliente.resx">
+      <DependentUpon>RptCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptEmpleado.resx">
+      <DependentUpon>RptEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptInventario.resx">
+      <DependentUpon>RptInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptMateriaPrima.resx">
+      <DependentUpon>RptMateriaPrima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptPresentacionProducto.resx">
+      <DependentUpon>RptPresentacionProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptProveedor.resx">
+      <DependentUpon>RptProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash_BakerySystem.resx">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +601,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="dsBakerySystem.xsc">
+      <DependentUpon>dsBakerySystem.xsd</DependentUpon>
+    </None>
+    <None Include="dsBakerySystem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBakerySystem.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsBakerySystem.xss">
+      <DependentUpon>dsBakerySystem.xsd</DependentUpon>
+    </None>
     <None Include="MamiManda_TemporaryKey.pfx" />
     <Content Include="ManualAyuda.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -511,7 +638,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -523,12 +650,12 @@
   <ItemGroup>
     <PublishFile Include="DevExpress.Data.v16.1.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
