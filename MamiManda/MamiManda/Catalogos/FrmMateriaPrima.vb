@@ -79,7 +79,7 @@ Public Class FrmMateriaPrima
                         .Parameters.Add("@ExistenciaMinima", SqlDbType.Int).Value = TxtExistenciaMinima.Text.Trim
                         .Parameters.Add("@Existencia", SqlDbType.Int).Value = 0
                         .Parameters.Add("@PrecioCostoM", SqlDbType.Money).Value = TxtPrecio.Text.Trim
-                        .Parameters.Add("@Fecha", SqlDbType.Date).Value = TxtFecha.Text.Trim
+                        .Parameters.Add("@Fecha", SqlDbType.Date).Value = TxtFecha.Value
                         .Parameters.Add("@UnidadMedida", SqlDbType.Int).Value = CboUnidadMedida.SelectedValue
                         .Parameters.Add("@RtnProveedor", SqlDbType.NVarChar).Value = TxtRtnProveedor.Text.Trim
                         .ExecuteNonQuery()
@@ -111,7 +111,7 @@ Public Class FrmMateriaPrima
                     .Parameters.Add("@ExistenciaMinima", SqlDbType.Int).Value = TxtExistenciaMinima.Text.Trim
                     .Parameters.Add("@Existencia", SqlDbType.Int).Value = existencia
                     .Parameters.Add("@PrecioCostoM", SqlDbType.Money).Value = TxtPrecio.Text.Trim
-                    .Parameters.Add("@Fecha", SqlDbType.Date).Value = TxtFecha.Text.Trim
+                    .Parameters.Add("@Fecha", SqlDbType.Date).Value = TxtFecha.Value
                     .Parameters.Add("@UnidadMedida", SqlDbType.Int).Value = CboUnidadMedida.SelectedValue
                     .Parameters.Add("@RtnProveedor", SqlDbType.NVarChar).Value = TxtRtnProveedor.Text.Trim
                     .ExecuteNonQuery()
@@ -244,7 +244,6 @@ Public Class FrmMateriaPrima
         TxtNombreMateriaPrima.Enabled = valor
         TxtExistenciaMinima.Enabled = valor
         TxtPrecio.Enabled = valor
-        TxtFecha.Enabled = valor
         CboUnidadMedida.Enabled = valor
         btnProveedor.Enabled = valor
 
@@ -282,7 +281,6 @@ Public Class FrmMateriaPrima
         If Validar(TxtNombreMateriaPrima, "Debe ingresar un nombre de materia prima") Then
         ElseIf Validar(TxtExistenciaMinima, "Debe ingresar la existencia minima") Then
         ElseIf Validar(TxtPrecio, "Debe ingresar el precio") Then
-        ElseIf Validar(TxtFecha, "Debe ingresar ula fecha") Then
         ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
         ElseIf Validar(TxtRtnProveedor, "Debe seleccionar el rtn del proveedor") Then
         Else
@@ -298,7 +296,6 @@ Public Class FrmMateriaPrima
         TxtNombreMateriaPrima.Text = Nothing
         TxtExistenciaMinima.Text = Nothing
         TxtPrecio.Text = Nothing
-        TxtFecha.Text = Nothing
         CboUnidadMedida.SelectedIndex = -1
         TxtRtnProveedor.Text = Nothing
     End Sub
@@ -311,7 +308,6 @@ Public Class FrmMateriaPrima
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         If Validar(TxtNombreMateriaPrima, "Debe ingresar un nombre de materia prima") Then
         ElseIf Validar(TxtPrecio, "Debe ingresar el precio") Then
-        ElseIf Validar(TxtFecha, "Debe ingresar ula fecha") Then
         ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
         ElseIf Validar(TxtRtnProveedor, "Debe seleccionar el rtn del proveedor") Then
         Else

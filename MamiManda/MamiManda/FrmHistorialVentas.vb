@@ -22,8 +22,6 @@ Public Class FrmHistorialVentas
                     With Me.LsvMostrarVentas.Items.Add(VerFactura("IdFactura").ToString)
                         .SubItems.Add(VerFactura("RTNCliente").ToString)
                         .SubItems.Add(VerFactura("Fecha").ToString)
-                        .SubItems.Add(VerFactura("TipoDocumento").ToString)
-                        .SubItems.Add(VerFactura("TipoFactura").ToString)
                         .SubItems.Add(VerFactura("Subtotal").ToString)
                         .SubItems.Add(VerFactura("ISV").ToString)
                         .SubItems.Add(VerFactura("Total").ToString)

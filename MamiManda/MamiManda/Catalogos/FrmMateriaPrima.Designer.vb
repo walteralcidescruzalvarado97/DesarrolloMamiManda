@@ -34,8 +34,6 @@ Partial Class FrmMateriaPrima
         Me.CboUnidadMedida = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TxtFecha = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtExistenciaMinima = New System.Windows.Forms.TextBox()
@@ -63,6 +61,7 @@ Partial Class FrmMateriaPrima
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.TxtFecha = New System.Windows.Forms.DateTimePicker()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -76,7 +75,7 @@ Partial Class FrmMateriaPrima
         Me.TabControl1.Location = New System.Drawing.Point(-5, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(741, 389)
+        Me.TabControl1.Size = New System.Drawing.Size(737, 389)
         Me.TabControl1.TabIndex = 42
         '
         'TabPage1
@@ -98,7 +97,7 @@ Partial Class FrmMateriaPrima
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(733, 363)
+        Me.TabPage1.Size = New System.Drawing.Size(729, 363)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión Materia Prima"
         '
@@ -153,8 +152,6 @@ Partial Class FrmMateriaPrima
         Me.GroupBox1.Controls.Add(Me.CboUnidadMedida)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.TxtFecha)
-        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.TxtPrecio)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.TxtExistenciaMinima)
@@ -219,22 +216,6 @@ Partial Class FrmMateriaPrima
         Me.Label12.Size = New System.Drawing.Size(93, 13)
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "Unidad de medida"
-        '
-        'TxtFecha
-        '
-        Me.TxtFecha.Location = New System.Drawing.Point(172, 145)
-        Me.TxtFecha.Name = "TxtFecha"
-        Me.TxtFecha.Size = New System.Drawing.Size(146, 20)
-        Me.TxtFecha.TabIndex = 13
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(127, 148)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(37, 13)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "Fecha"
         '
         'TxtPrecio
         '
@@ -389,7 +370,7 @@ Partial Class FrmMateriaPrima
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(733, 363)
+        Me.TabPage2.Size = New System.Drawing.Size(729, 363)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Listar Materia Prima"
         '
@@ -469,13 +450,22 @@ Partial Class FrmMateriaPrima
         Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
         Me.txtBuscar.TabIndex = 90
         '
+        'TxtFecha
+        '
+        Me.TxtFecha.Location = New System.Drawing.Point(738, 97)
+        Me.TxtFecha.Name = "TxtFecha"
+        Me.TxtFecha.Size = New System.Drawing.Size(200, 20)
+        Me.TxtFecha.TabIndex = 92
+        Me.TxtFecha.Visible = False
+        '
         'FrmMateriaPrima
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(716, 384)
+        Me.ClientSize = New System.Drawing.Size(732, 384)
+        Me.Controls.Add(Me.TxtFecha)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -506,8 +496,6 @@ Partial Class FrmMateriaPrima
     Friend WithEvents TxtRtnProveedor As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents TxtFecha As TextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents TxtPrecio As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TxtExistenciaMinima As TextBox
@@ -537,4 +525,5 @@ Partial Class FrmMateriaPrima
     Friend WithEvents ChFecha As ColumnHeader
     Friend WithEvents ChMedida As ColumnHeader
     Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents TxtFecha As DateTimePicker
 End Class

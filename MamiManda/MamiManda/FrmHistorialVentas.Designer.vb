@@ -28,8 +28,6 @@ Partial Class FrmHistorialVentas
         Me.chCodigo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCliente = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTipoDocumento = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTipoFactura = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSubtotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chIsv = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -41,7 +39,7 @@ Partial Class FrmHistorialVentas
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(213, 102)
+        Me.txtBuscar.Location = New System.Drawing.Point(114, 101)
         Me.txtBuscar.Multiline = True
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(403, 26)
@@ -49,12 +47,12 @@ Partial Class FrmHistorialVentas
         '
         'LsvMostrarVentas
         '
-        Me.LsvMostrarVentas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodigo, Me.chCliente, Me.chFecha, Me.chTipoDocumento, Me.chTipoFactura, Me.chSubtotal, Me.chIsv, Me.chTotal, Me.chUsuario})
+        Me.LsvMostrarVentas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodigo, Me.chCliente, Me.chFecha, Me.chSubtotal, Me.chIsv, Me.chTotal, Me.chUsuario})
         Me.LsvMostrarVentas.FullRowSelect = True
         Me.LsvMostrarVentas.GridLines = True
         Me.LsvMostrarVentas.Location = New System.Drawing.Point(12, 147)
         Me.LsvMostrarVentas.Name = "LsvMostrarVentas"
-        Me.LsvMostrarVentas.Size = New System.Drawing.Size(828, 302)
+        Me.LsvMostrarVentas.Size = New System.Drawing.Size(637, 302)
         Me.LsvMostrarVentas.TabIndex = 112
         Me.LsvMostrarVentas.UseCompatibleStateImageBehavior = False
         Me.LsvMostrarVentas.View = System.Windows.Forms.View.Details
@@ -73,16 +71,6 @@ Partial Class FrmHistorialVentas
         '
         Me.chFecha.Text = "Fecha"
         Me.chFecha.Width = 120
-        '
-        'chTipoDocumento
-        '
-        Me.chTipoDocumento.Text = "Tipo Documento"
-        Me.chTipoDocumento.Width = 100
-        '
-        'chTipoFactura
-        '
-        Me.chTipoFactura.Text = "Tipo Factura"
-        Me.chTipoFactura.Width = 100
         '
         'chSubtotal
         '
@@ -121,7 +109,7 @@ Partial Class FrmHistorialVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(852, 468)
+        Me.ClientSize = New System.Drawing.Size(659, 468)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.LsvMostrarVentas)
@@ -145,8 +133,6 @@ Partial Class FrmHistorialVentas
     Friend WithEvents chCodigo As ColumnHeader
     Friend WithEvents chCliente As ColumnHeader
     Friend WithEvents chFecha As ColumnHeader
-    Friend WithEvents chTipoDocumento As ColumnHeader
-    Friend WithEvents chTipoFactura As ColumnHeader
     Friend WithEvents chUsuario As ColumnHeader
     Friend WithEvents chSubtotal As ColumnHeader
     Friend WithEvents chIsv As ColumnHeader
