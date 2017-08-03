@@ -23,6 +23,7 @@ Partial Class FrmReporteInventario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReporteInventario))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IdInventarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -109,6 +110,7 @@ Partial Class FrmReporteInventario
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(247, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 13)
@@ -117,6 +119,7 @@ Partial Class FrmReporteInventario
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(60, 30)
@@ -169,12 +172,16 @@ Partial Class FrmReporteInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(680, 293)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtId)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmReporteInventario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Inventario"

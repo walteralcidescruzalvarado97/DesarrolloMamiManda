@@ -23,6 +23,7 @@ Partial Class FrmReportePresentacionProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReportePresentacionProducto))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -48,6 +49,7 @@ Partial Class FrmReportePresentacionProducto
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(237, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 13)
@@ -56,6 +58,7 @@ Partial Class FrmReportePresentacionProducto
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(63, 37)
@@ -169,15 +172,19 @@ Partial Class FrmReportePresentacionProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(673, 287)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtID)
         Me.Controls.Add(Me.Button1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmReportePresentacionProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmReportePresentacionProducto"
+        Me.Text = "Reporte Presentacion Producto"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -320,12 +320,6 @@
     <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Reportes\FrmReporteCliente.Designer.vb">
       <DependentUpon>FrmReporteCliente.vb</DependentUpon>
     </Compile>
@@ -544,9 +538,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteCliente.resx">
       <DependentUpon>FrmReporteCliente.vb</DependentUpon>

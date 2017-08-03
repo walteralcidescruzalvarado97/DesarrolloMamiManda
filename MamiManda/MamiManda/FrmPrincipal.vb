@@ -91,4 +91,28 @@ Public Class FrmPrincipal
     Private Sub TileFacturas_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileFacturas.ItemClick
         FrmHistorialVentas.Show()
     End Sub
+
+    Private Sub ReporteDeClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeClienteToolStripMenuItem.Click
+        FrmReporteCliente.Show()
+    End Sub
+
+    Private Sub ReporteDeEmpleadpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeEmpleadpToolStripMenuItem.Click
+        FrmReporteEmpleado.Show()
+    End Sub
+
+    Private Sub ReporteDeInventarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeInventarioToolStripMenuItem.Click
+        FrmReporteInventario.Show()
+    End Sub
+
+    Private Sub ReporteDeMateriaPrimaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeMateriaPrimaToolStripMenuItem.Click
+        FrmReporteMateriaPrima.Show()
+    End Sub
+
+    Private Sub ReporteDePresentaciónProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDePresentaciónProductoToolStripMenuItem.Click
+        FrmReportePresentacionProducto.Show()
+    End Sub
+
+    Private Sub ReporteDeProveedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeProveedorToolStripMenuItem.Click
+        FrmReporteProveedor.Show()
+    End Sub
 End Class

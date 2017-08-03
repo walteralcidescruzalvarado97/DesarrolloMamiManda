@@ -23,28 +23,29 @@ Partial Class FrmReporteProveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReporteProveedor))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.TxtRTN = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.RTNProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DsBakerySystemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DsBakerySystem = New MamiManda.dsBakerySystem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.TxtRTN = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ProveedorTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ProveedorTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.DsBakerySystemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -58,14 +59,61 @@ Partial Class FrmReporteProveedor
         Me.DataGridView1.Size = New System.Drawing.Size(642, 198)
         Me.DataGridView1.TabIndex = 0
         '
+        'RTNProveedorDataGridViewTextBoxColumn
+        '
+        Me.RTNProveedorDataGridViewTextBoxColumn.DataPropertyName = "RTNProveedor"
+        Me.RTNProveedorDataGridViewTextBoxColumn.HeaderText = "RTNProveedor"
+        Me.RTNProveedorDataGridViewTextBoxColumn.Name = "RTNProveedorDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'ApellidoDataGridViewTextBoxColumn
+        '
+        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "Email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        '
+        'TelefonoDataGridViewTextBoxColumn
+        '
+        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
+        '
+        'DireccionDataGridViewTextBoxColumn
+        '
+        Me.DireccionDataGridViewTextBoxColumn.DataPropertyName = "direccion"
+        Me.DireccionDataGridViewTextBoxColumn.HeaderText = "direccion"
+        Me.DireccionDataGridViewTextBoxColumn.Name = "DireccionDataGridViewTextBoxColumn"
+        '
         'ProveedorBindingSource
         '
         Me.ProveedorBindingSource.DataMember = "Proveedor"
         Me.ProveedorBindingSource.DataSource = Me.DsBakerySystemBindingSource
         '
+        'DsBakerySystemBindingSource
+        '
+        Me.DsBakerySystemBindingSource.DataSource = Me.DsBakerySystem
+        Me.DsBakerySystemBindingSource.Position = 0
+        '
+        'DsBakerySystem
+        '
+        Me.DsBakerySystem.DataSetName = "dsBakerySystem"
+        Me.DsBakerySystem.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(223, 62)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(82, 13)
@@ -74,6 +122,7 @@ Partial Class FrmReporteProveedor
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(36, 32)
@@ -122,52 +171,6 @@ Partial Class FrmReporteProveedor
         Me.Button1.Text = "Generar Reporte"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'RTNProveedorDataGridViewTextBoxColumn
-        '
-        Me.RTNProveedorDataGridViewTextBoxColumn.DataPropertyName = "RTNProveedor"
-        Me.RTNProveedorDataGridViewTextBoxColumn.HeaderText = "RTNProveedor"
-        Me.RTNProveedorDataGridViewTextBoxColumn.Name = "RTNProveedorDataGridViewTextBoxColumn"
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'ApellidoDataGridViewTextBoxColumn
-        '
-        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
-        '
-        'EmailDataGridViewTextBoxColumn
-        '
-        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "Email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email"
-        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
-        '
-        'TelefonoDataGridViewTextBoxColumn
-        '
-        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
-        '
-        'DireccionDataGridViewTextBoxColumn
-        '
-        Me.DireccionDataGridViewTextBoxColumn.DataPropertyName = "direccion"
-        Me.DireccionDataGridViewTextBoxColumn.HeaderText = "direccion"
-        Me.DireccionDataGridViewTextBoxColumn.Name = "DireccionDataGridViewTextBoxColumn"
-        '
-        'DsBakerySystemBindingSource
-        '
-        Me.DsBakerySystemBindingSource.DataSource = Me.DsBakerySystem
-        Me.DsBakerySystemBindingSource.Position = 0
-        '
-        'DsBakerySystem
-        '
-        Me.DsBakerySystem.DataSetName = "dsBakerySystem"
-        Me.DsBakerySystem.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ProveedorTableAdapter
         '
         Me.ProveedorTableAdapter.ClearBeforeFill = True
@@ -176,21 +179,25 @@ Partial Class FrmReporteProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(669, 326)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtRTN)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmReporteProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Proveedor"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.DsBakerySystemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

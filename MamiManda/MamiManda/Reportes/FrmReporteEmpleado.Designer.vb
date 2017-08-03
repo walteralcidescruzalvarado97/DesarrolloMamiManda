@@ -23,6 +23,7 @@ Partial Class FrmReporteEmpleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReporteEmpleado))
         Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DsBakerySystem = New MamiManda.dsBakerySystem()
         Me.EmpleadoTableAdapter = New MamiManda.dsBakerySystemTableAdapters.EmpleadoTableAdapter()
@@ -151,6 +152,7 @@ Partial Class FrmReporteEmpleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(171, 27)
@@ -202,6 +204,7 @@ Partial Class FrmReporteEmpleado
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(345, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 13)
@@ -212,12 +215,16 @@ Partial Class FrmReporteEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(864, 331)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtId)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmReporteEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Empleado"

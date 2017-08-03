@@ -23,6 +23,7 @@ Partial Class FrmReporteCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReporteCliente))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.RTNClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,7 +56,8 @@ Partial Class FrmReporteCliente
         Me.DataGridView1.DataSource = Me.ClienteBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 128)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(839, 190)
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.Size = New System.Drawing.Size(803, 190)
         Me.DataGridView1.TabIndex = 0
         '
         'RTNClienteDataGridViewTextBoxColumn
@@ -123,6 +125,7 @@ Partial Class FrmReporteCliente
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(345, 64)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 13)
@@ -131,6 +134,7 @@ Partial Class FrmReporteCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(171, 38)
@@ -183,12 +187,16 @@ Partial Class FrmReporteCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(871, 330)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(829, 330)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtRTN)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmReporteCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Cliente"
