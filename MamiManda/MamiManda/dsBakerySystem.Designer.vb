@@ -8635,7 +8635,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8858,7 +8858,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9093,7 +9093,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9411,7 +9411,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9734,7 +9734,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10035,7 +10035,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10307,7 +10307,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10671,7 +10671,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10974,7 +10974,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11241,7 +11241,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11680,7 +11680,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11924,7 +11924,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12253,7 +12253,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12577,7 +12577,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12907,7 +12907,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13257,7 +13257,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13570,7 +13570,7 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.BakerySystemConnectionString
+            Me._connection.ConnectionString = Global.MamiManda.My.MySettings.Default.Conexion
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

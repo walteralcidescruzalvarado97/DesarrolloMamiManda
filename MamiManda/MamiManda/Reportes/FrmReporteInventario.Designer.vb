@@ -54,7 +54,8 @@ Partial Class FrmReporteInventario
         Me.DataGridView1.DataSource = Me.InventarioBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(21, 106)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(643, 175)
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.Size = New System.Drawing.Size(597, 175)
         Me.DataGridView1.TabIndex = 0
         '
         'IdInventarioDataGridViewTextBoxColumn
@@ -111,7 +112,7 @@ Partial Class FrmReporteInventario
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(247, 60)
+        Me.Label1.Location = New System.Drawing.Point(239, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 23
@@ -122,7 +123,7 @@ Partial Class FrmReporteInventario
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(60, 30)
+        Me.GroupBox1.Location = New System.Drawing.Point(52, 30)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(167, 59)
         Me.GroupBox1.TabIndex = 22
@@ -154,14 +155,14 @@ Partial Class FrmReporteInventario
         'TxtId
         '
         Me.TxtId.Enabled = False
-        Me.TxtId.Location = New System.Drawing.Point(335, 57)
+        Me.TxtId.Location = New System.Drawing.Point(327, 57)
         Me.TxtId.Name = "TxtId"
         Me.TxtId.Size = New System.Drawing.Size(151, 20)
         Me.TxtId.TabIndex = 21
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(492, 48)
+        Me.Button1.Location = New System.Drawing.Point(484, 48)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
         Me.Button1.TabIndex = 20
@@ -174,7 +175,7 @@ Partial Class FrmReporteInventario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(680, 293)
+        Me.ClientSize = New System.Drawing.Size(633, 293)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtId)

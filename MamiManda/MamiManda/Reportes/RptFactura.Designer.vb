@@ -19,8 +19,8 @@ Partial Public Class RptFactura
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RptFactura))
+        Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.DsBakerySystem1 = New MamiManda.dsBakerySystem()
         Me.ClienteTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ClienteTableAdapter()
@@ -64,19 +64,19 @@ Partial Public Class RptFactura
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
+        Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
+        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel21 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel20 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel19 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel20 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel21 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
-        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -327,10 +327,10 @@ Partial Public Class RptFactura
         '
         Me.XrLabel15.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "DataTable1.Precio")})
         Me.XrLabel15.Dpi = 100.0!
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(440.7557!, 0!)
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(425.9104!, 0!)
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(34.62587!, 36.0!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(49.47116!, 36.0!)
         Me.XrLabel15.StyleName = "DataField"
         Me.XrLabel15.Text = "XrLabel15"
         '
@@ -338,10 +338,10 @@ Partial Public Class RptFactura
         '
         Me.XrLabel16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "DataTable1.Subtotal")})
         Me.XrLabel16.Dpi = 100.0!
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(559.4218!, 0!)
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(550.0!, 0!)
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel16.SizeF = New System.Drawing.SizeF(44.20323!, 36.0!)
+        Me.XrLabel16.SizeF = New System.Drawing.SizeF(62.50006!, 36.0!)
         Me.XrLabel16.StyleName = "DataField"
         Me.XrLabel16.Text = "XrLabel16"
         '
@@ -460,6 +460,59 @@ Partial Public Class RptFactura
         Me.TopMarginBand1.HeightF = 127.0833!
         Me.TopMarginBand1.Name = "TopMarginBand1"
         '
+        'XrLabel27
+        '
+        Me.XrLabel27.Dpi = 100.0!
+        Me.XrLabel27.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(133.3922!, 90.00001!)
+        Me.XrLabel27.Name = "XrLabel27"
+        Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
+        Me.XrLabel27.StylePriority.UseFont = False
+        Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
+        '
+        'XrLabel26
+        '
+        Me.XrLabel26.Dpi = 100.0!
+        Me.XrLabel26.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(157.2917!, 67.00001!)
+        Me.XrLabel26.Name = "XrLabel26"
+        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(368.8807!, 23.0!)
+        Me.XrLabel26.StylePriority.UseFont = False
+        Me.XrLabel26.Text = "B° Iztoca, Dos Cuadras de Agua Pinguino, Choluteca"
+        '
+        'XrLabel25
+        '
+        Me.XrLabel25.Dpi = 100.0!
+        Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(216.6972!, 41.33334!)
+        Me.XrLabel25.Name = "XrLabel25"
+        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel25.SizeF = New System.Drawing.SizeF(258.6844!, 23.0!)
+        Me.XrLabel25.StylePriority.UseFont = False
+        Me.XrLabel25.Text = "Prop. Pedro Leonardo Martín Ponce"
+        '
+        'XrLabel24
+        '
+        Me.XrLabel24.Dpi = 100.0!
+        Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(169.0425!, 10.00001!)
+        Me.XrLabel24.Name = "XrLabel24"
+        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel24.SizeF = New System.Drawing.SizeF(340.7141!, 31.33334!)
+        Me.XrLabel24.StylePriority.UseFont = False
+        Me.XrLabel24.Text = "PANADERÍA MAMIMANDA"
+        '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.Dpi = 100.0!
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(5.999994!, 10.00001!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        '
         'BottomMarginBand1
         '
         Me.BottomMarginBand1.Dpi = 100.0!
@@ -472,6 +525,42 @@ Partial Public Class RptFactura
         Me.ReportFooter.Dpi = 100.0!
         Me.ReportFooter.HeightF = 113.0!
         Me.ReportFooter.Name = "ReportFooter"
+        '
+        'XrLabel23
+        '
+        Me.XrLabel23.Dpi = 100.0!
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(550.0!, 79.99998!)
+        Me.XrLabel23.Name = "XrLabel23"
+        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel23.SizeF = New System.Drawing.SizeF(71.92188!, 23.0!)
+        Me.XrLabel23.Text = "XrLabel21"
+        '
+        'XrLabel22
+        '
+        Me.XrLabel22.Dpi = 100.0!
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(454.2974!, 79.99998!)
+        Me.XrLabel22.Name = "XrLabel22"
+        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel22.SizeF = New System.Drawing.SizeF(84.37503!, 23.0!)
+        Me.XrLabel22.Text = "Total a pagar"
+        '
+        'XrLabel21
+        '
+        Me.XrLabel21.Dpi = 100.0!
+        Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(550.0!, 45.49999!)
+        Me.XrLabel21.Name = "XrLabel21"
+        Me.XrLabel21.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel21.SizeF = New System.Drawing.SizeF(71.92188!, 23.0!)
+        Me.XrLabel21.Text = "XrLabel21"
+        '
+        'XrLabel20
+        '
+        Me.XrLabel20.Dpi = 100.0!
+        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(478.2557!, 45.49999!)
+        Me.XrLabel20.Name = "XrLabel20"
+        Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel20.SizeF = New System.Drawing.SizeF(60.41672!, 23.0!)
+        Me.XrLabel20.Text = "I.S.V"
         '
         'XrLabel18
         '
@@ -493,95 +582,6 @@ Partial Public Class RptFactura
         XrSummary1.FormatString = "{0:L0.00}"
         XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
         Me.XrLabel19.Summary = XrSummary1
-        '
-        'XrLabel20
-        '
-        Me.XrLabel20.Dpi = 100.0!
-        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(478.2557!, 45.49999!)
-        Me.XrLabel20.Name = "XrLabel20"
-        Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel20.SizeF = New System.Drawing.SizeF(60.41672!, 23.0!)
-        Me.XrLabel20.Text = "I.S.V"
-        '
-        'XrLabel21
-        '
-        Me.XrLabel21.Dpi = 100.0!
-        Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(550.0!, 45.49999!)
-        Me.XrLabel21.Name = "XrLabel21"
-        Me.XrLabel21.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel21.SizeF = New System.Drawing.SizeF(71.92188!, 23.0!)
-        Me.XrLabel21.Text = "XrLabel21"
-        '
-        'XrLabel22
-        '
-        Me.XrLabel22.Dpi = 100.0!
-        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(454.2974!, 79.99998!)
-        Me.XrLabel22.Name = "XrLabel22"
-        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel22.SizeF = New System.Drawing.SizeF(84.37503!, 23.0!)
-        Me.XrLabel22.Text = "Total a pagar"
-        '
-        'XrLabel23
-        '
-        Me.XrLabel23.Dpi = 100.0!
-        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(550.0!, 79.99998!)
-        Me.XrLabel23.Name = "XrLabel23"
-        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel23.SizeF = New System.Drawing.SizeF(71.92188!, 23.0!)
-        Me.XrLabel23.Text = "XrLabel21"
-        '
-        'XrPictureBox1
-        '
-        Me.XrPictureBox1.Dpi = 100.0!
-        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(5.999994!, 10.00001!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
-        '
-        'XrLabel24
-        '
-        Me.XrLabel24.Dpi = 100.0!
-        Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(169.0425!, 10.00001!)
-        Me.XrLabel24.Name = "XrLabel24"
-        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel24.SizeF = New System.Drawing.SizeF(340.7141!, 31.33334!)
-        Me.XrLabel24.StylePriority.UseFont = False
-        Me.XrLabel24.Text = "PANADERÍA MAMIMANDA"
-        '
-        'XrLabel25
-        '
-        Me.XrLabel25.Dpi = 100.0!
-        Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(216.6972!, 41.33334!)
-        Me.XrLabel25.Name = "XrLabel25"
-        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel25.SizeF = New System.Drawing.SizeF(258.6844!, 23.0!)
-        Me.XrLabel25.StylePriority.UseFont = False
-        Me.XrLabel25.Text = "Prop. Pedro Leonardo Martín Ponce"
-        '
-        'XrLabel26
-        '
-        Me.XrLabel26.Dpi = 100.0!
-        Me.XrLabel26.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(157.2917!, 67.00001!)
-        Me.XrLabel26.Name = "XrLabel26"
-        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel26.SizeF = New System.Drawing.SizeF(368.8807!, 23.0!)
-        Me.XrLabel26.StylePriority.UseFont = False
-        Me.XrLabel26.Text = "B° Iztoca, Dos Cuadras de Agua Pinguino, Choluteca"
-        '
-        'XrLabel27
-        '
-        Me.XrLabel27.Dpi = 100.0!
-        Me.XrLabel27.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(133.3922!, 90.00001!)
-        Me.XrLabel27.Name = "XrLabel27"
-        Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
-        Me.XrLabel27.StylePriority.UseFont = False
-        Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
         '
         'RptFactura
         '

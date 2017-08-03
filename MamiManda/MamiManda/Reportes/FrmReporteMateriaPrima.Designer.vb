@@ -56,7 +56,8 @@ Partial Class FrmReporteMateriaPrima
         Me.DataGridView1.DataSource = Me.MateriaPrimaBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 124)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(844, 209)
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.Size = New System.Drawing.Size(801, 209)
         Me.DataGridView1.TabIndex = 0
         '
         'IdMateriaPrimaDataGridViewTextBoxColumn
@@ -189,7 +190,7 @@ Partial Class FrmReporteMateriaPrima
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(871, 345)
+        Me.ClientSize = New System.Drawing.Size(837, 345)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtID)

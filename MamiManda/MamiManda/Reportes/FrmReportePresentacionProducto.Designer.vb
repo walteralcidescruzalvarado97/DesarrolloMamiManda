@@ -50,7 +50,7 @@ Partial Class FrmReportePresentacionProducto
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(237, 63)
+        Me.Label1.Location = New System.Drawing.Point(222, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 23
@@ -61,7 +61,7 @@ Partial Class FrmReportePresentacionProducto
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(63, 37)
+        Me.GroupBox1.Location = New System.Drawing.Point(48, 37)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(167, 59)
         Me.GroupBox1.TabIndex = 22
@@ -93,14 +93,14 @@ Partial Class FrmReportePresentacionProducto
         'TxtID
         '
         Me.TxtID.Enabled = False
-        Me.TxtID.Location = New System.Drawing.Point(330, 60)
+        Me.TxtID.Location = New System.Drawing.Point(315, 60)
         Me.TxtID.Name = "TxtID"
         Me.TxtID.Size = New System.Drawing.Size(151, 20)
         Me.TxtID.TabIndex = 21
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(487, 51)
+        Me.Button1.Location = New System.Drawing.Point(472, 51)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
         Me.Button1.TabIndex = 20
@@ -115,7 +115,8 @@ Partial Class FrmReportePresentacionProducto
         Me.DataGridView1.DataSource = Me.PresentacionProductoBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 121)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(642, 154)
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.Size = New System.Drawing.Size(601, 154)
         Me.DataGridView1.TabIndex = 24
         '
         'IdInventarioDataGridViewTextBoxColumn
@@ -174,7 +175,7 @@ Partial Class FrmReportePresentacionProducto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(673, 287)
+        Me.ClientSize = New System.Drawing.Size(633, 287)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
