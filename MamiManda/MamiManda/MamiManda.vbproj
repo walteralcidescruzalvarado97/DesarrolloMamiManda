@@ -320,6 +320,12 @@
     <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\FrmReporteCliente.Designer.vb">
       <DependentUpon>FrmReporteCliente.vb</DependentUpon>
     </Compile>
@@ -414,6 +420,12 @@
       <DependentUpon>RptEmpleado.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RptEmpleado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptFactura.Designer.vb">
+      <DependentUpon>RptFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptFactura.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\RptInventario.Designer.vb">
@@ -533,6 +545,9 @@
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteCliente.resx">
       <DependentUpon>FrmReporteCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -580,6 +595,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptEmpleado.resx">
       <DependentUpon>RptEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptFactura.resx">
+      <DependentUpon>RptFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptInventario.resx">
       <DependentUpon>RptInventario.vb</DependentUpon>
@@ -638,7 +656,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

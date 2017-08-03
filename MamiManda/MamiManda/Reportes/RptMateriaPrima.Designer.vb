@@ -19,31 +19,32 @@ Partial Public Class RptMateriaPrima
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RptMateriaPrima))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow4 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell14 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.DsBakerySystem1 = New MamiManda.dsBakerySystem()
         Me.ClienteTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ClienteTableAdapter()
         Me.MateriaPrimaTableAdapter1 = New MamiManda.dsBakerySystemTableAdapters.MateriaPrimaTableAdapter()
         Me.PageHeaderBand1 = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableRow4 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell14 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.PageFooterBand1 = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
@@ -55,10 +56,14 @@ Partial Public Class RptMateriaPrima
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
+        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
+        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -69,6 +74,62 @@ Partial Public Class RptMateriaPrima
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrTable2
+        '
+        Me.XrTable2.AnchorVertical = CType((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top Or DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom), DevExpress.XtraReports.UI.VerticalAnchorStyles)
+        Me.XrTable2.Dpi = 100.0!
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
+        Me.XrTable2.Name = "XrTable2"
+        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow4})
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(637.0!, 23.0!)
+        '
+        'XrTableRow4
+        '
+        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell12, Me.XrTableCell14})
+        Me.XrTableRow4.Dpi = 100.0!
+        Me.XrTableRow4.Name = "XrTableRow4"
+        Me.XrTableRow4.Weight = 1.0R
+        '
+        'XrTableCell8
+        '
+        Me.XrTableCell8.CanGrow = False
+        Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.IdMateriaPrima")})
+        Me.XrTableCell8.Dpi = 100.0!
+        Me.XrTableCell8.Name = "XrTableCell8"
+        Me.XrTableCell8.StyleName = "DataField"
+        Me.XrTableCell8.Text = "XrTableCell8"
+        Me.XrTableCell8.Weight = 0.252747252747253R
+        '
+        'XrTableCell10
+        '
+        Me.XrTableCell10.CanGrow = False
+        Me.XrTableCell10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.NombreMateriaPrima")})
+        Me.XrTableCell10.Dpi = 100.0!
+        Me.XrTableCell10.Name = "XrTableCell10"
+        Me.XrTableCell10.StyleName = "DataField"
+        Me.XrTableCell10.Text = "XrTableCell10"
+        Me.XrTableCell10.Weight = 0.346938775510204R
+        '
+        'XrTableCell12
+        '
+        Me.XrTableCell12.CanGrow = False
+        Me.XrTableCell12.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.Existencia")})
+        Me.XrTableCell12.Dpi = 100.0!
+        Me.XrTableCell12.Name = "XrTableCell12"
+        Me.XrTableCell12.StyleName = "DataField"
+        Me.XrTableCell12.Text = "XrTableCell12"
+        Me.XrTableCell12.Weight = 0.161695447409733R
+        '
+        'XrTableCell14
+        '
+        Me.XrTableCell14.CanGrow = False
+        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.PrecioCostoM")})
+        Me.XrTableCell14.Dpi = 100.0!
+        Me.XrTableCell14.Name = "XrTableCell14"
+        Me.XrTableCell14.StyleName = "DataField"
+        Me.XrTableCell14.Text = "XrTableCell14"
+        Me.XrTableCell14.Weight = 0.23861852433281R
         '
         'DsBakerySystem1
         '
@@ -99,6 +160,53 @@ Partial Public Class RptMateriaPrima
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(637.0!, 36.0!)
         '
+        'XrTableRow3
+        '
+        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9, Me.XrTableCell11, Me.XrTableCell13})
+        Me.XrTableRow3.Dpi = 100.0!
+        Me.XrTableRow3.Name = "XrTableRow3"
+        Me.XrTableRow3.Weight = 1.0R
+        '
+        'XrTableCell7
+        '
+        Me.XrTableCell7.CanGrow = False
+        Me.XrTableCell7.Dpi = 100.0!
+        Me.XrTableCell7.Name = "XrTableCell7"
+        Me.XrTableCell7.StyleName = "FieldCaption"
+        Me.XrTableCell7.Text = "Id Materia Prima"
+        Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell7.Weight = 0.252747252747253R
+        '
+        'XrTableCell9
+        '
+        Me.XrTableCell9.CanGrow = False
+        Me.XrTableCell9.Dpi = 100.0!
+        Me.XrTableCell9.Name = "XrTableCell9"
+        Me.XrTableCell9.StyleName = "FieldCaption"
+        Me.XrTableCell9.Text = "Nombre Materia Prima"
+        Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell9.Weight = 0.346938775510204R
+        '
+        'XrTableCell11
+        '
+        Me.XrTableCell11.CanGrow = False
+        Me.XrTableCell11.Dpi = 100.0!
+        Me.XrTableCell11.Name = "XrTableCell11"
+        Me.XrTableCell11.StyleName = "FieldCaption"
+        Me.XrTableCell11.Text = "Existencia"
+        Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell11.Weight = 0.161695447409733R
+        '
+        'XrTableCell13
+        '
+        Me.XrTableCell13.CanGrow = False
+        Me.XrTableCell13.Dpi = 100.0!
+        Me.XrTableCell13.Name = "XrTableCell13"
+        Me.XrTableCell13.StyleName = "FieldCaption"
+        Me.XrTableCell13.Text = "Precio Costo M"
+        Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell13.Weight = 0.23861852433281R
+        '
         'XrTableRow1
         '
         Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2, Me.XrTableCell3})
@@ -127,15 +235,6 @@ Partial Public Class RptMateriaPrima
         Me.XrTableCell3.Text = "XrTableCell3"
         Me.XrTableCell3.Weight = 1.0R
         '
-        'XrTable2
-        '
-        Me.XrTable2.AnchorVertical = CType((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top Or DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom), DevExpress.XtraReports.UI.VerticalAnchorStyles)
-        Me.XrTable2.Dpi = 100.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
-        Me.XrTable2.Name = "XrTable2"
-        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow4})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(637.0!, 23.0!)
-        '
         'XrTableRow2
         '
         Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell4, Me.XrTableCell5, Me.XrTableCell6})
@@ -163,100 +262,6 @@ Partial Public Class RptMateriaPrima
         Me.XrTableCell6.Name = "XrTableCell6"
         Me.XrTableCell6.Text = "XrTableCell6"
         Me.XrTableCell6.Weight = 1.0R
-        '
-        'XrTableRow3
-        '
-        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9, Me.XrTableCell11, Me.XrTableCell13})
-        Me.XrTableRow3.Dpi = 100.0!
-        Me.XrTableRow3.Name = "XrTableRow3"
-        Me.XrTableRow3.Weight = 1.0R
-        '
-        'XrTableRow4
-        '
-        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell12, Me.XrTableCell14})
-        Me.XrTableRow4.Dpi = 100.0!
-        Me.XrTableRow4.Name = "XrTableRow4"
-        Me.XrTableRow4.Weight = 1.0R
-        '
-        'XrTableCell7
-        '
-        Me.XrTableCell7.CanGrow = False
-        Me.XrTableCell7.Dpi = 100.0!
-        Me.XrTableCell7.Name = "XrTableCell7"
-        Me.XrTableCell7.StyleName = "FieldCaption"
-        Me.XrTableCell7.Text = "Id Materia Prima"
-        Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell7.Weight = 0.25274725274725274R
-        '
-        'XrTableCell8
-        '
-        Me.XrTableCell8.CanGrow = False
-        Me.XrTableCell8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.IdMateriaPrima")})
-        Me.XrTableCell8.Dpi = 100.0!
-        Me.XrTableCell8.Name = "XrTableCell8"
-        Me.XrTableCell8.StyleName = "DataField"
-        Me.XrTableCell8.Text = "XrTableCell8"
-        Me.XrTableCell8.Weight = 0.25274725274725274R
-        '
-        'XrTableCell9
-        '
-        Me.XrTableCell9.CanGrow = False
-        Me.XrTableCell9.Dpi = 100.0!
-        Me.XrTableCell9.Name = "XrTableCell9"
-        Me.XrTableCell9.StyleName = "FieldCaption"
-        Me.XrTableCell9.Text = "Nombre Materia Prima"
-        Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell9.Weight = 0.34693877551020408R
-        '
-        'XrTableCell10
-        '
-        Me.XrTableCell10.CanGrow = False
-        Me.XrTableCell10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.NombreMateriaPrima")})
-        Me.XrTableCell10.Dpi = 100.0!
-        Me.XrTableCell10.Name = "XrTableCell10"
-        Me.XrTableCell10.StyleName = "DataField"
-        Me.XrTableCell10.Text = "XrTableCell10"
-        Me.XrTableCell10.Weight = 0.34693877551020408R
-        '
-        'XrTableCell11
-        '
-        Me.XrTableCell11.CanGrow = False
-        Me.XrTableCell11.Dpi = 100.0!
-        Me.XrTableCell11.Name = "XrTableCell11"
-        Me.XrTableCell11.StyleName = "FieldCaption"
-        Me.XrTableCell11.Text = "Existencia"
-        Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell11.Weight = 0.16169544740973313R
-        '
-        'XrTableCell12
-        '
-        Me.XrTableCell12.CanGrow = False
-        Me.XrTableCell12.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.Existencia")})
-        Me.XrTableCell12.Dpi = 100.0!
-        Me.XrTableCell12.Name = "XrTableCell12"
-        Me.XrTableCell12.StyleName = "DataField"
-        Me.XrTableCell12.Text = "XrTableCell12"
-        Me.XrTableCell12.Weight = 0.16169544740973313R
-        '
-        'XrTableCell13
-        '
-        Me.XrTableCell13.CanGrow = False
-        Me.XrTableCell13.Dpi = 100.0!
-        Me.XrTableCell13.Name = "XrTableCell13"
-        Me.XrTableCell13.StyleName = "FieldCaption"
-        Me.XrTableCell13.Text = "Precio Costo M"
-        Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell13.Weight = 0.23861852433281006R
-        '
-        'XrTableCell14
-        '
-        Me.XrTableCell14.CanGrow = False
-        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "MateriaPrima.PrecioCostoM")})
-        Me.XrTableCell14.Dpi = 100.0!
-        Me.XrTableCell14.Name = "XrTableCell14"
-        Me.XrTableCell14.StyleName = "DataField"
-        Me.XrTableCell14.Text = "XrTableCell14"
-        Me.XrTableCell14.Weight = 0.23861852433281006R
         '
         'PageFooterBand1
         '
@@ -346,9 +351,9 @@ Partial Public Class RptMateriaPrima
         '
         'TopMarginBand1
         '
-        Me.TopMarginBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2})
+        Me.TopMarginBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPictureBox1, Me.XrLabel24, Me.XrLabel25, Me.XrLabel26, Me.XrLabel27})
         Me.TopMarginBand1.Dpi = 100.0!
-        Me.TopMarginBand1.HeightF = 100.0!
+        Me.TopMarginBand1.HeightF = 127.0833!
         Me.TopMarginBand1.Name = "TopMarginBand1"
         '
         'BottomMarginBand1
@@ -357,16 +362,58 @@ Partial Public Class RptMateriaPrima
         Me.BottomMarginBand1.HeightF = 100.0!
         Me.BottomMarginBand1.Name = "BottomMarginBand1"
         '
-        'XrLabel2
+        'XrPictureBox1
         '
-        Me.XrLabel2.Dpi = 100.0!
-        Me.XrLabel2.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(187.5!, 25.0!)
-        Me.XrLabel2.Name = "XrLabel2"
-        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(282.3291!, 40.70832!)
-        Me.XrLabel2.StylePriority.UseFont = False
-        Me.XrLabel2.Text = "Panadería Mami Manda"
+        Me.XrPictureBox1.Dpi = 100.0!
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 10.00002!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        '
+        'XrLabel24
+        '
+        Me.XrLabel24.Dpi = 100.0!
+        Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(204.3464!, 10.00002!)
+        Me.XrLabel24.Name = "XrLabel24"
+        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel24.SizeF = New System.Drawing.SizeF(340.7141!, 31.33334!)
+        Me.XrLabel24.StylePriority.UseFont = False
+        Me.XrLabel24.Text = "PANADERÍA MAMIMANDA"
+        '
+        'XrLabel25
+        '
+        Me.XrLabel25.Dpi = 100.0!
+        Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(252.0011!, 41.33335!)
+        Me.XrLabel25.Name = "XrLabel25"
+        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel25.SizeF = New System.Drawing.SizeF(258.6844!, 23.0!)
+        Me.XrLabel25.StylePriority.UseFont = False
+        Me.XrLabel25.Text = "Prop. Pedro Leonardo Martín Ponce"
+        '
+        'XrLabel26
+        '
+        Me.XrLabel26.Dpi = 100.0!
+        Me.XrLabel26.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(192.5956!, 67.00002!)
+        Me.XrLabel26.Name = "XrLabel26"
+        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(368.8807!, 23.0!)
+        Me.XrLabel26.StylePriority.UseFont = False
+        Me.XrLabel26.Text = "B° Iztoca, Dos Cuadras de Agua Pinguino, Choluteca"
+        '
+        'XrLabel27
+        '
+        Me.XrLabel27.Dpi = 100.0!
+        Me.XrLabel27.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(168.6961!, 90.00002!)
+        Me.XrLabel27.Name = "XrLabel27"
+        Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
+        Me.XrLabel27.StylePriority.UseFont = False
+        Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
         '
         'RptMateriaPrima
         '
@@ -374,12 +421,13 @@ Partial Public Class RptMateriaPrima
         Me.DataAdapter = Me.MateriaPrimaTableAdapter1
         Me.DataMember = "MateriaPrima"
         Me.DataSource = Me.DsBakerySystem1
+        Me.Margins = New System.Drawing.Printing.Margins(100, 100, 127, 100)
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.Title, Me.FieldCaption, Me.PageInfo, Me.DataField})
         Me.Version = "16.1"
+        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -419,5 +467,9 @@ Partial Public Class RptMateriaPrima
     Friend WithEvents DataField As DevExpress.XtraReports.UI.XRControlStyle
     Friend WithEvents TopMarginBand1 As DevExpress.XtraReports.UI.TopMarginBand
     Friend WithEvents BottomMarginBand1 As DevExpress.XtraReports.UI.BottomMarginBand
-    Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
+    Friend WithEvents XrLabel24 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel25 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel26 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel27 As DevExpress.XtraReports.UI.XRLabel
 End Class

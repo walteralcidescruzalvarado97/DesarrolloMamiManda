@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports MamiManda
-
+Imports DevExpress.XtraReports.UI
 Public Class Venta
     Implements ICliente
     Implements IPresentacion
@@ -85,6 +85,14 @@ Public Class Venta
             HabilitarBotones(True, False, False, False)
             AgregarFactura()
             AgregarDetalle()
+            If MessageBox.Show("¿Desea imprimir la factura?", "BakerySystem", MessageBoxButtons.YesNo, MessageBoxIcon.Information) Then
+                Dim id As Integer = txtCodFactura.Text
+                Dim impuesto As Double = txtIsv.Text
+                Dim total As Double = txtTotal.Text
+                Dim rpt As New RptFactura(id, impuesto, total)
+                Dim printTool As New ReportPrintTool(rpt)
+                printTool.ShowRibbonPreview()
+            End If
             Limpiar()
             LimpiarArticulos()
         End If
