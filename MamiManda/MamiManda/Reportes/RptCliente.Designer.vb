@@ -56,13 +56,13 @@ Partial Public Class RptCliente
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
-        Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.EmpleadoTableAdapter = New MamiManda.dsBakerySystemTableAdapters.EmpleadoTableAdapter()
-        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.EmpleadoTableAdapter = New MamiManda.dsBakerySystemTableAdapters.EmpleadoTableAdapter()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,25 +374,6 @@ Partial Public Class RptCliente
         Me.TopMarginBand1.HeightF = 138.2499!
         Me.TopMarginBand1.Name = "TopMarginBand1"
         '
-        'BottomMarginBand1
-        '
-        Me.BottomMarginBand1.Dpi = 100.0!
-        Me.BottomMarginBand1.HeightF = 100.0!
-        Me.BottomMarginBand1.Name = "BottomMarginBand1"
-        '
-        'EmpleadoTableAdapter
-        '
-        Me.EmpleadoTableAdapter.ClearBeforeFill = True
-        '
-        'XrPictureBox1
-        '
-        Me.XrPictureBox1.Dpi = 100.0!
-        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 31.16662!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
-        '
         'XrLabel24
         '
         Me.XrLabel24.Dpi = 100.0!
@@ -436,6 +417,25 @@ Partial Public Class RptCliente
         Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
         Me.XrLabel27.StylePriority.UseFont = False
         Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
+        '
+        'BottomMarginBand1
+        '
+        Me.BottomMarginBand1.Dpi = 100.0!
+        Me.BottomMarginBand1.HeightF = 100.0!
+        Me.BottomMarginBand1.Name = "BottomMarginBand1"
+        '
+        'EmpleadoTableAdapter
+        '
+        Me.EmpleadoTableAdapter.ClearBeforeFill = True
+        '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.Dpi = 100.0!
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 31.16662!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
         '
         'RptCliente
         '

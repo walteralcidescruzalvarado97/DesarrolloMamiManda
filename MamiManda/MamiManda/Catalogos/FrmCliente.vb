@@ -1,13 +1,21 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmCliente
+
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property RtnCliente As String = ""
     Private Sub FrmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(True, True, False)
         Limpiar()
         LlenarComboboxSexo()
         LlenarComboboxMunicipio()
-        MostrarCliente()
         cboSexo.SelectedIndex = -1
         cboMunicipio.SelectedIndex = -1
+        HabilitarTexbox(True)
+        txtRtn.Focus()
+
+        If ModoEdicion Then
+            Call CargarDatosCliente()
+        End If
 
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
@@ -17,10 +25,8 @@ Public Class FrmCliente
 
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
         HabilitarTexbox(valor)
     End Sub
@@ -59,6 +65,42 @@ Public Class FrmCliente
         End If
     End Function
 
+    Private Sub CargarDatosCliente()
+        If cnn.State = ConnectionState.Open Then
+            cnn.close
+        End If
+
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "Sp_CargarDatosCliente"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@RtnCliente", SqlDbType.NVarChar).Value = RtnCliente
+                End With
+
+                Dim reader As SqlDataReader = cmd.ExecuteReader
+
+                While reader.Read
+                    txtRtn.Text = reader("RTNCliente").ToString
+                    txtNombre.Text = reader("Nombre").ToString
+                    txtApellido.Text = reader("Apellido").ToString
+                    txtEmail.Text = reader("EMail").ToString
+                    mtbTelefono.Text = reader("Telefono").ToString
+                    txtDireccion.Text = reader("Direccion").ToString
+                    dtpFecha.Value = reader("FechaNac").ToString
+                    cboSexo.Text = reader("sexo").ToString
+                    cboMunicipio.Text = reader("Municipio").ToString
+                    NuDiasPlazo.Value = reader("DiasPlazo").ToString
+                End While
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Function ExisteCliente() As Boolean
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
@@ -86,79 +128,9 @@ Public Class FrmCliente
         Return Val
     End Function
 
-    Private Sub MostrarCliente()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
 
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_MostrarCliente"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim VerCliente As SqlDataReader
-                VerCliente = cmd.ExecuteReader()
-                LsvMostrarCliente.Items.Clear()
-                While VerCliente.Read = True
-                    With Me.LsvMostrarCliente.Items.Add(VerCliente("RTNCliente").ToString)
-                        .SubItems.Add(VerCliente("Nombre").ToString)
-                        .SubItems.Add(VerCliente("Apellido").ToString)
-                        .SubItems.Add(VerCliente("EMail").ToString)
-                        .SubItems.Add(VerCliente("Telefono").ToString)
-                        .SubItems.Add(VerCliente("FechaNac").ToString)
-                        .SubItems.Add(VerCliente("Sexo").ToString)
-                        .SubItems.Add(VerCliente("Direccion").ToString)
-                        .SubItems.Add(VerCliente("Municipio").ToString)
 
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
 
-    Private Sub ListarCliente()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarCLiente"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim VerCliente As SqlDataReader
-                VerCliente = cmd.ExecuteReader()
-                LsvMostrarCliente.Items.Clear()
-                While VerCliente.Read = True
-                    With Me.LsvMostrarCliente.Items.Add(VerCliente("RTNCliente").ToString)
-                        .SubItems.Add(VerCliente("Nombre").ToString)
-                        .SubItems.Add(VerCliente("Apellido").ToString)
-                        .SubItems.Add(VerCliente("EMail").ToString)
-                        .SubItems.Add(VerCliente("Telefono").ToString)
-                        .SubItems.Add(VerCliente("FechaNac").ToString)
-                        .SubItems.Add(VerCliente("Sexo").ToString)
-                        .SubItems.Add(VerCliente("Direccion").ToString)
-                        .SubItems.Add(VerCliente("Municipio").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
 #End Region
 
 #Region "LLenar Combobox"
@@ -241,6 +213,7 @@ Public Class FrmCliente
                         .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = mtbTelefono.Text.Trim
                         .Parameters.Add("@Direccion", SqlDbType.NVarChar).Value = txtDireccion.Text.Trim
                         .Parameters.Add("@Fecha", SqlDbType.Date).Value = dtpFecha.Value
+                        .Parameters.Add("@DiasPlazo", SqlDbType.Int).Value = NuDiasPlazo.Value
                         .Parameters.Add("@Sexo", SqlDbType.Int).Value = cboSexo.SelectedValue
                         .Parameters.Add("@Municipio", SqlDbType.Int).Value = cboMunicipio.SelectedValue
                         .ExecuteNonQuery()
@@ -275,6 +248,7 @@ Public Class FrmCliente
                     .Parameters.Add("@Telefono", SqlDbType.VarChar).Value = mtbTelefono.Text.Trim
                     .Parameters.Add("@Direccion", SqlDbType.NVarChar).Value = txtDireccion.Text.Trim
                     .Parameters.Add("@Fecha", SqlDbType.Date).Value = dtpFecha.Value
+                    .Parameters.Add("@DiasPlazo", SqlDbType.Int).Value = NuDiasPlazo.Value
                     .Parameters.Add("@Sexo", SqlDbType.Int).Value = cboSexo.SelectedValue
                     .Parameters.Add("@Municipio", SqlDbType.Int).Value = cboMunicipio.SelectedValue
                     .ExecuteNonQuery()
@@ -318,10 +292,16 @@ Public Class FrmCliente
         ElseIf Validar(cboSexo, "Debe seleccionar un sexo") Then
         ElseIf Validar(cboMunicipio, "Debe seleccionar un municipio") Then
         Else
-            AgregarCliente()
-            HabilitarBotones(True, False, False, False, False)
+            If ModoEdicion Then
+                ActualizarCliente()
+            Else
+                AgregarCliente()
+            End If
+
+            HabilitarBotones(False, False, False)
             Limpiar()
-            MostrarCliente()
+            FrmClientes.ActualizarTablas(True)
+            Me.Close()
         End If
     End Sub
 
@@ -331,60 +311,9 @@ Public Class FrmCliente
     End Sub
 
     Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
-    End Sub
-
-    Private Sub btnInsertar_Click_1(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, False, True, True)
-    End Sub
-
-    Private Sub btnActualizar_Click_1(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        If Validar(txtRtn, "Debe ingresar un RTN") Then
-        ElseIf Validar(txtNombre, "Debe ingresar un nombre de empleado") Then
-        ElseIf Validar(txtApellido, "Debe ingresar un apellido") Then
-        ElseIf Validar(txtEmail, "Debe seleccionar un Email") Then
-        ElseIf ValidateEmail(txtEmail.Text) = False Then
-            ErrorProvider1.SetError(txtEmail, "Debe ingresar un correo válido")
-        ElseIf Validar(mtbTelefono, "Debe ingresar unnúmero de teléfono") Then
-        ElseIf mtbTelefono.TextLength < 8 Then
-            ErrorProvider1.SetError(mtbTelefono, "Debe ingresar un número de teléfono válido")
-        ElseIf Validar(txtDireccion, "Debe ingresar una dirección") Then
-        ElseIf Validar(cboSexo, "Debe seleccionar un sexo") Then
-        ElseIf Validar(cboMunicipio, "Debe seleccionar un municipio") Then
-        Else
-            ActualizarCliente()
-            HabilitarBotones(True, False, False, False, False)
-            Limpiar()
-            MostrarCliente()
-        End If
-    End Sub
-
-    Private Sub LsvMostrarCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LsvMostrarCliente.SelectedIndexChanged
-        btnEditar.Enabled = True
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        txtRtn.Text = LsvMostrarCliente.FocusedItem.SubItems(0).Text
-        txtNombre.Text = LsvMostrarCliente.FocusedItem.SubItems(1).Text
-        txtApellido.Text = LsvMostrarCliente.FocusedItem.SubItems(2).Text
-        txtEmail.Text = LsvMostrarCliente.FocusedItem.SubItems(3).Text
-        mtbTelefono.Text = LsvMostrarCliente.FocusedItem.SubItems(4).Text
-        txtDireccion.Text = LsvMostrarCliente.FocusedItem.SubItems(7).Text
-        dtpFecha.Text = LsvMostrarCliente.FocusedItem.SubItems(5).Text
-        cboSexo.Text = LsvMostrarCliente.FocusedItem.SubItems(6).Text
-        cboMunicipio.Text = LsvMostrarCliente.FocusedItem.SubItems(8).Text
-        HabilitarBotones(False, False, True, True, True)
-
-        TabControl1.SelectedIndex = 0
-        btnEditar.Enabled = False
-        txtBuscar.Text = ""
-        txtRtn.Enabled = False
-    End Sub
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        btnEditar.Enabled = False
-        ListarCliente()
+        Me.Close()
     End Sub
 
     Private Sub txtRtn_TextChanged(sender As Object, e As EventArgs) Handles txtRtn.TextChanged
@@ -451,7 +380,4 @@ Public Class FrmCliente
         ErrorProvider1.Clear()
     End Sub
 
-    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
-
-    End Sub
 End Class

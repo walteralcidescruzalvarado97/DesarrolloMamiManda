@@ -18,14 +18,14 @@ Public Class FrmBuscarCliente
                 LsvMostrarCliente.Items.Clear()
                 While VerCliente.Read = True
                     With Me.LsvMostrarCliente.Items.Add(VerCliente("RTNCliente").ToString)
-                        .SubItems.Add(VerCliente("Nombre").ToString)
-                        .SubItems.Add(VerCliente("Apellido").ToString)
+                        .SubItems.Add(VerCliente("NombreCompleto").ToString)
                         .SubItems.Add(VerCliente("EMail").ToString)
                         .SubItems.Add(VerCliente("Telefono").ToString)
                         .SubItems.Add(VerCliente("Direccion").ToString)
                         .SubItems.Add(VerCliente("FechaNac").ToString)
                         .SubItems.Add(VerCliente("Sexo").ToString)
                         .SubItems.Add(VerCliente("Municipio").ToString)
+                        .SubItems.Add(VerCliente("DiasPlazo").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -55,14 +55,14 @@ Public Class FrmBuscarCliente
                 LsvMostrarCliente.Items.Clear()
                 While VerCliente.Read = True
                     With Me.LsvMostrarCliente.Items.Add(VerCliente("RTNCliente").ToString)
-                        .SubItems.Add(VerCliente("Nombre").ToString)
-                        .SubItems.Add(VerCliente("Apellido").ToString)
+                        .SubItems.Add(VerCliente("NombreCompleto").ToString)
                         .SubItems.Add(VerCliente("EMail").ToString)
                         .SubItems.Add(VerCliente("Telefono").ToString)
                         .SubItems.Add(VerCliente("Direccion").ToString)
                         .SubItems.Add(VerCliente("FechaNac").ToString)
                         .SubItems.Add(VerCliente("Sexo").ToString)
                         .SubItems.Add(VerCliente("Municipio").ToString)
+                        .SubItems.Add(VerCliente("DiasPlazo").ToString)
                     End With
                 End While
             Catch ex As Exception
@@ -92,10 +92,14 @@ Public Class FrmBuscarCliente
 
     Private Sub LsvMostrarCliente_DoubleClick(sender As Object, e As EventArgs) Handles LsvMostrarCliente.DoubleClick
         Dim Codigo As String = LsvMostrarCliente.FocusedItem.SubItems(0).Text
+        Dim DiasPlazo As Integer = LsvMostrarCliente.FocusedItem.SubItems(8).Text
+        Dim Nombre As String = LsvMostrarCliente.FocusedItem.SubItems(1).Text
         Dim InstanciaICliente As ICliente = CType(Me.Owner, ICliente)
 
         If InstanciaICliente IsNot Nothing Then
             InstanciaICliente.ObtenerCodCliente(Codigo)
+            InstanciaICliente.ObtenerDiasPlazoCliente(DiasPlazo)
+            InstanciaICliente.ObtenerNombreCliente(Nombre)
         End If
         Close()
     End Sub

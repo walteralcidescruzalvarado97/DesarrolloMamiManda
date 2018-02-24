@@ -1,8 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FrmBuscarProveedor
+    Friend Property DesdeMateriaPrima As Boolean = False
     Private Sub FrmBuscarProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MostrarTodoProveedor()
+        Call LlenarGridProveedor()
 
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
@@ -10,77 +11,32 @@ Public Class FrmBuscarProveedor
         HelpProvider1.SetHelpKeyword(Me, "BProveedor")
     End Sub
 
-    Private Sub MostrarTodoProveedor()
+    Private Sub LlenarGridProveedor()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
         End If
-        cnn.Open()
 
-        Using cmd As New SqlCommand
-            Try
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
                 With cmd
                     .CommandText = "Sp_MostrarTodoProveedor"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
                 End With
-                Dim VerProveedor As SqlDataReader
-                VerProveedor = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerProveedor.Read = True
-                    With Me.lsvMostrar.Items.Add(VerProveedor("RTNProveedor").ToString)
-                        .SubItems.Add(VerProveedor("Nombre").ToString)
-                        .SubItems.Add(VerProveedor("Apellido").ToString)
-                        .SubItems.Add(VerProveedor("Email").ToString)
-                        .SubItems.Add(VerProveedor("Telefono").ToString)
-                        .SubItems.Add(VerProveedor("direccion").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
 
+                If cmd.ExecuteNonQuery Then
+                    Dim Dt As New DataTable
+                    Dim Da As New SqlDataAdapter(cmd)
 
-    Private Sub MostrarProveedor()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
+                    Da.Fill(Dt)
 
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarProveedor"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim VerProveedor As SqlDataReader
-                VerProveedor = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerProveedor.Read = True
-                    With Me.lsvMostrar.Items.Add(VerProveedor("RTNProveedor").ToString)
-                        .SubItems.Add(VerProveedor("Nombre").ToString)
-                        .SubItems.Add(VerProveedor("Apellido").ToString)
-                        .SubItems.Add(VerProveedor("Email").ToString)
-                        .SubItems.Add(VerProveedor("Telefono").ToString)
-                        .SubItems.Add(VerProveedor("direccion").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
-
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        MostrarProveedor()
+                    GcProveedor.DataSource = Dt
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -88,14 +44,25 @@ Public Class FrmBuscarProveedor
         Close()
     End Sub
 
-    Private Sub lsvMostrar_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lsvMostrar.MouseDoubleClick
-        Dim Dato As String = lsvMostrar.FocusedItem.SubItems(0).Text
+    Private Sub GcProveedor_DoubleClick(sender As Object, e As EventArgs) Handles GcProveedor.DoubleClick
+        If DesdeMateriaPrima Then
+            Dim fila As Integer = GridView1.FocusedRowHandle
 
-        Dim InstanciaForm As IForm = CType(Me.Owner, IForm)
-
-        If InstanciaForm IsNot Nothing Then
-            InstanciaForm.ObtenerDato(Dato)
+            FrmMateriaPrima.TxtRtnProveedor.Text = GridView1.GetRowCellValue(fila, "RTNProveedor")
         End If
-        Close()
+        Me.Close()
     End Sub
+
+    'Private Sub lsvMostrar_MouseDoubleClick(sender As Object, e As MouseEventArgs)
+    '    Dim Dato As String = lsvMostrar.FocusedItem.SubItems(0).Text
+
+    '    Dim InstanciaForm As IForm = CType(Me.Owner, IForm)
+
+    '    If InstanciaForm IsNot Nothing Then
+    '        InstanciaForm.ObtenerDato(Dato)
+    '    End If
+    '    Close()
+    'End Sub
+
+
 End Class

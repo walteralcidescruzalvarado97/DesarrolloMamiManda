@@ -8,16 +8,33 @@ Public Class Venta
     Dim Existencia As Integer
     Dim registro As Integer = 0
 
+    Private Property _Dias As Integer = 0
+
+    Private Property Cai As String = ""
+    Private Property FechaInicio As Date
+    Private Property FechaFinal As Date
+    Private Property CorrelativoDesde As String = ""
+    Private Property CorrelativoHasta As String = ""
+    Friend Property ModoConsulta As Boolean = False
+    Friend Property CodFacturaGuardada As String = ""
 
     Private Sub Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call InvestigarCai()
         HabilitarBotones(True, False, False, False)
         Limpiar()
-
+        LlenarComboTipoPago()
+        CboTipoPago.SelectedIndex = -1
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
         HelpProvider1.SetHelpKeyword(Me, "Ventas")
         btnNuevo.Focus()
+
+        If ModoConsulta = True Then
+            Call CargarDetalleFacturaGuardada()
+            Call CargarFacturaGuardada()
+            Call BloquearControles()
+        End If
     End Sub
 
 #Region "Funciones"
@@ -36,8 +53,23 @@ Public Class Venta
         txtPrecio.Enabled = valor
         btnBuscarProducto.Enabled = valor
         btnAgregar.Enabled = valor
+        CboTipoPago.Enabled = valor
+        NuDiasPlazo.Enabled = valor
+        TxtFechaVence.Enabled = valor
+        TxtNombreCliente.Enabled = valor
     End Sub
 
+
+    Private Sub BloquearControles()
+        btnNuevo.Visible = False
+        btnGuardar.Visible = False
+        btnCancelar.Visible = False
+        Me.lsvMostrar.Enabled = False
+        LblNuevo.Visible = False
+        LblGuardar.Visible = False
+        LblCancelar.Visible = False
+        BtnImprimir.Visible = True
+    End Sub
     Private Sub Limpiar()
         txtCodFactura.Text = Nothing
         txtCliente.Text = Nothing
@@ -45,6 +77,10 @@ Public Class Venta
         txtIsv.Text = Nothing
         txtTotal.Text = Nothing
         lsvMostrar.Items.Clear()
+        CboTipoPago.SelectedIndex = -1
+        TxtFechaVence.Text = Nothing
+        NuDiasPlazo.Value = Nothing
+        TxtNombreCliente.Text = Nothing
     End Sub
 
     Private Sub LimpiarArticulos()
@@ -70,8 +106,9 @@ Public Class Venta
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         HabilitarBotones(False, True, True, True)
-        InvestigarCorrelativo()
+        NuevoIdFactura()
         btnBuscarCliente.Focus()
+        CboTipoPago.SelectedIndex = 0
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -85,13 +122,8 @@ Public Class Venta
             HabilitarBotones(True, False, False, False)
             AgregarFactura()
             AgregarDetalle()
-            If MessageBox.Show("¿Desea imprimir la factura?", "BakerySystem", MessageBoxButtons.YesNo, MessageBoxIcon.Information) Then
-                Dim id As Integer = txtCodFactura.Text
-                Dim impuesto As Double = txtIsv.Text
-                Dim total As Double = txtTotal.Text
-                Dim rpt As New RptFactura(id, impuesto, total)
-                Dim printTool As New ReportPrintTool(rpt)
-                printTool.ShowRibbonPreview()
+            If MessageBox.Show("¿Desea imprimir la factura?", "BakerySystem", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                ImprimirFactura()
             End If
             Limpiar()
             LimpiarArticulos()
@@ -101,6 +133,7 @@ Public Class Venta
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         HabilitarBotones(True, False, False, False)
         SumarProducto()
+        estado = True
         Limpiar()
         LimpiarArticulos()
     End Sub
@@ -110,13 +143,20 @@ Public Class Venta
         BuscarCliente.Show(Me)
         btnBuscarProducto.Focus()
         BuscarCliente.Focus()
-
     End Sub
 
     Public Sub ObtenerCodCliente(Codigo As String) Implements ICliente.ObtenerCodCliente
         txtCliente.Text = Codigo
     End Sub
 
+    Public Sub ObtenerNombreCliente(Nombre As String) Implements ICliente.ObtenerNombreCliente
+        TxtNombreCliente.Text = Nombre
+    End Sub
+
+    Public Sub ObtenerDiasPlazoCLiente(DiasPlazo As Integer) Implements ICliente.ObtenerDiasPlazoCliente
+        NuDiasPlazo.Value = DiasPlazo
+        _Dias = DiasPlazo
+    End Sub
 #End Region
 
 #Region "Llenar"
@@ -142,6 +182,183 @@ Public Class Venta
             cnn.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub InvestigarCai()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Try
+            cnn.Open()
+
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "Sp_InvestigarCai"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                End With
+
+                Dim reader As SqlDataReader = cmd.ExecuteReader
+
+                If reader.Read Then
+                    Cai = reader("Cai").ToString
+                    FechaInicio = reader("FechaInicio").ToString
+                    FechaFinal = reader("FechaFinal").ToString
+                    CorrelativoDesde = reader("CorrelativoDesde").ToString
+                    CorrelativoHasta = reader("CorrelativoHasta").ToString
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub NuevoIdFactura()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "Sp_InvestigarNumFactura"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@Cai", SqlDbType.NVarChar).Value = Cai
+                End With
+
+                Dim reader As SqlDataReader = cmd.ExecuteReader
+                If reader.Read Then
+                    If reader("IdFactura") Is DBNull.Value Then
+                        txtCodFactura.Text = CorrelativoDesde
+                    Else
+                        Dim IdUltimaFactura As String = reader("IdFactura").ToString
+                        Dim IdUltimaFactura2 As String() = IdUltimaFactura.Split("-")
+                        Dim Correlativo As String = IdUltimaFactura2(3) + 1
+                        Dim NumFactura As String = ""
+                        Dim caracter As String = ""
+
+                        For num As Integer = 1 To (8 - Correlativo.Length)
+                            caracter = caracter & 0
+                        Next
+
+                        NumFactura = "001-001-01-" & caracter & Correlativo
+
+                        txtCodFactura.Text = NumFactura
+                    End If
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            cnn.Close()
+        End Try
+    End Sub
+    Private Sub CargarFacturaGuardada()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Try
+            cnn.Open()
+
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "Sp_DatosFactura"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@CodFactura", SqlDbType.nvarchar).Value = CodFacturaGuardada
+                End With
+
+                Dim lector As SqlDataReader
+                lector = cmd.ExecuteReader
+
+                While lector.Read
+                    txtCodFactura.Text = lector.Item("IdFactura").ToString
+                    dtpFecha.Value = lector.Item("Fecha").ToString
+                    txtCliente.Text = lector.Item("RTNCliente").ToString
+                    TxtNombreCliente.Text = lector.Item("Cliente").ToString
+                    NuDiasPlazo.Value = lector.Item("DiasPlazo").ToString
+
+                    Dim FechaVence As String = lector.Item("FechaVence").ToString
+                    Dim FechaVence1 As String() = FechaVence.Split(" ")
+
+                    TxtFechaVence.Text = FechaVence1(0).ToString
+                    CboTipoPago.SelectedValue = CInt(lector("IdTipoPago").ToString)
+                End While
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            cnn.Close()
+        End Try
+    End Sub
+
+    Private Sub CargarDetalleFacturaGuardada()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "Sp_CargarDetalleFactura"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@CodFactura", SqlDbType.NVarChar).Value = CodFacturaGuardada
+                End With
+
+                Dim lector As SqlDataReader
+                lector = cmd.ExecuteReader
+                Me.lsvMostrar.Items.Clear()
+
+                While lector.Read
+                    With Me.lsvMostrar.Items.Add(lector("IdInventario").ToString)
+                        .SubItems.Add(lector("NombreProducto").ToString)
+                        .SubItems.Add(lector("TipoPresentacion").ToString)
+                        .SubItems.Add(lector("Precio").ToString)
+                        .SubItems.Add(lector("Cantidad").ToString)
+                        .SubItems.Add(lector("Total").ToString)
+                    End With
+                End While
+            End Using
+            Call Calculos()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            cnn.Close()
+        End Try
+
+    End Sub
+
+
+    Sub LlenarComboTipoPago()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
+                cmd.CommandText = "Select IdTipoPago, TipoPago From TipoPago Order By IdTipoPago"
+                cmd.CommandType = CommandType.Text
+                cmd.Connection = cnn
+
+                Dim Da As New SqlDataAdapter(cmd)
+                Dim Ds As New DataSet
+
+                Da.Fill(Ds, "TipoPago")
+                Me.CboTipoPago.DataSource = Ds.Tables(0)
+                Me.CboTipoPago.DisplayMember = Ds.Tables(0).Columns("TipoPago").ToString
+                Me.CboTipoPago.ValueMember = Ds.Tables(0).Columns("IdTIpoPago").ToString
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -213,7 +430,7 @@ Public Class Venta
                         .CommandText = "Sp_InsertDetalleFactura"
                         .CommandType = CommandType.StoredProcedure
                         .Connection = cnn
-                        .Parameters.Add("@IdFactura", SqlDbType.Int).Value = txtCodFactura.Text.Trim
+                        .Parameters.Add("@IdFactura", SqlDbType.NVarChar).Value = txtCodFactura.Text.Trim
                         .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = lsvMostrar.Items(i).SubItems(0).Text
                         .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = lsvMostrar.Items(i).SubItems(6).Text
                         .Parameters.Add("@Cantidad", SqlDbType.Int).Value = lsvMostrar.Items(i).SubItems(4).Text
@@ -240,9 +457,21 @@ Public Class Venta
                     .CommandText = "Sp_InsertFactura"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
+                    .Parameters.Add("@IdFactura", SqlDbType.NVarChar).Value = txtCodFactura.Text.Trim
                     .Parameters.Add("@Fecha", SqlDbType.Date).Value = dtpFecha.Value
                     .Parameters.Add("@RTNCliente", SqlDbType.NVarChar).Value = txtCliente.Text
+                    If CboTipoPago.SelectedIndex = 1 Then
+                        .Parameters.Add("DiasPlazo", SqlDbType.Int).Value = 0
+                        .Parameters.Add("FechaVence", SqlDbType.Date).Value = DBNull.Value
+                        .Parameters.Add("EstadoFactura", SqlDbType.Int).Value = 2
+                    Else
+                        .Parameters.Add("DiasPlazo", SqlDbType.Int).Value = NuDiasPlazo.Value
+                        .Parameters.Add("FechaVence", SqlDbType.Date).Value = TxtFechaVence.Text
+                        .Parameters.Add("EstadoFactura", SqlDbType.Int).Value = 1
+                    End If
+                    .Parameters.Add("TipoPago", SqlDbType.Int).Value = CboTipoPago.SelectedValue
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
+                    .Parameters.Add("@Cai", SqlDbType.NVarChar).Value = Cai
                     .ExecuteNonQuery()
                 End With
             End Using
@@ -301,9 +530,9 @@ Public Class Venta
         Isv = Subtotal * 0.15
         Total = Subtotal + Isv
 
-        txtSubTotal.Text = Subtotal
-        txtIsv.Text = Isv
-        txtTotal.Text = Total
+        txtSubTotal.Text = FormatCurrency(Subtotal, 2)
+        txtIsv.Text = FormatCurrency(Isv, 2)
+        txtTotal.Text = FormatCurrency(Total, 2)
 
 
     End Sub
@@ -333,9 +562,9 @@ Public Class Venta
                         With Me.lsvMostrar.Items.Add(txtCodProducto.Text)
                             .SubItems.Add(lblNombreProducto.Text)
                             .SubItems.Add(txtPresentacion.Text)
-                            .SubItems.Add(txtPrecio.Text)
+                            .SubItems.Add(FormatCurrency(txtPrecio.Text))
                             .SubItems.Add(txtCantidad.Text)
-                            .SubItems.Add(total.ToString)
+                            .SubItems.Add(FormatCurrency(total.ToString))
                             .SubItems.Add(lblCodPresentacion.Text)
                             .SubItems.Add(txtUnidad.Text)
                         End With
@@ -356,9 +585,9 @@ Public Class Venta
                             With Me.lsvMostrar.Items.Add(txtCodProducto.Text)
                                 .SubItems.Add(lblNombreProducto.Text)
                                 .SubItems.Add(txtPresentacion.Text)
-                                .SubItems.Add(txtPrecio.Text)
+                                .SubItems.Add(FormatCurrency(txtPrecio.Text))
                                 .SubItems.Add(txtCantidad.Text)
-                                .SubItems.Add(total.ToString)
+                                .SubItems.Add(FormatCurrency(total.ToString))
                                 .SubItems.Add(lblCodPresentacion.Text)
                                 .SubItems.Add(txtUnidad.Text)
                             End With
@@ -441,4 +670,58 @@ Public Class Venta
         End If
     End Function
 
+    Private Sub CboTipoPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboTipoPago.SelectedIndexChanged
+        Dim index As Integer = CboTipoPago.SelectedIndex
+
+        If index = 1 Then
+            Me.LblDias.Visible = False
+            Me.LblFechaVence.Visible = False
+            NuDiasPlazo.Visible = False
+            TxtFechaVence.Visible = False
+        Else
+            Me.LblDias.Visible = True
+            Me.LblFechaVence.Visible = True
+            NuDiasPlazo.Visible = True
+            TxtFechaVence.Visible = True
+        End If
+    End Sub
+    Dim estado As Boolean = False
+    Private Sub NuDiasPlazo_ValueChanged(sender As Object, e As EventArgs) Handles NuDiasPlazo.ValueChanged
+
+
+        TxtFechaVence.Text = Now.Date.AddDays(NuDiasPlazo.Value)
+        If _Dias <= 0 Then
+            Return
+        End If
+
+
+        If Me.NuDiasPlazo.Value > _Dias Then
+            MsgBox("No se puede exceder el número de días de plazo para este cliente")
+            Me.NuDiasPlazo.Value = _Dias
+            Return
+        End If
+
+        If estado = True Then
+            If Me.NuDiasPlazo.Value <= 0 Then
+                MsgBox("No se puede asignar dias plazo menores e iguales a cero")
+                Me.NuDiasPlazo.Value = _Dias
+            End If
+        End If
+    End Sub
+
+    Private Sub QuitarItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitarItemToolStripMenuItem.Click
+        Me.lsvMostrar.FocusedItem.Remove()
+        Calculos()
+    End Sub
+
+    Sub ImprimirFactura()
+        Dim id As String = txtCodFactura.Text
+        Dim total As Double = txtTotal.Text
+        Dim rpt As New RepFac(id)
+        Dim printTool As New ReportPrintTool(rpt)
+        printTool.ShowRibbonPreview()
+    End Sub
+    Private Sub BtnImprimir_Click(sender As Object, e As EventArgs) Handles BtnImprimir.Click
+        ImprimirFactura()
+    End Sub
 End Class

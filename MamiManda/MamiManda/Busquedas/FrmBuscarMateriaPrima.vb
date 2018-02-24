@@ -2,105 +2,75 @@
 
 
 Public Class FrmBuscarMateriaPrima
+    Friend Property DesdeAgregarMateriaPrima As Boolean = False
+    Friend Property DesdeReceta As Boolean = False
     Private Sub FrmBuscarMateriaPrima_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MostrarTodoMateriaPrima()
+        Call LlenarGridMateriaPrima()
     End Sub
 
-    Private Sub MostrarTodoMateriaPrima()
+
+    Private Sub LlenarGridMateriaPrima()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
         End If
-        cnn.Open()
 
-        Using cmd As New SqlCommand
-            Try
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
                 With cmd
                     .CommandText = "Sp_MostrarMateriaPrima"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
                 End With
-                Dim VerMateriaPrima As SqlDataReader
-                VerMateriaPrima = cmd.ExecuteReader()
-                LsvMostrarMateriaPrima.Items.Clear()
-                While VerMateriaPrima.Read = True
-                    With Me.LsvMostrarMateriaPrima.Items.Add(VerMateriaPrima("IdMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("NombreMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("ExistenciaMinima").ToString)
-                        .SubItems.Add(VerMateriaPrima("Existencia").ToString)
-                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
-                        .SubItems.Add(VerMateriaPrima("Fecha").ToString)
-                        .SubItems.Add(VerMateriaPrima("Medida").ToString)
-                        .SubItems.Add(VerMateriaPrima("RtnProveedor").ToString)
-                        .SubItems.Add(VerMateriaPrima("Nombre").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
+
+                If cmd.ExecuteNonQuery Then
+                    Dim Dt As New DataTable
+                    Dim Da As New SqlDataAdapter(cmd)
+
+                    Da.Fill(Dt)
+
+                    GcMateriaPrima.DataSource = Dt
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
-
-    Private Sub MostrarMateriaPrima()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarMateriaPrima"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim VerMateriaPrima As SqlDataReader
-                VerMateriaPrima = cmd.ExecuteReader()
-                LsvMostrarMateriaPrima.Items.Clear()
-                While VerMateriaPrima.Read = True
-                    With Me.LsvMostrarMateriaPrima.Items.Add(VerMateriaPrima("IdMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("NombreMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("ExistenciaMinima").ToString)
-                        .SubItems.Add(VerMateriaPrima("Existencia").ToString)
-                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
-                        .SubItems.Add(VerMateriaPrima("Fecha").ToString)
-                        .SubItems.Add(VerMateriaPrima("Medida").ToString)
-                        .SubItems.Add(VerMateriaPrima("RtnProveedor").ToString)
-                        .SubItems.Add(VerMateriaPrima("Nombre").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        MostrarMateriaPrima()
-    End Sub
-
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         FrmMateriaPrima.Show()
         Close()
     End Sub
 
-    Private Sub LsvMostrarMateriaPrima_DoubleClick(sender As Object, e As EventArgs) Handles LsvMostrarMateriaPrima.DoubleClick
-        Dim Codigo As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
-        Dim Materia As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
-        Dim Medida As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(6).Text
+    Private Sub GcMateriaPrima_DoubleClick(sender As Object, e As EventArgs) Handles GcMateriaPrima.DoubleClick
+        If DesdeAgregarMateriaPrima Then
+            Dim fila As Integer = GridView1.FocusedRowHandle
 
-        Dim InstanciaIAgregarMateria As IAgregarMateria = CType(Me.Owner, IAgregarMateria)
-
-        If InstanciaIAgregarMateria IsNot Nothing Then
-            InstanciaIAgregarMateria.ObtenerCodReceta(Codigo)
-            InstanciaIAgregarMateria.ObtenerMateria(Materia)
-            InstanciaIAgregarMateria.ObtenerMedida(Medida)
+            FrmAgregarMateria.txtCodMateria.Text = GridView1.GetRowCellValue(fila, "IdMateriaPrima")
+            FrmAgregarMateria.txtMateria.Text = GridView1.GetRowCellValue(fila, "NombreMateriaPrima")
+            FrmAgregarMateria.txtMedida.Text = GridView1.GetRowCellValue(fila, "Medida")
         End If
-        Close()
+
+        If DesdeReceta Then
+            Dim fila As Integer = GridView1.FocusedRowHandle
+
+            FrmReceta.txtCodMateria.Text = GridView1.GetRowCellValue(fila, "IdMateriaPrima")
+        End If
+        Me.Close()
     End Sub
+
+    'Private Sub LsvMostrarMateriaPrima_DoubleClick(sender As Object, e As EventArgs)
+    '    Dim Codigo As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
+    '    Dim Materia As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
+    '    Dim Medida As String = LsvMostrarMateriaPrima.FocusedItem.SubItems(6).Text
+
+    '    Dim InstanciaIAgregarMateria As IAgregarMateria = CType(Me.Owner, IAgregarMateria)
+
+    '    If InstanciaIAgregarMateria IsNot Nothing Then
+    '        InstanciaIAgregarMateria.ObtenerCodReceta(Codigo)
+    '        InstanciaIAgregarMateria.ObtenerMateria(Materia)
+    '        InstanciaIAgregarMateria.ObtenerMedida(Medida)
+    '    End If
+    '    Close()
+    'End Sub
 
 End Class

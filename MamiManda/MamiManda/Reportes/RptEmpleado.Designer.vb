@@ -61,13 +61,13 @@ Partial Public Class RptEmpleado
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
-        Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.DsBakerySystem2 = New MamiManda.dsBakerySystem()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.DsBakerySystem2 = New MamiManda.dsBakerySystem()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -424,17 +424,6 @@ Partial Public Class RptEmpleado
         Me.TopMarginBand1.HeightF = 118.75!
         Me.TopMarginBand1.Name = "TopMarginBand1"
         '
-        'BottomMarginBand1
-        '
-        Me.BottomMarginBand1.Dpi = 100.0!
-        Me.BottomMarginBand1.HeightF = 100.0!
-        Me.BottomMarginBand1.Name = "BottomMarginBand1"
-        '
-        'DsBakerySystem2
-        '
-        Me.DsBakerySystem2.DataSetName = "dsBakerySystem"
-        Me.DsBakerySystem2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'XrPictureBox1
         '
         Me.XrPictureBox1.Dpi = 100.0!
@@ -487,6 +476,17 @@ Partial Public Class RptEmpleado
         Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
         Me.XrLabel27.StylePriority.UseFont = False
         Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
+        '
+        'BottomMarginBand1
+        '
+        Me.BottomMarginBand1.Dpi = 100.0!
+        Me.BottomMarginBand1.HeightF = 100.0!
+        Me.BottomMarginBand1.Name = "BottomMarginBand1"
+        '
+        'DsBakerySystem2
+        '
+        Me.DsBakerySystem2.DataSetName = "dsBakerySystem"
+        Me.DsBakerySystem2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'RptEmpleado
         '

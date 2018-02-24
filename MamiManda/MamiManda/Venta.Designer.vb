@@ -26,9 +26,9 @@ Partial Class Venta
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Venta))
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.LblGuardar = New System.Windows.Forms.Label()
+        Me.LblNuevo = New System.Windows.Forms.Label()
+        Me.LblCancelar = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.gbArticulos = New System.Windows.Forms.GroupBox()
         Me.txtUnidad = New System.Windows.Forms.TextBox()
@@ -45,12 +45,21 @@ Partial Class Venta
         Me.lblCodPresentacion = New System.Windows.Forms.Label()
         Me.label7 = New System.Windows.Forms.Label()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
+        Me.TxtFechaVence = New System.Windows.Forms.TextBox()
+        Me.LblFechaVence = New System.Windows.Forms.Label()
+        Me.NuDiasPlazo = New System.Windows.Forms.NumericUpDown()
+        Me.LblDias = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtNombreCliente = New System.Windows.Forms.TextBox()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CboTipoPago = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.label3 = New System.Windows.Forms.Label()
         Me.txtCodFactura = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.ChCod = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -58,6 +67,8 @@ Partial Class Venta
         Me.chPrecio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.CmsOpcion = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.QuitarItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtSubTotal = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtIsv = New System.Windows.Forms.TextBox()
@@ -68,8 +79,11 @@ Partial Class Venta
         Me.lblNombreProducto = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.BtnImprimir = New DevExpress.XtraEditors.SimpleButton()
         Me.gbArticulos.SuspendLayout()
         Me.gbDatos.SuspendLayout()
+        CType(Me.NuDiasPlazo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsOpcion.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,7 +98,7 @@ Partial Class Venta
         Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Location = New System.Drawing.Point(204, 558)
+        Me.btnNuevo.Location = New System.Drawing.Point(204, 624)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(47, 43)
         Me.btnNuevo.TabIndex = 0
@@ -100,44 +114,44 @@ Partial Class Venta
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(360, 558)
+        Me.btnGuardar.Location = New System.Drawing.Point(360, 624)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 5
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'Label9
+        'LblGuardar
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(356, 601)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(57, 16)
-        Me.Label9.TabIndex = 68
-        Me.Label9.Text = "Guardar"
+        Me.LblGuardar.AutoSize = True
+        Me.LblGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.LblGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGuardar.Location = New System.Drawing.Point(356, 667)
+        Me.LblGuardar.Name = "LblGuardar"
+        Me.LblGuardar.Size = New System.Drawing.Size(57, 16)
+        Me.LblGuardar.TabIndex = 68
+        Me.LblGuardar.Text = "Guardar"
         '
-        'Label8
+        'LblNuevo
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(204, 600)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 16)
-        Me.Label8.TabIndex = 67
-        Me.Label8.Text = "Nuevo"
+        Me.LblNuevo.AutoSize = True
+        Me.LblNuevo.BackColor = System.Drawing.Color.Transparent
+        Me.LblNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblNuevo.Location = New System.Drawing.Point(204, 666)
+        Me.LblNuevo.Name = "LblNuevo"
+        Me.LblNuevo.Size = New System.Drawing.Size(48, 16)
+        Me.LblNuevo.TabIndex = 67
+        Me.LblNuevo.Text = "Nuevo"
         '
-        'Label13
+        'LblCancelar
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(514, 599)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(62, 16)
-        Me.Label13.TabIndex = 72
-        Me.Label13.Text = "Cancelar"
+        Me.LblCancelar.AutoSize = True
+        Me.LblCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.LblCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblCancelar.Location = New System.Drawing.Point(514, 665)
+        Me.LblCancelar.Name = "LblCancelar"
+        Me.LblCancelar.Size = New System.Drawing.Size(62, 16)
+        Me.LblCancelar.TabIndex = 72
+        Me.LblCancelar.Text = "Cancelar"
         '
         'btnCancelar
         '
@@ -149,7 +163,7 @@ Partial Class Venta
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(522, 563)
+        Me.btnCancelar.Location = New System.Drawing.Point(522, 629)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 6
@@ -172,7 +186,7 @@ Partial Class Venta
         Me.gbArticulos.Controls.Add(Me.lblCodPresentacion)
         Me.gbArticulos.Controls.Add(Me.label7)
         Me.gbArticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbArticulos.Location = New System.Drawing.Point(24, 176)
+        Me.gbArticulos.Location = New System.Drawing.Point(24, 226)
         Me.gbArticulos.Name = "gbArticulos"
         Me.gbArticulos.Size = New System.Drawing.Size(936, 72)
         Me.gbArticulos.TabIndex = 2
@@ -229,7 +243,7 @@ Partial Class Venta
         Me.btnBuscarProducto.Location = New System.Drawing.Point(189, 25)
         Me.btnBuscarProducto.Name = "btnBuscarProducto"
         Me.btnBuscarProducto.Size = New System.Drawing.Size(26, 23)
-        Me.btnBuscarProducto.TabIndex = 2
+        Me.btnBuscarProducto.TabIndex = 6
         Me.btnBuscarProducto.UseVisualStyleBackColor = True
         '
         'btnAgregar
@@ -237,7 +251,7 @@ Partial Class Venta
         Me.btnAgregar.Location = New System.Drawing.Point(843, 27)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 4
+        Me.btnAgregar.TabIndex = 8
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -265,7 +279,7 @@ Partial Class Venta
         Me.txtCantidad.Location = New System.Drawing.Point(748, 29)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(81, 20)
-        Me.txtCantidad.TabIndex = 3
+        Me.txtCantidad.TabIndex = 7
         '
         'label6
         '
@@ -310,6 +324,16 @@ Partial Class Venta
         'gbDatos
         '
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
+        Me.gbDatos.Controls.Add(Me.TxtFechaVence)
+        Me.gbDatos.Controls.Add(Me.LblFechaVence)
+        Me.gbDatos.Controls.Add(Me.NuDiasPlazo)
+        Me.gbDatos.Controls.Add(Me.LblDias)
+        Me.gbDatos.Controls.Add(Me.Label10)
+        Me.gbDatos.Controls.Add(Me.TxtNombreCliente)
+        Me.gbDatos.Controls.Add(Me.dtpFecha)
+        Me.gbDatos.Controls.Add(Me.Label4)
+        Me.gbDatos.Controls.Add(Me.CboTipoPago)
+        Me.gbDatos.Controls.Add(Me.Label2)
         Me.gbDatos.Controls.Add(Me.btnBuscarCliente)
         Me.gbDatos.Controls.Add(Me.txtCliente)
         Me.gbDatos.Controls.Add(Me.label3)
@@ -318,10 +342,94 @@ Partial Class Venta
         Me.gbDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbDatos.Location = New System.Drawing.Point(24, 113)
         Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(599, 57)
+        Me.gbDatos.Size = New System.Drawing.Size(936, 107)
         Me.gbDatos.TabIndex = 1
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "Datos de Factura"
+        '
+        'TxtFechaVence
+        '
+        Me.TxtFechaVence.Location = New System.Drawing.Point(776, 61)
+        Me.TxtFechaVence.Name = "TxtFechaVence"
+        Me.TxtFechaVence.ReadOnly = True
+        Me.TxtFechaVence.Size = New System.Drawing.Size(100, 20)
+        Me.TxtFechaVence.TabIndex = 19
+        '
+        'LblFechaVence
+        '
+        Me.LblFechaVence.AutoSize = True
+        Me.LblFechaVence.Location = New System.Drawing.Point(699, 64)
+        Me.LblFechaVence.Name = "LblFechaVence"
+        Me.LblFechaVence.Size = New System.Drawing.Size(71, 13)
+        Me.LblFechaVence.TabIndex = 18
+        Me.LblFechaVence.Text = "Fecha Vence"
+        '
+        'NuDiasPlazo
+        '
+        Me.NuDiasPlazo.Location = New System.Drawing.Point(630, 61)
+        Me.NuDiasPlazo.Name = "NuDiasPlazo"
+        Me.NuDiasPlazo.Size = New System.Drawing.Size(51, 20)
+        Me.NuDiasPlazo.TabIndex = 5
+        '
+        'LblDias
+        '
+        Me.LblDias.AutoSize = True
+        Me.LblDias.Location = New System.Drawing.Point(565, 65)
+        Me.LblDias.Name = "LblDias"
+        Me.LblDias.Size = New System.Drawing.Size(59, 13)
+        Me.LblDias.TabIndex = 16
+        Me.LblDias.Text = "Días Plazo"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(262, 27)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(37, 13)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "Fecha"
+        '
+        'TxtNombreCliente
+        '
+        Me.TxtNombreCliente.Location = New System.Drawing.Point(376, 60)
+        Me.TxtNombreCliente.Name = "TxtNombreCliente"
+        Me.TxtNombreCliente.ReadOnly = True
+        Me.TxtNombreCliente.Size = New System.Drawing.Size(183, 20)
+        Me.TxtNombreCliente.TabIndex = 14
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Location = New System.Drawing.Point(305, 25)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(196, 20)
+        Me.dtpFecha.TabIndex = 15
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(20, 63)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(59, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Rtn Cliente"
+        '
+        'CboTipoPago
+        '
+        Me.CboTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboTipoPago.FormattingEnabled = True
+        Me.CboTipoPago.Location = New System.Drawing.Point(621, 24)
+        Me.CboTipoPago.Name = "CboTipoPago"
+        Me.CboTipoPago.Size = New System.Drawing.Size(121, 21)
+        Me.CboTipoPago.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(548, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Tipo Venta"
         '
         'btnBuscarCliente
         '
@@ -332,17 +440,17 @@ Partial Class Venta
         Me.btnBuscarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(442, 23)
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(259, 60)
         Me.btnBuscarCliente.Name = "btnBuscarCliente"
         Me.btnBuscarCliente.Size = New System.Drawing.Size(26, 23)
-        Me.btnBuscarCliente.TabIndex = 1
+        Me.btnBuscarCliente.TabIndex = 4
         Me.btnBuscarCliente.UseVisualStyleBackColor = True
         '
         'txtCliente
         '
         Me.txtCliente.BackColor = System.Drawing.SystemColors.Window
         Me.txtCliente.Enabled = False
-        Me.txtCliente.Location = New System.Drawing.Point(265, 25)
+        Me.txtCliente.Location = New System.Drawing.Point(85, 60)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(171, 20)
         Me.txtCliente.TabIndex = 10
@@ -351,11 +459,11 @@ Partial Class Venta
         '
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label3.Location = New System.Drawing.Point(220, 28)
+        Me.label3.Location = New System.Drawing.Point(291, 63)
         Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(39, 13)
+        Me.label3.Size = New System.Drawing.Size(79, 13)
         Me.label3.TabIndex = 4
-        Me.label3.Text = "Cliente"
+        Me.label3.Text = "Nombre Cliente"
         '
         'txtCodFactura
         '
@@ -363,7 +471,7 @@ Partial Class Venta
         Me.txtCodFactura.Enabled = False
         Me.txtCodFactura.Location = New System.Drawing.Point(102, 25)
         Me.txtCodFactura.Name = "txtCodFactura"
-        Me.txtCodFactura.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodFactura.Size = New System.Drawing.Size(154, 20)
         Me.txtCodFactura.TabIndex = 0
         '
         'Label11
@@ -376,20 +484,13 @@ Partial Class Venta
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Código Factura"
         '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(758, 27)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(196, 20)
-        Me.dtpFecha.TabIndex = 15
-        Me.dtpFecha.Visible = False
-        '
         'lsvMostrar
         '
+        Me.lsvMostrar.AllowColumnReorder = True
         Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCod, Me.chNombre, Me.chTipo, Me.chPrecio, Me.chCantidad, Me.chTotal})
+        Me.lsvMostrar.ContextMenuStrip = Me.CmsOpcion
         Me.lsvMostrar.FullRowSelect = True
-        Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(24, 254)
+        Me.lsvMostrar.Location = New System.Drawing.Point(24, 314)
         Me.lsvMostrar.Name = "lsvMostrar"
         Me.lsvMostrar.Size = New System.Drawing.Size(936, 284)
         Me.lsvMostrar.TabIndex = 79
@@ -426,11 +527,23 @@ Partial Class Venta
         Me.chTotal.Text = "Total"
         Me.chTotal.Width = 141
         '
+        'CmsOpcion
+        '
+        Me.CmsOpcion.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuitarItemToolStripMenuItem})
+        Me.CmsOpcion.Name = "CmsOpcion"
+        Me.CmsOpcion.Size = New System.Drawing.Size(135, 26)
+        '
+        'QuitarItemToolStripMenuItem
+        '
+        Me.QuitarItemToolStripMenuItem.Name = "QuitarItemToolStripMenuItem"
+        Me.QuitarItemToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.QuitarItemToolStripMenuItem.Text = "Quitar Item"
+        '
         'txtSubTotal
         '
         Me.txtSubTotal.BackColor = System.Drawing.SystemColors.Window
         Me.txtSubTotal.Enabled = False
-        Me.txtSubTotal.Location = New System.Drawing.Point(834, 544)
+        Me.txtSubTotal.Location = New System.Drawing.Point(834, 610)
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.Size = New System.Drawing.Size(126, 20)
         Me.txtSubTotal.TabIndex = 22
@@ -439,7 +552,7 @@ Partial Class Venta
         '
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Location = New System.Drawing.Point(782, 547)
+        Me.Label15.Location = New System.Drawing.Point(782, 613)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(46, 13)
         Me.Label15.TabIndex = 21
@@ -449,7 +562,7 @@ Partial Class Venta
         '
         Me.txtIsv.BackColor = System.Drawing.SystemColors.Window
         Me.txtIsv.Enabled = False
-        Me.txtIsv.Location = New System.Drawing.Point(834, 570)
+        Me.txtIsv.Location = New System.Drawing.Point(834, 636)
         Me.txtIsv.Name = "txtIsv"
         Me.txtIsv.Size = New System.Drawing.Size(126, 20)
         Me.txtIsv.TabIndex = 81
@@ -458,7 +571,7 @@ Partial Class Venta
         '
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Location = New System.Drawing.Point(782, 573)
+        Me.Label16.Location = New System.Drawing.Point(782, 639)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(50, 13)
         Me.Label16.TabIndex = 80
@@ -468,7 +581,7 @@ Partial Class Venta
         '
         Me.txtTotal.BackColor = System.Drawing.SystemColors.Window
         Me.txtTotal.Enabled = False
-        Me.txtTotal.Location = New System.Drawing.Point(834, 596)
+        Me.txtTotal.Location = New System.Drawing.Point(834, 662)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(126, 20)
         Me.txtTotal.TabIndex = 83
@@ -477,7 +590,7 @@ Partial Class Venta
         '
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Location = New System.Drawing.Point(797, 599)
+        Me.Label17.Location = New System.Drawing.Point(797, 665)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(31, 13)
         Me.Label17.TabIndex = 82
@@ -490,7 +603,7 @@ Partial Class Venta
         'lblNombreProducto
         '
         Me.lblNombreProducto.AutoSize = True
-        Me.lblNombreProducto.Location = New System.Drawing.Point(67, 504)
+        Me.lblNombreProducto.Location = New System.Drawing.Point(67, 611)
         Me.lblNombreProducto.Name = "lblNombreProducto"
         Me.lblNombreProducto.Size = New System.Drawing.Size(0, 13)
         Me.lblNombreProducto.TabIndex = 84
@@ -503,9 +616,19 @@ Partial Class Venta
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(2, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(483, 111)
+        Me.PictureBox1.Size = New System.Drawing.Size(504, 111)
         Me.PictureBox1.TabIndex = 85
         Me.PictureBox1.TabStop = False
+        '
+        'BtnImprimir
+        '
+        Me.BtnImprimir.Image = CType(resources.GetObject("BtnImprimir.Image"), System.Drawing.Image)
+        Me.BtnImprimir.Location = New System.Drawing.Point(24, 632)
+        Me.BtnImprimir.Name = "BtnImprimir"
+        Me.BtnImprimir.Size = New System.Drawing.Size(96, 49)
+        Me.BtnImprimir.TabIndex = 86
+        Me.BtnImprimir.Text = "Imprimir"
+        Me.BtnImprimir.Visible = False
         '
         'Venta
         '
@@ -513,10 +636,10 @@ Partial Class Venta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(979, 631)
+        Me.ClientSize = New System.Drawing.Size(979, 703)
+        Me.Controls.Add(Me.BtnImprimir)
         Me.Controls.Add(Me.gbDatos)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.lblNombreProducto)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label17)
@@ -528,9 +651,9 @@ Partial Class Venta
         Me.Controls.Add(Me.gbArticulos)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.LblGuardar)
+        Me.Controls.Add(Me.LblNuevo)
+        Me.Controls.Add(Me.LblCancelar)
         Me.Controls.Add(Me.btnCancelar)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -540,11 +663,13 @@ Partial Class Venta
         Me.Name = "Venta"
         Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Venta"
+        Me.Text = " "
         Me.gbArticulos.ResumeLayout(False)
         Me.gbArticulos.PerformLayout()
         Me.gbDatos.ResumeLayout(False)
         Me.gbDatos.PerformLayout()
+        CType(Me.NuDiasPlazo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsOpcion.ResumeLayout(False)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -554,9 +679,9 @@ Partial Class Venta
 
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents LblGuardar As Label
+    Friend WithEvents LblNuevo As Label
+    Friend WithEvents LblCancelar As Label
     Friend WithEvents btnCancelar As Button
     Private WithEvents gbArticulos As GroupBox
     Private WithEvents btnBuscarProducto As Button
@@ -596,4 +721,16 @@ Partial Class Venta
     Friend WithEvents lblNombreProducto As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents CboTipoPago As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtFechaVence As TextBox
+    Friend WithEvents LblFechaVence As Label
+    Friend WithEvents NuDiasPlazo As NumericUpDown
+    Friend WithEvents LblDias As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TxtNombreCliente As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CmsOpcion As ContextMenuStrip
+    Friend WithEvents QuitarItemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BtnImprimir As DevExpress.XtraEditors.SimpleButton
 End Class

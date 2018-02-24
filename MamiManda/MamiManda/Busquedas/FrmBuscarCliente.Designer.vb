@@ -26,13 +26,13 @@ Partial Class FrmBuscarCliente
         Me.LsvMostrarCliente = New System.Windows.Forms.ListView()
         Me.chRtn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chApellido = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDireccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chMunicipio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ChDiasPlazo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -41,7 +41,7 @@ Partial Class FrmBuscarCliente
         '
         'LsvMostrarCliente
         '
-        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chApellido, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chFecha, Me.chSexo, Me.chMunicipio})
+        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chFecha, Me.chSexo, Me.chMunicipio, Me.ChDiasPlazo})
         Me.LsvMostrarCliente.FullRowSelect = True
         Me.LsvMostrarCliente.GridLines = True
         Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 84)
@@ -58,12 +58,8 @@ Partial Class FrmBuscarCliente
         '
         'chNombre
         '
-        Me.chNombre.Text = "Nombre "
-        Me.chNombre.Width = 80
-        '
-        'chApellido
-        '
-        Me.chApellido.Text = "Apellido"
+        Me.chNombre.Text = "NombreCompleto"
+        Me.chNombre.Width = 105
         '
         'chEmail
         '
@@ -82,7 +78,7 @@ Partial Class FrmBuscarCliente
         'chFecha
         '
         Me.chFecha.Text = "Fecha"
-        Me.chFecha.Width = 137
+        Me.chFecha.Width = 110
         '
         'chSexo
         '
@@ -93,6 +89,10 @@ Partial Class FrmBuscarCliente
         '
         Me.chMunicipio.Text = "Municipio"
         Me.chMunicipio.Width = 90
+        '
+        'ChDiasPlazo
+        '
+        Me.ChDiasPlazo.Text = "DiasPlazo"
         '
         'txtBuscar
         '
@@ -167,7 +167,7 @@ Partial Class FrmBuscarCliente
     Friend WithEvents chMunicipio As ColumnHeader
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents chApellido As ColumnHeader
     Friend WithEvents btnAgregar As Button
     Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents ChDiasPlazo As ColumnHeader
 End Class

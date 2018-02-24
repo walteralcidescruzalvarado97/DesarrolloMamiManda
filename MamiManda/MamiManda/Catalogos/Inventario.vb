@@ -1,10 +1,15 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmInventario
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property IdInventario As String = ""
     Private Sub FrmInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(True, True, True)
         Limpiar()
-        MostrarInventario()
 
+        If ModoEdicion Then
+            Call CargarDatosInventario()
+            txtCodInventario.ReadOnly = True
+        End If
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
@@ -12,10 +17,8 @@ Public Class FrmInventario
     End Sub
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
         HabilitarTexbox(valor)
     End Sub
@@ -49,76 +52,36 @@ Public Class FrmInventario
 
 #Region "Llenar"
 
-    Private Sub MostrarInventario()
+    Private Sub CargarDatosInventario()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
         End If
-        cnn.Open()
 
-        Using cmd As New SqlCommand
-            Try
+        Try
+            cnn.Open()
+            Using cmd As New SqlCommand
                 With cmd
-                    .CommandText = "Sp_MostrarInventario"
+                    .CommandText = "Sp_CargarDatosInventario"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
+                    .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = IdInventario
                 End With
-                Dim VerInventario As SqlDataReader
-                VerInventario = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerInventario.Read = True
-                    With Me.lsvMostrar.Items.Add(VerInventario("IdInventario").ToString)
-                        .SubItems.Add(VerInventario("NombreProducto").ToString)
-                        .SubItems.Add(VerInventario("ExistenciaMaxima").ToString)
-                        .SubItems.Add(VerInventario("ExistenciaMinima").ToString)
-                        .SubItems.Add(VerInventario("Existencia").ToString)
-                        .SubItems.Add(VerInventario("IdUsuario").ToString)
-                    End With
+
+                Dim reader As SqlDataReader = cmd.ExecuteReader
+
+                While reader.Read
+                    txtCodInventario.Text = reader("IdInventario").ToString
+                    txtNombre.Text = reader("NombreProducto").ToString
+                    txtExistenciaMaxima.Text = reader("ExistenciaMaxima").ToString
+                    txtExistenciaMinima.Text = reader("ExistenciaMinima").ToString
                 End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub ListarInventario()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarInventario"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim VerInventario As SqlDataReader
-                VerInventario = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerInventario.Read = True
-                    With Me.lsvMostrar.Items.Add(VerInventario("IdInventario").ToString)
-                        .SubItems.Add(VerInventario("NombreProducto").ToString)
-                        .SubItems.Add(VerInventario("ExistenciaMaxima").ToString)
-                        .SubItems.Add(VerInventario("ExistenciaMinima").ToString)
-                        .SubItems.Add(VerInventario("Existencia").ToString)
-                        .SubItems.Add(VerInventario("IdUsuario").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        ListarInventario()
-    End Sub
 #End Region
 
 #Region "CRUD"
@@ -167,7 +130,7 @@ Public Class FrmInventario
                         .Parameters.Add("@ExistenciaMaxima", SqlDbType.Decimal).Value = txtExistenciaMaxima.Text.Trim
                         .Parameters.Add("@ExistenciaMinima", SqlDbType.Decimal).Value = txtExistenciaMinima.Text.Trim
                         .Parameters.Add("@Existencia", SqlDbType.Decimal).Value = 0
-                        .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
+                        .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario
                         .ExecuteNonQuery()
                         MessageBox.Show("El producto ha sido agregado", "MamiManda", MessageBoxButtons.OK)
                     End With
@@ -197,7 +160,7 @@ Public Class FrmInventario
                     .Parameters.Add("@ExistenciaMaxima", SqlDbType.Decimal).Value = txtExistenciaMaxima.Text.Trim
                     .Parameters.Add("@ExistenciaMinima", SqlDbType.Decimal).Value = txtExistenciaMinima.Text.Trim
                     .Parameters.Add("@Existencia", SqlDbType.Decimal).Value = 0
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de inventario ha sido actualizado", "MamiManda", MessageBoxButtons.OK)
                 End With
@@ -215,14 +178,10 @@ Public Class FrmInventario
     End Sub
 
 #End Region
-
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, False, True, True)
-    End Sub
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
+        Me.Close()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -239,47 +198,18 @@ Public Class FrmInventario
         ElseIf maxima <= minima Then
             MessageBox.Show("La existencia máxima debe ser mayor a la mínima", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf maxima > minima Then
-            AgregarInventario()
-            HabilitarBotones(True, False, False, False, False)
+            If ModoEdicion Then
+                Call ActualizarInventario()
+            Else
+                Call AgregarInventario()
+            End If
+
+            HabilitarBotones(False, False, False)
             Limpiar()
-            MostrarInventario()
+            FrmInventarios.ActualizarGrid(True)
+            Me.Close()
         End If
     End Sub
-
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Dim minima As Integer = txtExistenciaMinima.Text
-        Dim maxima As Integer = txtExistenciaMaxima.Text
-
-        If Validar(txtNombre, "Debe ingresar un nombre del producto") Then
-        ElseIf Validar(txtExistenciaMaxima, "Debe ingresar la existencia máxima") Then
-        ElseIf Validar(txtExistenciaMinima, "Debe ingresar la existencia mínima") Then
-        ElseIf maxima <= minima Then
-            MessageBox.Show("La existencia máxima debe ser mayor a la mínima", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        ElseIf maxima > minima Then
-            ActualizarInventario()
-            HabilitarBotones(True, False, False, False, False)
-            Limpiar()
-            MostrarInventario()
-        End If
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        txtCodInventario.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        txtNombre.Text = lsvMostrar.FocusedItem.SubItems(1).Text
-        txtExistenciaMaxima.Text = lsvMostrar.FocusedItem.SubItems(2).Text
-        txtExistenciaMinima.Text = lsvMostrar.FocusedItem.SubItems(3).Text
-        HabilitarBotones(False, False, True, True, True)
-
-        TabControl1.SelectedIndex = 0
-        btnEditar.Enabled = False
-        txtBuscar.Text = ""
-        txtCodInventario.Enabled = False
-    End Sub
-
-    Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
-        btnEditar.Enabled = True
-    End Sub
-
     Private Sub txtAlfabetico(e)
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -298,10 +228,6 @@ Public Class FrmInventario
         txtAlfabetico(e)
     End Sub
 
-    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
-
-    End Sub
-
     Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = True
@@ -311,4 +237,5 @@ Public Class FrmInventario
             e.Handled = False
         End If
     End Sub
+
 End Class

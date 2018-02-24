@@ -33,19 +33,21 @@ Partial Class FrmProduccion
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
-        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lsvMostrar = New System.Windows.Forms.ListView()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.NavBarControl1 = New DevExpress.XtraNavBar.NavBarControl()
+        Me.NavBarGroup1 = New DevExpress.XtraNavBar.NavBarGroup()
+        Me.NavBarItem1 = New DevExpress.XtraNavBar.NavBarItem()
         Me.ChProducto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChMateria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.lsvMostrar = New System.Windows.Forms.ListView()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -53,7 +55,7 @@ Partial Class FrmProduccion
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(37, 23)
+        Me.Label1.Location = New System.Drawing.Point(340, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(120, 25)
         Me.Label1.TabIndex = 93
@@ -61,6 +63,7 @@ Partial Class FrmProduccion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtProducto)
@@ -69,7 +72,7 @@ Partial Class FrmProduccion
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCantidad)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 71)
+        Me.GroupBox1.Location = New System.Drawing.Point(421, 78)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(312, 124)
         Me.GroupBox1.TabIndex = 94
@@ -144,24 +147,9 @@ Partial Class FrmProduccion
         Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
         Me.txtCantidad.TabIndex = 72
         '
-        'btnInsertar
-        '
-        Me.btnInsertar.BackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.BackgroundImage = CType(resources.GetObject("btnInsertar.BackgroundImage"), System.Drawing.Image)
-        Me.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInsertar.FlatAppearance.BorderSize = 0
-        Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(380, 87)
-        Me.btnInsertar.Name = "btnInsertar"
-        Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
-        Me.btnInsertar.TabIndex = 95
-        Me.btnInsertar.UseVisualStyleBackColor = False
-        '
         'btnGuardar
         '
+        Me.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -170,7 +158,7 @@ Partial Class FrmProduccion
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(380, 151)
+        Me.btnGuardar.Location = New System.Drawing.Point(519, 348)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 96
@@ -178,10 +166,11 @@ Partial Class FrmProduccion
         '
         'Label9
         '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(376, 192)
+        Me.Label9.Location = New System.Drawing.Point(515, 389)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 98
@@ -189,28 +178,19 @@ Partial Class FrmProduccion
         '
         'Label13
         '
+        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(374, 252)
+        Me.Label13.Location = New System.Drawing.Point(582, 389)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 102
         Me.Label13.Text = "Cancelar"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(380, 128)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 16)
-        Me.Label8.TabIndex = 97
-        Me.Label8.Text = "Insertar"
-        '
         'btnCancelar
         '
+        Me.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -219,7 +199,7 @@ Partial Class FrmProduccion
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(382, 216)
+        Me.btnCancelar.Location = New System.Drawing.Point(590, 353)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 100
@@ -229,17 +209,35 @@ Partial Class FrmProduccion
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'lsvMostrar
+        'NavBarControl1
         '
-        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChProducto, Me.ChMateria})
-        Me.lsvMostrar.FullRowSelect = True
-        Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(26, 204)
-        Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(312, 131)
-        Me.lsvMostrar.TabIndex = 103
-        Me.lsvMostrar.UseCompatibleStateImageBehavior = False
-        Me.lsvMostrar.View = System.Windows.Forms.View.Details
+        Me.NavBarControl1.ActiveGroup = Me.NavBarGroup1
+        Me.NavBarControl1.Appearance.Background.BackColor = System.Drawing.Color.Transparent
+        Me.NavBarControl1.Appearance.Background.Options.UseBackColor = True
+        Me.NavBarControl1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.NavBarControl1.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup1})
+        Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1})
+        Me.NavBarControl1.Location = New System.Drawing.Point(0, 0)
+        Me.NavBarControl1.Name = "NavBarControl1"
+        Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 181
+        Me.NavBarControl1.Size = New System.Drawing.Size(181, 426)
+        Me.NavBarControl1.TabIndex = 113
+        Me.NavBarControl1.Text = "NavBarControl1"
+        '
+        'NavBarGroup1
+        '
+        Me.NavBarGroup1.Caption = "Opciones"
+        Me.NavBarGroup1.Expanded = True
+        Me.NavBarGroup1.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem1)})
+        Me.NavBarGroup1.Name = "NavBarGroup1"
+        Me.NavBarGroup1.SmallImage = CType(resources.GetObject("NavBarGroup1.SmallImage"), System.Drawing.Image)
+        '
+        'NavBarItem1
+        '
+        Me.NavBarItem1.Caption = "Nueva Producción"
+        Me.NavBarItem1.LargeImage = CType(resources.GetObject("NavBarItem1.LargeImage"), System.Drawing.Image)
+        Me.NavBarItem1.Name = "NavBarItem1"
+        Me.NavBarItem1.SmallImage = CType(resources.GetObject("NavBarItem1.SmallImage"), System.Drawing.Image)
         '
         'ChProducto
         '
@@ -251,19 +249,31 @@ Partial Class FrmProduccion
         Me.ChMateria.Text = "Ingredientes"
         Me.ChMateria.Width = 160
         '
+        'lsvMostrar
+        '
+        Me.lsvMostrar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChProducto, Me.ChMateria})
+        Me.lsvMostrar.FullRowSelect = True
+        Me.lsvMostrar.GridLines = True
+        Me.lsvMostrar.Location = New System.Drawing.Point(421, 211)
+        Me.lsvMostrar.Name = "lsvMostrar"
+        Me.lsvMostrar.Size = New System.Drawing.Size(312, 131)
+        Me.lsvMostrar.TabIndex = 103
+        Me.lsvMostrar.UseCompatibleStateImageBehavior = False
+        Me.lsvMostrar.View = System.Windows.Forms.View.Details
+        '
         'FrmProduccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(476, 347)
+        Me.ClientSize = New System.Drawing.Size(951, 426)
+        Me.Controls.Add(Me.NavBarControl1)
         Me.Controls.Add(Me.lsvMostrar)
-        Me.Controls.Add(Me.btnInsertar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
@@ -279,6 +289,7 @@ Partial Class FrmProduccion
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,17 +302,18 @@ Partial Class FrmProduccion
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCantidad As TextBox
-    Friend WithEvents btnInsertar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents txtProducto As TextBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents NavBarControl1 As DevExpress.XtraNavBar.NavBarControl
+    Friend WithEvents NavBarGroup1 As DevExpress.XtraNavBar.NavBarGroup
+    Friend WithEvents NavBarItem1 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents lsvMostrar As ListView
     Friend WithEvents ChProducto As ColumnHeader
     Friend WithEvents ChMateria As ColumnHeader
-    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

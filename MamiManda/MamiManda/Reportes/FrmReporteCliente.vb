@@ -10,8 +10,6 @@ Public Class FrmReporteCliente
         Dim reporte As New RptCliente()
         Dim viewer As New ReportPrintTool(reporte)
 
-
-
         If (RadioButton1.Checked = True) Then
             If (TxtRTN.Text = Nothing) Then
                 MessageBox.Show("Ingrese el RTN Cliente", "Car Wash", MessageBoxButtons.OK, MessageBoxIcon.Information)

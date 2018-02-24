@@ -42,6 +42,7 @@ Public Class FrmConfiguracion
 
             config.Save(ConfigurationSaveMode.Modified, False)
 
+
             My.Settings.Save()
             My.Settings.ConexionTemporal = nuevaCadenaConexion
             My.Settings.Save()

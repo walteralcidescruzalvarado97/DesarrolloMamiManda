@@ -41,29 +41,14 @@ Partial Class FrmUsuario
         Me.btnEliminarFoto = New System.Windows.Forms.Button()
         Me.btnAbrir = New System.Windows.Forms.Button()
         Me.FotoAgregar = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.lsvMostrar = New System.Windows.Forms.ListView()
-        Me.chCodUsuario = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chUserName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chPassword = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chEstado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTipo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.AbrirFoto = New System.Windows.Forms.OpenFileDialog()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GrupBox1.SuspendLayout()
@@ -71,7 +56,6 @@ Partial Class FrmUsuario
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -172,7 +156,7 @@ Partial Class FrmUsuario
         Me.btnEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpleado.Location = New System.Drawing.Point(378, 154)
+        Me.btnEmpleado.Location = New System.Drawing.Point(378, 156)
         Me.btnEmpleado.Name = "btnEmpleado"
         Me.btnEmpleado.Size = New System.Drawing.Size(26, 23)
         Me.btnEmpleado.TabIndex = 10
@@ -216,9 +200,9 @@ Partial Class FrmUsuario
         Me.GrupBox1.Controls.Add(Me.txtContrasena)
         Me.GrupBox1.Controls.Add(Me.cboEstado)
         Me.GrupBox1.Controls.Add(Me.Label4)
-        Me.GrupBox1.Location = New System.Drawing.Point(24, 57)
+        Me.GrupBox1.Location = New System.Drawing.Point(79, 64)
         Me.GrupBox1.Name = "GrupBox1"
-        Me.GrupBox1.Size = New System.Drawing.Size(442, 226)
+        Me.GrupBox1.Size = New System.Drawing.Size(451, 217)
         Me.GrupBox1.TabIndex = 13
         Me.GrupBox1.TabStop = False
         Me.GrupBox1.Text = "Datos de Usuario"
@@ -265,43 +249,16 @@ Partial Class FrmUsuario
         Me.FotoAgregar.TabIndex = 48
         Me.FotoAgregar.TabStop = False
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(520, 72)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 16)
-        Me.Label8.TabIndex = 45
-        Me.Label8.Text = "Insertar"
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(517, 196)
+        Me.Label9.Location = New System.Drawing.Point(253, 323)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 16)
         Me.Label9.TabIndex = 46
         Me.Label9.Text = "Guardar"
-        '
-        'btnInsertar
-        '
-        Me.btnInsertar.BackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.BackgroundImage = CType(resources.GetObject("btnInsertar.BackgroundImage"), System.Drawing.Image)
-        Me.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInsertar.FlatAppearance.BorderSize = 0
-        Me.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInsertar.Location = New System.Drawing.Point(520, 31)
-        Me.btnInsertar.Name = "btnInsertar"
-        Me.btnInsertar.Size = New System.Drawing.Size(47, 43)
-        Me.btnInsertar.TabIndex = 43
-        Me.btnInsertar.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
@@ -313,49 +270,22 @@ Partial Class FrmUsuario
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(521, 155)
+        Me.btnGuardar.Location = New System.Drawing.Point(257, 282)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 44
         Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(514, 136)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(66, 16)
-        Me.Label10.TabIndex = 53
-        Me.Label10.Text = "Actualizar"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(515, 256)
+        Me.Label13.Location = New System.Drawing.Point(322, 323)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 54
         Me.Label13.Text = "Cancelar"
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.BackColor = System.Drawing.Color.Transparent
-        Me.btnActualizar.BackgroundImage = CType(resources.GetObject("btnActualizar.BackgroundImage"), System.Drawing.Image)
-        Me.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnActualizar.FlatAppearance.BorderSize = 0
-        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(520, 93)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(47, 43)
-        Me.btnActualizar.TabIndex = 51
-        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -367,53 +297,11 @@ Partial Class FrmUsuario
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(523, 220)
+        Me.btnCancelar.Location = New System.Drawing.Point(330, 287)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 52
         Me.btnCancelar.UseVisualStyleBackColor = False
-        '
-        'lsvMostrar
-        '
-        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodUsuario, Me.chUserName, Me.chPassword, Me.chEstado, Me.chNombre, Me.chTipo})
-        Me.lsvMostrar.FullRowSelect = True
-        Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(0, 112)
-        Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(596, 187)
-        Me.lsvMostrar.TabIndex = 57
-        Me.lsvMostrar.UseCompatibleStateImageBehavior = False
-        Me.lsvMostrar.View = System.Windows.Forms.View.Details
-        '
-        'chCodUsuario
-        '
-        Me.chCodUsuario.Text = "Código Usuario"
-        Me.chCodUsuario.Width = 90
-        '
-        'chUserName
-        '
-        Me.chUserName.Text = "Nombre Usuario"
-        Me.chUserName.Width = 120
-        '
-        'chPassword
-        '
-        Me.chPassword.Text = "Password"
-        Me.chPassword.Width = 70
-        '
-        'chEstado
-        '
-        Me.chEstado.Text = "Estado"
-        Me.chEstado.Width = 80
-        '
-        'chNombre
-        '
-        Me.chNombre.Text = "Nombre Completo"
-        Me.chNombre.Width = 130
-        '
-        'chTipo
-        '
-        Me.chTipo.Text = "Tipo Usuario"
-        Me.chTipo.Width = 100
         '
         'Label7
         '
@@ -433,80 +321,29 @@ Partial Class FrmUsuario
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(-4, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(611, 328)
+        Me.TabControl1.Size = New System.Drawing.Size(658, 419)
         Me.TabControl1.TabIndex = 59
         '
         'TabPage1
         '
         Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage1.Controls.Add(Me.btnInsertar)
         Me.TabPage1.Controls.Add(Me.Label7)
-        Me.TabPage1.Controls.Add(Me.GrupBox1)
         Me.TabPage1.Controls.Add(Me.btnGuardar)
-        Me.TabPage1.Controls.Add(Me.Label10)
-        Me.TabPage1.Controls.Add(Me.Label9)
+        Me.TabPage1.Controls.Add(Me.GrupBox1)
         Me.TabPage1.Controls.Add(Me.Label13)
-        Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Controls.Add(Me.btnActualizar)
         Me.TabPage1.Controls.Add(Me.btnCancelar)
+        Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(603, 302)
+        Me.TabPage1.Size = New System.Drawing.Size(650, 393)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gestión Usuario"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
-        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage2.Controls.Add(Me.btnEditar)
-        Me.TabPage2.Controls.Add(Me.Label11)
-        Me.TabPage2.Controls.Add(Me.txtBuscar)
-        Me.TabPage2.Controls.Add(Me.lsvMostrar)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(603, 302)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Listar Usuario"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'btnEditar
-        '
-        Me.btnEditar.Enabled = False
-        Me.btnEditar.Location = New System.Drawing.Point(517, 55)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditar.TabIndex = 88
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(40, 20)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(145, 25)
-        Me.Label11.TabIndex = 87
-        Me.Label11.Text = "Listar Usuario"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(83, 69)
-        Me.txtBuscar.Multiline = True
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(416, 29)
-        Me.txtBuscar.TabIndex = 86
         '
         'AbrirFoto
         '
@@ -518,7 +355,7 @@ Partial Class FrmUsuario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(599, 323)
+        Me.ClientSize = New System.Drawing.Size(600, 371)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
@@ -534,8 +371,6 @@ Partial Class FrmUsuario
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -554,29 +389,14 @@ Partial Class FrmUsuario
     Friend WithEvents Label6 As Label
     Friend WithEvents cboTipoUsuario As ComboBox
     Friend WithEvents GrupBox1 As GroupBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents btnInsertar As Button
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents btnActualizar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents lsvMostrar As ListView
-    Friend WithEvents chCodUsuario As ColumnHeader
-    Friend WithEvents chUserName As ColumnHeader
-    Friend WithEvents chPassword As ColumnHeader
-    Friend WithEvents chNombre As ColumnHeader
-    Friend WithEvents chTipo As ColumnHeader
-    Friend WithEvents chEstado As ColumnHeader
     Friend WithEvents Label7 As Label
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents btnEditar As Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents btnEliminarFoto As Button
     Friend WithEvents btnAbrir As Button
     Friend WithEvents FotoAgregar As PictureBox

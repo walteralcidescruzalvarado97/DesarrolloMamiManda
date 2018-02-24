@@ -1,13 +1,19 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmEmpleado
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property IdEmpleado As Integer = 0
     Private Sub frmEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarComboboxTipoEmpleado()
         LlenarComboboxSexo()
-        HabilitarBotones(True, False, False, False, False)
-        MostrarEmpleado()
+        HabilitarBotones(True, True, true)
         CboTipoEmpleado.Text = Nothing
         CboSexo.Text = Nothing
 
+        If ModoEdicion Then
+            CargarDatosEmpleado()
+        Else
+            InvestigarCorrelativo()
+        End If
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
@@ -86,10 +92,8 @@ Public Class FrmEmpleado
 
 #Region "Funciones"
 
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
         HabilitarTextBox(valor)
     End Sub
@@ -181,40 +185,38 @@ Public Class FrmEmpleado
 
 #Region "Llenar"
 
-    Private Sub ListarEmpleado()
+    Private Sub CargarDatosEmpleado()
         If cnn.State = ConnectionState.Open Then
-            cnn.Close()
+            cnn.close
         End If
-        cnn.Open()
 
-        Using cmd As New SqlCommand
-            Try
+        Try
+            cnn.Open()
+
+            Using cmd As New SqlCommand
                 With cmd
-                    .CommandText = "Sp_ListarEmpleado"
+                    .CommandText = "Sp_CargarDatosEmpleado"
                     .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
                     .Connection = cnn
+                    .Parameters.Add("@IdEmpleado", SqlDbType.Int).Value = IdEmpleado
                 End With
-                Dim VerEmpleado As SqlDataReader
-                VerEmpleado = cmd.ExecuteReader()
-                LsvMostrarEmpleado.Items.Clear()
-                While VerEmpleado.Read = True
-                    With Me.LsvMostrarEmpleado.Items.Add(VerEmpleado("IdEmpleado").ToString)
-                        .SubItems.Add(VerEmpleado("Nombre").ToString)
-                        .SubItems.Add(VerEmpleado("Apellido").ToString)
-                        .SubItems.Add(VerEmpleado("EMail").ToString)
-                        .SubItems.Add(VerEmpleado("Telefono").ToString)
-                        .SubItems.Add(VerEmpleado("TipoEmpleado").ToString)
-                        .SubItems.Add(VerEmpleado("Sexo").ToString)
-                        .SubItems.Add(VerEmpleado("Direccion").ToString)
-                    End With
+
+                Dim reader As SqlDataReader = cmd.ExecuteReader
+
+                While reader.Read
+                    TxtCodEmpleado.Text = reader("IdEmpleado").ToString
+                    TxtNombre.Text = reader("Nombre").ToString
+                    TxtApellido.Text = reader("Apellido").ToString
+                    TxtEmail.Text = reader("EMail").ToString
+                    mtbTelefono.Text = reader("Telefono").ToString
+                    TxtDireccion.Text = reader("direccion").ToString
+                    CboTipoEmpleado.Text = reader("TipoEmpleado").ToString
+                    CboSexo.Text = reader("sexo").ToString
                 End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub LlenarComboboxTipoEmpleado()
@@ -268,48 +270,7 @@ Public Class FrmEmpleado
             cnn.Close()
         End Try
     End Sub
-
-    Private Sub MostrarEmpleado()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_MostrarEmpleado"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim VerEmpleado As SqlDataReader
-                VerEmpleado = cmd.ExecuteReader()
-                LsvMostrarEmpleado.Items.Clear()
-                While VerEmpleado.Read = True
-                    With Me.LsvMostrarEmpleado.Items.Add(VerEmpleado("IdEmpleado").ToString)
-                        .SubItems.Add(VerEmpleado("Nombre").ToString)
-                        .SubItems.Add(VerEmpleado("Apellido").ToString)
-                        .SubItems.Add(VerEmpleado("EMail").ToString)
-                        .SubItems.Add(VerEmpleado("Telefono").ToString)
-                        .SubItems.Add(VerEmpleado("TipoEmpleado").ToString)
-                        .SubItems.Add(VerEmpleado("Sexo").ToString)
-                        .SubItems.Add(VerEmpleado("Direccion").ToString)
-
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
 #End Region
-
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, False, True, True)
-        InvestigarCorrelativo()
-    End Sub
 
     Function ValidateEmail(ByVal email As String) As Boolean
         Dim emailRegex As New System.Text.RegularExpressions.Regex(
@@ -318,83 +279,8 @@ Public Class FrmEmpleado
        emailRegex.Match(email)
         Return emailMatch.Success
     End Function
-
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
-        ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
-        ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
-        ElseIf ValidateEmail(TxtEmail.Text) = False Then
-            MessageBox.Show("Debe ingresar un correo válido", "MamiManda", MessageBoxButtons.OK)
-        ElseIf Validar(mtbTelefono, "Debe ingresar un número de teléfono") Then
-        ElseIf mtbTelefono.TextLength < 8 Then
-            MessageBox.Show("Debe ingresar un número de teléfono válido", "MamiManda", MessageBoxButtons.OK)
-        ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
-        ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
-        ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
-        Else
-            AgregarEmpleado()
-            HabilitarBotones(True, False, False, False, False)
-            Limpiar()
-            MostrarEmpleado()
-        End If
-    End Sub
-
-    Private Sub LsvMostrarEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs)
-        btnEditar.Enabled = True
-    End Sub
-
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
-        Limpiar()
-    End Sub
-
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
-        ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
-        ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
-        ElseIf ValidateEmail(TxtEmail.Text) = False Then
-            MessageBox.Show("Debe ingresar un correo válido", "MamiManda", MessageBoxButtons.OK)
-        ElseIf Validar(mtbTelefono, "Debe ingresar un número de teléfono") Then
-        ElseIf mtbTelefono.TextLength < 8 Then
-            MessageBox.Show("Debe ingresar un número de teléfono válido", "MamiManda", MessageBoxButtons.OK)
-        ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
-        ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
-        ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
-        Else
-            ActualizarEmpleado()
-            HabilitarBotones(True, False, False, False, False)
-            Limpiar()
-            MostrarEmpleado()
-        End If
-    End Sub
-
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) 
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         Close()
-    End Sub
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        btnEditar.Enabled = False
-        ListarEmpleado()
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        TxtCodEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(0).Text
-        TxtNombre.Text = LsvMostrarEmpleado.FocusedItem.SubItems(1).Text
-        TxtApellido.Text = LsvMostrarEmpleado.FocusedItem.SubItems(2).Text
-        TxtEmail.Text = LsvMostrarEmpleado.FocusedItem.SubItems(3).Text
-        mtbTelefono.Text = LsvMostrarEmpleado.FocusedItem.SubItems(4).Text
-        TxtDireccion.Text = LsvMostrarEmpleado.FocusedItem.SubItems(7).Text
-        CboTipoEmpleado.Text = LsvMostrarEmpleado.FocusedItem.SubItems(5).Text
-        CboSexo.Text = LsvMostrarEmpleado.FocusedItem.SubItems(6).Text
-        HabilitarBotones(False, False, True, True, True)
-
-        TabControl1.SelectedIndex = 0
-        btnEditar.Enabled = False
-        txtBuscar.Text = ""
-    End Sub
-
-    Private Sub LsvMostrarEmpleado_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles LsvMostrarEmpleado.SelectedIndexChanged
-        btnEditar.Enabled = True
     End Sub
 
     Private Sub txtAlfabetico(e)
@@ -427,5 +313,37 @@ Public Class FrmEmpleado
 
     Private Sub mtbTelefono_TextChanged(sender As Object, e As EventArgs) Handles mtbTelefono.TextChanged
 
+    End Sub
+
+    Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        If Validar(TxtNombre, "Debe ingresar un nombre de empleado") Then
+        ElseIf Validar(TxtApellido, "Debe ingresar un apellido") Then
+        ElseIf Validar(TxtEmail, "Debe seleccionar un Email") Then
+        ElseIf ValidateEmail(TxtEmail.Text) = False Then
+            MessageBox.Show("Debe ingresar un correo válido", "MamiManda", MessageBoxButtons.OK)
+        ElseIf Validar(mtbTelefono, "Debe ingresar un número de teléfono") Then
+        ElseIf mtbTelefono.TextLength < 8 Then
+            MessageBox.Show("Debe ingresar un número de teléfono válido", "MamiManda", MessageBoxButtons.OK)
+        ElseIf Validar(TxtDireccion, "Debe ingresar una dirección") Then
+        ElseIf Validar(CboTipoEmpleado, "Debe seleccionar un tipo de Empleado") Then
+        ElseIf Validar(CboSexo, "Debe seleccionar un Sexo") Then
+        Else
+            If ModoEdicion Then
+                Call ActualizarEmpleado()
+            Else
+                Call AgregarEmpleado()
+            End If
+
+            HabilitarBotones(False, False, False)
+            Limpiar()
+            FrmEmpleados.Actualizar(True)
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        HabilitarBotones(False, False, False)
+        Limpiar()
+        Me.Close()
     End Sub
 End Class

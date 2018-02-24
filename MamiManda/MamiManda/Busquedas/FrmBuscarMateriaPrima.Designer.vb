@@ -23,95 +23,24 @@ Partial Class FrmBuscarMateriaPrima
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBuscarMateriaPrima))
-        Me.LsvMostrarMateriaPrima = New System.Windows.Forms.ListView()
-        Me.ChIdMateriaPrima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChNombreMateriaPrima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChExistenciaMinima = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChExistencia = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChPrecio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChMedida = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChRTNProveedor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chNombreProveedor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.GcMateriaPrima = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        CType(Me.GcMateriaPrima, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LsvMostrarMateriaPrima
-        '
-        Me.LsvMostrarMateriaPrima.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChIdMateriaPrima, Me.ChNombreMateriaPrima, Me.ChExistenciaMinima, Me.ChExistencia, Me.ChPrecio, Me.ChFecha, Me.ChMedida, Me.ChRTNProveedor, Me.chNombreProveedor})
-        Me.LsvMostrarMateriaPrima.FullRowSelect = True
-        Me.LsvMostrarMateriaPrima.GridLines = True
-        Me.LsvMostrarMateriaPrima.Location = New System.Drawing.Point(1, 91)
-        Me.LsvMostrarMateriaPrima.Name = "LsvMostrarMateriaPrima"
-        Me.LsvMostrarMateriaPrima.Size = New System.Drawing.Size(842, 284)
-        Me.LsvMostrarMateriaPrima.TabIndex = 97
-        Me.LsvMostrarMateriaPrima.UseCompatibleStateImageBehavior = False
-        Me.LsvMostrarMateriaPrima.View = System.Windows.Forms.View.Details
-        '
-        'ChIdMateriaPrima
-        '
-        Me.ChIdMateriaPrima.Text = "Código"
-        '
-        'ChNombreMateriaPrima
-        '
-        Me.ChNombreMateriaPrima.Text = "Materia Prima"
-        Me.ChNombreMateriaPrima.Width = 100
-        '
-        'ChExistenciaMinima
-        '
-        Me.ChExistenciaMinima.Text = "Existencia Minima"
-        Me.ChExistenciaMinima.Width = 105
-        '
-        'ChExistencia
-        '
-        Me.ChExistencia.Text = "Existencia"
-        '
-        'ChPrecio
-        '
-        Me.ChPrecio.Text = "Precio Costo"
-        Me.ChPrecio.Width = 80
-        '
-        'ChFecha
-        '
-        Me.ChFecha.Text = "Fecha"
-        Me.ChFecha.Width = 135
-        '
-        'ChMedida
-        '
-        Me.ChMedida.Text = "Medida"
-        Me.ChMedida.Width = 70
-        '
-        'ChRTNProveedor
-        '
-        Me.ChRTNProveedor.Text = "RTN Proveedor"
-        Me.ChRTNProveedor.Width = 115
-        '
-        'chNombreProveedor
-        '
-        Me.chNombreProveedor.Text = "Proveedor"
-        Me.chNombreProveedor.Width = 110
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(319, 14)
+        Me.Label15.Location = New System.Drawing.Point(319, 30)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(218, 25)
         Me.Label15.TabIndex = 95
         Me.Label15.Text = "Buscar Materia Prima"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(272, 42)
-        Me.txtBuscar.Multiline = True
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(314, 27)
-        Me.txtBuscar.TabIndex = 94
         '
         'btnAgregar
         '
@@ -129,6 +58,29 @@ Partial Class FrmBuscarMateriaPrima
         Me.btnAgregar.TabIndex = 98
         Me.btnAgregar.UseVisualStyleBackColor = False
         '
+        'GcMateriaPrima
+        '
+        Me.GcMateriaPrima.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GcMateriaPrima.Location = New System.Drawing.Point(12, 90)
+        Me.GcMateriaPrima.MainView = Me.GridView1
+        Me.GcMateriaPrima.Name = "GcMateriaPrima"
+        Me.GcMateriaPrima.Size = New System.Drawing.Size(813, 270)
+        Me.GcMateriaPrima.TabIndex = 99
+        Me.GcMateriaPrima.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GcMateriaPrima
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsBehavior.ReadOnly = True
+        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
         'FrmBuscarMateriaPrima
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -137,10 +89,9 @@ Partial Class FrmBuscarMateriaPrima
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(837, 372)
+        Me.Controls.Add(Me.GcMateriaPrima)
         Me.Controls.Add(Me.btnAgregar)
-        Me.Controls.Add(Me.LsvMostrarMateriaPrima)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.txtBuscar)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -148,22 +99,14 @@ Partial Class FrmBuscarMateriaPrima
         Me.Name = "FrmBuscarMateriaPrima"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarMateriaPrima"
+        CType(Me.GcMateriaPrima, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents LsvMostrarMateriaPrima As ListView
-    Friend WithEvents ChIdMateriaPrima As ColumnHeader
-    Friend WithEvents ChNombreMateriaPrima As ColumnHeader
-    Friend WithEvents ChExistenciaMinima As ColumnHeader
-    Friend WithEvents ChExistencia As ColumnHeader
-    Friend WithEvents ChPrecio As ColumnHeader
-    Friend WithEvents ChFecha As ColumnHeader
-    Friend WithEvents ChMedida As ColumnHeader
-    Friend WithEvents ChRTNProveedor As ColumnHeader
     Friend WithEvents Label15 As Label
-    Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents chNombreProveedor As ColumnHeader
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents GcMateriaPrima As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class

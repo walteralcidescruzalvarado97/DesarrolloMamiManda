@@ -31,9 +31,7 @@ Partial Class FrmReceta
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -47,21 +45,11 @@ Partial Class FrmReceta
         Me.ChMateria = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChMedida = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnEditarListar = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.lsvMostrarListar = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -129,22 +117,6 @@ Partial Class FrmReceta
         Me.Label4.TabIndex = 71
         Me.Label4.Text = "Cantidad"
         '
-        'btnNuevo
-        '
-        Me.btnNuevo.BackColor = System.Drawing.Color.Transparent
-        Me.btnNuevo.BackgroundImage = CType(resources.GetObject("btnNuevo.BackgroundImage"), System.Drawing.Image)
-        Me.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNuevo.FlatAppearance.BorderSize = 0
-        Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Location = New System.Drawing.Point(411, 40)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(47, 43)
-        Me.btnNuevo.TabIndex = 84
-        Me.btnNuevo.UseVisualStyleBackColor = False
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -155,17 +127,6 @@ Partial Class FrmReceta
         Me.Label13.Size = New System.Drawing.Size(62, 16)
         Me.Label13.TabIndex = 91
         Me.Label13.Text = "Cancelar"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(412, 85)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(48, 16)
-        Me.Label9.TabIndex = 88
-        Me.Label9.Text = "Nueva"
         '
         'btnCancelar
         '
@@ -254,7 +215,6 @@ Partial Class FrmReceta
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(-4, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -269,8 +229,6 @@ Partial Class FrmReceta
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.btnCancelar)
-        Me.TabPage1.Controls.Add(Me.btnNuevo)
-        Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.Label13)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -312,84 +270,6 @@ Partial Class FrmReceta
         Me.ChMedida.Text = "Medida"
         Me.ChMedida.Width = 80
         '
-        'TabPage2
-        '
-        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
-        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage2.Controls.Add(Me.btnEditarListar)
-        Me.TabPage2.Controls.Add(Me.Label5)
-        Me.TabPage2.Controls.Add(Me.txtBuscar)
-        Me.TabPage2.Controls.Add(Me.lsvMostrarListar)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(487, 354)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Listar Recetas"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'btnEditarListar
-        '
-        Me.btnEditarListar.Enabled = False
-        Me.btnEditarListar.Location = New System.Drawing.Point(394, 82)
-        Me.btnEditarListar.Name = "btnEditarListar"
-        Me.btnEditarListar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditarListar.TabIndex = 97
-        Me.btnEditarListar.Text = "Editar"
-        Me.btnEditarListar.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(32, 27)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(139, 25)
-        Me.Label5.TabIndex = 96
-        Me.Label5.Text = "Listar Receta"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(95, 78)
-        Me.txtBuscar.Multiline = True
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(287, 29)
-        Me.txtBuscar.TabIndex = 95
-        '
-        'lsvMostrarListar
-        '
-        Me.lsvMostrarListar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.lsvMostrarListar.FullRowSelect = True
-        Me.lsvMostrarListar.GridLines = True
-        Me.lsvMostrarListar.Location = New System.Drawing.Point(0, 120)
-        Me.lsvMostrarListar.Name = "lsvMostrarListar"
-        Me.lsvMostrarListar.Size = New System.Drawing.Size(491, 238)
-        Me.lsvMostrarListar.TabIndex = 94
-        Me.lsvMostrarListar.UseCompatibleStateImageBehavior = False
-        Me.lsvMostrarListar.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Producto"
-        Me.ColumnHeader1.Width = 150
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Materia Prima"
-        Me.ColumnHeader2.Width = 150
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Cantidad"
-        Me.ColumnHeader3.Width = 80
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Medida"
-        Me.ColumnHeader4.Width = 100
-        '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
@@ -416,8 +296,6 @@ Partial Class FrmReceta
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -428,9 +306,7 @@ Partial Class FrmReceta
     Friend WithEvents Label3 As Label
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnNuevo As Button
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnMateriaPrima As Button
@@ -443,18 +319,9 @@ Partial Class FrmReceta
     Friend WithEvents ChProducto As ColumnHeader
     Friend WithEvents ChMateria As ColumnHeader
     Friend WithEvents ChCantidad As ColumnHeader
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents lsvMostrarListar As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents btnEditar As Button
     Friend WithEvents btnAgregar As Button
     Friend WithEvents ChMedida As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents btnEditarListar As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents HelpProvider1 As HelpProvider
 End Class

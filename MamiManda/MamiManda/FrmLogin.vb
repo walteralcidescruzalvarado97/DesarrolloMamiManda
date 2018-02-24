@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmLogin
+    Friend Property ModoInicio As Boolean = True
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
 
         If Validar(TxtUser, "Debe ingresar un nombre de usuario") Then
@@ -26,25 +27,41 @@ Public Class FrmLogin
 
                     If reader.HasRows Then
                         reader.Read()
-                        Dim name As String = reader("Nombre")
-                        Dim username As String() = name.Split(" ")
-                        Dim name2 As String = reader("Apellido")
-                        Dim username2 As String() = name2.Split(" ")
-                        FrmPrincipal.Show()
-                        FrmPrincipal.LblId.Text = String.Format("{0}", reader.GetValue(0))
-                        FrmPrincipal.LblUser.Text = String.Format("{0} {1}", username(0), username2(0))
+                        UsuarioActivo.NombreCompleto = reader("NombreCompleto").ToString
+                        UsuarioActivo.IdUsuario = reader("IdUsuario").ToString
 
-                        If IsDBNull(reader("Foto")) Then
+                        Dim TipoUsuario As Integer = reader("IdTipoUsuario").ToString
+
+                        If TipoUsuario = 1 Then
+                            UsuarioActivo.EsAdmin = True
                         Else
-                            Dim imagen As New System.IO.MemoryStream(DirectCast(reader("Foto"), [Byte]()))
-                            Dim ObjImagen As Image = Image.FromStream(imagen)
-
-                            FrmPrincipal.PbUser.BackgroundImage = ObjImagen
+                            UsuarioActivo.EsAdmin = False
                         End If
 
+                        MenuPrincipal.Show()
+
+                        'Dim name As String = reader("Nombre")
+                        'Dim username As String() = name.Split(" ")
+                        'Dim name2 As String = reader("Apellido")
+                        'Dim username2 As String() = name2.Split(" ")
+                        'FrmPrincipal.Show()
+
+
+                        'FrmPrincipal.LblId.Text = String.Format("{0}", reader.GetValue(0))
+                        'FrmPrincipal.LblUser.Text = String.Format("{0} {1}", username(0), username2(0))
+
+
+                        'If IsDBNull(reader("Foto")) Then
+                        'Else
+                        '    Dim imagen As New System.IO.MemoryStream(DirectCast(reader("Foto"), [Byte]()))
+                        '    Dim ObjImagen As Image = Image.FromStream(imagen)
+
+                        '    FrmPrincipal.PbUser.BackgroundImage = ObjImagen
+                        'End If
+
                         Me.Close()
-                        Else
-                            MsgBox("Usuario y Contrasena invalido")
+                    Else
+                        MsgBox("Usuario y Contrasena invalido")
                     End If
                 End Using
 
@@ -66,15 +83,15 @@ Public Class FrmLogin
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
         HelpProvider1.SetHelpKeyword(Me, "Login")
 
-
-        My.Settings.ConexionTemporal = My.Settings.Conexion
-        My.Settings.Save()
-        If Conexion() = False Then
-            Dim frm As New FrmConfiguracion()
-            frm.Show()
-            Me.Close()
+        If ModoInicio Then
+            My.Settings.ConexionTemporal = My.Settings.Conexion
+            My.Settings.Save()
+            If Conexion() = False Then
+                Dim frm As New FrmConfiguracion()
+                frm.Show()
+                Me.Close()
+            End If
         End If
-
     End Sub
 
     Private Function Conexion() As Boolean

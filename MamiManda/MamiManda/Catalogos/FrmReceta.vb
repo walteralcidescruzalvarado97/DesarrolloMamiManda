@@ -1,35 +1,14 @@
 ﻿Imports System.Data.SqlClient
 Imports MamiManda
 Public Class FrmReceta
-    Implements IForm
-    Implements IForm2
-    Implements IAgregarMateria
     Dim err As Integer = 0
-
-    Public Sub ObtenerDato(dato As String) Implements IForm.ObtenerDato
-        txtCodProducto.Text = dato
-    End Sub
-
-    Public Sub ObtenerNombre(Nombre As String) Implements IForm2.ObtenerNombre
-
-    End Sub
-
-    Public Sub ObtenerCodReceta(Codigo As String) Implements IAgregarMateria.ObtenerCodReceta
-        txtCodMateria.Text = Codigo
-    End Sub
-
-    Public Sub ObtenerMateria(Materia As String) Implements IAgregarMateria.ObtenerMateria
-
-    End Sub
-
-    Public Sub ObtenerMedida(Medida As String) Implements IAgregarMateria.ObtenerMedida
-
-    End Sub
-
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property IdProducto As String = ""
     Private Sub FrmReceta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HabilitarBotones(True, False, False, False, False)
-        ListarReceta()
-
+        HabilitarBotones(True, False, True, True)
+        If ModoEdicion Then
+            txtCodProducto.Text = IdProducto
+        End If
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
@@ -38,17 +17,18 @@ Public Class FrmReceta
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
         Dim BuscarInventario As New FrmBuscarInventario
+        BuscarInventario.DesdeReceta = True
         BuscarInventario.Show(Me)
     End Sub
 
     Private Sub btnMateriaPrima_Click(sender As Object, e As EventArgs) Handles btnMateriaPrima.Click
         Dim BuscarMateriaPrima As New FrmBuscarMateriaPrima
+        BuscarMateriaPrima.DesdeReceta = True
         BuscarMateriaPrima.Show(Me)
     End Sub
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnNuevo.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnAgregar.Enabled = guardar
         btnEditar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
@@ -86,40 +66,6 @@ Public Class FrmReceta
 #End Region
 
 #Region "Llenar"
-    Private Sub ListarReceta()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarReceta"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-
-                End With
-                Dim VerReceta As SqlDataReader
-                VerReceta = cmd.ExecuteReader()
-                lsvMostrarListar.Items.Clear()
-                While VerReceta.Read = True
-                    With Me.lsvMostrarListar.Items.Add(VerReceta("NombreProducto").ToString)
-                        .SubItems.Add(VerReceta("NombreMateriaPrima").ToString)
-                        .SubItems.Add(VerReceta("CantidadMateriaPrima").ToString)
-                        .SubItems.Add(VerReceta("Medida").ToString)
-                        .SubItems.Add(VerReceta("IdInventario").ToString)
-                        .SubItems.Add(VerReceta("IdMateriaPrima").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
 
     Private Sub MostrarReceta()
         If cnn.State = ConnectionState.Open Then
@@ -216,16 +162,11 @@ Public Class FrmReceta
     End Sub
 #End Region
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        HabilitarBotones(False, True, False, True, True)
-        LimpiarTodo()
-        lsvMostrar.Items.Clear()
-    End Sub
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(False, False, False, False)
         LimpiarTodo()
         lsvMostrar.Items.Clear()
+        Me.Close()
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -235,9 +176,8 @@ Public Class FrmReceta
         Else
             AgregarIngrediente()
             MostrarReceta()
-            ListarReceta()
             If err = 0 Then
-                HabilitarBotones(False, True, False, True, True)
+                HabilitarBotones(True, False, True, True)
                 Limpiar()
             Else
                 err = 0
@@ -253,7 +193,7 @@ Public Class FrmReceta
         ElseIf Validar(txtCantidad, "Debe ingresar la cantidad de materia prima") Then
         Else
             ActualizarIngrediente()
-            HabilitarBotones(False, True, False, True, True)
+            HabilitarBotones(True, False, True, True)
             MostrarReceta()
             Limpiar()
             btnAgregar.Enabled = True
@@ -269,20 +209,6 @@ Public Class FrmReceta
         btnAgregar.Enabled = False
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        ListarReceta()
-    End Sub
-
-    Private Sub btnEditarListar_Click(sender As Object, e As EventArgs) Handles btnEditarListar.Click
-        txtCodProducto.Text = lsvMostrarListar.FocusedItem.SubItems(4).Text
-        MostrarReceta()
-        HabilitarBotones(False, True, False, True, True)
-        TabControl1.SelectedIndex = 0
-    End Sub
-
-    Private Sub lsvMostrarListar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrarListar.SelectedIndexChanged
-        btnEditarListar.Enabled = True
-    End Sub
 
     Private Sub txtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles txtCodProducto.TextChanged
         MostrarReceta()

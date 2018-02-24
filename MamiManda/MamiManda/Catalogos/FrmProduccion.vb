@@ -12,7 +12,7 @@ Public Class FrmProduccion
     End Sub
 
     Private Sub FrmProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HabilitarBotones(True, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
 
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
@@ -22,8 +22,7 @@ Public Class FrmProduccion
     End Sub
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
         btnCancelar.Enabled = cancelar
         HabilitarTextBox(valor)
@@ -149,12 +148,6 @@ Public Class FrmProduccion
         End Using
     End Sub
 #End Region
-
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, True, True)
-        Limpiar()
-    End Sub
-
     Private Sub RestarMateria()
         Dim producto As String
         Dim materia As Integer
@@ -189,7 +182,7 @@ Public Class FrmProduccion
             Next
 
             AgregarProduccion()
-            HabilitarBotones(True, False, False, False)
+            HabilitarBotones(False, False, False)
             Limpiar()
         End If
 
@@ -207,12 +200,13 @@ Public Class FrmProduccion
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
         Dim BuscarInventario As New FrmBuscarInventario
+        BuscarInventario.DesdeProduccion = True
         BuscarInventario.Show(Me)
     End Sub
 
@@ -237,5 +231,10 @@ Public Class FrmProduccion
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub NavBarItem1_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem1.LinkClicked
+        HabilitarBotones(True, True, True)
+        Limpiar()
     End Sub
 End Class

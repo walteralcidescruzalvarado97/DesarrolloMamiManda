@@ -1,18 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FrmMateriaPrima
-    Implements IForm
     Dim existencia As Integer
-
-    Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
-        TxtRtnProveedor.Text = cuenta
-    End Sub
-
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, False, True, True)
-        InvestigarCorrelativo()
-    End Sub
-
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property IdMateria As Integer = 0
     Private Sub InvestigarCorrelativo()
 
         If cnn.State = ConnectionState.Open Then
@@ -63,6 +54,39 @@ Public Class FrmMateriaPrima
         End Try
     End Sub
 
+
+    Private Sub CargarDatosMateriaPrima()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            cnn.Open()
+
+            Try
+                With cmd
+                    .CommandText = "Sp_CargarDatosMateriaPrima"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@IdMateriaPrima", SqlDbType.Int).Value = IdMateria
+                End With
+
+                Dim lector As SqlDataReader = cmd.ExecuteReader
+
+                While lector.Read
+                    TxtIdMateriaPrima.Text = lector("IdMateriaPrima").ToString
+                    TxtNombreMateriaPrima.Text = lector("NombreMateriaPrima").ToString
+                    TxtExistenciaMinima.Text = lector("ExistenciaMinima").ToString
+                    TxtPrecio.Text = lector("PrecioCostoM").ToString
+                    CboUnidadMedida.SelectedValue = lector("IdUnidadMedida").ToString
+                    TxtRtnProveedor.Text = lector("RTNProveedor").ToString
+                End While
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End Using
+    End Sub
     Private Sub AgregarMateriaPrima()
         If ExisteMateriaPrima() = False Then
             If cnn.State = ConnectionState.Open Then
@@ -95,7 +119,7 @@ Public Class FrmMateriaPrima
         End If
     End Sub
 
-    Private Sub ActualizarEmpleado()
+    Private Sub ActualizarMateriaPrima()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
         End If
@@ -158,83 +182,8 @@ Public Class FrmMateriaPrima
     End Function
 
 
-    Private Sub MostrarMateriaPrima()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_MostrarMateriaPrima"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim VerMateriaPrima As SqlDataReader
-                VerMateriaPrima = cmd.ExecuteReader()
-                LsvMostrarMateriaPrima.Items.Clear()
-                While VerMateriaPrima.Read = True
-                    With Me.LsvMostrarMateriaPrima.Items.Add(VerMateriaPrima("IdMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("NombreMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("ExistenciaMinima").ToString)
-                        .SubItems.Add(VerMateriaPrima("Existencia").ToString)
-                        .SubItems.Add(VerMateriaPrima("Fecha").ToString)
-                        .SubItems.Add(VerMateriaPrima("Medida").ToString)
-                        .SubItems.Add(VerMateriaPrima("Nombre").ToString)
-                        .SubItems.Add(VerMateriaPrima("RtnProveedor").ToString)
-                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
-
-    Private Sub ListarMateriaPrima()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarMateriaPrima"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim VerMateriaPrima As SqlDataReader
-                VerMateriaPrima = cmd.ExecuteReader()
-                LsvMostrarMateriaPrima.Items.Clear()
-                While VerMateriaPrima.Read = True
-                    With Me.LsvMostrarMateriaPrima.Items.Add(VerMateriaPrima("IdMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("NombreMateriaPrima").ToString)
-                        .SubItems.Add(VerMateriaPrima("ExistenciaMinima").ToString)
-                        .SubItems.Add(VerMateriaPrima("Existencia").ToString)
-                        .SubItems.Add(VerMateriaPrima("Fecha").ToString)
-                        .SubItems.Add(VerMateriaPrima("Medida").ToString)
-                        .SubItems.Add(VerMateriaPrima("Nombre").ToString)
-                        .SubItems.Add(VerMateriaPrima("RtnProveedor").ToString)
-                        .SubItems.Add(VerMateriaPrima("PrecioCostoM").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
-
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
         HabilitarTextBox(valor)
     End Sub
@@ -262,10 +211,13 @@ Public Class FrmMateriaPrima
 
     Private Sub FrmMateriaPrima_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarComboboxUnidadMedida()
-        MostrarMateriaPrima()
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(True, True, True)
         CboUnidadMedida.Text = Nothing
-
+        If ModoEdicion Then
+            Call CargarDatosMateriaPrima()
+        Else
+            Call InvestigarCorrelativo()
+        End If
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
@@ -274,6 +226,7 @@ Public Class FrmMateriaPrima
 
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
         Dim BuscarProveedor As New FrmBuscarProveedor
+        BuscarProveedor.DesdeMateriaPrima = True
         BuscarProveedor.Show(Me)
     End Sub
 
@@ -284,10 +237,16 @@ Public Class FrmMateriaPrima
         ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
         ElseIf Validar(TxtRtnProveedor, "Debe seleccionar el rtn del proveedor") Then
         Else
-            AgregarMateriaPrima()
-            HabilitarBotones(True, False, False, False, False)
+            If ModoEdicion Then
+                Call ActualizarMateriaPrima()
+            Else
+                Call AgregarMateriaPrima()
+            End If
+
+            HabilitarBotones(False, False, False)
             Limpiar()
-            MostrarMateriaPrima()
+            FrmMateriasPrimas.ActualizarTablas(True)
+            Me.Close()
         End If
     End Sub
 
@@ -301,46 +260,9 @@ Public Class FrmMateriaPrima
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
-    End Sub
-
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        If Validar(TxtNombreMateriaPrima, "Debe ingresar un nombre de materia prima") Then
-        ElseIf Validar(TxtPrecio, "Debe ingresar el precio") Then
-        ElseIf Validar(CboUnidadMedida, "Debe seleccionar la unidad de medidan") Then
-        ElseIf Validar(TxtRtnProveedor, "Debe seleccionar el rtn del proveedor") Then
-        Else
-            ActualizarEmpleado()
-            HabilitarBotones(True, False, False, False, False)
-            MostrarMateriaPrima()
-            Limpiar()
-        End If
-    End Sub
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        btnEditar.Enabled = False
-        ListarMateriaPrima()
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        TxtIdMateriaPrima.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(0).Text
-        TxtNombreMateriaPrima.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(1).Text
-        TxtExistenciaMinima.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(2).Text
-        existencia = LsvMostrarMateriaPrima.FocusedItem.SubItems(3).Text
-        TxtFecha.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(4).Text
-        CboUnidadMedida.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(5).Text
-        TxtRtnProveedor.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(7).Text
-        TxtPrecio.Text = LsvMostrarMateriaPrima.FocusedItem.SubItems(8).Text
-        HabilitarBotones(False, False, True, True, True)
-
-        TabControl1.SelectedIndex = 0
-        btnEditar.Enabled = False
-        txtBuscar.Text = ""
-    End Sub
-
-    Private Sub LsvMostrarMateriaPrima_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LsvMostrarMateriaPrima.SelectedIndexChanged
-        btnEditar.Enabled = True
+        Me.Close()
     End Sub
 
     Private Function txtNumerico(ByVal txtControl As TextBox, ByVal caracter As Char, ByVal decimales As Boolean) As Boolean

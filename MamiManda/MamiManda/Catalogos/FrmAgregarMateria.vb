@@ -5,7 +5,7 @@ Public Class FrmAgregarMateria
     Implements IAgregarMateria
 
     Private Sub FrmAgregarMateria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HabilitarBotones(True, False, False, False)
+        HabilitarBotones(False, False, False)
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
@@ -13,8 +13,7 @@ Public Class FrmAgregarMateria
     End Sub
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
         btnCancelar.Enabled = cancelar
         HabilitarTextBox(valor)
@@ -72,18 +71,12 @@ Public Class FrmAgregarMateria
         End Try
     End Sub
 #End Region
-
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, True, True)
-        Limpiar()
-    End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(txtCodMateria, "Debe ingresar el código de materia prima") Then
         ElseIf Validar(txtCantidad, "Debe ingresar la cantidad de materia prima") Then
         Else
             AgregarExistencia()
-            HabilitarBotones(True, False, False, False)
+            HabilitarBotones(False, False, False)
             Limpiar()
         End If
 
@@ -91,12 +84,13 @@ Public Class FrmAgregarMateria
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
     End Sub
 
     Private Sub btnMateria_Click(sender As Object, e As EventArgs) Handles btnMateria.Click
         Dim BuscarMateriaPrima As New FrmBuscarMateriaPrima
+        BuscarMateriaPrima.DesdeAgregarMateriaPrima = True
         BuscarMateriaPrima.Show(Me)
         txtCantidad.Focus()
     End Sub
@@ -137,5 +131,10 @@ Public Class FrmAgregarMateria
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub NavBarItem1_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem1.LinkClicked
+        HabilitarBotones(True, True, True)
+        Limpiar()
     End Sub
 End Class

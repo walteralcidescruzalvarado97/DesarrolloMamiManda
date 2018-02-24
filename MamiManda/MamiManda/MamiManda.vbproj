@@ -11,9 +11,10 @@
     <AssemblyName>MamiManda</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>C:\Users\Cornelio\Desktop\MamiManda\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -96,6 +97,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -112,6 +114,9 @@
     <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -144,6 +149,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BakerySystemDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BakerySystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\FrmBuscarPresentacion.Designer.vb">
       <DependentUpon>FrmBuscarPresentacion.vb</DependentUpon>
     </Compile>
@@ -186,6 +196,12 @@
     <Compile Include="Catalogos\FrmReceta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConfiguracionCai.designer.vb">
+      <DependentUpon>ConfiguracionCai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionCai.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dsBakerySystem.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,6 +209,12 @@
     </Compile>
     <Compile Include="dsBakerySystem.vb">
       <DependentUpon>dsBakerySystem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\FrmBuscarCliente.designer.vb">
+      <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\FrmBuscarCliente.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDetalleFactura.Designer.vb">
       <DependentUpon>FrmDetalleFactura.vb</DependentUpon>
@@ -227,12 +249,6 @@
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="Busquedas\FrmBuscarUsuario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Busquedas\FrmBuscarCliente.Designer.vb">
-      <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Busquedas\FrmBuscarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Busquedas\FrmBuscarProveedor.Designer.vb">
@@ -271,6 +287,7 @@
     <Compile Include="FrmConfiguracion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\ConvertirCantidadesLetras.vb" />
     <Compile Include="Modulos\FuncionSha1.vb" />
     <Compile Include="Interfaces\IForm.vb" />
     <Compile Include="Interfaces\IForm2.vb" />
@@ -293,6 +310,7 @@
     <Compile Include="Catalogos\FrmMateriaPrima.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Sesion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -318,6 +336,66 @@
       <DependentUpon>Usuario.vb</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmAsignarPermisos.Designer.vb">
+      <DependentUpon>FrmAsignarPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmAsignarPermisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmClientes.Designer.vb">
+      <DependentUpon>FrmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmConfigSar.Designer.vb">
+      <DependentUpon>FrmConfigSar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmConfigSar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmEmpleados.Designer.vb">
+      <DependentUpon>FrmEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmInventarios.Designer.vb">
+      <DependentUpon>FrmInventarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmInventarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmMateriasPrimas.Designer.vb">
+      <DependentUpon>FrmMateriasPrimas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmMateriasPrimas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmProveedores.Designer.vb">
+      <DependentUpon>FrmProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmRecetas.Designer.vb">
+      <DependentUpon>FrmRecetas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmRecetas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmUsuarios.Designer.vb">
+      <DependentUpon>FrmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\MenuPrincipal.Designer.vb">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\MenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\FrmReporteCliente.Designer.vb">
@@ -355,6 +433,12 @@
     </Compile>
     <Compile Include="Reportes\FrmReporteProveedor.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RepFac.Designer.vb">
+      <DependentUpon>RepFac.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RepFac.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\ReporteClientes.Designer.vb">
       <DependentUpon>ReporteClientes.vb</DependentUpon>
@@ -475,9 +559,6 @@
     <EmbeddedResource Include="Busquedas\FrmBuscarUsuario.resx">
       <DependentUpon>FrmBuscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Busquedas\FrmBuscarCliente.resx">
-      <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\FrmBuscarProveedor.resx">
       <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
     </EmbeddedResource>
@@ -504,6 +585,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmReceta.resx">
       <DependentUpon>FrmReceta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfiguracionCai.resx">
+      <DependentUpon>ConfiguracionCai.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConfiguracion.resx">
       <DependentUpon>FrmConfiguracion.vb</DependentUpon>
@@ -539,6 +626,36 @@
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmAsignarPermisos.resx">
+      <DependentUpon>FrmAsignarPermisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmClientes.resx">
+      <DependentUpon>FrmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmConfigSar.resx">
+      <DependentUpon>FrmConfigSar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmEmpleados.resx">
+      <DependentUpon>FrmEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmInventarios.resx">
+      <DependentUpon>FrmInventarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmMateriasPrimas.resx">
+      <DependentUpon>FrmMateriasPrimas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmRecetas.resx">
+      <DependentUpon>FrmRecetas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteCliente.resx">
       <DependentUpon>FrmReporteCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -556,6 +673,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteProveedor.resx">
       <DependentUpon>FrmReporteProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepFac.resx">
+      <DependentUpon>RepFac.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteClientes.resx">
       <DependentUpon>ReporteClientes.vb</DependentUpon>
@@ -610,6 +730,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\FB_IMG_1517286072084.jpg" />
+    <None Include="BakerySystemDataSet.xsc">
+      <DependentUpon>BakerySystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BakerySystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BakerySystemDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BakerySystemDataSet.xss">
+      <DependentUpon>BakerySystemDataSet.xsd</DependentUpon>
+    </None>
     <None Include="dsBakerySystem.xsc">
       <DependentUpon>dsBakerySystem.xsd</DependentUpon>
     </None>
@@ -649,6 +781,11 @@
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>

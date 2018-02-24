@@ -2,21 +2,19 @@
 Imports System.IO
 Imports System.Drawing.Imaging
 Public Class FrmUsuario
-
-    Implements IForm
-
-    Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
-        txtEmpleado.Text = cuenta
-    End Sub
-
-
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property IdUsuario As Integer = 0
     Private Sub Usuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarComboboxTipoUsuario()
         LLenarComboEstado()
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(True, True, True)
         Limpiar()
 
-        MostrarUsuario()
+        If ModoEdicion Then
+            CargarDatosUsuario()
+        Else
+            InvestigarCorrelativo()
+        End If
 
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
@@ -39,10 +37,8 @@ Public Class FrmUsuario
 
     End Function
 
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
         HabilitarTextBox(valor)
     End Sub
@@ -226,84 +222,38 @@ Public Class FrmUsuario
 #End Region
 
 #Region "Llenar"
-    Private Sub MostrarUsuario()
+
+    Private Sub CargarDatosUsuario()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
         End If
-        cnn.Open()
 
         Using cmd As New SqlCommand
             Try
+                cnn.Open()
                 With cmd
-                    .CommandText = "Sp_MostrarTodoUsuario"
+                    .CommandText = "Sp_CargarDatosUsuario"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = IdUsuario
                 End With
-                Dim VerUsuario As SqlDataReader
-                VerUsuario = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerUsuario.Read = True
-                    With Me.lsvMostrar.Items.Add(VerUsuario("IdUsuario").ToString)
-                        .SubItems.Add(VerUsuario("UserName").ToString)
-                        .SubItems.Add(VerUsuario("Password").ToString)
-                        If VerUsuario("Activo").ToString = "True" Then
-                            .SubItems.Add("Activo")
-                        Else
-                            .SubItems.Add("Inactivo")
-                        End If
-                        .SubItems.Add(VerUsuario("Nombre Completo").ToString)
-                        .SubItems.Add(VerUsuario("TipoUsuario").ToString)
-                        .SubItems.Add(VerUsuario("IdTipoUsuario").ToString)
-                        .SubItems.Add(VerUsuario("IdEmpleado").ToString)
-                        .SubItems.Add(VerUsuario("Foto").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
 
+                Dim lector As SqlDataReader = cmd.ExecuteReader
 
-    Private Sub ListarUsuario()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarUsuario"
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                    .Connection = cnn
-                End With
-                Dim VerUsuario As SqlDataReader
-                VerUsuario = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerUsuario.Read = True
-                    With Me.lsvMostrar.Items.Add(VerUsuario("IdUsuario").ToString)
-                        .SubItems.Add(VerUsuario("UserName").ToString)
-                        .SubItems.Add(VerUsuario("Password").ToString)
-                        If VerUsuario("Activo").ToString = "True" Then
-                            .SubItems.Add("Activo")
-                        Else
-                            .SubItems.Add("Inactivo")
-                        End If
-                        .SubItems.Add(VerUsuario("Nombre Completo").ToString)
-                        .SubItems.Add(VerUsuario("TipoUsuario").ToString)
-                        .SubItems.Add(VerUsuario("IdTipoUsuario").ToString)
-                        .SubItems.Add(VerUsuario("IdEmpleado").ToString)
-                        .SubItems.Add(VerUsuario("Foto").ToString)
-                    End With
+                While lector.Read
+                    txtCodUsuario.Text = lector("IdUsuario").ToString
+                    txtUserName.Text = lector("UserName").ToString
+                    txtContrasena.Text = lector("Password").ToString
+                    If lector("Activo") Then
+                        cboEstado.SelectedIndex = 0
+                    Else
+                        cboEstado.SelectedIndex = 1
+                    End If
+                    txtEmpleado.Text = lector("IdEmpleado").ToString
+                    cboTipoUsuario.SelectedValue = lector("IdTipoUsuario").ToString
                 End While
             Catch ex As Exception
                 MsgBox(ex.Message)
-            Finally
-                cnn.Close()
             End Try
         End Using
     End Sub
@@ -358,32 +308,9 @@ Public Class FrmUsuario
     End Sub
 #End Region
 
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, False, True, True)
-        InvestigarCorrelativo()
-        txtUserName.Focus()
-    End Sub
-
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
-        Close()
-    End Sub
-
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        If Validar(txtUserName, "Debe ingresar un nombre de usuario") Then
-        ElseIf Validar(txtContrasena, "Debe ingresar una contraseña") Then
-        ElseIf Validar(cboEstado, "Debe seleccionar un estado") Then
-        ElseIf Validar(txtEmpleado, "Debe ingresar un empleado") Then
-        ElseIf Validar(cboTipoUsuario, "Debe seleccionar un tipo de usuario") Then
-        Else
-            ActualizarUsuario()
-            HabilitarBotones(True, False, False, False, False)
-            Limpiar()
-            MostrarUsuario()
-        End If
-    End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
     End Sub
 
@@ -394,21 +321,21 @@ Public Class FrmUsuario
         ElseIf Validar(txtEmpleado, "Debe ingresar un empleado") Then
         ElseIf Validar(cboTipoUsuario, "Debe seleccionar un tipo de usuario") Then
         Else
-            AgregarUsuario()
-            HabilitarBotones(True, False, False, False, False)
+            If ModoEdicion Then
+                Call ActualizarUsuario()
+            Else
+                Call AgregarUsuario()
+            End If
+            HabilitarBotones(False, False, False)
             Limpiar()
-            MostrarUsuario()
+            FrmUsuarios.ActualizarTablas(True)
+            Me.Close()
         End If
 
     End Sub
-
-    Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
-
-        btnEditar.Enabled = True
-    End Sub
-
     Private Sub btnEmpleado_Click(sender As Object, e As EventArgs) Handles btnEmpleado.Click
         Dim BuscarEmpleado As New FrmBuscarEmpleado
+        BuscarEmpleado.DesdeUsuario = True
         BuscarEmpleado.Show(Me)
     End Sub
 
@@ -439,31 +366,6 @@ Public Class FrmUsuario
         ErrorProvider1.Clear()
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        btnEditar.Enabled = False
-        ListarUsuario()
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        txtCodUsuario.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        txtUserName.Text = lsvMostrar.FocusedItem.SubItems(1).Text
-        txtEmpleado.Text = lsvMostrar.FocusedItem.SubItems(7).Text
-        cboTipoUsuario.SelectedValue = lsvMostrar.FocusedItem.SubItems(6).Text
-        Dim var As String = lsvMostrar.FocusedItem.SubItems(3).Text
-        If var = "True" Then
-            cboEstado.SelectedValue = 1
-        Else
-            cboEstado.SelectedValue = 0
-        End If
-        MostrarImagen()
-
-        HabilitarBotones(False, False, True, True, True)
-
-
-        TabControl1.SelectedIndex = 0
-        btnEditar.Enabled = False
-    End Sub
-
     Private Sub MostrarImagen()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
@@ -471,7 +373,7 @@ Public Class FrmUsuario
         cnn.Open()
         'Dim connection As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=BakerySystem;Integrated Security=True")
         Dim command As New SqlCommand("SELECT Foto FROM Usuario where IdUsuario = @var", cnn)
-        command.Parameters.Add("@var", SqlDbType.VarChar).Value = lsvMostrar.FocusedItem.SubItems(0).Text
+        command.Parameters.Add("@var", SqlDbType.VarChar).Value = IdUsuario
 
         Dim table As New DataTable()
         Dim adapter As New SqlDataAdapter(command)
@@ -484,8 +386,6 @@ Public Class FrmUsuario
             Dim ms As New MemoryStream(img)
             FotoAgregar.Image = Image.FromStream(ms)
         End If
-
-
     End Sub
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
