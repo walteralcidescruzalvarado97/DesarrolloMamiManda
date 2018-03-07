@@ -173,6 +173,6 @@ Public Class MenuPrincipal
     End Sub
 
     Private Sub BarButtonItem10_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem10.ItemClick
-        FrmHistorialVentas.Show()
+        AbrirForm(FrmHistorialVentas)
     End Sub
 End Class

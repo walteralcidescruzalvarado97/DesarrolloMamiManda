@@ -43,6 +43,7 @@ Partial Class FrmEmpleados
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtIdEmpleado = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GcEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -243,11 +244,24 @@ Partial Class FrmEmpleados
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Id Empleado:"
         '
+        'Label7
+        '
+        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Location = New System.Drawing.Point(746, 33)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Hacer doble click para editar"
+        '
         'FrmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1177, 471)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.NavBarControl1)
         Me.Controls.Add(Me.GcEmpleados)
@@ -260,6 +274,7 @@ Partial Class FrmEmpleados
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -283,4 +298,5 @@ Partial Class FrmEmpleados
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtIdEmpleado As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

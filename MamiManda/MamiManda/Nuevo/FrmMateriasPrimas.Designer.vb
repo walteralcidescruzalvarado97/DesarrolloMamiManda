@@ -43,6 +43,7 @@ Partial Class FrmMateriasPrimas
         Me.NavBarItem3 = New DevExpress.XtraNavBar.NavBarItem()
         Me.GcMateriaPrima = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -242,11 +243,24 @@ Partial Class FrmMateriasPrimas
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
+        'Label7
+        '
+        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Location = New System.Drawing.Point(747, 29)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Hacer doble click para editar"
+        '
         'FrmMateriasPrimas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1177, 471)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.NavBarControl1)
         Me.Controls.Add(Me.GcMateriaPrima)
@@ -259,6 +273,7 @@ Partial Class FrmMateriasPrimas
         CType(Me.GcMateriaPrima, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -282,4 +297,5 @@ Partial Class FrmMateriasPrimas
     Friend WithEvents NavBarItem3 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents GcMateriaPrima As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

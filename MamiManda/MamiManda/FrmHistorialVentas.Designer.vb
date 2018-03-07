@@ -23,12 +23,6 @@ Partial Class FrmHistorialVentas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmHistorialVentas))
-        Me.LsvMostrarVentas = New System.Windows.Forms.ListView()
-        Me.chCodigo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chCliente = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChTipoFactura = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChEstado = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,47 +30,16 @@ Partial Class FrmHistorialVentas
         Me.DtpFechaHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.GcHistorial = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.Label7 = New System.Windows.Forms.Label()
+        CType(Me.GcHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LsvMostrarVentas
-        '
-        Me.LsvMostrarVentas.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCodigo, Me.chCliente, Me.chFecha, Me.ChTipoFactura, Me.ChEstado})
-        Me.LsvMostrarVentas.FullRowSelect = True
-        Me.LsvMostrarVentas.GridLines = True
-        Me.LsvMostrarVentas.Location = New System.Drawing.Point(12, 147)
-        Me.LsvMostrarVentas.Name = "LsvMostrarVentas"
-        Me.LsvMostrarVentas.Size = New System.Drawing.Size(594, 302)
-        Me.LsvMostrarVentas.TabIndex = 112
-        Me.LsvMostrarVentas.UseCompatibleStateImageBehavior = False
-        Me.LsvMostrarVentas.View = System.Windows.Forms.View.Details
-        '
-        'chCodigo
-        '
-        Me.chCodigo.Text = "Código Factura"
-        Me.chCodigo.Width = 120
-        '
-        'chCliente
-        '
-        Me.chCliente.Text = "Cliente"
-        Me.chCliente.Width = 141
-        '
-        'chFecha
-        '
-        Me.chFecha.Text = "Fecha"
-        Me.chFecha.Width = 107
-        '
-        'ChTipoFactura
-        '
-        Me.ChTipoFactura.Text = "TipoFactura"
-        Me.ChTipoFactura.Width = 141
-        '
-        'ChEstado
-        '
-        Me.ChEstado.Text = "Estado"
-        Me.ChEstado.Width = 81
         '
         'Label15
         '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -88,48 +51,90 @@ Partial Class FrmHistorialVentas
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(62, 109)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(347, 121)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 13)
+        Me.Label1.Size = New System.Drawing.Size(121, 20)
         Me.Label1.TabIndex = 115
         Me.Label1.Text = "Fecha Desde:"
         '
         'DtpFechaDesde
         '
+        Me.DtpFechaDesde.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpFechaDesde.Location = New System.Drawing.Point(137, 105)
+        Me.DtpFechaDesde.Location = New System.Drawing.Point(474, 122)
         Me.DtpFechaDesde.Name = "DtpFechaDesde"
         Me.DtpFechaDesde.Size = New System.Drawing.Size(96, 20)
         Me.DtpFechaDesde.TabIndex = 116
         '
         'DtpFechaHasta
         '
+        Me.DtpFechaHasta.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpFechaHasta.Location = New System.Drawing.Point(353, 103)
+        Me.DtpFechaHasta.Location = New System.Drawing.Point(699, 122)
         Me.DtpFechaHasta.Name = "DtpFechaHasta"
         Me.DtpFechaHasta.Size = New System.Drawing.Size(96, 20)
         Me.DtpFechaHasta.TabIndex = 118
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(278, 107)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(576, 121)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 13)
+        Me.Label2.Size = New System.Drawing.Size(117, 20)
         Me.Label2.TabIndex = 117
         Me.Label2.Text = "Fecha Hasta:"
         '
         'SimpleButton1
         '
+        Me.SimpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(477, 98)
+        Me.SimpleButton1.Location = New System.Drawing.Point(855, 119)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(101, 27)
         Me.SimpleButton1.TabIndex = 119
         Me.SimpleButton1.Text = "Mostrar"
+        '
+        'GcHistorial
+        '
+        Me.GcHistorial.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GcHistorial.Location = New System.Drawing.Point(249, 161)
+        Me.GcHistorial.MainView = Me.GridView1
+        Me.GcHistorial.Name = "GcHistorial"
+        Me.GcHistorial.Size = New System.Drawing.Size(739, 287)
+        Me.GcHistorial.TabIndex = 120
+        Me.GcHistorial.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GcHistorial
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsBehavior.ReadOnly = True
+        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Gainsboro
+        Me.Label7.Location = New System.Drawing.Point(828, 173)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 13)
+        Me.Label7.TabIndex = 121
+        Me.Label7.Text = "Hacer doble click para editar"
         '
         'FrmHistorialVentas
         '
@@ -137,14 +142,15 @@ Partial Class FrmHistorialVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(624, 468)
+        Me.ClientSize = New System.Drawing.Size(1177, 471)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.GcHistorial)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.DtpFechaHasta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DtpFechaDesde)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.LsvMostrarVentas)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)
@@ -154,21 +160,20 @@ Partial Class FrmHistorialVentas
         Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Historial Ventas"
+        CType(Me.GcHistorial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents LsvMostrarVentas As ListView
     Friend WithEvents Label15 As Label
-    Friend WithEvents chCodigo As ColumnHeader
-    Friend WithEvents chCliente As ColumnHeader
-    Friend WithEvents chFecha As ColumnHeader
     Friend WithEvents HelpProvider1 As HelpProvider
-    Friend WithEvents ChTipoFactura As ColumnHeader
-    Friend WithEvents ChEstado As ColumnHeader
     Friend WithEvents Label1 As Label
     Friend WithEvents DtpFechaDesde As DateTimePicker
     Friend WithEvents DtpFechaHasta As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GcHistorial As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

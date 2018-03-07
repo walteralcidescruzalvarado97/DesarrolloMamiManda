@@ -31,6 +31,9 @@ Partial Class FrmAsignarPermisos
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.BtnAgregar = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnRemover = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblMensaje = New System.Windows.Forms.Label()
         CType(Me.GcModulosDisponibles, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GcModulosAsignados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,7 +45,7 @@ Partial Class FrmAsignarPermisos
         'GcModulosDisponibles
         '
         Me.GcModulosDisponibles.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GcModulosDisponibles.Location = New System.Drawing.Point(39, 204)
+        Me.GcModulosDisponibles.Location = New System.Drawing.Point(84, 284)
         Me.GcModulosDisponibles.MainView = Me.GridView2
         Me.GcModulosDisponibles.Name = "GcModulosDisponibles"
         Me.GcModulosDisponibles.Size = New System.Drawing.Size(266, 235)
@@ -60,7 +63,7 @@ Partial Class FrmAsignarPermisos
         'GcModulosAsignados
         '
         Me.GcModulosAsignados.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GcModulosAsignados.Location = New System.Drawing.Point(628, 204)
+        Me.GcModulosAsignados.Location = New System.Drawing.Point(673, 284)
         Me.GcModulosAsignados.MainView = Me.GridView3
         Me.GcModulosAsignados.Name = "GcModulosAsignados"
         Me.GcModulosAsignados.Size = New System.Drawing.Size(261, 235)
@@ -78,7 +81,7 @@ Partial Class FrmAsignarPermisos
         'GcUsuario
         '
         Me.GcUsuario.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GcUsuario.Location = New System.Drawing.Point(39, 12)
+        Me.GcUsuario.Location = New System.Drawing.Point(84, 32)
         Me.GcUsuario.MainView = Me.GridView1
         Me.GcUsuario.Name = "GcUsuario"
         Me.GcUsuario.Size = New System.Drawing.Size(850, 176)
@@ -101,7 +104,7 @@ Partial Class FrmAsignarPermisos
         Me.BtnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnAgregar.Image = CType(resources.GetObject("BtnAgregar.Image"), System.Drawing.Image)
         Me.BtnAgregar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.BtnAgregar.Location = New System.Drawing.Point(432, 268)
+        Me.BtnAgregar.Location = New System.Drawing.Point(477, 307)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(84, 57)
         Me.BtnAgregar.TabIndex = 8
@@ -111,16 +114,53 @@ Partial Class FrmAsignarPermisos
         Me.BtnRemover.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnRemover.Image = CType(resources.GetObject("BtnRemover.Image"), System.Drawing.Image)
         Me.BtnRemover.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.BtnRemover.Location = New System.Drawing.Point(432, 331)
+        Me.BtnRemover.Location = New System.Drawing.Point(477, 370)
         Me.BtnRemover.Name = "BtnRemover"
         Me.BtnRemover.Size = New System.Drawing.Size(84, 57)
         Me.BtnRemover.TabIndex = 9
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(126, 237)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(171, 20)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Modulos disponibles"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(720, 237)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(163, 20)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Modulos asignados"
+        '
+        'LblMensaje
+        '
+        Me.LblMensaje.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.LblMensaje.AutoSize = True
+        Me.LblMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblMensaje.Location = New System.Drawing.Point(755, 335)
+        Me.LblMensaje.Name = "LblMensaje"
+        Me.LblMensaje.Size = New System.Drawing.Size(99, 20)
+        Me.LblMensaje.TabIndex = 12
+        Me.LblMensaje.Text = "Sin asignar"
+        Me.LblMensaje.Visible = False
         '
         'FrmAsignarPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(928, 451)
+        Me.ClientSize = New System.Drawing.Size(1003, 558)
+        Me.Controls.Add(Me.LblMensaje)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnRemover)
         Me.Controls.Add(Me.BtnAgregar)
         Me.Controls.Add(Me.GcUsuario)
@@ -135,6 +175,7 @@ Partial Class FrmAsignarPermisos
         CType(Me.GcUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -146,4 +187,7 @@ Partial Class FrmAsignarPermisos
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents BtnAgregar As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BtnRemover As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents LblMensaje As System.Windows.Forms.Label
 End Class

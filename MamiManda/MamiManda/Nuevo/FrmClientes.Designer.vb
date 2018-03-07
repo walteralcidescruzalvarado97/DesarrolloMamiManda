@@ -43,6 +43,7 @@ Partial Class FrmClientes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtRtnCliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.GcClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +79,6 @@ Partial Class FrmClientes
         Me.NavBarControl1.ActiveGroup = Me.NavBarGroup1
         Me.NavBarControl1.Appearance.Background.BackColor = System.Drawing.Color.Transparent
         Me.NavBarControl1.Appearance.Background.Options.UseBackColor = True
-        Me.NavBarControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.NavBarControl1.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup1})
         Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3})
         Me.NavBarControl1.Location = New System.Drawing.Point(0, 0)
@@ -243,12 +243,25 @@ Partial Class FrmClientes
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Rtn Cliente:"
         '
+        'Label7
+        '
+        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Location = New System.Drawing.Point(740, 30)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 13)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "Hacer doble click para editar"
+        '
         'FrmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1177, 471)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.NavBarControl1)
         Me.Controls.Add(Me.GcClientes)
@@ -261,6 +274,7 @@ Partial Class FrmClientes
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -284,4 +298,5 @@ Partial Class FrmClientes
     Friend WithEvents TxtRtnCliente As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents NavBarItem3 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

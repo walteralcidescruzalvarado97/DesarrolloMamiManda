@@ -283,7 +283,7 @@ Partial Class MenuPrincipal
         '
         'BarButtonItem19
         '
-        Me.BarButtonItem19.Caption = "Configuración Cai"
+        Me.BarButtonItem19.Caption = "Configuración SAR"
         Me.BarButtonItem19.Glyph = CType(resources.GetObject("BarButtonItem19.Glyph"), System.Drawing.Image)
         Me.BarButtonItem19.Id = 26
         Me.BarButtonItem19.LargeGlyph = CType(resources.GetObject("BarButtonItem19.LargeGlyph"), System.Drawing.Image)
