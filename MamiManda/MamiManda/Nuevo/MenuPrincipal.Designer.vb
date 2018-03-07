@@ -22,10 +22,6 @@ Partial Class MenuPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPrincipal))
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.ApplicationMenu1 = New DevExpress.XtraBars.Ribbon.ApplicationMenu(Me.components)
-        Me.SkinRibbonGalleryBarItem1 = New DevExpress.XtraBars.SkinRibbonGalleryBarItem()
-        Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BbiCambiar = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
@@ -34,12 +30,15 @@ Partial Class MenuPrincipal
         Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem10 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem12 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem13 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem14 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem15 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BbiCambiar = New DevExpress.XtraBars.BarButtonItem()
+        Me.SkinRibbonGalleryBarItem1 = New DevExpress.XtraBars.SkinRibbonGalleryBarItem()
         Me.BarButtonItem17 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarStaticItem1 = New DevExpress.XtraBars.BarStaticItem()
         Me.BsIUsuario = New DevExpress.XtraBars.BarStaticItem()
@@ -59,6 +58,7 @@ Partial Class MenuPrincipal
         Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
+        Me.ApplicationMenu1 = New DevExpress.XtraBars.Ribbon.ApplicationMenu(Me.components)
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.TabFormDefaultManager1 = New DevExpress.XtraBars.TabFormDefaultManager()
@@ -85,37 +85,6 @@ Partial Class MenuPrincipal
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage2, Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage4})
         Me.RibbonControl.Size = New System.Drawing.Size(1102, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
-        '
-        'ApplicationMenu1
-        '
-        Me.ApplicationMenu1.ItemLinks.Add(Me.SkinRibbonGalleryBarItem1)
-        Me.ApplicationMenu1.ItemLinks.Add(Me.BarButtonItem9)
-        Me.ApplicationMenu1.ItemLinks.Add(Me.BbiCambiar)
-        Me.ApplicationMenu1.Name = "ApplicationMenu1"
-        Me.ApplicationMenu1.Ribbon = Me.RibbonControl
-        '
-        'SkinRibbonGalleryBarItem1
-        '
-        Me.SkinRibbonGalleryBarItem1.Caption = "Temas"
-        Me.SkinRibbonGalleryBarItem1.Id = 17
-        Me.SkinRibbonGalleryBarItem1.Name = "SkinRibbonGalleryBarItem1"
-        '
-        'BarButtonItem9
-        '
-        Me.BarButtonItem9.Caption = "Factura"
-        Me.BarButtonItem9.Glyph = CType(resources.GetObject("BarButtonItem9.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem9.Id = 9
-        Me.BarButtonItem9.LargeGlyph = CType(resources.GetObject("BarButtonItem9.LargeGlyph"), System.Drawing.Image)
-        Me.BarButtonItem9.Name = "BarButtonItem9"
-        Me.BarButtonItem9.Tag = "9"
-        '
-        'BbiCambiar
-        '
-        Me.BbiCambiar.Caption = "Cambiar de usuario"
-        Me.BbiCambiar.Glyph = CType(resources.GetObject("BbiCambiar.Glyph"), System.Drawing.Image)
-        Me.BbiCambiar.Id = 16
-        Me.BbiCambiar.LargeGlyph = CType(resources.GetObject("BbiCambiar.LargeGlyph"), System.Drawing.Image)
-        Me.BbiCambiar.Name = "BbiCambiar"
         '
         'BarButtonItem1
         '
@@ -189,6 +158,15 @@ Partial Class MenuPrincipal
         Me.BarButtonItem8.Name = "BarButtonItem8"
         Me.BarButtonItem8.Tag = "8"
         '
+        'BarButtonItem9
+        '
+        Me.BarButtonItem9.Caption = "Factura"
+        Me.BarButtonItem9.Glyph = CType(resources.GetObject("BarButtonItem9.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem9.Id = 9
+        Me.BarButtonItem9.LargeGlyph = CType(resources.GetObject("BarButtonItem9.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem9.Name = "BarButtonItem9"
+        Me.BarButtonItem9.Tag = "9"
+        '
         'BarButtonItem10
         '
         Me.BarButtonItem10.Caption = "Historial de ventas"
@@ -242,6 +220,20 @@ Partial Class MenuPrincipal
         Me.BarButtonItem15.LargeGlyph = CType(resources.GetObject("BarButtonItem15.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem15.Name = "BarButtonItem15"
         Me.BarButtonItem15.Tag = "15"
+        '
+        'BbiCambiar
+        '
+        Me.BbiCambiar.Caption = "Cambiar de usuario"
+        Me.BbiCambiar.Glyph = CType(resources.GetObject("BbiCambiar.Glyph"), System.Drawing.Image)
+        Me.BbiCambiar.Id = 16
+        Me.BbiCambiar.LargeGlyph = CType(resources.GetObject("BbiCambiar.LargeGlyph"), System.Drawing.Image)
+        Me.BbiCambiar.Name = "BbiCambiar"
+        '
+        'SkinRibbonGalleryBarItem1
+        '
+        Me.SkinRibbonGalleryBarItem1.Caption = "Temas"
+        Me.SkinRibbonGalleryBarItem1.Id = 17
+        Me.SkinRibbonGalleryBarItem1.Name = "SkinRibbonGalleryBarItem1"
         '
         'BarButtonItem17
         '
@@ -372,6 +364,14 @@ Partial Class MenuPrincipal
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar.Size = New System.Drawing.Size(1102, 31)
+        '
+        'ApplicationMenu1
+        '
+        Me.ApplicationMenu1.ItemLinks.Add(Me.SkinRibbonGalleryBarItem1)
+        Me.ApplicationMenu1.ItemLinks.Add(Me.BarButtonItem9)
+        Me.ApplicationMenu1.ItemLinks.Add(Me.BbiCambiar)
+        Me.ApplicationMenu1.Name = "ApplicationMenu1"
+        Me.ApplicationMenu1.Ribbon = Me.RibbonControl
         '
         'XtraTabbedMdiManager1
         '

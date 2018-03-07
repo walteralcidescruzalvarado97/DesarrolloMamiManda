@@ -175,4 +175,12 @@ Public Class MenuPrincipal
     Private Sub BarButtonItem10_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem10.ItemClick
         AbrirForm(FrmHistorialVentas)
     End Sub
+
+    Private Sub XtraTabbedMdiManager1_PageAdded(sender As Object, e As DevExpress.XtraTabbedMdi.MdiTabPageEventArgs) Handles XtraTabbedMdiManager1.PageAdded, XtraTabbedMdiManager1.PageRemoved
+        If XtraTabbedMdiManager1.Pages.Count = 0 Then
+            PictureBox1.Visible = True
+        Else
+            PictureBox1.Visible = False
+        End If
+    End Sub
 End Class
