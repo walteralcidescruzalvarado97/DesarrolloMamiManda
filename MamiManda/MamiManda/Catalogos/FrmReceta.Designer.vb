@@ -68,26 +68,26 @@ Partial Class FrmReceta
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(38, 19)
+        Me.Label2.Location = New System.Drawing.Point(50, 22)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 13)
+        Me.Label2.Size = New System.Drawing.Size(127, 20)
         Me.Label2.TabIndex = 67
         Me.Label2.Text = "Código Producto"
         '
         'txtCodProducto
         '
         Me.txtCodProducto.Enabled = False
-        Me.txtCodProducto.Location = New System.Drawing.Point(130, 16)
+        Me.txtCodProducto.Location = New System.Drawing.Point(178, 20)
         Me.txtCodProducto.Name = "txtCodProducto"
-        Me.txtCodProducto.Size = New System.Drawing.Size(132, 20)
+        Me.txtCodProducto.Size = New System.Drawing.Size(132, 26)
         Me.txtCodProducto.TabIndex = 68
         '
         'txtCodMateria
         '
         Me.txtCodMateria.Enabled = False
-        Me.txtCodMateria.Location = New System.Drawing.Point(130, 47)
+        Me.txtCodMateria.Location = New System.Drawing.Point(178, 50)
         Me.txtCodMateria.Name = "txtCodMateria"
-        Me.txtCodMateria.Size = New System.Drawing.Size(132, 20)
+        Me.txtCodMateria.Size = New System.Drawing.Size(132, 26)
         Me.txtCodMateria.TabIndex = 70
         '
         'Label3
@@ -96,24 +96,24 @@ Partial Class FrmReceta
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Location = New System.Drawing.Point(17, 50)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(107, 13)
+        Me.Label3.Size = New System.Drawing.Size(160, 20)
         Me.Label3.TabIndex = 69
         Me.Label3.Text = "Código Materia Prima"
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(130, 76)
+        Me.txtCantidad.Location = New System.Drawing.Point(178, 79)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(132, 26)
         Me.txtCantidad.TabIndex = 72
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(75, 79)
+        Me.Label4.Location = New System.Drawing.Point(102, 79)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(73, 20)
         Me.Label4.TabIndex = 71
         Me.Label4.Text = "Cantidad"
         '
@@ -157,27 +157,28 @@ Partial Class FrmReceta
         Me.GroupBox1.Controls.Add(Me.txtCodMateria)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCantidad)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(44, 67)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(335, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(353, 141)
         Me.GroupBox1.TabIndex = 92
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
         '
         'btnEditar
         '
-        Me.btnEditar.Location = New System.Drawing.Point(187, 105)
+        Me.btnEditar.Location = New System.Drawing.Point(190, 106)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEditar.Size = New System.Drawing.Size(75, 30)
         Me.btnEditar.TabIndex = 76
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(106, 105)
+        Me.btnAgregar.Location = New System.Drawing.Point(109, 106)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAgregar.Size = New System.Drawing.Size(75, 30)
         Me.btnAgregar.TabIndex = 75
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
@@ -191,7 +192,7 @@ Partial Class FrmReceta
         Me.btnMateriaPrima.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnMateriaPrima.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnMateriaPrima.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMateriaPrima.Location = New System.Drawing.Point(268, 45)
+        Me.btnMateriaPrima.Location = New System.Drawing.Point(314, 52)
         Me.btnMateriaPrima.Name = "btnMateriaPrima"
         Me.btnMateriaPrima.Size = New System.Drawing.Size(26, 23)
         Me.btnMateriaPrima.TabIndex = 74
@@ -206,7 +207,7 @@ Partial Class FrmReceta
         Me.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProducto.Location = New System.Drawing.Point(268, 14)
+        Me.btnProducto.Location = New System.Drawing.Point(314, 21)
         Me.btnProducto.Name = "btnProducto"
         Me.btnProducto.Size = New System.Drawing.Size(26, 23)
         Me.btnProducto.TabIndex = 73

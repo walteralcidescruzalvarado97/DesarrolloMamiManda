@@ -59,7 +59,7 @@ Partial Class FrmEmpleado
         Me.TabControl1.Location = New System.Drawing.Point(0, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(623, 422)
+        Me.TabControl1.Size = New System.Drawing.Size(712, 465)
         Me.TabControl1.TabIndex = 86
         '
         'TPGestionEmpleado
@@ -75,7 +75,7 @@ Partial Class FrmEmpleado
         Me.TPGestionEmpleado.Location = New System.Drawing.Point(4, 22)
         Me.TPGestionEmpleado.Name = "TPGestionEmpleado"
         Me.TPGestionEmpleado.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPGestionEmpleado.Size = New System.Drawing.Size(615, 396)
+        Me.TPGestionEmpleado.Size = New System.Drawing.Size(704, 439)
         Me.TPGestionEmpleado.TabIndex = 0
         Me.TPGestionEmpleado.Text = "Gestión Empleado"
         Me.TPGestionEmpleado.UseVisualStyleBackColor = True
@@ -90,7 +90,7 @@ Partial Class FrmEmpleado
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(224, 319)
+        Me.btnGuardar.Location = New System.Drawing.Point(252, 341)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 85
@@ -100,10 +100,10 @@ Partial Class FrmEmpleado
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(221, 360)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(247, 382)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 16)
+        Me.Label11.Size = New System.Drawing.Size(62, 18)
         Me.Label11.TabIndex = 87
         Me.Label11.Text = "Guardar"
         '
@@ -111,10 +111,10 @@ Partial Class FrmEmpleado
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(302, 360)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(328, 382)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(62, 16)
+        Me.Label13.Size = New System.Drawing.Size(67, 18)
         Me.Label13.TabIndex = 88
         Me.Label13.Text = "Cancelar"
         '
@@ -128,7 +128,7 @@ Partial Class FrmEmpleado
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(310, 324)
+        Me.btnCancelar.Location = New System.Drawing.Point(338, 346)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 86
@@ -153,27 +153,28 @@ Partial Class FrmEmpleado
         Me.GbDatos.Controls.Add(Me.TxtEmail)
         Me.GbDatos.Controls.Add(Me.Label5)
         Me.GbDatos.Controls.Add(Me.Label4)
+        Me.GbDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GbDatos.Location = New System.Drawing.Point(39, 70)
         Me.GbDatos.Name = "GbDatos"
-        Me.GbDatos.Size = New System.Drawing.Size(545, 239)
+        Me.GbDatos.Size = New System.Drawing.Size(575, 253)
         Me.GbDatos.TabIndex = 78
         Me.GbDatos.TabStop = False
         Me.GbDatos.Text = "Datos del Empleado"
         '
         'mtbTelefono
         '
-        Me.mtbTelefono.Location = New System.Drawing.Point(130, 119)
+        Me.mtbTelefono.Location = New System.Drawing.Point(130, 124)
         Me.mtbTelefono.MaxLength = 8
         Me.mtbTelefono.Name = "mtbTelefono"
-        Me.mtbTelefono.Size = New System.Drawing.Size(158, 20)
+        Me.mtbTelefono.Size = New System.Drawing.Size(158, 26)
         Me.mtbTelefono.TabIndex = 18
         '
         'lblapellidos
         '
         Me.lblapellidos.AutoSize = True
-        Me.lblapellidos.Location = New System.Drawing.Point(300, 70)
+        Me.lblapellidos.Location = New System.Drawing.Point(307, 70)
         Me.lblapellidos.Name = "lblapellidos"
-        Me.lblapellidos.Size = New System.Drawing.Size(49, 13)
+        Me.lblapellidos.Size = New System.Drawing.Size(73, 20)
         Me.lblapellidos.TabIndex = 17
         Me.lblapellidos.Text = "Apellidos"
         '
@@ -181,33 +182,33 @@ Partial Class FrmEmpleado
         '
         Me.CboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboSexo.FormattingEnabled = True
-        Me.CboSexo.Location = New System.Drawing.Point(378, 119)
+        Me.CboSexo.Location = New System.Drawing.Point(410, 126)
         Me.CboSexo.Name = "CboSexo"
-        Me.CboSexo.Size = New System.Drawing.Size(131, 21)
+        Me.CboSexo.Size = New System.Drawing.Size(131, 28)
         Me.CboSexo.TabIndex = 16
         '
         'TxtApellido
         '
-        Me.TxtApellido.Location = New System.Drawing.Point(351, 67)
+        Me.TxtApellido.Location = New System.Drawing.Point(386, 67)
         Me.TxtApellido.Name = "TxtApellido"
-        Me.TxtApellido.Size = New System.Drawing.Size(158, 20)
+        Me.TxtApellido.Size = New System.Drawing.Size(158, 26)
         Me.TxtApellido.TabIndex = 3
         '
         'CboTipoEmpleado
         '
         Me.CboTipoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboTipoEmpleado.FormattingEnabled = True
-        Me.CboTipoEmpleado.Location = New System.Drawing.Point(378, 92)
+        Me.CboTipoEmpleado.Location = New System.Drawing.Point(410, 96)
         Me.CboTipoEmpleado.Name = "CboTipoEmpleado"
-        Me.CboTipoEmpleado.Size = New System.Drawing.Size(131, 21)
+        Me.CboTipoEmpleado.Size = New System.Drawing.Size(131, 28)
         Me.CboTipoEmpleado.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 40)
+        Me.Label1.Location = New System.Drawing.Point(11, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 13)
+        Me.Label1.Size = New System.Drawing.Size(114, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cod Empleado"
         '
@@ -216,24 +217,24 @@ Partial Class FrmEmpleado
         Me.TxtCodEmpleado.Enabled = False
         Me.TxtCodEmpleado.Location = New System.Drawing.Point(129, 37)
         Me.TxtCodEmpleado.Name = "TxtCodEmpleado"
-        Me.TxtCodEmpleado.Size = New System.Drawing.Size(54, 20)
+        Me.TxtCodEmpleado.Size = New System.Drawing.Size(54, 26)
         Me.TxtCodEmpleado.TabIndex = 1
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(340, 121)
+        Me.Label7.Location = New System.Drawing.Point(359, 129)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.Size = New System.Drawing.Size(45, 20)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Sexo"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(78, 70)
+        Me.Label2.Location = New System.Drawing.Point(42, 70)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(73, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Nombres"
         '
@@ -241,58 +242,58 @@ Partial Class FrmEmpleado
         '
         Me.TxtNombre.Location = New System.Drawing.Point(129, 67)
         Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(158, 20)
+        Me.TxtNombre.Size = New System.Drawing.Size(158, 26)
         Me.TxtNombre.TabIndex = 2
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(296, 96)
+        Me.Label6.Location = New System.Drawing.Point(293, 99)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 13)
+        Me.Label6.Size = New System.Drawing.Size(111, 20)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "TipoEmpleado"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(91, 96)
+        Me.Label3.Location = New System.Drawing.Point(67, 100)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.Size = New System.Drawing.Size(48, 20)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Email"
         '
         'TxtDireccion
         '
-        Me.TxtDireccion.Location = New System.Drawing.Point(129, 156)
+        Me.TxtDireccion.Location = New System.Drawing.Point(129, 160)
         Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
-        Me.TxtDireccion.Size = New System.Drawing.Size(380, 64)
+        Me.TxtDireccion.Size = New System.Drawing.Size(412, 64)
         Me.TxtDireccion.TabIndex = 6
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(129, 93)
+        Me.TxtEmail.Location = New System.Drawing.Point(129, 96)
         Me.TxtEmail.MaxLength = 1000
         Me.TxtEmail.Name = "TxtEmail"
-        Me.TxtEmail.Size = New System.Drawing.Size(158, 20)
+        Me.TxtEmail.Size = New System.Drawing.Size(158, 26)
         Me.TxtEmail.TabIndex = 4
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(71, 156)
+        Me.Label5.Location = New System.Drawing.Point(40, 163)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.Size = New System.Drawing.Size(75, 20)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Dirección"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(74, 122)
+        Me.Label4.Location = New System.Drawing.Point(44, 127)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(71, 20)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Teléfono"
         '
@@ -314,7 +315,7 @@ Partial Class FrmEmpleado
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(622, 414)
+        Me.ClientSize = New System.Drawing.Size(656, 430)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

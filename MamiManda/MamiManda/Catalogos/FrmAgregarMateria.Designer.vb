@@ -60,7 +60,7 @@ Partial Class FrmAgregarMateria
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(354, 255)
+        Me.btnGuardar.Location = New System.Drawing.Point(385, 253)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 107
@@ -71,10 +71,10 @@ Partial Class FrmAgregarMateria
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(350, 296)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(371, 294)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(57, 16)
+        Me.Label9.Size = New System.Drawing.Size(62, 18)
         Me.Label9.TabIndex = 109
         Me.Label9.Text = "Guardar"
         '
@@ -83,10 +83,10 @@ Partial Class FrmAgregarMateria
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(416, 296)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(437, 294)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(62, 16)
+        Me.Label13.Size = New System.Drawing.Size(67, 18)
         Me.Label13.TabIndex = 111
         Me.Label13.Text = "Cancelar"
         '
@@ -101,7 +101,7 @@ Partial Class FrmAgregarMateria
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(424, 260)
+        Me.btnCancelar.Location = New System.Drawing.Point(455, 258)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 110
@@ -131,9 +131,10 @@ Partial Class FrmAgregarMateria
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCantidad)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(250, 79)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(312, 162)
+        Me.GroupBox1.Size = New System.Drawing.Size(357, 162)
         Me.GroupBox1.TabIndex = 105
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
@@ -144,15 +145,15 @@ Partial Class FrmAgregarMateria
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Location = New System.Drawing.Point(67, 87)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.Size = New System.Drawing.Size(67, 20)
         Me.Label5.TabIndex = 78
         Me.Label5.Text = "Medida"
         '
         'txtMedida
         '
-        Me.txtMedida.Location = New System.Drawing.Point(125, 84)
+        Me.txtMedida.Location = New System.Drawing.Point(174, 84)
         Me.txtMedida.Name = "txtMedida"
-        Me.txtMedida.Size = New System.Drawing.Size(132, 20)
+        Me.txtMedida.Size = New System.Drawing.Size(132, 26)
         Me.txtMedida.TabIndex = 79
         '
         'Label3
@@ -161,16 +162,16 @@ Partial Class FrmAgregarMateria
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Location = New System.Drawing.Point(48, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 13)
+        Me.Label3.Size = New System.Drawing.Size(119, 20)
         Me.Label3.TabIndex = 76
         Me.Label3.Text = "Materia Prima"
         '
         'txtMateria
         '
         Me.txtMateria.Enabled = False
-        Me.txtMateria.Location = New System.Drawing.Point(125, 58)
+        Me.txtMateria.Location = New System.Drawing.Point(174, 56)
         Me.txtMateria.Name = "txtMateria"
-        Me.txtMateria.Size = New System.Drawing.Size(132, 20)
+        Me.txtMateria.Size = New System.Drawing.Size(132, 26)
         Me.txtMateria.TabIndex = 77
         '
         'btnMateria
@@ -182,7 +183,7 @@ Partial Class FrmAgregarMateria
         Me.btnMateria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnMateria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMateria.Location = New System.Drawing.Point(263, 27)
+        Me.btnMateria.Location = New System.Drawing.Point(312, 24)
         Me.btnMateria.Name = "btnMateria"
         Me.btnMateria.Size = New System.Drawing.Size(26, 23)
         Me.btnMateria.TabIndex = 73
@@ -191,9 +192,9 @@ Partial Class FrmAgregarMateria
         'txtCodMateria
         '
         Me.txtCodMateria.Enabled = False
-        Me.txtCodMateria.Location = New System.Drawing.Point(125, 29)
+        Me.txtCodMateria.Location = New System.Drawing.Point(174, 28)
         Me.txtCodMateria.Name = "txtCodMateria"
-        Me.txtCodMateria.Size = New System.Drawing.Size(132, 20)
+        Me.txtCodMateria.Size = New System.Drawing.Size(132, 26)
         Me.txtCodMateria.TabIndex = 68
         '
         'Label2
@@ -202,7 +203,7 @@ Partial Class FrmAgregarMateria
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Location = New System.Drawing.Point(41, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 13)
+        Me.Label2.Size = New System.Drawing.Size(130, 20)
         Me.Label2.TabIndex = 67
         Me.Label2.Text = "Código Materia"
         '
@@ -212,15 +213,15 @@ Partial Class FrmAgregarMateria
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Location = New System.Drawing.Point(67, 113)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.Size = New System.Drawing.Size(86, 20)
         Me.Label4.TabIndex = 71
         Me.Label4.Text = "Cantidad "
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(125, 110)
+        Me.txtCantidad.Location = New System.Drawing.Point(174, 112)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(132, 26)
         Me.txtCantidad.TabIndex = 72
         '
         'ErrorProvider1

@@ -62,25 +62,25 @@ Partial Class FrmUsuario
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(166, 30)
+        Me.Label1.Location = New System.Drawing.Point(167, 33)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
+        Me.Label1.Size = New System.Drawing.Size(118, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código Usuario"
         '
         'txtCodUsuario
         '
         Me.txtCodUsuario.Enabled = False
-        Me.txtCodUsuario.Location = New System.Drawing.Point(251, 27)
+        Me.txtCodUsuario.Location = New System.Drawing.Point(291, 30)
         Me.txtCodUsuario.Name = "txtCodUsuario"
-        Me.txtCodUsuario.Size = New System.Drawing.Size(121, 20)
+        Me.txtCodUsuario.Size = New System.Drawing.Size(121, 26)
         Me.txtCodUsuario.TabIndex = 1
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(251, 60)
+        Me.txtUserName.Location = New System.Drawing.Point(291, 63)
         Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(121, 20)
+        Me.txtUserName.Size = New System.Drawing.Size(121, 26)
         Me.txtUserName.TabIndex = 3
         '
         'Label2
@@ -89,24 +89,24 @@ Partial Class FrmUsuario
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Location = New System.Drawing.Point(146, 63)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 13)
+        Me.Label2.Size = New System.Drawing.Size(143, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Nombre de usuario"
         '
         'txtContrasena
         '
-        Me.txtContrasena.Location = New System.Drawing.Point(251, 93)
+        Me.txtContrasena.Location = New System.Drawing.Point(291, 96)
         Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.Size = New System.Drawing.Size(121, 20)
+        Me.txtContrasena.Size = New System.Drawing.Size(121, 26)
         Me.txtContrasena.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(181, 96)
+        Me.Label3.Location = New System.Drawing.Point(193, 96)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
+        Me.Label3.Size = New System.Drawing.Size(92, 20)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Contraseña"
         '
@@ -114,9 +114,9 @@ Partial Class FrmUsuario
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(205, 129)
+        Me.Label4.Location = New System.Drawing.Point(229, 128)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(60, 20)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Estado"
         '
@@ -124,27 +124,27 @@ Partial Class FrmUsuario
         '
         Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(251, 125)
+        Me.cboEstado.Location = New System.Drawing.Point(291, 128)
         Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(121, 21)
+        Me.cboEstado.Size = New System.Drawing.Size(121, 28)
         Me.cboEstado.TabIndex = 7
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(191, 161)
+        Me.Label5.Location = New System.Drawing.Point(208, 162)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(54, 13)
+        Me.Label5.Size = New System.Drawing.Size(81, 20)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Empleado"
         '
         'txtEmpleado
         '
         Me.txtEmpleado.Enabled = False
-        Me.txtEmpleado.Location = New System.Drawing.Point(251, 156)
+        Me.txtEmpleado.Location = New System.Drawing.Point(291, 159)
         Me.txtEmpleado.Name = "txtEmpleado"
-        Me.txtEmpleado.Size = New System.Drawing.Size(121, 20)
+        Me.txtEmpleado.Size = New System.Drawing.Size(121, 26)
         Me.txtEmpleado.TabIndex = 9
         '
         'btnEmpleado
@@ -156,7 +156,7 @@ Partial Class FrmUsuario
         Me.btnEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpleado.Location = New System.Drawing.Point(378, 156)
+        Me.btnEmpleado.Location = New System.Drawing.Point(418, 162)
         Me.btnEmpleado.Name = "btnEmpleado"
         Me.btnEmpleado.Size = New System.Drawing.Size(26, 23)
         Me.btnEmpleado.TabIndex = 10
@@ -166,9 +166,9 @@ Partial Class FrmUsuario
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(165, 190)
+        Me.Label6.Location = New System.Drawing.Point(172, 190)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.Size = New System.Drawing.Size(117, 20)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Tipo de usuario"
         '
@@ -176,9 +176,9 @@ Partial Class FrmUsuario
         '
         Me.cboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoUsuario.FormattingEnabled = True
-        Me.cboTipoUsuario.Location = New System.Drawing.Point(251, 187)
+        Me.cboTipoUsuario.Location = New System.Drawing.Point(291, 190)
         Me.cboTipoUsuario.Name = "cboTipoUsuario"
-        Me.cboTipoUsuario.Size = New System.Drawing.Size(121, 21)
+        Me.cboTipoUsuario.Size = New System.Drawing.Size(121, 28)
         Me.cboTipoUsuario.TabIndex = 12
         '
         'GrupBox1
@@ -200,9 +200,10 @@ Partial Class FrmUsuario
         Me.GrupBox1.Controls.Add(Me.txtContrasena)
         Me.GrupBox1.Controls.Add(Me.cboEstado)
         Me.GrupBox1.Controls.Add(Me.Label4)
+        Me.GrupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrupBox1.Location = New System.Drawing.Point(79, 64)
         Me.GrupBox1.Name = "GrupBox1"
-        Me.GrupBox1.Size = New System.Drawing.Size(451, 217)
+        Me.GrupBox1.Size = New System.Drawing.Size(451, 231)
         Me.GrupBox1.TabIndex = 13
         Me.GrupBox1.TabStop = False
         Me.GrupBox1.Text = "Datos de Usuario"
@@ -253,10 +254,10 @@ Partial Class FrmUsuario
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(253, 323)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(251, 337)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(57, 16)
+        Me.Label9.Size = New System.Drawing.Size(62, 18)
         Me.Label9.TabIndex = 46
         Me.Label9.Text = "Guardar"
         '
@@ -270,7 +271,7 @@ Partial Class FrmUsuario
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(257, 282)
+        Me.btnGuardar.Location = New System.Drawing.Point(255, 296)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 44
@@ -280,10 +281,10 @@ Partial Class FrmUsuario
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(322, 323)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(320, 337)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(62, 16)
+        Me.Label13.Size = New System.Drawing.Size(67, 18)
         Me.Label13.TabIndex = 54
         Me.Label13.Text = "Cancelar"
         '
@@ -297,7 +298,7 @@ Partial Class FrmUsuario
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(330, 287)
+        Me.btnCancelar.Location = New System.Drawing.Point(328, 301)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 52
@@ -355,7 +356,7 @@ Partial Class FrmUsuario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(600, 371)
+        Me.ClientSize = New System.Drawing.Size(600, 385)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.HelpProvider1.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.TableOfContents)

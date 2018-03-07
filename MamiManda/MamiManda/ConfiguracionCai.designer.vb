@@ -28,28 +28,28 @@ Partial Class ConfiguracionCai
         Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
         Me.TCCai = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ChkUsado = New System.Windows.Forms.CheckBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DtFechaFin = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DtFechaInicio = New System.Windows.Forms.DateTimePicker()
-        Me.TxtFin = New System.Windows.Forms.MaskedTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtInicio = New System.Windows.Forms.MaskedTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtCai = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ChkUsado = New System.Windows.Forms.CheckBox()
+        Me.TxtInicio = New System.Windows.Forms.MaskedTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DtFechaFin = New System.Windows.Forms.DateTimePicker()
+        Me.TxtFin = New System.Windows.Forms.MaskedTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DtFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.BtnCancelar = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnGuardar = New DevExpress.XtraEditors.SimpleButton()
         Me.CmsOpc = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EpValidar = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.BtnCancelar = New DevExpress.XtraEditors.SimpleButton()
-        Me.BtnGuardar = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TCCai.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.CmsOpc.SuspendLayout()
         CType(Me.EpValidar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TCCai
@@ -77,94 +77,26 @@ Partial Class ConfiguracionCai
         Me.TabPage1.Text = "Configuración"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'ChkUsado
+        'GroupBox1
         '
-        Me.ChkUsado.AutoSize = True
-        Me.ChkUsado.Location = New System.Drawing.Point(65, 147)
-        Me.ChkUsado.Margin = New System.Windows.Forms.Padding(2)
-        Me.ChkUsado.Name = "ChkUsado"
-        Me.ChkUsado.Size = New System.Drawing.Size(57, 17)
-        Me.ChkUsado.TabIndex = 5
-        Me.ChkUsado.Text = "Usado"
-        Me.ChkUsado.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(249, 74)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 13)
-        Me.Label6.TabIndex = 109
-        Me.Label6.Text = "Fecha Fin:"
-        '
-        'DtFechaFin
-        '
-        Me.DtFechaFin.Enabled = False
-        Me.DtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtFechaFin.Location = New System.Drawing.Point(320, 70)
-        Me.DtFechaFin.Name = "DtFechaFin"
-        Me.DtFechaFin.Size = New System.Drawing.Size(102, 20)
-        Me.DtFechaFin.TabIndex = 2
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(62, 74)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 13)
-        Me.Label5.TabIndex = 107
-        Me.Label5.Text = "Fecha Inicio:"
-        '
-        'DtFechaInicio
-        '
-        Me.DtFechaInicio.Enabled = False
-        Me.DtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtFechaInicio.Location = New System.Drawing.Point(133, 70)
-        Me.DtFechaInicio.Name = "DtFechaInicio"
-        Me.DtFechaInicio.Size = New System.Drawing.Size(102, 20)
-        Me.DtFechaInicio.TabIndex = 1
-        '
-        'TxtFin
-        '
-        Me.TxtFin.Enabled = False
-        Me.TxtFin.Location = New System.Drawing.Point(307, 109)
-        Me.TxtFin.Margin = New System.Windows.Forms.Padding(2)
-        Me.TxtFin.Mask = "000-000-00-00000000"
-        Me.TxtFin.Name = "TxtFin"
-        Me.TxtFin.Size = New System.Drawing.Size(117, 20)
-        Me.TxtFin.TabIndex = 4
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(279, 114)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(24, 13)
-        Me.Label3.TabIndex = 104
-        Me.Label3.Text = "Fin:"
-        '
-        'TxtInicio
-        '
-        Me.TxtInicio.Enabled = False
-        Me.TxtInicio.Location = New System.Drawing.Point(105, 109)
-        Me.TxtInicio.Margin = New System.Windows.Forms.Padding(2)
-        Me.TxtInicio.Mask = "000-000-00-00000000"
-        Me.TxtInicio.Name = "TxtInicio"
-        Me.TxtInicio.Size = New System.Drawing.Size(117, 20)
-        Me.TxtInicio.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(62, 114)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
-        Me.Label2.TabIndex = 102
-        Me.Label2.Text = "Inicio:"
+        Me.GroupBox1.Controls.Add(Me.TxtCai)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.ChkUsado)
+        Me.GroupBox1.Controls.Add(Me.TxtInicio)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.DtFechaFin)
+        Me.GroupBox1.Controls.Add(Me.TxtFin)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.DtFechaInicio)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(168, 51)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(515, 179)
+        Me.GroupBox1.TabIndex = 110
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Datos del CAI"
         '
         'TxtCai
         '
@@ -173,34 +105,107 @@ Partial Class ConfiguracionCai
         Me.TxtCai.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtCai.Mask = "AAAAAA-AAAAAA-AAAAAA-AAAAAA-AAAAAA-AA"
         Me.TxtCai.Name = "TxtCai"
-        Me.TxtCai.Size = New System.Drawing.Size(249, 20)
+        Me.TxtCai.Size = New System.Drawing.Size(249, 26)
         Me.TxtCai.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(62, 36)
+        Me.Label1.Location = New System.Drawing.Point(62, 39)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(27, 13)
+        Me.Label1.Size = New System.Drawing.Size(40, 20)
         Me.Label1.TabIndex = 100
         Me.Label1.Text = "CAI:"
         '
-        'CmsOpc
+        'Label2
         '
-        Me.CmsOpc.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem})
-        Me.CmsOpc.Name = "CmsOpc"
-        Me.CmsOpc.Size = New System.Drawing.Size(108, 26)
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(62, 114)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 20)
+        Me.Label2.TabIndex = 102
+        Me.Label2.Text = "Inicio:"
         '
-        'EditarToolStripMenuItem
+        'ChkUsado
         '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar "
+        Me.ChkUsado.AutoSize = True
+        Me.ChkUsado.Location = New System.Drawing.Point(65, 147)
+        Me.ChkUsado.Margin = New System.Windows.Forms.Padding(2)
+        Me.ChkUsado.Name = "ChkUsado"
+        Me.ChkUsado.Size = New System.Drawing.Size(75, 24)
+        Me.ChkUsado.TabIndex = 5
+        Me.ChkUsado.Text = "Usado"
+        Me.ChkUsado.UseVisualStyleBackColor = True
         '
-        'EpValidar
+        'TxtInicio
         '
-        Me.EpValidar.ContainerControl = Me
+        Me.TxtInicio.Enabled = False
+        Me.TxtInicio.Location = New System.Drawing.Point(116, 111)
+        Me.TxtInicio.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtInicio.Mask = "000-000-00-00000000"
+        Me.TxtInicio.Name = "TxtInicio"
+        Me.TxtInicio.Size = New System.Drawing.Size(117, 26)
+        Me.TxtInicio.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(279, 74)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(84, 20)
+        Me.Label6.TabIndex = 109
+        Me.Label6.Text = "Fecha Fin:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(279, 114)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 20)
+        Me.Label3.TabIndex = 104
+        Me.Label3.Text = "Fin:"
+        '
+        'DtFechaFin
+        '
+        Me.DtFechaFin.Enabled = False
+        Me.DtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaFin.Location = New System.Drawing.Point(359, 74)
+        Me.DtFechaFin.Name = "DtFechaFin"
+        Me.DtFechaFin.Size = New System.Drawing.Size(102, 26)
+        Me.DtFechaFin.TabIndex = 2
+        '
+        'TxtFin
+        '
+        Me.TxtFin.Enabled = False
+        Me.TxtFin.Location = New System.Drawing.Point(318, 111)
+        Me.TxtFin.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtFin.Mask = "000-000-00-00000000"
+        Me.TxtFin.Name = "TxtFin"
+        Me.TxtFin.Size = New System.Drawing.Size(117, 26)
+        Me.TxtFin.TabIndex = 4
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(62, 74)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(99, 20)
+        Me.Label5.TabIndex = 107
+        Me.Label5.Text = "Fecha Inicio:"
+        '
+        'DtFechaInicio
+        '
+        Me.DtFechaInicio.Enabled = False
+        Me.DtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFechaInicio.Location = New System.Drawing.Point(166, 74)
+        Me.DtFechaInicio.Name = "DtFechaInicio"
+        Me.DtFechaInicio.Size = New System.Drawing.Size(102, 26)
+        Me.DtFechaInicio.TabIndex = 1
         '
         'BtnCancelar
         '
@@ -225,25 +230,21 @@ Partial Class ConfiguracionCai
         Me.BtnGuardar.TabIndex = 1
         Me.BtnGuardar.ToolTip = "Guardar"
         '
-        'GroupBox1
+        'CmsOpc
         '
-        Me.GroupBox1.Controls.Add(Me.TxtCai)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.ChkUsado)
-        Me.GroupBox1.Controls.Add(Me.TxtInicio)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.DtFechaFin)
-        Me.GroupBox1.Controls.Add(Me.TxtFin)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.DtFechaInicio)
-        Me.GroupBox1.Location = New System.Drawing.Point(168, 51)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(515, 179)
-        Me.GroupBox1.TabIndex = 110
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos del CAI"
+        Me.CmsOpc.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem})
+        Me.CmsOpc.Name = "CmsOpc"
+        Me.CmsOpc.Size = New System.Drawing.Size(108, 26)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar "
+        '
+        'EpValidar
+        '
+        Me.EpValidar.ContainerControl = Me
         '
         'ConfiguracionCai
         '
@@ -256,10 +257,10 @@ Partial Class ConfiguracionCai
         Me.Text = "ConfiguracionCai"
         Me.TCCai.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.CmsOpc.ResumeLayout(False)
-        CType(Me.EpValidar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.CmsOpc.ResumeLayout(False)
+        CType(Me.EpValidar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

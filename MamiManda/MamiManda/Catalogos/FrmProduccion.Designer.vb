@@ -72,9 +72,10 @@ Partial Class FrmProduccion
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCantidad)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(421, 78)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(312, 124)
+        Me.GroupBox1.Size = New System.Drawing.Size(370, 124)
         Me.GroupBox1.TabIndex = 94
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
@@ -85,16 +86,16 @@ Partial Class FrmProduccion
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Location = New System.Drawing.Point(69, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(50, 13)
+        Me.Label3.Size = New System.Drawing.Size(81, 20)
         Me.Label3.TabIndex = 76
         Me.Label3.Text = "Producto"
         '
         'txtProducto
         '
         Me.txtProducto.Enabled = False
-        Me.txtProducto.Location = New System.Drawing.Point(125, 58)
+        Me.txtProducto.Location = New System.Drawing.Point(190, 55)
         Me.txtProducto.Name = "txtProducto"
-        Me.txtProducto.Size = New System.Drawing.Size(132, 20)
+        Me.txtProducto.Size = New System.Drawing.Size(132, 26)
         Me.txtProducto.TabIndex = 77
         '
         'btnProducto
@@ -106,7 +107,7 @@ Partial Class FrmProduccion
         Me.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProducto.Location = New System.Drawing.Point(263, 27)
+        Me.btnProducto.Location = New System.Drawing.Point(328, 24)
         Me.btnProducto.Name = "btnProducto"
         Me.btnProducto.Size = New System.Drawing.Size(26, 23)
         Me.btnProducto.TabIndex = 73
@@ -115,9 +116,9 @@ Partial Class FrmProduccion
         'txtCodProducto
         '
         Me.txtCodProducto.Enabled = False
-        Me.txtCodProducto.Location = New System.Drawing.Point(125, 29)
+        Me.txtCodProducto.Location = New System.Drawing.Point(190, 26)
         Me.txtCodProducto.Name = "txtCodProducto"
-        Me.txtCodProducto.Size = New System.Drawing.Size(132, 20)
+        Me.txtCodProducto.Size = New System.Drawing.Size(132, 26)
         Me.txtCodProducto.TabIndex = 68
         '
         'Label2
@@ -126,7 +127,7 @@ Partial Class FrmProduccion
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Location = New System.Drawing.Point(33, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 13)
+        Me.Label2.Size = New System.Drawing.Size(142, 20)
         Me.Label2.TabIndex = 67
         Me.Label2.Text = "Código Producto"
         '
@@ -136,15 +137,15 @@ Partial Class FrmProduccion
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Location = New System.Drawing.Point(13, 92)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(106, 13)
+        Me.Label4.Size = New System.Drawing.Size(177, 20)
         Me.Label4.TabIndex = 71
         Me.Label4.Text = "Cantidad a Prooducir"
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(125, 89)
+        Me.txtCantidad.Location = New System.Drawing.Point(190, 86)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(132, 26)
         Me.txtCantidad.TabIndex = 72
         '
         'btnGuardar
@@ -158,7 +159,7 @@ Partial Class FrmProduccion
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(519, 348)
+        Me.btnGuardar.Location = New System.Drawing.Point(565, 353)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 96
@@ -169,10 +170,10 @@ Partial Class FrmProduccion
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(515, 389)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(561, 394)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(57, 16)
+        Me.Label9.Size = New System.Drawing.Size(62, 18)
         Me.Label9.TabIndex = 98
         Me.Label9.Text = "Guardar"
         '
@@ -181,10 +182,10 @@ Partial Class FrmProduccion
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(582, 389)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(628, 394)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(62, 16)
+        Me.Label13.Size = New System.Drawing.Size(67, 18)
         Me.Label13.TabIndex = 102
         Me.Label13.Text = "Cancelar"
         '
@@ -199,7 +200,7 @@ Partial Class FrmProduccion
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(590, 353)
+        Me.btnCancelar.Location = New System.Drawing.Point(636, 358)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(40, 33)
         Me.btnCancelar.TabIndex = 100
@@ -242,12 +243,12 @@ Partial Class FrmProduccion
         'ChProducto
         '
         Me.ChProducto.Text = "Producto"
-        Me.ChProducto.Width = 150
+        Me.ChProducto.Width = 146
         '
         'ChMateria
         '
         Me.ChMateria.Text = "Ingredientes"
-        Me.ChMateria.Width = 160
+        Me.ChMateria.Width = 219
         '
         'lsvMostrar
         '
@@ -257,7 +258,7 @@ Partial Class FrmProduccion
         Me.lsvMostrar.GridLines = True
         Me.lsvMostrar.Location = New System.Drawing.Point(421, 211)
         Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(312, 131)
+        Me.lsvMostrar.Size = New System.Drawing.Size(370, 131)
         Me.lsvMostrar.TabIndex = 103
         Me.lsvMostrar.UseCompatibleStateImageBehavior = False
         Me.lsvMostrar.View = System.Windows.Forms.View.Details

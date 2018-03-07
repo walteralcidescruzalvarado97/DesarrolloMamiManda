@@ -100,7 +100,7 @@ Partial Class FrmMateriaPrima
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(241, 261)
+        Me.btnGuardar.Location = New System.Drawing.Point(270, 265)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(46, 42)
         Me.btnGuardar.TabIndex = 86
@@ -122,9 +122,10 @@ Partial Class FrmMateriaPrima
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.TxtIdMateriaPrima)
         Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(72, 81)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(509, 165)
+        Me.GroupBox1.Size = New System.Drawing.Size(550, 165)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos materia prima"
@@ -132,9 +133,9 @@ Partial Class FrmMateriaPrima
         'TxtRtnProveedor
         '
         Me.TxtRtnProveedor.Enabled = False
-        Me.TxtRtnProveedor.Location = New System.Drawing.Point(122, 116)
+        Me.TxtRtnProveedor.Location = New System.Drawing.Point(155, 121)
         Me.TxtRtnProveedor.Name = "TxtRtnProveedor"
-        Me.TxtRtnProveedor.Size = New System.Drawing.Size(146, 20)
+        Me.TxtRtnProveedor.Size = New System.Drawing.Size(146, 26)
         Me.TxtRtnProveedor.TabIndex = 17
         '
         'btnProveedor
@@ -146,7 +147,7 @@ Partial Class FrmMateriaPrima
         Me.btnProveedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProveedor.Location = New System.Drawing.Point(274, 114)
+        Me.btnProveedor.Location = New System.Drawing.Point(307, 122)
         Me.btnProveedor.Name = "btnProveedor"
         Me.btnProveedor.Size = New System.Drawing.Size(26, 23)
         Me.btnProveedor.TabIndex = 18
@@ -156,91 +157,91 @@ Partial Class FrmMateriaPrima
         '
         Me.CboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboUnidadMedida.FormattingEnabled = True
-        Me.CboUnidadMedida.Location = New System.Drawing.Point(122, 87)
+        Me.CboUnidadMedida.Location = New System.Drawing.Point(155, 92)
         Me.CboUnidadMedida.Name = "CboUnidadMedida"
-        Me.CboUnidadMedida.Size = New System.Drawing.Size(146, 21)
+        Me.CboUnidadMedida.Size = New System.Drawing.Size(146, 28)
         Me.CboUnidadMedida.TabIndex = 18
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(40, 119)
+        Me.Label14.Location = New System.Drawing.Point(38, 121)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(76, 13)
+        Me.Label14.Size = New System.Drawing.Size(111, 20)
         Me.Label14.TabIndex = 16
         Me.Label14.Text = "Rtn Proveedor"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(23, 89)
+        Me.Label12.Location = New System.Drawing.Point(21, 94)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(93, 13)
+        Me.Label12.Size = New System.Drawing.Size(138, 20)
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "Unidad de medida"
         '
         'TxtPrecio
         '
-        Me.TxtPrecio.Location = New System.Drawing.Point(295, 64)
+        Me.TxtPrecio.Location = New System.Drawing.Point(371, 68)
         Me.TxtPrecio.Name = "TxtPrecio"
-        Me.TxtPrecio.Size = New System.Drawing.Size(146, 20)
+        Me.TxtPrecio.Size = New System.Drawing.Size(146, 26)
         Me.TxtPrecio.TabIndex = 11
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(223, 68)
+        Me.Label7.Location = New System.Drawing.Point(270, 71)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 13)
+        Me.Label7.Size = New System.Drawing.Size(96, 20)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Precio costo"
         '
         'TxtExistenciaMinima
         '
-        Me.TxtExistenciaMinima.Location = New System.Drawing.Point(122, 61)
+        Me.TxtExistenciaMinima.Location = New System.Drawing.Point(155, 65)
         Me.TxtExistenciaMinima.Name = "TxtExistenciaMinima"
-        Me.TxtExistenciaMinima.Size = New System.Drawing.Size(93, 20)
+        Me.TxtExistenciaMinima.Size = New System.Drawing.Size(93, 26)
         Me.TxtExistenciaMinima.TabIndex = 5
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 64)
+        Me.Label4.Location = New System.Drawing.Point(22, 66)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 13)
+        Me.Label4.Size = New System.Drawing.Size(135, 20)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Existencia mínima"
         '
         'TxtNombreMateriaPrima
         '
-        Me.TxtNombreMateriaPrima.Location = New System.Drawing.Point(338, 35)
+        Me.TxtNombreMateriaPrima.Location = New System.Drawing.Point(385, 38)
         Me.TxtNombreMateriaPrima.Name = "TxtNombreMateriaPrima"
-        Me.TxtNombreMateriaPrima.Size = New System.Drawing.Size(146, 20)
+        Me.TxtNombreMateriaPrima.Size = New System.Drawing.Size(146, 26)
         Me.TxtNombreMateriaPrima.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(223, 38)
+        Me.Label3.Location = New System.Drawing.Point(270, 41)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 13)
+        Me.Label3.Size = New System.Drawing.Size(165, 20)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Nombre materia prima"
         '
         'TxtIdMateriaPrima
         '
         Me.TxtIdMateriaPrima.Enabled = False
-        Me.TxtIdMateriaPrima.Location = New System.Drawing.Point(122, 35)
+        Me.TxtIdMateriaPrima.Location = New System.Drawing.Point(155, 38)
         Me.TxtIdMateriaPrima.Name = "TxtIdMateriaPrima"
-        Me.TxtIdMateriaPrima.Size = New System.Drawing.Size(93, 20)
+        Me.TxtIdMateriaPrima.Size = New System.Drawing.Size(93, 26)
         Me.TxtIdMateriaPrima.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 38)
+        Me.Label2.Location = New System.Drawing.Point(31, 38)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 13)
+        Me.Label2.Size = New System.Drawing.Size(124, 20)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Id Materia Prima"
         '
@@ -248,10 +249,10 @@ Partial Class FrmMateriaPrima
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(238, 308)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(267, 312)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 16)
+        Me.Label11.Size = New System.Drawing.Size(62, 18)
         Me.Label11.TabIndex = 89
         Me.Label11.Text = "Guardar"
         '
@@ -265,7 +266,7 @@ Partial Class FrmMateriaPrima
         Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(317, 270)
+        Me.btnCancelar.Location = New System.Drawing.Point(346, 274)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(57, 33)
         Me.btnCancelar.TabIndex = 87
@@ -275,10 +276,10 @@ Partial Class FrmMateriaPrima
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(316, 308)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(345, 312)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(62, 16)
+        Me.Label13.Size = New System.Drawing.Size(67, 18)
         Me.Label13.TabIndex = 91
         Me.Label13.Text = "Cancelar"
         '
