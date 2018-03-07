@@ -238,7 +238,7 @@ Partial Class FrmUsuarios
         Me.Controls.Add(Me.NavBarControl1)
         Me.Controls.Add(Me.GcUsuario)
         Me.Name = "FrmUsuarios"
-        Me.Text = "FrmUsuarios"
+        Me.Text = "Gestión de Usuarios"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()

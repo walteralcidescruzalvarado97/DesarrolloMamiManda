@@ -76,7 +76,6 @@ Partial Class MenuPrincipal
         '
         'RibbonControl
         '
-        Me.RibbonControl.ApplicationButtonDropDownControl = Me.ApplicationMenu1
         Me.RibbonControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19})

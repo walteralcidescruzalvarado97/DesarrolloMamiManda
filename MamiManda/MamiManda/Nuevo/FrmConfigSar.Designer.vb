@@ -158,7 +158,7 @@ Partial Class FrmConfigSar
         Me.Controls.Add(Me.DtgCai)
         Me.Controls.Add(Me.NavBarControl1)
         Me.Name = "FrmConfigSar"
-        Me.Text = "FrmConfigSar"
+        Me.Text = "Configuración SAR"
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtgCai, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

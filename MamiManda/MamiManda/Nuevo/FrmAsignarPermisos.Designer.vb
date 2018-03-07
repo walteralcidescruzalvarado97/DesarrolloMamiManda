@@ -157,6 +157,7 @@ Partial Class FrmAsignarPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1003, 558)
         Me.Controls.Add(Me.LblMensaje)
         Me.Controls.Add(Me.Label2)
@@ -167,7 +168,7 @@ Partial Class FrmAsignarPermisos
         Me.Controls.Add(Me.GcModulosAsignados)
         Me.Controls.Add(Me.GcModulosDisponibles)
         Me.Name = "FrmAsignarPermisos"
-        Me.Text = "FrmAsignarPermisos"
+        Me.Text = "Asignar persmisos"
         CType(Me.GcModulosDisponibles, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GcModulosAsignados, System.ComponentModel.ISupportInitialize).EndInit()

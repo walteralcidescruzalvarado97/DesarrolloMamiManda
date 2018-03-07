@@ -244,7 +244,7 @@ Partial Class FrmInventarios
         Me.Controls.Add(Me.NavBarControl1)
         Me.Controls.Add(Me.GcInventario)
         Me.Name = "FrmInventarios"
-        Me.Text = "FrmInventariosvb"
+        Me.Text = "Gestión de Inventario"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
