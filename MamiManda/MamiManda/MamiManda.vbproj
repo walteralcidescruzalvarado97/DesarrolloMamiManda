@@ -374,6 +374,12 @@
     <Compile Include="Nuevo\FrmMateriasPrimas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Nuevo\FrmPresentacion.Designer.vb">
+      <DependentUpon>FrmPresentacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmPresentacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Nuevo\FrmProveedores.Designer.vb">
       <DependentUpon>FrmProveedores.vb</DependentUpon>
     </Compile>
@@ -643,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\FrmMateriasPrimas.resx">
       <DependentUpon>FrmMateriasPrimas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmPresentacion.resx">
+      <DependentUpon>FrmPresentacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\FrmProveedores.resx">
       <DependentUpon>FrmProveedores.vb</DependentUpon>

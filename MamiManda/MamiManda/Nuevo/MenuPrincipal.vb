@@ -183,4 +183,8 @@ Public Class MenuPrincipal
             PictureBox1.Visible = False
         End If
     End Sub
+
+    Private Sub BarButtonItem20_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem20.ItemClick
+        AbrirForm(FrmPresentacion)
+    End Sub
 End Class

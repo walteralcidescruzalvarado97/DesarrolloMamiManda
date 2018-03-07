@@ -2,7 +2,8 @@
 Public Class FrmPresentacionProducto
     Implements IForm
     Implements IForm2
-
+    Friend Property ModoEdicion As Boolean = False
+    Friend Property Codigo
     Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
         txtCodInventario.Text = cuenta
     End Sub
@@ -12,10 +13,13 @@ Public Class FrmPresentacionProducto
     End Sub
 
     Private Sub FrmPresentacionProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(True, True, True)
         LlenarComboboxTipoPresentacion()
         Limpiar()
-        MostrarPresentacion()
+
+        If ModoEdicion Then
+            Call CargarDatosPresentacion()
+        End If
 
         Dim chmFilePath As String = HTMLHelpClass.GetLocalHelpFileName("ManualAyuda.chm")
         HelpProvider1.HelpNamespace = chmFilePath
@@ -24,10 +28,8 @@ Public Class FrmPresentacionProducto
     End Sub
 
 #Region "Funciones"
-    Private Sub HabilitarBotones(ByVal insertar As Boolean, ByVal guardar As Boolean, ByVal actualizar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
-        btnInsertar.Enabled = insertar
+    Private Sub HabilitarBotones(ByVal guardar As Boolean, ByVal cancelar As Boolean, ByVal valor As Boolean)
         btnGuardar.Enabled = guardar
-        btnActualizar.Enabled = actualizar
         btnCancelar.Enabled = cancelar
         HabilitarTexbox(valor)
     End Sub
@@ -90,79 +92,44 @@ Public Class FrmPresentacionProducto
         End Try
     End Sub
 
-    Private Sub MostrarPresentacion()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_MostrarPresentacionProducto"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                End With
-                Dim VerEmpleado As SqlDataReader
-                VerEmpleado = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerEmpleado.Read = True
-                    With Me.lsvMostrar.Items.Add(VerEmpleado("NombreProducto").ToString)
-                        .SubItems.Add(VerEmpleado("TipoPresentacion").ToString)
-                        .SubItems.Add(VerEmpleado("Unidades").ToString)
-                        .SubItems.Add(VerEmpleado("PrecioMayorista").ToString)
-                        .SubItems.Add(VerEmpleado("PrecioDetalle").ToString)
-                        .SubItems.Add(VerEmpleado("PrecioCosto").ToString)
-                        .SubItems.Add(VerEmpleado("IdInventario").ToString)
-                        .SubItems.Add(VerEmpleado("IdTipoPresentacio").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
-
-    Private Sub ListarPresentacion()
-        If cnn.State = ConnectionState.Open Then
-            cnn.Close()
-        End If
-        cnn.Open()
-
-        Using cmd As New SqlCommand
-            Try
-                With cmd
-                    .CommandText = "Sp_ListarPresentacionProducto"
-                    .CommandType = CommandType.StoredProcedure
-                    .Connection = cnn
-                    .Parameters.Add("@var", SqlDbType.NVarChar).Value = txtBuscar.Text.Trim
-                End With
-                Dim VerEmpleado As SqlDataReader
-                VerEmpleado = cmd.ExecuteReader()
-                lsvMostrar.Items.Clear()
-                While VerEmpleado.Read = True
-                    With Me.lsvMostrar.Items.Add(VerEmpleado("NombreProducto").ToString)
-                        .SubItems.Add(VerEmpleado("TipoPresentacion").ToString)
-                        .SubItems.Add(VerEmpleado("Unidades").ToString)
-                        .SubItems.Add(VerEmpleado("PrecioMayorista").ToString)
-                        .SubItems.Add(VerEmpleado("PrecioDetalle").ToString)
-                        .SubItems.Add(VerEmpleado("PrecioCosto").ToString)
-                        .SubItems.Add(VerEmpleado("IdInventario").ToString)
-                        .SubItems.Add(VerEmpleado("IdTipoPresentacio").ToString)
-                    End With
-                End While
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                cnn.Close()
-            End Try
-        End Using
-    End Sub
+   
+ 
 #End Region
 
 #Region "SCRUD"
+
+    Private Sub CargarDatosPresentacion()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            cnn.Open()
+            Try
+                With cmd
+                    .CommandText = "Sp_CargarDatosPresentacion"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@IdInventario", SqlDbType.Int).Value = Codigo
+                End With
+
+                Dim lector As SqlDataReader = cmd.ExecuteReader
+
+                While lector.Read
+                    txtCodInventario.Text = lector("IdInventario").ToString
+                    txtNombre.Text = lector("NombreProducto").ToString
+                    cboPresentacion.SelectedValue = lector("IdTipoPresentacio").ToString
+                    txtPreMayorista.Text = lector("PrecioMayorista").ToString
+                    txtPreDetalle.Text = lector("PrecioDetalle").ToString
+                    txtPreCosto.Text = lector("PrecioCosto").ToString
+                End While
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End Using
+    End Sub
+
     Private Sub AgregarPresentacion()
         If cnn.State = ConnectionState.Open Then
             cnn.Close()
@@ -179,7 +146,7 @@ Public Class FrmPresentacionProducto
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
                     .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodInventario.Text.Trim
                     .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = cboPresentacion.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de presentación ha sido guardado", "MamiManda", MessageBoxButtons.OK)
                 End With
@@ -207,7 +174,7 @@ Public Class FrmPresentacionProducto
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
                     .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodInventario.Text.Trim
                     .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = cboPresentacion.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de presentación ha sido actualizado", "MamiManda", MessageBoxButtons.OK)
                 End With
@@ -221,24 +188,6 @@ Public Class FrmPresentacionProducto
 #End Region
 
 
-    Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
-        HabilitarBotones(False, True, False, True, True)
-    End Sub
-
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        If Validar(txtCodInventario, "Debe ingresar un código de producto") Then
-        ElseIf Validar(cboPresentacion, "Debe seleccionar un tipo de presentación") Then
-        ElseIf Validar(txtPreMayorista, "Debe ingresar el precio para mayorista") Then
-        ElseIf Validar(txtPreDetalle, "Debe ingresar el precio al detalle") Then
-        ElseIf Validar(txtPreCosto, "Debe ingresar el precio de costo") Then
-        Else
-            ActualizarPresentacion()
-            HabilitarBotones(True, False, False, False, False)
-            Limpiar()
-            MostrarPresentacion()
-        End If
-
-    End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If Validar(txtCodInventario, "Debe ingresar un código de producto") Then
@@ -247,47 +196,31 @@ Public Class FrmPresentacionProducto
         ElseIf Validar(txtPreDetalle, "Debe ingresar el precio al detalle") Then
         ElseIf Validar(txtPreCosto, "Debe ingresar el precio de costo") Then
         Else
-            AgregarPresentacion()
-            HabilitarBotones(True, False, False, False, False)
+            If ModoEdicion Then
+                Call ActualizarPresentacion()
+            Else
+                AgregarPresentacion()
+            End If
+            HabilitarBotones(False, False, False)
             Limpiar()
-            MostrarPresentacion()
+            FrmPresentacion.ActualizarTablas(True)
+            Me.Close()
         End If
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        HabilitarBotones(True, False, False, False, False)
+        HabilitarBotones(False, False, False)
         Limpiar()
+        Me.Close()
     End Sub
 
     Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
         Dim BuscarInventario As New FrmBuscarInventario
+        BuscarInventario.DesdePresentacion = True
         BuscarInventario.Show(Me)
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        ListarPresentacion()
-        btnEditar.Enabled = False
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        txtNombre.Text = lsvMostrar.FocusedItem.SubItems(0).Text
-        txtCodInventario.Text = lsvMostrar.FocusedItem.SubItems(6).Text
-        cboPresentacion.SelectedValue = lsvMostrar.FocusedItem.SubItems(7).Text
-        txtPreMayorista.Text = lsvMostrar.FocusedItem.SubItems(3).Text
-        txtPreDetalle.Text = lsvMostrar.FocusedItem.SubItems(4).Text
-        txtPreCosto.Text = lsvMostrar.FocusedItem.SubItems(5).Text
-        HabilitarBotones(False, False, True, True, True)
-
-        TabControl1.SelectedIndex = 0
-        btnEditar.Enabled = False
-        txtBuscar.Text = ""
-        btnInventario.Enabled = False
-        cboPresentacion.Enabled = False
-    End Sub
-
-    Private Sub lsvMostrar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMostrar.SelectedIndexChanged
-        btnEditar.Enabled = True
-    End Sub
+   
 
     Private Function txtNumerico(ByVal txtControl As TextBox, ByVal caracter As Char, ByVal decimales As Boolean) As Boolean
         If (Char.IsNumber(caracter, 0) = True) Or caracter = Convert.ToChar(8) Or caracter = "." Then
@@ -314,4 +247,6 @@ Public Class FrmPresentacionProducto
     Private Sub txtPreCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPreCosto.KeyPress
         e.Handled = txtNumerico(txtPreCosto, e.KeyChar, True)
     End Sub
+
+    
 End Class

@@ -67,6 +67,8 @@ Partial Class MenuPrincipal
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,9 +80,9 @@ Partial Class MenuPrincipal
         '
         Me.RibbonControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 27
+        Me.RibbonControl.MaxItemId = 28
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage2, Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage4})
         Me.RibbonControl.Size = New System.Drawing.Size(1102, 143)
@@ -316,7 +318,7 @@ Partial Class MenuPrincipal
         '
         'RibbonPage3
         '
-        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup6})
+        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup6, Me.RibbonPageGroup4})
         Me.RibbonPage3.Name = "RibbonPage3"
         Me.RibbonPage3.Text = "Producción"
         '
@@ -426,6 +428,20 @@ Partial Class MenuPrincipal
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem20)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.Text = "Presentación producto"
+        '
+        'BarButtonItem20
+        '
+        Me.BarButtonItem20.Caption = "Presentación Producto"
+        Me.BarButtonItem20.Glyph = CType(resources.GetObject("BarButtonItem20.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem20.Id = 27
+        Me.BarButtonItem20.LargeGlyph = CType(resources.GetObject("BarButtonItem20.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem20.Name = "BarButtonItem20"
+        '
         'MenuPrincipal
         '
         Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
@@ -501,4 +517,6 @@ Partial Class MenuPrincipal
     Friend WithEvents BarButtonItem19 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class
