@@ -45,6 +45,7 @@ Partial Class MenuPrincipal
         Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem18 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem19 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -52,6 +53,7 @@ Partial Class MenuPrincipal
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage3 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -67,8 +69,9 @@ Partial Class MenuPrincipal
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.BarButtonItem21 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem22 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,9 +83,9 @@ Partial Class MenuPrincipal
         '
         Me.RibbonControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 28
+        Me.RibbonControl.MaxItemId = 30
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage2, Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage4})
         Me.RibbonControl.Size = New System.Drawing.Size(1102, 143)
@@ -282,6 +285,14 @@ Partial Class MenuPrincipal
         Me.BarButtonItem19.LargeGlyph = CType(resources.GetObject("BarButtonItem19.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem19.Name = "BarButtonItem19"
         '
+        'BarButtonItem20
+        '
+        Me.BarButtonItem20.Caption = "Presentación Producto"
+        Me.BarButtonItem20.Glyph = CType(resources.GetObject("BarButtonItem20.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem20.Id = 27
+        Me.BarButtonItem20.LargeGlyph = CType(resources.GetObject("BarButtonItem20.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem20.Name = "BarButtonItem20"
+        '
         'RibbonPage2
         '
         Me.RibbonPage2.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup5})
@@ -331,9 +342,15 @@ Partial Class MenuPrincipal
         Me.RibbonPageGroup6.Name = "RibbonPageGroup6"
         Me.RibbonPageGroup6.Text = "Producción"
         '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem20)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.Text = "Presentación producto"
+        '
         'RibbonPage4
         '
-        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup7, Me.RibbonPageGroup8, Me.RibbonPageGroup9, Me.RibbonPageGroup2})
+        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup7, Me.RibbonPageGroup8, Me.RibbonPageGroup9, Me.RibbonPageGroup2, Me.RibbonPageGroup10})
         Me.RibbonPage4.Name = "RibbonPage4"
         Me.RibbonPage4.Text = "Configuración"
         '
@@ -428,19 +445,24 @@ Partial Class MenuPrincipal
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
-        'RibbonPageGroup4
+        'RibbonPageGroup10
         '
-        Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem20)
-        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        Me.RibbonPageGroup4.Text = "Presentación producto"
+        Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem21)
+        Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem22)
+        Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
+        Me.RibbonPageGroup10.Text = "RibbonPageGroup10"
         '
-        'BarButtonItem20
+        'BarButtonItem21
         '
-        Me.BarButtonItem20.Caption = "Presentación Producto"
-        Me.BarButtonItem20.Glyph = CType(resources.GetObject("BarButtonItem20.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem20.Id = 27
-        Me.BarButtonItem20.LargeGlyph = CType(resources.GetObject("BarButtonItem20.LargeGlyph"), System.Drawing.Image)
-        Me.BarButtonItem20.Name = "BarButtonItem20"
+        Me.BarButtonItem21.Caption = "Reporte Materia P."
+        Me.BarButtonItem21.Id = 28
+        Me.BarButtonItem21.Name = "BarButtonItem21"
+        '
+        'BarButtonItem22
+        '
+        Me.BarButtonItem22.Caption = "Reporte Clientes"
+        Me.BarButtonItem22.Id = 29
+        Me.BarButtonItem22.Name = "BarButtonItem22"
         '
         'MenuPrincipal
         '
@@ -519,4 +541,7 @@ Partial Class MenuPrincipal
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarButtonItem21 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup10 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarButtonItem22 As DevExpress.XtraBars.BarButtonItem
 End Class

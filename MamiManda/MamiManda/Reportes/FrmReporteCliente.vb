@@ -12,14 +12,23 @@ Public Class FrmReporteCliente
 
         If (RadioButton1.Checked = True) Then
             If (TxtRTN.Text = Nothing) Then
-                MessageBox.Show("Ingrese el RTN Cliente", "Car Wash", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Ingrese el RTN Cliente", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 TxtRTN.Focus()
             Else
                 Dim rpt As New RptCliente(TxtRTN.Text)
                 Dim printTool As New ReportPrintTool(rpt)
                 printTool.ShowRibbonPreview()
             End If
-        ElseIf (RadioButton2.Checked = True)
+        ElseIf (RadioButton3.Checked = True) Then
+            If (TxtRTN.Text = Nothing) Then
+                MessageBox.Show("Ingrese el RTN Cliente", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TxtRTN.Focus()
+            Else
+                Dim ReporteClienteFactura As New RptClientesFactura(TxtRTN.Text)
+                ReporteClienteFactura.ShowRibbonPreview
+            End If
+
+        ElseIf (RadioButton2.Checked = True)Then
             viewer.ShowRibbonPreview()
         Else
             MessageBox.Show("No ha seleccionado nada", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -33,5 +42,9 @@ Public Class FrmReporteCliente
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         TxtRTN.Enabled = False
         TxtRTN.Clear()
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        TxtRTN.Enabled = True
     End Sub
 End Class

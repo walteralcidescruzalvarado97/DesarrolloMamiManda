@@ -446,70 +446,28 @@
     <Compile Include="Reportes\RepFac.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteClientes.Designer.vb">
-      <DependentUpon>ReporteClientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteClientes.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteEmpleados.Designer.vb">
-      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteEmpleados.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteFacturas.Designer.vb">
-      <DependentUpon>ReporteFacturas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteFacturas.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteInventario.Designer.vb">
-      <DependentUpon>ReporteInventario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteInventario.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteMateriaPrima.Designer.vb">
-      <DependentUpon>ReporteMateriaPrima.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteMateriaPrima.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReportePresentacionProductos.Designer.vb">
-      <DependentUpon>ReportePresentacionProductos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReportePresentacionProductos.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteProveedores.Designer.vb">
-      <DependentUpon>ReporteProveedores.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteProveedores.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteX.Designer.vb">
-      <DependentUpon>ReporteX.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteX.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Reportes\RptCliente.Designer.vb">
       <DependentUpon>RptCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RptCliente.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\RptClienteMayorC.designer.vb">
+      <DependentUpon>RptClienteMayorC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptClienteMayorC.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptClientesFactura.designer.vb">
+      <DependentUpon>RptClientesFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptClientesFactura.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\RptEmpleado.Designer.vb">
       <DependentUpon>RptEmpleado.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RptEmpleado.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\RptFactura.Designer.vb">
-      <DependentUpon>RptFactura.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\RptFactura.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\RptInventario.Designer.vb">
@@ -686,38 +644,17 @@
     <EmbeddedResource Include="Reportes\RepFac.resx">
       <DependentUpon>RepFac.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteClientes.resx">
-      <DependentUpon>ReporteClientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteEmpleados.resx">
-      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteFacturas.resx">
-      <DependentUpon>ReporteFacturas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteInventario.resx">
-      <DependentUpon>ReporteInventario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteMateriaPrima.resx">
-      <DependentUpon>ReporteMateriaPrima.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportePresentacionProductos.resx">
-      <DependentUpon>ReportePresentacionProductos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteProveedores.resx">
-      <DependentUpon>ReporteProveedores.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteX.resx">
-      <DependentUpon>ReporteX.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptCliente.resx">
       <DependentUpon>RptCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptClienteMayorC.resx">
+      <DependentUpon>RptClienteMayorC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptClientesFactura.resx">
+      <DependentUpon>RptClientesFactura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptEmpleado.resx">
       <DependentUpon>RptEmpleado.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RptFactura.resx">
-      <DependentUpon>RptFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptInventario.resx">
       <DependentUpon>RptInventario.vb</DependentUpon>

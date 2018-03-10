@@ -42,6 +42,7 @@ Partial Class FrmReporteCliente
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.TxtRTN = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,11 +136,12 @@ Partial Class FrmReporteCliente
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(171, 38)
+        Me.GroupBox1.Location = New System.Drawing.Point(49, 38)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(167, 59)
+        Me.GroupBox1.Size = New System.Drawing.Size(289, 59)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Generar reporte por:"
@@ -182,6 +184,17 @@ Partial Class FrmReporteCliente
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "Generar Reporte"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(166, 27)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(119, 17)
+        Me.RadioButton3.TabIndex = 6
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Facturas por Cliente"
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'FrmReporteCliente
         '
@@ -228,4 +241,5 @@ Partial Class FrmReporteCliente
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents TxtRTN As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents RadioButton3 As RadioButton
 End Class

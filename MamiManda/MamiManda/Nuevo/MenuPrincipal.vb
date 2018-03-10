@@ -187,4 +187,14 @@ Public Class MenuPrincipal
     Private Sub BarButtonItem20_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem20.ItemClick
         AbrirForm(FrmPresentacion)
     End Sub
+
+    Private Sub BarButtonItem21_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem21.ItemClick
+        FrmReporteMateriaPrima.MdiParent = Me
+        FrmReporteMateriaPrima.Show()
+    End Sub
+
+    Private Sub BarButtonItem22_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem22.ItemClick
+        FrmReporteCliente.MdiParent = Me
+        FrmReporteCliente.Show()
+    End Sub
 End Class

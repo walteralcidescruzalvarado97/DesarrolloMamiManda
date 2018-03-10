@@ -1,5 +1,5 @@
 ﻿Public Class RptCliente
-    Public Sub New(Optional RTN As String = "0000-0000-00000")
+    Public Sub New(Optional RTN As String = "0601-1997-008410")
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -7,6 +7,8 @@
         'If RTN > 0 Then
         '    ClienteTableAdapter.FillByRTN(DsBakerySystem1, RTN)
         'End If
-        ClienteTableAdapter.FillByRTN(DsBakerySystem1.Cliente, RTN)
+        ' ClienteTableAdapter.FillByRTN(DsBakerySystem1.Cliente, RTN)
+
+        Sp_RptMostrarClientesTableAdapter1.Fill(DsBakerySystem1.Sp_RptMostrarClientes, RTN)
     End Sub
 End Class

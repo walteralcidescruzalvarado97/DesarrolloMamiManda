@@ -5,8 +5,6 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        If (Id > 0) Then
-            MateriaPrimaTableAdapter1.FillByID(DsBakerySystem1.MateriaPrima, Id)
-        End If
+        Sp_RptMostrarMateriaPrimaTableAdapter1.Fill(DsBakerySystem1.Sp_RptMostrarMateriaPrima, Id)
     End Sub
 End Class
