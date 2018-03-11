@@ -197,4 +197,28 @@ Public Class MenuPrincipal
         FrmReporteCliente.MdiParent = Me
         FrmReporteCliente.Show()
     End Sub
+
+    Private Sub BarButtonItem23_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem23.ItemClick
+        FrmReporteProveedor.MdiParent = Me
+        FrmReporteProveedor.Show()
+    End Sub
+
+    Private Sub BarButtonItem24_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem24.ItemClick
+        FrmReporteEmpleado.MdiParent = Me
+        FrmReporteEmpleado.Show()
+    End Sub
+
+    Private Sub BarButtonItem25_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem25.ItemClick
+        FrmReporteInventario.MdiParent = Me
+        FrmReporteInventario.Show()
+    End Sub
+
+    Private Sub BarButtonItem26_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem26.ItemClick
+        FrmReportePresentacionProducto.MdiParent = Me
+        FrmReportePresentacionProducto.Show()
+    End Sub
+
+    Private Sub BarButtonItem27_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem27.ItemClick
+        Dim rpt As New RptClienteMayorC()
+    End Sub
 End Class

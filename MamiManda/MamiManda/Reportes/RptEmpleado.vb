@@ -4,9 +4,7 @@
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
-        If Id > 0 Then
-            EmpleadoTableAdapter1.FillById(DsBakerySystem2.Empleado, Id)
-        End If
+        Sp_RptMostrarEmpleadosTableAdapter1.Fill(DsBakerySystem1.Sp_RptMostrarEmpleados, Id)
 
     End Sub
 End Class

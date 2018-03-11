@@ -1,5 +1,5 @@
 ﻿Public Class RptCliente
-    Public Sub New(Optional RTN As String = "0601-1997-008410")
+    Public Sub New(Optional RTN As String = "")
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()

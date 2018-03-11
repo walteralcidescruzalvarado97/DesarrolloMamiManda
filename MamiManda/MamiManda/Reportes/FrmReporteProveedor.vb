@@ -12,7 +12,7 @@ Public Class FrmReporteProveedor
 
         If (RadioButton1.Checked = True) Then
             If (TxtRTN.Text = Nothing) Then
-                MessageBox.Show("Ingrese el RTN del Proveedor", "Car Wash", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Ingrese el RTN del Proveedor", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 TxtRTN.Focus()
             Else
                 Dim rpt As New RptProveedor(TxtRTN.Text)

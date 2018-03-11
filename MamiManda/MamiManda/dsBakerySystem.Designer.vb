@@ -7941,10 +7941,6 @@ Partial Public Class dsBakerySystem
     Partial Public Class Sp_RptMostrarEmpleadosDataTable
         Inherits Global.System.Data.TypedTableBase(Of Sp_RptMostrarEmpleadosRow)
         
-        Private columnIdEmpleado As Global.System.Data.DataColumn
-        
-        Private columnNombre_Completo As Global.System.Data.DataColumn
-        
         Private columnEMail As Global.System.Data.DataColumn
         
         Private columnTelefono As Global.System.Data.DataColumn
@@ -7954,6 +7950,8 @@ Partial Public Class dsBakerySystem
         Private columnTipoEmpleado As Global.System.Data.DataColumn
         
         Private columnsexo As Global.System.Data.DataColumn
+        
+        Private columnNombreCompleto As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -7989,22 +7987,6 @@ Partial Public Class dsBakerySystem
             MyBase.New(info, context)
             Me.InitVars
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IdEmpleadoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnIdEmpleado
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Nombre_CompletoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNombre_Completo
-            End Get
-        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -8047,6 +8029,14 @@ Partial Public Class dsBakerySystem
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NombreCompletoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombreCompleto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -8083,18 +8073,12 @@ Partial Public Class dsBakerySystem
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSp_RptMostrarEmpleadosRow(ByVal Nombre_Completo As String, ByVal EMail As String, ByVal Telefono As String, ByVal direccion As String, ByVal TipoEmpleado As String, ByVal sexo As String) As Sp_RptMostrarEmpleadosRow
+        Public Overloads Function AddSp_RptMostrarEmpleadosRow(ByVal EMail As String, ByVal Telefono As String, ByVal direccion As String, ByVal TipoEmpleado As String, ByVal sexo As String, ByVal NombreCompleto As String) As Sp_RptMostrarEmpleadosRow
             Dim rowSp_RptMostrarEmpleadosRow As Sp_RptMostrarEmpleadosRow = CType(Me.NewRow,Sp_RptMostrarEmpleadosRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nombre_Completo, EMail, Telefono, direccion, TipoEmpleado, sexo}
+            Dim columnValuesArray() As Object = New Object() {EMail, Telefono, direccion, TipoEmpleado, sexo, NombreCompleto}
             rowSp_RptMostrarEmpleadosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSp_RptMostrarEmpleadosRow)
             Return rowSp_RptMostrarEmpleadosRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByIdEmpleado(ByVal IdEmpleado As Integer) As Sp_RptMostrarEmpleadosRow
-            Return CType(Me.Rows.Find(New Object() {IdEmpleado}),Sp_RptMostrarEmpleadosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8114,22 +8098,17 @@ Partial Public Class dsBakerySystem
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIdEmpleado = MyBase.Columns("IdEmpleado")
-            Me.columnNombre_Completo = MyBase.Columns("Nombre Completo")
             Me.columnEMail = MyBase.Columns("EMail")
             Me.columnTelefono = MyBase.Columns("Telefono")
             Me.columndireccion = MyBase.Columns("direccion")
             Me.columnTipoEmpleado = MyBase.Columns("TipoEmpleado")
             Me.columnsexo = MyBase.Columns("sexo")
+            Me.columnNombreCompleto = MyBase.Columns("NombreCompleto")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIdEmpleado = New Global.System.Data.DataColumn("IdEmpleado", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIdEmpleado)
-            Me.columnNombre_Completo = New Global.System.Data.DataColumn("Nombre Completo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombre_Completo)
             Me.columnEMail = New Global.System.Data.DataColumn("EMail", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEMail)
             Me.columnTelefono = New Global.System.Data.DataColumn("Telefono", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -8140,15 +8119,8 @@ Partial Public Class dsBakerySystem
             MyBase.Columns.Add(Me.columnTipoEmpleado)
             Me.columnsexo = New Global.System.Data.DataColumn("sexo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsexo)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdEmpleado}, true))
-            Me.columnIdEmpleado.AutoIncrement = true
-            Me.columnIdEmpleado.AutoIncrementSeed = -1
-            Me.columnIdEmpleado.AutoIncrementStep = -1
-            Me.columnIdEmpleado.AllowDBNull = false
-            Me.columnIdEmpleado.ReadOnly = true
-            Me.columnIdEmpleado.Unique = true
-            Me.columnNombre_Completo.ReadOnly = true
-            Me.columnNombre_Completo.MaxLength = 61
+            Me.columnNombreCompleto = New Global.System.Data.DataColumn("NombreCompleto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreCompleto)
             Me.columnEMail.MaxLength = 40
             Me.columnTelefono.AllowDBNull = false
             Me.columnTelefono.MaxLength = 9
@@ -8158,6 +8130,8 @@ Partial Public Class dsBakerySystem
             Me.columnTipoEmpleado.MaxLength = 40
             Me.columnsexo.AllowDBNull = false
             Me.columnsexo.MaxLength = 9
+            Me.columnNombreCompleto.ReadOnly = true
+            Me.columnNombreCompleto.MaxLength = 61
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11374,33 +11348,6 @@ Partial Public Class dsBakerySystem
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IdEmpleado() As Integer
-            Get
-                Return CType(Me(Me.tableSp_RptMostrarEmpleados.IdEmpleadoColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSp_RptMostrarEmpleados.IdEmpleadoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Nombre_Completo() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSp_RptMostrarEmpleados.Nombre_CompletoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nombre Completo' in table 'Sp_RptMostrarEmpleados' is DBNul"& _ 
-                            "l.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSp_RptMostrarEmpleados.Nombre_CompletoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property EMail() As String
             Get
                 Try 
@@ -11460,15 +11407,19 @@ Partial Public Class dsBakerySystem
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNombre_CompletoNull() As Boolean
-            Return Me.IsNull(Me.tableSp_RptMostrarEmpleados.Nombre_CompletoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNombre_CompletoNull()
-            Me(Me.tableSp_RptMostrarEmpleados.Nombre_CompletoColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property NombreCompleto() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSp_RptMostrarEmpleados.NombreCompletoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NombreCompleto' in table 'Sp_RptMostrarEmpleados' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSp_RptMostrarEmpleados.NombreCompletoColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -11480,6 +11431,18 @@ Partial Public Class dsBakerySystem
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetEMailNull()
             Me(Me.tableSp_RptMostrarEmpleados.EMailColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNombreCompletoNull() As Boolean
+            Return Me.IsNull(Me.tableSp_RptMostrarEmpleados.NombreCompletoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNombreCompletoNull()
+            Me(Me.tableSp_RptMostrarEmpleados.NombreCompletoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -18082,14 +18045,20 @@ Namespace dsBakerySystemTableAdapters
             Me._commandCollection(0).CommandText = "dbo.Sp_MostrarTodoProveedor"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@rtnProveedor", Global.System.Data.SqlDbType.NVarChar, 16, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_MostrarTodoProveedorDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_MostrarTodoProveedorDataTable, ByVal rtnProveedor As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (rtnProveedor Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(rtnProveedor,String)
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -18101,8 +18070,13 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dsBakerySystem.Sp_MostrarTodoProveedorDataTable
+        Public Overloads Overridable Function GetData(ByVal rtnProveedor As String) As dsBakerySystem.Sp_MostrarTodoProveedorDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (rtnProveedor Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(rtnProveedor,String)
+            End If
             Dim dataTable As dsBakerySystem.Sp_MostrarTodoProveedorDataTable = New dsBakerySystem.Sp_MostrarTodoProveedorDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -18262,14 +18236,20 @@ Namespace dsBakerySystemTableAdapters
             Me._commandCollection(0).CommandText = "dbo.Sp_MostrarPresentacionProducto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdPrese", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_MostrarPresentacionProductoDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_MostrarPresentacionProductoDataTable, ByVal IdPrese As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (IdPrese Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(IdPrese,String)
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -18281,8 +18261,13 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dsBakerySystem.Sp_MostrarPresentacionProductoDataTable
+        Public Overloads Overridable Function GetData(ByVal IdPrese As String) As dsBakerySystem.Sp_MostrarPresentacionProductoDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (IdPrese Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(IdPrese,String)
+            End If
             Dim dataTable As dsBakerySystem.Sp_MostrarPresentacionProductoDataTable = New dsBakerySystem.Sp_MostrarPresentacionProductoDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -18441,14 +18426,20 @@ Namespace dsBakerySystemTableAdapters
             Me._commandCollection(0).CommandText = "dbo.Sp_RptMostrarInventario"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdPrese", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_RptMostrarInventarioDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_RptMostrarInventarioDataTable, ByVal IdPrese As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (IdPrese Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(IdPrese,String)
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -18460,8 +18451,13 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dsBakerySystem.Sp_RptMostrarInventarioDataTable
+        Public Overloads Overridable Function GetData(ByVal IdPrese As String) As dsBakerySystem.Sp_RptMostrarInventarioDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (IdPrese Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(IdPrese,String)
+            End If
             Dim dataTable As dsBakerySystem.Sp_RptMostrarInventarioDataTable = New dsBakerySystem.Sp_RptMostrarInventarioDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -18786,13 +18782,12 @@ Namespace dsBakerySystemTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Sp_RptMostrarEmpleados"
-            tableMapping.ColumnMappings.Add("IdEmpleado", "IdEmpleado")
-            tableMapping.ColumnMappings.Add("Nombre Completo", "Nombre Completo")
             tableMapping.ColumnMappings.Add("EMail", "EMail")
             tableMapping.ColumnMappings.Add("Telefono", "Telefono")
             tableMapping.ColumnMappings.Add("direccion", "direccion")
             tableMapping.ColumnMappings.Add("TipoEmpleado", "TipoEmpleado")
             tableMapping.ColumnMappings.Add("sexo", "sexo")
+            tableMapping.ColumnMappings.Add("NombreCompleto", "NombreCompleto")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -18812,14 +18807,20 @@ Namespace dsBakerySystemTableAdapters
             Me._commandCollection(0).CommandText = "dbo.Sp_RptMostrarEmpleados"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdEmpleado", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_RptMostrarEmpleadosDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dsBakerySystem.Sp_RptMostrarEmpleadosDataTable, ByVal IdEmpleado As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (IdEmpleado.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(IdEmpleado.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -18831,8 +18832,13 @@ Namespace dsBakerySystemTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dsBakerySystem.Sp_RptMostrarEmpleadosDataTable
+        Public Overloads Overridable Function GetData(ByVal IdEmpleado As Global.System.Nullable(Of Integer)) As dsBakerySystem.Sp_RptMostrarEmpleadosDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (IdEmpleado.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(IdEmpleado.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As dsBakerySystem.Sp_RptMostrarEmpleadosDataTable = New dsBakerySystem.Sp_RptMostrarEmpleadosDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

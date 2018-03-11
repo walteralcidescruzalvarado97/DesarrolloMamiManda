@@ -1,12 +1,14 @@
 ﻿Public Class RptPresentacionProducto
-    Public Sub New(Optional Id As Integer = 0)
+    Public Sub New(Optional RTN As String = "")
 
-        ' This call is required by the designer.
+        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
-        ' Add any initialization after the InitializeComponent() call.
-        If (Id > 0) Then
-            PresentacionProductoTableAdapter1.FillByID(DsBakerySystem1.PresentacionProducto, Id)
-        End If
+        'If RTN > 0 Then
+        '    ClienteTableAdapter.FillByRTN(DsBakerySystem1, RTN)
+        'End If
+        ' ClienteTableAdapter.FillByRTN(DsBakerySystem1.Cliente, RTN)
+
+        Sp_MostrarPresentacionProductoTableAdapter1.Fill(DsBakerySystem1.Sp_MostrarPresentacionProducto, RTN)
     End Sub
 End Class
