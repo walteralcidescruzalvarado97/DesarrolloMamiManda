@@ -676,6 +676,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\IMG-20180311-WA0027.jpg" />
     <None Include="Resources\FB_IMG_1517286072084.jpg" />
     <None Include="BakerySystemDataSet.xsc">
       <DependentUpon>BakerySystemDataSet.xsd</DependentUpon>

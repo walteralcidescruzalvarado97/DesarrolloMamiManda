@@ -52,6 +52,7 @@ Partial Class MenuPrincipal
         Me.BarButtonItem24 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem25 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem26 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem27 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -76,7 +77,6 @@ Partial Class MenuPrincipal
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BarButtonItem27 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -334,6 +334,12 @@ Partial Class MenuPrincipal
         Me.BarButtonItem26.Id = 33
         Me.BarButtonItem26.Name = "BarButtonItem26"
         '
+        'BarButtonItem27
+        '
+        Me.BarButtonItem27.Caption = "Reporte Cliente Mayor C."
+        Me.BarButtonItem27.Id = 34
+        Me.BarButtonItem27.Name = "BarButtonItem27"
+        '
         'RibbonPage2
         '
         Me.RibbonPage2.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup5})
@@ -426,7 +432,7 @@ Partial Class MenuPrincipal
         Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem26)
         Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem27)
         Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
-        Me.RibbonPageGroup10.Text = "RibbonPageGroup10"
+        Me.RibbonPageGroup10.Text = "Reportes"
         '
         'RibbonStatusBar
         '
@@ -497,12 +503,6 @@ Partial Class MenuPrincipal
         Me.PictureBox1.Size = New System.Drawing.Size(1102, 282)
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
-        '
-        'BarButtonItem27
-        '
-        Me.BarButtonItem27.Caption = "Reporte Cliente Mayor C."
-        Me.BarButtonItem27.Id = 34
-        Me.BarButtonItem27.Name = "BarButtonItem27"
         '
         'MenuPrincipal
         '

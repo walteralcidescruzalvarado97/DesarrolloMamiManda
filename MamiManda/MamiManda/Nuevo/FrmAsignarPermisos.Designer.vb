@@ -158,6 +158,8 @@ Partial Class FrmAsignarPermisos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.IMG_20180311_WA0027
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1003, 558)
         Me.Controls.Add(Me.LblMensaje)
         Me.Controls.Add(Me.Label2)

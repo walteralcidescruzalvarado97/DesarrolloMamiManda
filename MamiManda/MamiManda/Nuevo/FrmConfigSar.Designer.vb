@@ -154,6 +154,8 @@ Partial Class FrmConfigSar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.IMG_20180311_WA0027
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1177, 471)
         Me.Controls.Add(Me.DtgCai)
         Me.Controls.Add(Me.NavBarControl1)

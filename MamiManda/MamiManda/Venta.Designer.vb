@@ -623,7 +623,7 @@ Partial Class Venta
         'BtnImprimir
         '
         Me.BtnImprimir.Image = CType(resources.GetObject("BtnImprimir.Image"), System.Drawing.Image)
-        Me.BtnImprimir.Location = New System.Drawing.Point(24, 632)
+        Me.BtnImprimir.Location = New System.Drawing.Point(24, 629)
         Me.BtnImprimir.Name = "BtnImprimir"
         Me.BtnImprimir.Size = New System.Drawing.Size(96, 49)
         Me.BtnImprimir.TabIndex = 86
