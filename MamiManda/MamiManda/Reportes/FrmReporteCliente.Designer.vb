@@ -38,11 +38,11 @@ Partial Class FrmReporteCliente
         Me.ClienteTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ClienteTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.TxtRTN = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +51,7 @@ Partial Class FrmReporteCliente
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RTNClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.EMailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.FechaNacDataGridViewTextBoxColumn, Me.SexoDataGridViewTextBoxColumn})
@@ -125,6 +126,7 @@ Partial Class FrmReporteCliente
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(345, 64)
@@ -135,6 +137,7 @@ Partial Class FrmReporteCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
@@ -145,6 +148,17 @@ Partial Class FrmReporteCliente
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Generar reporte por:"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(166, 27)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(119, 17)
+        Me.RadioButton3.TabIndex = 6
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Facturas por Cliente"
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton2
         '
@@ -170,6 +184,7 @@ Partial Class FrmReporteCliente
         '
         'TxtRTN
         '
+        Me.TxtRTN.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtRTN.Enabled = False
         Me.TxtRTN.Location = New System.Drawing.Point(417, 61)
         Me.TxtRTN.Name = "TxtRTN"
@@ -178,23 +193,13 @@ Partial Class FrmReporteCliente
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(574, 52)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "Generar Reporte"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(166, 27)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(119, 17)
-        Me.RadioButton3.TabIndex = 6
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Facturas por Cliente"
-        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'FrmReporteCliente
         '

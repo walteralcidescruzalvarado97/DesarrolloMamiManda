@@ -50,6 +50,7 @@ Partial Class FrmReporteMateriaPrima
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdMateriaPrimaDataGridViewTextBoxColumn, Me.NombreMateriaPrimaDataGridViewTextBoxColumn, Me.ExistenciaMinimaDataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.PrecioCostoMDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.RTNProveedorDataGridViewTextBoxColumn, Me.MedidaDataGridViewTextBoxColumn})
@@ -121,6 +122,7 @@ Partial Class FrmReporteMateriaPrima
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(325, 66)
@@ -131,6 +133,7 @@ Partial Class FrmReporteMateriaPrima
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
@@ -165,6 +168,7 @@ Partial Class FrmReporteMateriaPrima
         '
         'TxtID
         '
+        Me.TxtID.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtID.Enabled = False
         Me.TxtID.Location = New System.Drawing.Point(418, 63)
         Me.TxtID.Name = "TxtID"
@@ -173,6 +177,7 @@ Partial Class FrmReporteMateriaPrima
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(575, 54)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)

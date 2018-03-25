@@ -440,6 +440,18 @@
     <Compile Include="Reportes\FrmReporteProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\FrmReporteVenta.Designer.vb">
+      <DependentUpon>FrmReporteVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteVentasCliente.Designer.vb">
+      <DependentUpon>FrmReporteVentasCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteVentasCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\RepFac.Designer.vb">
       <DependentUpon>RepFac.vb</DependentUpon>
     </Compile>
@@ -458,6 +470,18 @@
     <Compile Include="Reportes\RptClienteMayorC.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\RptClienteMCA.Designer.vb">
+      <DependentUpon>RptClienteMCA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptClienteMCA.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptClienteMCM.Designer.vb">
+      <DependentUpon>RptClienteMCM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptClienteMCM.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\RptClientesFactura.designer.vb">
       <DependentUpon>RptClientesFactura.vb</DependentUpon>
     </Compile>
@@ -468,6 +492,30 @@
       <DependentUpon>RptEmpleado.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RptEmpleado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptEmpleadoFactura.Designer.vb">
+      <DependentUpon>RptEmpleadoFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptEmpleadoFactura.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptEmpleadoFacturaMax.Designer.vb">
+      <DependentUpon>RptEmpleadoFacturaMax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptEmpleadoFacturaMax.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptExistenciaMinima.Designer.vb">
+      <DependentUpon>RptExistenciaMinima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptExistenciaMinima.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptExistenciaMinimaMateria.Designer.vb">
+      <DependentUpon>RptExistenciaMinimaMateria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptExistenciaMinimaMateria.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\RptInventario.Designer.vb">
@@ -488,10 +536,34 @@
     <Compile Include="Reportes\RptPresentacionProducto.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\RptProductoMV.Designer.vb">
+      <DependentUpon>RptProductoMV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptProductoMV.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\RptProveedor.Designer.vb">
       <DependentUpon>RptProveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RptProveedor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptVentasAno.Designer.vb">
+      <DependentUpon>RptVentasAno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptVentasAno.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptVentasDia.Designer.vb">
+      <DependentUpon>RptVentasDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptVentasDia.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptVentasMes.Designer.vb">
+      <DependentUpon>RptVentasMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptVentasMes.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Splash_BakerySystem.Designer.vb">
@@ -641,6 +713,12 @@
     <EmbeddedResource Include="Reportes\FrmReporteProveedor.resx">
       <DependentUpon>FrmReporteProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteVenta.resx">
+      <DependentUpon>FrmReporteVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteVentasCliente.resx">
+      <DependentUpon>FrmReporteVentasCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RepFac.resx">
       <DependentUpon>RepFac.vb</DependentUpon>
     </EmbeddedResource>
@@ -650,11 +728,29 @@
     <EmbeddedResource Include="Reportes\RptClienteMayorC.resx">
       <DependentUpon>RptClienteMayorC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptClienteMCA.resx">
+      <DependentUpon>RptClienteMCA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptClienteMCM.resx">
+      <DependentUpon>RptClienteMCM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptClientesFactura.resx">
       <DependentUpon>RptClientesFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptEmpleado.resx">
       <DependentUpon>RptEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptEmpleadoFactura.resx">
+      <DependentUpon>RptEmpleadoFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptEmpleadoFacturaMax.resx">
+      <DependentUpon>RptEmpleadoFacturaMax.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptExistenciaMinima.resx">
+      <DependentUpon>RptExistenciaMinima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptExistenciaMinimaMateria.resx">
+      <DependentUpon>RptExistenciaMinimaMateria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptInventario.resx">
       <DependentUpon>RptInventario.vb</DependentUpon>
@@ -665,8 +761,20 @@
     <EmbeddedResource Include="Reportes\RptPresentacionProducto.resx">
       <DependentUpon>RptPresentacionProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptProductoMV.resx">
+      <DependentUpon>RptProductoMV.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptProveedor.resx">
       <DependentUpon>RptProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptVentasAno.resx">
+      <DependentUpon>RptVentasAno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptVentasDia.resx">
+      <DependentUpon>RptVentasDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptVentasMes.resx">
+      <DependentUpon>RptVentasMes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash_BakerySystem.resx">
       <DependentUpon>Splash_BakerySystem.vb</DependentUpon>

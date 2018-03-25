@@ -41,6 +41,7 @@ Partial Class FrmReporteEmpleado
         Me.TipoEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpleadoBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.TxtId = New System.Windows.Forms.TextBox()
@@ -87,6 +88,7 @@ Partial Class FrmReporteEmpleado
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdEmpleadoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.EMailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.SexoDataGridViewTextBoxColumn, Me.TipoEmpleadoDataGridViewTextBoxColumn})
@@ -153,15 +155,28 @@ Partial Class FrmReporteEmpleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(171, 27)
+        Me.GroupBox1.Location = New System.Drawing.Point(43, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(167, 59)
+        Me.GroupBox1.Size = New System.Drawing.Size(296, 59)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Generar reporte por:"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(161, 27)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(134, 17)
+        Me.RadioButton3.TabIndex = 7
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Facturas por Empleado"
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton2
         '
@@ -187,6 +202,7 @@ Partial Class FrmReporteEmpleado
         '
         'TxtId
         '
+        Me.TxtId.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtId.Enabled = False
         Me.TxtId.Location = New System.Drawing.Point(417, 50)
         Me.TxtId.Name = "TxtId"
@@ -195,6 +211,7 @@ Partial Class FrmReporteEmpleado
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(549, 41)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
@@ -204,6 +221,7 @@ Partial Class FrmReporteEmpleado
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(345, 53)
@@ -264,4 +282,5 @@ Partial Class FrmReporteEmpleado
     Friend WithEvents TxtId As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents RadioButton3 As RadioButton
 End Class

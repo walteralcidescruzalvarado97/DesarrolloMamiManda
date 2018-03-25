@@ -48,6 +48,7 @@ Partial Class FrmReportePresentacionProducto
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(222, 63)
@@ -58,6 +59,7 @@ Partial Class FrmReportePresentacionProducto
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
@@ -92,6 +94,7 @@ Partial Class FrmReportePresentacionProducto
         '
         'TxtID
         '
+        Me.TxtID.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtID.Enabled = False
         Me.TxtID.Location = New System.Drawing.Point(315, 60)
         Me.TxtID.Name = "TxtID"
@@ -100,6 +103,7 @@ Partial Class FrmReportePresentacionProducto
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(472, 51)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
@@ -109,6 +113,7 @@ Partial Class FrmReportePresentacionProducto
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdInventarioDataGridViewTextBoxColumn, Me.PrecioMayoristaDataGridViewTextBoxColumn, Me.PrecioDetalleDataGridViewTextBoxColumn, Me.PrecioCostoDataGridViewTextBoxColumn, Me.TipoPresentacionDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn})

@@ -48,6 +48,7 @@ Partial Class FrmReporteInventario
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdInventarioDataGridViewTextBoxColumn, Me.NombreProductoDataGridViewTextBoxColumn, Me.ExistenciaMaximaDataGridViewTextBoxColumn, Me.ExistenciaMinimaDataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn})
@@ -110,6 +111,7 @@ Partial Class FrmReporteInventario
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(239, 60)
@@ -120,6 +122,7 @@ Partial Class FrmReporteInventario
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
@@ -154,6 +157,7 @@ Partial Class FrmReporteInventario
         '
         'TxtId
         '
+        Me.TxtId.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtId.Enabled = False
         Me.TxtId.Location = New System.Drawing.Point(327, 57)
         Me.TxtId.Name = "TxtId"
@@ -162,6 +166,7 @@ Partial Class FrmReporteInventario
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button1.Location = New System.Drawing.Point(484, 48)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)

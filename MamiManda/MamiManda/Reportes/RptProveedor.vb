@@ -5,6 +5,8 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Sp_MostrarTodoProveedorTableAdapter1.Fill(DsBakerySystem1.Sp_MostrarTodoProveedor, RTN)
+        Sp_MostrarTodoProveedorRTableAdapter1.Fill(DsBakerySystem1.Sp_MostrarTodoProveedorR, RTN)
     End Sub
+
+
 End Class

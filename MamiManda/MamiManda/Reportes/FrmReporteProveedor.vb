@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraReports.UI
-Public Class FrmReporteProveedor
+Public Class FrmReporteVentas
     Private Sub FrmReporteProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DsBakerySystem.Proveedor' table. You can move, or remove it, as needed.
         Me.ProveedorTableAdapter.Fill(Me.DsBakerySystem.Proveedor)

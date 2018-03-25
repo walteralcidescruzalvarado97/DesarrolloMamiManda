@@ -1,7 +1,9 @@
 ﻿Imports DevExpress.XtraBars.Helpers
 Imports DevExpress.XtraBars
+Imports DevExpress.XtraReports.UI
 
 Public Class MenuPrincipal
+
     Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatosUsuario()
         DevExpress.Skins.SkinManager.EnableFormSkins()
@@ -188,37 +190,72 @@ Public Class MenuPrincipal
         AbrirForm(FrmPresentacion)
     End Sub
 
-    Private Sub BarButtonItem21_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem21.ItemClick
+
+    Private Sub BarButtonItem32_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem32.ItemClick
         FrmReporteMateriaPrima.MdiParent = Me
         FrmReporteMateriaPrima.Show()
     End Sub
 
-    Private Sub BarButtonItem22_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem22.ItemClick
-        FrmReporteCliente.MdiParent = Me
-        FrmReporteCliente.Show()
-    End Sub
-
-    Private Sub BarButtonItem23_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem23.ItemClick
-        FrmReporteProveedor.MdiParent = Me
-        FrmReporteProveedor.Show()
-    End Sub
-
-    Private Sub BarButtonItem24_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem24.ItemClick
-        FrmReporteEmpleado.MdiParent = Me
-        FrmReporteEmpleado.Show()
-    End Sub
-
-    Private Sub BarButtonItem25_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem25.ItemClick
+    Private Sub BarButtonItem35_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem35.ItemClick
         FrmReporteInventario.MdiParent = Me
         FrmReporteInventario.Show()
     End Sub
 
-    Private Sub BarButtonItem26_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem26.ItemClick
+    Private Sub BarButtonItem33_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem33.ItemClick
+        FrmReporteCliente.MdiParent = Me
+        FrmReporteCliente.Show()
+    End Sub
+
+
+
+    Private Sub BarButtonItem34_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem34.ItemClick
+        FrmReporteEmpleado.MdiParent = Me
+        FrmReporteEmpleado.Show()
+    End Sub
+
+    Private Sub BarButtonItem36_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem36.ItemClick
         FrmReportePresentacionProducto.MdiParent = Me
         FrmReportePresentacionProducto.Show()
     End Sub
 
-    Private Sub BarButtonItem27_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem27.ItemClick
-        Dim rpt As New RptClienteMayorC()
+    Private Sub BarButtonItem37_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem37.ItemClick
+        Dim rpt As New RptClienteMayorC
+        rpt.ShowRibbonPreview
+    End Sub
+
+    Private Sub BarButtonItem38_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem38.ItemClick
+        Dim rpt As New RptExistenciaMinima
+        rpt.ShowRibbonPreview
+    End Sub
+
+    Private Sub BarButtonItem39_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem39.ItemClick
+        Dim rpt As New RptExistenciaMinimaMateria
+        rpt.ShowRibbonPreview
+    End Sub
+
+    Private Sub BarButtonItem40_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem40.ItemClick
+        Dim rpt As New RptProductoMV
+        rpt.ShowRibbonPreview
+    End Sub
+
+    Private Sub BarButtonItem41_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem41.ItemClick
+        Dim rpt As New RptEmpleadoFacturaMax
+        rpt.ShowRibbonPreview
+    End Sub
+
+    Private Sub BarButtonItem44_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem44.ItemClick
+        FrmReporteVentas.MdiParent = Me
+        FrmReporteVentas.Show()
+
+    End Sub
+
+    Private Sub BarButtonItem43_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem43.ItemClick
+        FrmReporteVenta.MdiParent = Me
+        FrmReporteVenta.Show()
+    End Sub
+
+    Private Sub BarButtonItem45_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem45.ItemClick
+        FrmReporteVentasCliente.MdiParent = Me
+        FrmReporteVentasCliente.Show()
     End Sub
 End Class

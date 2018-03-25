@@ -21,6 +21,15 @@ Partial Public Class RptPresentacionProducto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RptPresentacionProducto))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow6 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell14 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell16 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell18 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell20 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell22 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell26 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.DsBakerySystem1 = New MamiManda.dsBakerySystem()
         Me.ClienteTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ClienteTableAdapter()
         Me.PresentacionProductoTableAdapter1 = New MamiManda.dsBakerySystemTableAdapters.PresentacionProductoTableAdapter()
@@ -35,31 +44,22 @@ Partial Public Class RptPresentacionProducto
         Me.Sp_MostrarPresentacionProductoTableAdapter1 = New MamiManda.dsBakerySystemTableAdapters.Sp_MostrarPresentacionProductoTableAdapter()
         Me.PageHeaderBand1 = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow5 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell15 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell17 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell19 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell21 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell23 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell25 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow4 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow5 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableRow6 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell14 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell15 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell16 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell17 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell18 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell19 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell20 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell21 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell22 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell23 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell25 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell26 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.PageFooterBand1 = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
@@ -70,15 +70,15 @@ Partial Public Class RptPresentacionProducto
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
-        Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
+        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -89,6 +89,92 @@ Partial Public Class RptPresentacionProducto
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrTable2
+        '
+        Me.XrTable2.AnchorVertical = CType((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top Or DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom), DevExpress.XtraReports.UI.VerticalAnchorStyles)
+        Me.XrTable2.Dpi = 100.0!
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
+        Me.XrTable2.Name = "XrTable2"
+        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow6})
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(638.0!, 23.0!)
+        '
+        'XrTableRow6
+        '
+        Me.XrTableRow6.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell14, Me.XrTableCell16, Me.XrTableCell18, Me.XrTableCell20, Me.XrTableCell22, Me.XrTableCell24, Me.XrTableCell26})
+        Me.XrTableRow6.Dpi = 100.0!
+        Me.XrTableRow6.Name = "XrTableRow6"
+        Me.XrTableRow6.Weight = 1.0R
+        '
+        'XrTableCell14
+        '
+        Me.XrTableCell14.CanGrow = False
+        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.IdInventario")})
+        Me.XrTableCell14.Dpi = 100.0!
+        Me.XrTableCell14.Name = "XrTableCell14"
+        Me.XrTableCell14.StyleName = "DataField"
+        Me.XrTableCell14.Text = "XrTableCell14"
+        Me.XrTableCell14.Weight = 41.5R
+        '
+        'XrTableCell16
+        '
+        Me.XrTableCell16.CanGrow = False
+        Me.XrTableCell16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.NombreProducto")})
+        Me.XrTableCell16.Dpi = 100.0!
+        Me.XrTableCell16.Name = "XrTableCell16"
+        Me.XrTableCell16.StyleName = "DataField"
+        Me.XrTableCell16.Text = "XrTableCell16"
+        Me.XrTableCell16.Weight = 55.5R
+        '
+        'XrTableCell18
+        '
+        Me.XrTableCell18.CanGrow = False
+        Me.XrTableCell18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.TipoPresentacion")})
+        Me.XrTableCell18.Dpi = 100.0!
+        Me.XrTableCell18.Name = "XrTableCell18"
+        Me.XrTableCell18.StyleName = "DataField"
+        Me.XrTableCell18.Text = "XrTableCell18"
+        Me.XrTableCell18.Weight = 56.0R
+        '
+        'XrTableCell20
+        '
+        Me.XrTableCell20.CanGrow = False
+        Me.XrTableCell20.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.Unidades")})
+        Me.XrTableCell20.Dpi = 100.0!
+        Me.XrTableCell20.Name = "XrTableCell20"
+        Me.XrTableCell20.StyleName = "DataField"
+        Me.XrTableCell20.Text = "XrTableCell20"
+        Me.XrTableCell20.Weight = 29.0R
+        '
+        'XrTableCell22
+        '
+        Me.XrTableCell22.CanGrow = False
+        Me.XrTableCell22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.PrecioCosto")})
+        Me.XrTableCell22.Dpi = 100.0!
+        Me.XrTableCell22.Name = "XrTableCell22"
+        Me.XrTableCell22.StyleName = "DataField"
+        Me.XrTableCell22.Text = "XrTableCell22"
+        Me.XrTableCell22.Weight = 39.5R
+        '
+        'XrTableCell24
+        '
+        Me.XrTableCell24.CanGrow = False
+        Me.XrTableCell24.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.PrecioDetalle")})
+        Me.XrTableCell24.Dpi = 100.0!
+        Me.XrTableCell24.Name = "XrTableCell24"
+        Me.XrTableCell24.StyleName = "DataField"
+        Me.XrTableCell24.Text = "XrTableCell24"
+        Me.XrTableCell24.Weight = 43.0R
+        '
+        'XrTableCell26
+        '
+        Me.XrTableCell26.CanGrow = False
+        Me.XrTableCell26.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.PrecioMayorista")})
+        Me.XrTableCell26.Dpi = 100.0!
+        Me.XrTableCell26.Name = "XrTableCell26"
+        Me.XrTableCell26.StyleName = "DataField"
+        Me.XrTableCell26.Text = "XrTableCell26"
+        Me.XrTableCell26.Weight = 53.5R
         '
         'DsBakerySystem1
         '
@@ -179,6 +265,83 @@ Partial Public Class RptPresentacionProducto
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow5})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(638.0!, 36.0!)
         '
+        'XrTableRow5
+        '
+        Me.XrTableRow5.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell13, Me.XrTableCell15, Me.XrTableCell17, Me.XrTableCell19, Me.XrTableCell21, Me.XrTableCell23, Me.XrTableCell25})
+        Me.XrTableRow5.Dpi = 100.0!
+        Me.XrTableRow5.Name = "XrTableRow5"
+        Me.XrTableRow5.Weight = 1.0R
+        '
+        'XrTableCell13
+        '
+        Me.XrTableCell13.CanGrow = False
+        Me.XrTableCell13.Dpi = 100.0!
+        Me.XrTableCell13.Name = "XrTableCell13"
+        Me.XrTableCell13.StyleName = "FieldCaption"
+        Me.XrTableCell13.Text = "Id Inventario"
+        Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell13.Weight = 41.5R
+        '
+        'XrTableCell15
+        '
+        Me.XrTableCell15.CanGrow = False
+        Me.XrTableCell15.Dpi = 100.0!
+        Me.XrTableCell15.Name = "XrTableCell15"
+        Me.XrTableCell15.StyleName = "FieldCaption"
+        Me.XrTableCell15.Text = "Nombre Producto"
+        Me.XrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell15.Weight = 55.5R
+        '
+        'XrTableCell17
+        '
+        Me.XrTableCell17.CanGrow = False
+        Me.XrTableCell17.Dpi = 100.0!
+        Me.XrTableCell17.Name = "XrTableCell17"
+        Me.XrTableCell17.StyleName = "FieldCaption"
+        Me.XrTableCell17.Text = "Nombre Presentación"
+        Me.XrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell17.Weight = 56.0R
+        '
+        'XrTableCell19
+        '
+        Me.XrTableCell19.CanGrow = False
+        Me.XrTableCell19.Dpi = 100.0!
+        Me.XrTableCell19.Name = "XrTableCell19"
+        Me.XrTableCell19.StyleName = "FieldCaption"
+        Me.XrTableCell19.Text = "Unidades"
+        Me.XrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell19.Weight = 29.0R
+        '
+        'XrTableCell21
+        '
+        Me.XrTableCell21.CanGrow = False
+        Me.XrTableCell21.Dpi = 100.0!
+        Me.XrTableCell21.Name = "XrTableCell21"
+        Me.XrTableCell21.StyleName = "FieldCaption"
+        Me.XrTableCell21.Text = "Precio Costo"
+        Me.XrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell21.Weight = 39.5R
+        '
+        'XrTableCell23
+        '
+        Me.XrTableCell23.CanGrow = False
+        Me.XrTableCell23.Dpi = 100.0!
+        Me.XrTableCell23.Name = "XrTableCell23"
+        Me.XrTableCell23.StyleName = "FieldCaption"
+        Me.XrTableCell23.Text = "Precio Detalle"
+        Me.XrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell23.Weight = 43.0R
+        '
+        'XrTableCell25
+        '
+        Me.XrTableCell25.CanGrow = False
+        Me.XrTableCell25.Dpi = 100.0!
+        Me.XrTableCell25.Name = "XrTableCell25"
+        Me.XrTableCell25.StyleName = "FieldCaption"
+        Me.XrTableCell25.Text = "Precio Mayorista"
+        Me.XrTableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell25.Weight = 53.5R
+        '
         'XrTableRow3
         '
         Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell8, Me.XrTableCell9})
@@ -207,15 +370,6 @@ Partial Public Class RptPresentacionProducto
         Me.XrTableCell9.Text = "XrTableCell9"
         Me.XrTableCell9.Weight = 1.0R
         '
-        'XrTable2
-        '
-        Me.XrTable2.AnchorVertical = CType((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top Or DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom), DevExpress.XtraReports.UI.VerticalAnchorStyles)
-        Me.XrTable2.Dpi = 100.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
-        Me.XrTable2.Name = "XrTable2"
-        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow6})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(638.0!, 23.0!)
-        '
         'XrTableRow4
         '
         Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell10, Me.XrTableCell11, Me.XrTableCell12})
@@ -243,160 +397,6 @@ Partial Public Class RptPresentacionProducto
         Me.XrTableCell12.Name = "XrTableCell12"
         Me.XrTableCell12.Text = "XrTableCell12"
         Me.XrTableCell12.Weight = 1.0R
-        '
-        'XrTableRow5
-        '
-        Me.XrTableRow5.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell13, Me.XrTableCell15, Me.XrTableCell17, Me.XrTableCell19, Me.XrTableCell21, Me.XrTableCell23, Me.XrTableCell25})
-        Me.XrTableRow5.Dpi = 100.0!
-        Me.XrTableRow5.Name = "XrTableRow5"
-        Me.XrTableRow5.Weight = 1.0R
-        '
-        'XrTableRow6
-        '
-        Me.XrTableRow6.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell14, Me.XrTableCell16, Me.XrTableCell18, Me.XrTableCell20, Me.XrTableCell22, Me.XrTableCell24, Me.XrTableCell26})
-        Me.XrTableRow6.Dpi = 100.0!
-        Me.XrTableRow6.Name = "XrTableRow6"
-        Me.XrTableRow6.Weight = 1.0R
-        '
-        'XrTableCell13
-        '
-        Me.XrTableCell13.CanGrow = False
-        Me.XrTableCell13.Dpi = 100.0!
-        Me.XrTableCell13.Name = "XrTableCell13"
-        Me.XrTableCell13.StyleName = "FieldCaption"
-        Me.XrTableCell13.Text = "Id Inventario"
-        Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell13.Weight = 41.5R
-        '
-        'XrTableCell14
-        '
-        Me.XrTableCell14.CanGrow = False
-        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.IdInventario")})
-        Me.XrTableCell14.Dpi = 100.0!
-        Me.XrTableCell14.Name = "XrTableCell14"
-        Me.XrTableCell14.StyleName = "DataField"
-        Me.XrTableCell14.Text = "XrTableCell14"
-        Me.XrTableCell14.Weight = 41.5R
-        '
-        'XrTableCell15
-        '
-        Me.XrTableCell15.CanGrow = False
-        Me.XrTableCell15.Dpi = 100.0!
-        Me.XrTableCell15.Name = "XrTableCell15"
-        Me.XrTableCell15.StyleName = "FieldCaption"
-        Me.XrTableCell15.Text = "Nombre Producto"
-        Me.XrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell15.Weight = 55.5R
-        '
-        'XrTableCell16
-        '
-        Me.XrTableCell16.CanGrow = False
-        Me.XrTableCell16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.NombreProducto")})
-        Me.XrTableCell16.Dpi = 100.0!
-        Me.XrTableCell16.Name = "XrTableCell16"
-        Me.XrTableCell16.StyleName = "DataField"
-        Me.XrTableCell16.Text = "XrTableCell16"
-        Me.XrTableCell16.Weight = 55.5R
-        '
-        'XrTableCell17
-        '
-        Me.XrTableCell17.CanGrow = False
-        Me.XrTableCell17.Dpi = 100.0!
-        Me.XrTableCell17.Name = "XrTableCell17"
-        Me.XrTableCell17.StyleName = "FieldCaption"
-        Me.XrTableCell17.Text = "Nombre Presentacion"
-        Me.XrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell17.Weight = 56.0R
-        '
-        'XrTableCell18
-        '
-        Me.XrTableCell18.CanGrow = False
-        Me.XrTableCell18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.TipoPresentacion")})
-        Me.XrTableCell18.Dpi = 100.0!
-        Me.XrTableCell18.Name = "XrTableCell18"
-        Me.XrTableCell18.StyleName = "DataField"
-        Me.XrTableCell18.Text = "XrTableCell18"
-        Me.XrTableCell18.Weight = 56.0R
-        '
-        'XrTableCell19
-        '
-        Me.XrTableCell19.CanGrow = False
-        Me.XrTableCell19.Dpi = 100.0!
-        Me.XrTableCell19.Name = "XrTableCell19"
-        Me.XrTableCell19.StyleName = "FieldCaption"
-        Me.XrTableCell19.Text = "Unidades"
-        Me.XrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell19.Weight = 29.0R
-        '
-        'XrTableCell20
-        '
-        Me.XrTableCell20.CanGrow = False
-        Me.XrTableCell20.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.Unidades")})
-        Me.XrTableCell20.Dpi = 100.0!
-        Me.XrTableCell20.Name = "XrTableCell20"
-        Me.XrTableCell20.StyleName = "DataField"
-        Me.XrTableCell20.Text = "XrTableCell20"
-        Me.XrTableCell20.Weight = 29.0R
-        '
-        'XrTableCell21
-        '
-        Me.XrTableCell21.CanGrow = False
-        Me.XrTableCell21.Dpi = 100.0!
-        Me.XrTableCell21.Name = "XrTableCell21"
-        Me.XrTableCell21.StyleName = "FieldCaption"
-        Me.XrTableCell21.Text = "Precio Costo"
-        Me.XrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell21.Weight = 39.5R
-        '
-        'XrTableCell22
-        '
-        Me.XrTableCell22.CanGrow = False
-        Me.XrTableCell22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.PrecioCosto")})
-        Me.XrTableCell22.Dpi = 100.0!
-        Me.XrTableCell22.Name = "XrTableCell22"
-        Me.XrTableCell22.StyleName = "DataField"
-        Me.XrTableCell22.Text = "XrTableCell22"
-        Me.XrTableCell22.Weight = 39.5R
-        '
-        'XrTableCell23
-        '
-        Me.XrTableCell23.CanGrow = False
-        Me.XrTableCell23.Dpi = 100.0!
-        Me.XrTableCell23.Name = "XrTableCell23"
-        Me.XrTableCell23.StyleName = "FieldCaption"
-        Me.XrTableCell23.Text = "Precio Detalle"
-        Me.XrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell23.Weight = 43.0R
-        '
-        'XrTableCell24
-        '
-        Me.XrTableCell24.CanGrow = False
-        Me.XrTableCell24.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.PrecioDetalle")})
-        Me.XrTableCell24.Dpi = 100.0!
-        Me.XrTableCell24.Name = "XrTableCell24"
-        Me.XrTableCell24.StyleName = "DataField"
-        Me.XrTableCell24.Text = "XrTableCell24"
-        Me.XrTableCell24.Weight = 43.0R
-        '
-        'XrTableCell25
-        '
-        Me.XrTableCell25.CanGrow = False
-        Me.XrTableCell25.Dpi = 100.0!
-        Me.XrTableCell25.Name = "XrTableCell25"
-        Me.XrTableCell25.StyleName = "FieldCaption"
-        Me.XrTableCell25.Text = "Precio Mayorista"
-        Me.XrTableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell25.Weight = 53.5R
-        '
-        'XrTableCell26
-        '
-        Me.XrTableCell26.CanGrow = False
-        Me.XrTableCell26.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_MostrarPresentacionProducto.PrecioMayorista")})
-        Me.XrTableCell26.Dpi = 100.0!
-        Me.XrTableCell26.Name = "XrTableCell26"
-        Me.XrTableCell26.StyleName = "DataField"
-        Me.XrTableCell26.Text = "XrTableCell26"
-        Me.XrTableCell26.Weight = 53.5R
         '
         'PageFooterBand1
         '
@@ -491,12 +491,6 @@ Partial Public Class RptPresentacionProducto
         Me.TopMarginBand1.HeightF = 124.0!
         Me.TopMarginBand1.Name = "TopMarginBand1"
         '
-        'BottomMarginBand1
-        '
-        Me.BottomMarginBand1.Dpi = 100.0!
-        Me.BottomMarginBand1.HeightF = 100.0!
-        Me.BottomMarginBand1.Name = "BottomMarginBand1"
-        '
         'XrPictureBox1
         '
         Me.XrPictureBox1.Dpi = 100.0!
@@ -550,6 +544,12 @@ Partial Public Class RptPresentacionProducto
         Me.XrLabel27.StylePriority.UseFont = False
         Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
         '
+        'BottomMarginBand1
+        '
+        Me.BottomMarginBand1.Dpi = 100.0!
+        Me.BottomMarginBand1.HeightF = 100.0!
+        Me.BottomMarginBand1.Name = "BottomMarginBand1"
+        '
         'RptPresentacionProducto
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeaderBand1, Me.PageFooterBand1, Me.ReportHeaderBand1, Me.TopMarginBand1, Me.BottomMarginBand1})
@@ -560,9 +560,9 @@ Partial Public Class RptPresentacionProducto
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.Title, Me.FieldCaption, Me.PageInfo, Me.DataField})
         Me.Version = "16.1"
+        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

@@ -28,7 +28,7 @@ Public Class FrmReporteCliente
                 ReporteClienteFactura.ShowRibbonPreview
             End If
 
-        ElseIf (RadioButton2.Checked = True)Then
+        ElseIf (RadioButton2.Checked = True) Then
             viewer.ShowRibbonPreview()
         Else
             MessageBox.Show("No ha seleccionado nada", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)

@@ -113,7 +113,7 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub ReporteDeProveedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeProveedorToolStripMenuItem.Click
-        FrmReporteProveedor.Show()
+        FrmReporteVentas.Show()
     End Sub
 
     Private Sub ConfiguracionCAIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguracionCAIToolStripMenuItem.Click

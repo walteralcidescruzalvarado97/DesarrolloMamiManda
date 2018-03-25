@@ -14,7 +14,7 @@ Public Class FrmReporteEmpleado
 
         If (RadioButton1.Checked = True) Then
             If (TxtId.Text = Nothing) Then
-                MessageBox.Show("Ingrese el Id del Empleado", "Car Wash", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Ingrese el Id del Empleado", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 TxtId.Focus()
             Else
                 Dim rpt As New RptEmpleado(TxtId.Text)
@@ -22,7 +22,15 @@ Public Class FrmReporteEmpleado
                 printTool.ShowRibbonPreview()
             End If
 
-        ElseIf (RadioButton2.Checked = True)
+        ElseIf (RadioButton3.Checked = True) Then
+            If (TxtId.Text = Nothing) Then
+                MessageBox.Show("Ingrese el Id del Empleado", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TxtId.Focus()
+            Else
+                Dim rpt As New RptEmpleadoFactura(TxtId.Text)
+                rpt.ShowRibbonPreview
+            End If
+        ElseIf (RadioButton2.Checked = True) Then
             viewer.ShowRibbonPreview()
         Else
             MessageBox.Show("No ha seleccionado nada", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -36,5 +44,9 @@ Public Class FrmReporteEmpleado
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         TxtId.Enabled = False
         TxtId.Clear()
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        TxtId.Enabled = True
     End Sub
 End Class
