@@ -36,9 +36,9 @@ Partial Class FrmReporteVentasCliente
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 22)
+        Me.GroupBox1.Location = New System.Drawing.Point(43, 19)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(446, 59)
+        Me.GroupBox1.Size = New System.Drawing.Size(416, 59)
         Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Generar reporte por:"
@@ -46,7 +46,7 @@ Partial Class FrmReporteVentasCliente
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(255, 26)
+        Me.RadioButton2.Location = New System.Drawing.Point(223, 26)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(173, 17)
         Me.RadioButton2.TabIndex = 5
@@ -69,15 +69,15 @@ Partial Class FrmReporteVentasCliente
         '
         Me.TxtRTN.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtRTN.Enabled = False
-        Me.TxtRTN.Location = New System.Drawing.Point(73, 105)
+        Me.TxtRTN.Location = New System.Drawing.Point(43, 102)
         Me.TxtRTN.Name = "TxtRTN"
-        Me.TxtRTN.Size = New System.Drawing.Size(151, 20)
+        Me.TxtRTN.Size = New System.Drawing.Size(214, 20)
         Me.TxtRTN.TabIndex = 24
         '
         'Button1
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button1.Location = New System.Drawing.Point(267, 96)
+        Me.Button1.Location = New System.Drawing.Point(333, 93)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
         Me.Button1.TabIndex = 23
@@ -88,11 +88,14 @@ Partial Class FrmReporteVentasCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(658, 330)
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(573, 235)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtRTN)
         Me.Controls.Add(Me.Button1)
         Me.Name = "FrmReporteVentasCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Ventas por SCliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

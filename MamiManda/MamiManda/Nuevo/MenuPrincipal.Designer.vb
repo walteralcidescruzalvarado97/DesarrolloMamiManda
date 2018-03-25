@@ -70,6 +70,7 @@ Partial Class MenuPrincipal
         Me.BarButtonItem42 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem43 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem44 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem45 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -99,7 +100,6 @@ Partial Class MenuPrincipal
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Sp_EmpleadoFacturaTableAdapter = New MamiManda.dsBakerySystemTableAdapters.Sp_EmpleadoFacturaTableAdapter()
-        Me.BarButtonItem45 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -390,60 +390,70 @@ Partial Class MenuPrincipal
         'BarButtonItem32
         '
         Me.BarButtonItem32.Caption = "Reporte Materia Prima"
+        Me.BarButtonItem32.Glyph = CType(resources.GetObject("BarButtonItem32.Glyph"), System.Drawing.Image)
         Me.BarButtonItem32.Id = 39
         Me.BarButtonItem32.Name = "BarButtonItem32"
         '
         'BarButtonItem33
         '
         Me.BarButtonItem33.Caption = "Reporte de Clientes"
+        Me.BarButtonItem33.Glyph = CType(resources.GetObject("BarButtonItem33.Glyph"), System.Drawing.Image)
         Me.BarButtonItem33.Id = 40
         Me.BarButtonItem33.Name = "BarButtonItem33"
         '
         'BarButtonItem34
         '
         Me.BarButtonItem34.Caption = "Reporte de Empleados"
+        Me.BarButtonItem34.Glyph = CType(resources.GetObject("BarButtonItem34.Glyph"), System.Drawing.Image)
         Me.BarButtonItem34.Id = 41
         Me.BarButtonItem34.Name = "BarButtonItem34"
         '
         'BarButtonItem35
         '
         Me.BarButtonItem35.Caption = "Reporte de Inventario"
+        Me.BarButtonItem35.Glyph = CType(resources.GetObject("BarButtonItem35.Glyph"), System.Drawing.Image)
         Me.BarButtonItem35.Id = 42
         Me.BarButtonItem35.Name = "BarButtonItem35"
         '
         'BarButtonItem36
         '
         Me.BarButtonItem36.Caption = "Reporte de Presentacion Producto"
+        Me.BarButtonItem36.Glyph = CType(resources.GetObject("BarButtonItem36.Glyph"), System.Drawing.Image)
         Me.BarButtonItem36.Id = 43
         Me.BarButtonItem36.Name = "BarButtonItem36"
         '
         'BarButtonItem37
         '
         Me.BarButtonItem37.Caption = "Reporte Cliente Mayor Compra"
+        Me.BarButtonItem37.Glyph = CType(resources.GetObject("BarButtonItem37.Glyph"), System.Drawing.Image)
         Me.BarButtonItem37.Id = 44
         Me.BarButtonItem37.Name = "BarButtonItem37"
         '
         'BarButtonItem38
         '
         Me.BarButtonItem38.Caption = "Reporte Existencia M. Inventario"
+        Me.BarButtonItem38.Glyph = CType(resources.GetObject("BarButtonItem38.Glyph"), System.Drawing.Image)
         Me.BarButtonItem38.Id = 45
         Me.BarButtonItem38.Name = "BarButtonItem38"
         '
         'BarButtonItem39
         '
         Me.BarButtonItem39.Caption = "Reporte Existencia M. Materia P."
+        Me.BarButtonItem39.Glyph = CType(resources.GetObject("BarButtonItem39.Glyph"), System.Drawing.Image)
         Me.BarButtonItem39.Id = 46
         Me.BarButtonItem39.Name = "BarButtonItem39"
         '
         'BarButtonItem40
         '
         Me.BarButtonItem40.Caption = "Reporte Producto mas Vendido"
+        Me.BarButtonItem40.Glyph = CType(resources.GetObject("BarButtonItem40.Glyph"), System.Drawing.Image)
         Me.BarButtonItem40.Id = 47
         Me.BarButtonItem40.Name = "BarButtonItem40"
         '
         'BarButtonItem41
         '
         Me.BarButtonItem41.Caption = "Reporte mas Facturas por Empleado"
+        Me.BarButtonItem41.Glyph = CType(resources.GetObject("BarButtonItem41.Glyph"), System.Drawing.Image)
         Me.BarButtonItem41.Id = 48
         Me.BarButtonItem41.Name = "BarButtonItem41"
         '
@@ -456,14 +466,23 @@ Partial Class MenuPrincipal
         'BarButtonItem43
         '
         Me.BarButtonItem43.Caption = "Reporte Ventas "
+        Me.BarButtonItem43.Glyph = CType(resources.GetObject("BarButtonItem43.Glyph"), System.Drawing.Image)
         Me.BarButtonItem43.Id = 50
         Me.BarButtonItem43.Name = "BarButtonItem43"
         '
         'BarButtonItem44
         '
         Me.BarButtonItem44.Caption = "Reporte Proveedor"
+        Me.BarButtonItem44.Glyph = CType(resources.GetObject("BarButtonItem44.Glyph"), System.Drawing.Image)
         Me.BarButtonItem44.Id = 51
         Me.BarButtonItem44.Name = "BarButtonItem44"
+        '
+        'BarButtonItem45
+        '
+        Me.BarButtonItem45.Caption = "Reporte Ventas por Cliente"
+        Me.BarButtonItem45.Glyph = CType(resources.GetObject("BarButtonItem45.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem45.Id = 52
+        Me.BarButtonItem45.Name = "BarButtonItem45"
         '
         'RibbonPage2
         '
@@ -659,12 +678,6 @@ Partial Class MenuPrincipal
         'Sp_EmpleadoFacturaTableAdapter
         '
         Me.Sp_EmpleadoFacturaTableAdapter.ClearBeforeFill = True
-        '
-        'BarButtonItem45
-        '
-        Me.BarButtonItem45.Caption = "Reporte Ventas por Cliente"
-        Me.BarButtonItem45.Id = 52
-        Me.BarButtonItem45.Name = "BarButtonItem45"
         '
         'MenuPrincipal
         '

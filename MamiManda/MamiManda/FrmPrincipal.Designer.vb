@@ -101,9 +101,9 @@ Partial Class FrmPrincipal
         Me.ReporteDeMateriaPrimaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDePresentaciónProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguracionCAIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LblId = New System.Windows.Forms.Label()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
-        Me.ConfiguracionCAIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3.SuspendLayout()
         CType(Me.PbUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
@@ -142,6 +142,7 @@ Partial Class FrmPrincipal
         Me.TileVentas.BackgroundImage = CType(resources.GetObject("TileVentas.BackgroundImage"), System.Drawing.Image)
         Me.TileVentas.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft
         Me.TileVentas.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
+        Me.TileVentas.CurrentFrameIndex = 2
         TileItemElement1.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI Light", 21.25!)
         TileItemElement1.Appearance.Hovered.Options.UseFont = True
         TileItemElement1.Appearance.Hovered.Options.UseTextOptions = True
@@ -447,7 +448,6 @@ Partial Class FrmPrincipal
         Me.TileReceta.BackgroundImage = CType(resources.GetObject("TileReceta.BackgroundImage"), System.Drawing.Image)
         Me.TileReceta.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter
         Me.TileReceta.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch
-        Me.TileReceta.CurrentFrameIndex = 1
         TileItemElement15.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI Light", 21.25!)
         TileItemElement15.Appearance.Hovered.Options.UseFont = True
         TileItemElement15.Appearance.Hovered.Options.UseTextOptions = True
@@ -753,6 +753,7 @@ Partial Class FrmPrincipal
         Me.TileClientes.BackgroundImage = CType(resources.GetObject("TileClientes.BackgroundImage"), System.Drawing.Image)
         Me.TileClientes.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter
         Me.TileClientes.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
+        Me.TileClientes.CurrentFrameIndex = 2
         TileItemElement28.Text = "Clientes"
         Me.TileClientes.Elements.Add(TileItemElement28)
         TileItemFrame6.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollDown
@@ -1091,6 +1092,12 @@ Partial Class FrmPrincipal
         Me.ReporteDeProveedorToolStripMenuItem.Size = New System.Drawing.Size(254, 22)
         Me.ReporteDeProveedorToolStripMenuItem.Text = "Reporte de Proveedor"
         '
+        'ConfiguracionCAIToolStripMenuItem
+        '
+        Me.ConfiguracionCAIToolStripMenuItem.Name = "ConfiguracionCAIToolStripMenuItem"
+        Me.ConfiguracionCAIToolStripMenuItem.Size = New System.Drawing.Size(254, 22)
+        Me.ConfiguracionCAIToolStripMenuItem.Text = "Configuracion CAI"
+        '
         'LblId
         '
         Me.LblId.AutoSize = True
@@ -1099,12 +1106,6 @@ Partial Class FrmPrincipal
         Me.LblId.Size = New System.Drawing.Size(16, 13)
         Me.LblId.TabIndex = 12
         Me.LblId.Text = "Id"
-        '
-        'ConfiguracionCAIToolStripMenuItem
-        '
-        Me.ConfiguracionCAIToolStripMenuItem.Name = "ConfiguracionCAIToolStripMenuItem"
-        Me.ConfiguracionCAIToolStripMenuItem.Size = New System.Drawing.Size(254, 22)
-        Me.ConfiguracionCAIToolStripMenuItem.Text = "Configuracion CAI"
         '
         'FrmPrincipal
         '

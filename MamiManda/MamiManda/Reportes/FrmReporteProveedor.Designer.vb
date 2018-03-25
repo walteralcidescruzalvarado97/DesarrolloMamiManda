@@ -181,11 +181,11 @@ Partial Class FrmReporteVentas
         '
         Me.ProveedorTableAdapter.ClearBeforeFill = True
         '
-        'FrmReporteProveedor
+        'FrmReporteVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(639, 326)
         Me.Controls.Add(Me.Label1)
@@ -195,7 +195,7 @@ Partial Class FrmReporteVentas
         Me.Controls.Add(Me.DataGridView1)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "FrmReporteProveedor"
+        Me.Name = "FrmReporteVentas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Proveedor"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

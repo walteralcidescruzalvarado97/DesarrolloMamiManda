@@ -39,7 +39,7 @@ Partial Class FrmReporteVenta
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(39, 53)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 28)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(322, 59)
         Me.GroupBox1.TabIndex = 22
@@ -83,15 +83,15 @@ Partial Class FrmReporteVenta
         '
         Me.TxtRTN.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TxtRTN.Enabled = False
-        Me.TxtRTN.Location = New System.Drawing.Point(385, 85)
+        Me.TxtRTN.Location = New System.Drawing.Point(364, 52)
         Me.TxtRTN.Name = "TxtRTN"
-        Me.TxtRTN.Size = New System.Drawing.Size(151, 20)
+        Me.TxtRTN.Size = New System.Drawing.Size(200, 20)
         Me.TxtRTN.TabIndex = 21
         '
         'Button1
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button1.Location = New System.Drawing.Point(542, 76)
+        Me.Button1.Location = New System.Drawing.Point(438, 102)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
         Me.Button1.TabIndex = 20
@@ -100,7 +100,7 @@ Partial Class FrmReporteVenta
         '
         'dtpFecha
         '
-        Me.dtpFecha.Location = New System.Drawing.Point(57, 154)
+        Me.dtpFecha.Location = New System.Drawing.Point(24, 118)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(217, 20)
         Me.dtpFecha.TabIndex = 23
@@ -109,12 +109,15 @@ Partial Class FrmReporteVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(720, 313)
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(603, 258)
         Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtRTN)
         Me.Controls.Add(Me.Button1)
         Me.Name = "FrmReporteVenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Venta"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -65,7 +65,7 @@ Partial Class FrmPresentacionProducto
         'TPGestionPresentacion
         '
         Me.TPGestionPresentacion.BackColor = System.Drawing.Color.Transparent
-        Me.TPGestionPresentacion.BackgroundImage = CType(resources.GetObject("TPGestionPresentacion.BackgroundImage"), System.Drawing.Image)
+        Me.TPGestionPresentacion.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.TPGestionPresentacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TPGestionPresentacion.Controls.Add(Me.gbDatos)
         Me.TPGestionPresentacion.Controls.Add(Me.Label1)
@@ -292,7 +292,7 @@ Partial Class FrmPresentacionProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(596, 395)
         Me.Controls.Add(Me.TabControl1)

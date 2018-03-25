@@ -224,7 +224,7 @@ Partial Class FrmReceta
         '
         'TabPage1
         '
-        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage1.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPage1.Controls.Add(Me.lsvMostrar)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -279,7 +279,7 @@ Partial Class FrmReceta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.Imagen1
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(486, 378)
         Me.Controls.Add(Me.TabControl1)

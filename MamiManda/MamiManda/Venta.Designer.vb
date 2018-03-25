@@ -77,15 +77,14 @@ Partial Class Venta
         Me.Label17 = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.lblNombreProducto = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.BtnImprimir = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.gbArticulos.SuspendLayout()
         Me.gbDatos.SuspendLayout()
         CType(Me.NuDiasPlazo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CmsOpcion.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnNuevo
@@ -609,17 +608,6 @@ Partial Class Venta
         Me.lblNombreProducto.TabIndex = 84
         Me.lblNombreProducto.Visible = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(2, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(504, 111)
-        Me.PictureBox1.TabIndex = 85
-        Me.PictureBox1.TabStop = False
-        '
         'BtnImprimir
         '
         Me.BtnImprimir.Image = CType(resources.GetObject("BtnImprimir.Image"), System.Drawing.Image)
@@ -630,16 +618,28 @@ Partial Class Venta
         Me.BtnImprimir.Text = "Imprimir"
         Me.BtnImprimir.Visible = False
         '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(72, 34)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(135, 39)
+        Me.Label8.TabIndex = 115
+        Me.Label8.Text = "Factura"
+        '
         'Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(979, 703)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.BtnImprimir)
         Me.Controls.Add(Me.gbDatos)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblNombreProducto)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label17)
@@ -671,7 +671,6 @@ Partial Class Venta
         CType(Me.NuDiasPlazo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CmsOpcion.ResumeLayout(False)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -719,7 +718,6 @@ Partial Class Venta
     Public WithEvents txtUnidad As TextBox
     Private WithEvents Label5 As Label
     Friend WithEvents lblNombreProducto As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents HelpProvider1 As HelpProvider
     Friend WithEvents CboTipoPago As ComboBox
     Friend WithEvents Label2 As Label
@@ -733,4 +731,5 @@ Partial Class Venta
     Friend WithEvents CmsOpcion As ContextMenuStrip
     Friend WithEvents QuitarItemToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BtnImprimir As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label8 As Label
 End Class
