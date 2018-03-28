@@ -4,6 +4,7 @@ Public Class FrmPresentacionProducto
     Implements IForm2
     Friend Property ModoEdicion As Boolean = False
     Friend Property Codigo
+    Private Existencia As Integer = 0
     Public Sub ObtenerCuenta(cuenta As String) Implements IForm.ObtenerDato
         txtCodInventario.Text = cuenta
     End Sub
@@ -122,6 +123,7 @@ Public Class FrmPresentacionProducto
                     txtPreMayorista.Text = lector("PrecioMayorista").ToString
                     txtPreDetalle.Text = lector("PrecioDetalle").ToString
                     txtPreCosto.Text = lector("PrecioCosto").ToString
+                    Existencia = lector("Existencia").ToString
                 End While
 
             Catch ex As Exception
@@ -146,6 +148,7 @@ Public Class FrmPresentacionProducto
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
                     .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodInventario.Text.Trim
                     .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = cboPresentacion.SelectedValue
+                    .Parameters.Add("@Existencia", SqlDbType.Int).Value = Existencia
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario
                     .ExecuteNonQuery()
                     MessageBox.Show("El registro de presentación ha sido guardado", "MamiManda", MessageBoxButtons.OK)
@@ -172,6 +175,7 @@ Public Class FrmPresentacionProducto
                     .Parameters.Add("@PrecioMayorista", SqlDbType.Money).Value = txtPreMayorista.Text.Trim
                     .Parameters.Add("@PrecioDetalle", SqlDbType.Money).Value = txtPreDetalle.Text.Trim
                     .Parameters.Add("@PrecioCosto", SqlDbType.Money).Value = txtPreCosto.Text.Trim
+                    .Parameters.Add("@Existencia", SqlDbType.Int).Value = Existencia
                     .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodInventario.Text.Trim
                     .Parameters.Add("@IdTipoPresentacio", SqlDbType.Int).Value = cboPresentacion.SelectedValue
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario

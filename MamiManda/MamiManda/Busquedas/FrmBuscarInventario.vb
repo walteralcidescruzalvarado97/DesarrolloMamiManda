@@ -3,6 +3,7 @@ Public Class FrmBuscarInventario
     Friend Property DesdeProduccion As Boolean = False
     Friend Property DesdeReceta As Boolean = False
     Friend Property DesdePresentacion As Boolean = False
+    Friend Property DesdeProductoTerminado As Boolean = False
     Private Sub FrmBuscarInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call LlenarGridInventario()
     End Sub
@@ -59,6 +60,13 @@ Public Class FrmBuscarInventario
             FrmPresentacionProducto.txtCodInventario.Text = GridView1.GetRowCellValue(fila, "IdInventario")
             FrmPresentacionProducto.txtNombre.Text = GridView1.GetRowCellValue(fila, "NombreProducto")
         End If
+
+        If DesdeProductoTerminado Then
+            Dim fila As Integer = GridView1.FocusedRowHandle
+
+            FrmProductoPresentacion.txtCodInventario.Text = GridView1.GetRowCellValue(fila, "IdInventario")
+            FrmProductoPresentacion.txtNombre.Text = GridView1.GetRowCellValue(fila, "NombreProducto")
+        End If
         Me.Close()
     End Sub
     'Private Sub lsvMostrar_DoubleClick(sender As Object, e As EventArgs)
@@ -77,4 +85,8 @@ Public Class FrmBuscarInventario
 
     '    Close()
     'End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Call LlenarGridInventario()
+    End Sub
 End Class

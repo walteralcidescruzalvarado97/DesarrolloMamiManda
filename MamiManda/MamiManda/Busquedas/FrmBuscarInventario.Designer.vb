@@ -27,6 +27,7 @@ Partial Class FrmBuscarInventario
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.GcInventario = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.BtnActualizar = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GcInventario, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -81,6 +82,15 @@ Partial Class FrmBuscarInventario
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
+        Me.BtnActualizar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.BtnActualizar.Location = New System.Drawing.Point(732, 48)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(47, 33)
+        Me.BtnActualizar.TabIndex = 105
+        '
         'FrmBuscarInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -88,6 +98,7 @@ Partial Class FrmBuscarInventario
         Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(838, 409)
+        Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.GcInventario)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Label11)
@@ -108,4 +119,5 @@ Partial Class FrmBuscarInventario
     Friend WithEvents btnAgregar As Button
     Friend WithEvents GcInventario As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents BtnActualizar As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -67,4 +67,8 @@ Public Class FrmPresentacion
     Private Sub NavBarItem1_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem1.LinkClicked
         FrmPresentacionProducto.ShowDialog()
     End Sub
+
+    Private Sub NavBarItem3_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem3.LinkClicked
+        Call LlenarGridPresentacion()
+    End Sub
 End Class

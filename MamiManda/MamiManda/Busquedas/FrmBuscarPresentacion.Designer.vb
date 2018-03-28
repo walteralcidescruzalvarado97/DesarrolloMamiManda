@@ -23,78 +23,96 @@ Partial Class FrmBuscarPresentacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBuscarPresentacion))
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.lsvMostrar = New System.Windows.Forms.ListView()
-        Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTipo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chUnidades = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chPrecioMAyorista = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chPrecioDEtalle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chPrecioCOsto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GcPresentacion = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RdbDetalle = New System.Windows.Forms.RadioButton()
+        Me.RdbMayorista = New System.Windows.Forms.RadioButton()
+        Me.RdbCosto = New System.Windows.Forms.RadioButton()
+        CType(Me.GcPresentacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(113, 44)
-        Me.txtBuscar.Multiline = True
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(380, 26)
-        Me.txtBuscar.TabIndex = 0
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(202, 14)
+        Me.Label11.Location = New System.Drawing.Point(294, 24)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(197, 25)
         Me.Label11.TabIndex = 84
         Me.Label11.Text = "Listar Presentación"
         '
-        'lsvMostrar
+        'GcPresentacion
         '
-        Me.lsvMostrar.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chNombre, Me.chTipo, Me.chUnidades, Me.chPrecioMAyorista, Me.chPrecioDEtalle, Me.chPrecioCOsto})
-        Me.lsvMostrar.FullRowSelect = True
-        Me.lsvMostrar.GridLines = True
-        Me.lsvMostrar.Location = New System.Drawing.Point(12, 87)
-        Me.lsvMostrar.Name = "lsvMostrar"
-        Me.lsvMostrar.Size = New System.Drawing.Size(588, 241)
-        Me.lsvMostrar.TabIndex = 1
-        Me.lsvMostrar.UseCompatibleStateImageBehavior = False
-        Me.lsvMostrar.View = System.Windows.Forms.View.Details
+        Me.GcPresentacion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GcPresentacion.Location = New System.Drawing.Point(24, 64)
+        Me.GcPresentacion.MainView = Me.GridView1
+        Me.GcPresentacion.Name = "GcPresentacion"
+        Me.GcPresentacion.Size = New System.Drawing.Size(702, 233)
+        Me.GcPresentacion.TabIndex = 101
+        Me.GcPresentacion.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'chNombre
+        'GridView1
         '
-        Me.chNombre.Text = "Nombre Producto"
-        Me.chNombre.Width = 135
+        Me.GridView1.GridControl = Me.GcPresentacion
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsBehavior.ReadOnly = True
+        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
         '
-        'chTipo
+        'GroupBox1
         '
-        Me.chTipo.Text = "Tipo Presentación"
-        Me.chTipo.Width = 115
+        Me.GroupBox1.Controls.Add(Me.RdbCosto)
+        Me.GroupBox1.Controls.Add(Me.RdbMayorista)
+        Me.GroupBox1.Controls.Add(Me.RdbDetalle)
+        Me.GroupBox1.Location = New System.Drawing.Point(385, 317)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(341, 47)
+        Me.GroupBox1.TabIndex = 102
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Elegir Precio"
         '
-        'chUnidades
+        'RdbDetalle
         '
-        Me.chUnidades.Text = "Unidades"
-        Me.chUnidades.Width = 80
+        Me.RdbDetalle.AutoSize = True
+        Me.RdbDetalle.Location = New System.Drawing.Point(133, 20)
+        Me.RdbDetalle.Name = "RdbDetalle"
+        Me.RdbDetalle.Size = New System.Drawing.Size(58, 17)
+        Me.RdbDetalle.TabIndex = 0
+        Me.RdbDetalle.TabStop = True
+        Me.RdbDetalle.Text = "Detalle"
+        Me.RdbDetalle.UseVisualStyleBackColor = True
         '
-        'chPrecioMAyorista
+        'RdbMayorista
         '
-        Me.chPrecioMAyorista.Text = "Precio Mayorista"
-        Me.chPrecioMAyorista.Width = 90
+        Me.RdbMayorista.AutoSize = True
+        Me.RdbMayorista.Location = New System.Drawing.Point(19, 20)
+        Me.RdbMayorista.Name = "RdbMayorista"
+        Me.RdbMayorista.Size = New System.Drawing.Size(70, 17)
+        Me.RdbMayorista.TabIndex = 1
+        Me.RdbMayorista.TabStop = True
+        Me.RdbMayorista.Text = "Mayorista"
+        Me.RdbMayorista.UseVisualStyleBackColor = True
         '
-        'chPrecioDEtalle
+        'RdbCosto
         '
-        Me.chPrecioDEtalle.Text = "Precio Detalle"
-        Me.chPrecioDEtalle.Width = 80
-        '
-        'chPrecioCOsto
-        '
-        Me.chPrecioCOsto.Text = "Precio Costo"
-        Me.chPrecioCOsto.Width = 80
+        Me.RdbCosto.AutoSize = True
+        Me.RdbCosto.Location = New System.Drawing.Point(235, 20)
+        Me.RdbCosto.Name = "RdbCosto"
+        Me.RdbCosto.Size = New System.Drawing.Size(52, 17)
+        Me.RdbCosto.TabIndex = 2
+        Me.RdbCosto.TabStop = True
+        Me.RdbCosto.Text = "Costo"
+        Me.RdbCosto.UseVisualStyleBackColor = True
         '
         'FrmBuscarPresentacion
         '
@@ -102,9 +120,9 @@ Partial Class FrmBuscarPresentacion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(615, 340)
-        Me.Controls.Add(Me.lsvMostrar)
-        Me.Controls.Add(Me.txtBuscar)
+        Me.ClientSize = New System.Drawing.Size(749, 376)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GcPresentacion)
         Me.Controls.Add(Me.Label11)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -113,17 +131,19 @@ Partial Class FrmBuscarPresentacion
         Me.Name = "FrmBuscarPresentacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscarPresentacion"
+        CType(Me.GcPresentacion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents lsvMostrar As ListView
-    Friend WithEvents chNombre As ColumnHeader
-    Friend WithEvents chTipo As ColumnHeader
-    Friend WithEvents chUnidades As ColumnHeader
-    Friend WithEvents chPrecioMAyorista As ColumnHeader
-    Friend WithEvents chPrecioDEtalle As ColumnHeader
-    Friend WithEvents chPrecioCOsto As ColumnHeader
+    Friend WithEvents GcPresentacion As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents RdbCosto As System.Windows.Forms.RadioButton
+    Friend WithEvents RdbMayorista As System.Windows.Forms.RadioButton
+    Friend WithEvents RdbDetalle As System.Windows.Forms.RadioButton
 End Class

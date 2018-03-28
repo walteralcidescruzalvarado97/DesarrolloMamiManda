@@ -131,7 +131,7 @@ Public Class MenuPrincipal
     End Sub
 
     Private Sub BarButtonItem9_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem9.ItemClick
-        Venta.Show()
+        AbrirForm(Venta)
     End Sub
 
     Private Sub BarButtonItem15_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem15.ItemClick
@@ -257,5 +257,9 @@ Public Class MenuPrincipal
     Private Sub BarButtonItem45_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem45.ItemClick
         FrmReporteVentasCliente.MdiParent = Me
         FrmReporteVentasCliente.Show()
+    End Sub
+
+    Private Sub BarButtonItem46_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem46.ItemClick
+        FrmProductoPresentacion.ShowDialog()
     End Sub
 End Class

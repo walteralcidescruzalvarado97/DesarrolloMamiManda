@@ -172,6 +172,12 @@
     <Compile Include="Busquedas\FrmBuscarInventario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busquedas\FrmBusquedaPresentacionesProductos.Designer.vb">
+      <DependentUpon>FrmBusquedaPresentacionesProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\FrmBusquedaPresentacionesProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Catalogos\FrmAgregarMateria.Designer.vb">
       <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,12 @@
       <DependentUpon>FrmReceta.vb</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\FrmReceta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Producto terminado y su presentaci.Designer.vb">
+      <DependentUpon>Producto terminado y su presentaci.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Producto terminado y su presentaci.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConfiguracionCai.designer.vb">
@@ -518,6 +530,12 @@
     <Compile Include="Reportes\RptExistenciaMinimaMateria.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\RptFactura.Designer.vb">
+      <DependentUpon>RptFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RptFactura.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\RptInventario.Designer.vb">
       <DependentUpon>RptInventario.vb</DependentUpon>
     </Compile>
@@ -598,6 +616,9 @@
     <EmbeddedResource Include="Busquedas\FrmBuscarProveedor.resx">
       <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\FrmBusquedaPresentacionesProductos.resx">
+      <DependentUpon>FrmBusquedaPresentacionesProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmAgregarMateria.resx">
       <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +642,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\FrmReceta.resx">
       <DependentUpon>FrmReceta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Producto terminado y su presentaci.resx">
+      <DependentUpon>Producto terminado y su presentaci.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfiguracionCai.resx">
       <DependentUpon>ConfiguracionCai.vb</DependentUpon>
@@ -751,6 +775,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptExistenciaMinimaMateria.resx">
       <DependentUpon>RptExistenciaMinimaMateria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptFactura.resx">
+      <DependentUpon>RptFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptInventario.resx">
       <DependentUpon>RptInventario.vb</DependentUpon>

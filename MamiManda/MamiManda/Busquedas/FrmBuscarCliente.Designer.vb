@@ -23,92 +23,22 @@ Partial Class FrmBuscarCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBuscarCliente))
-        Me.LsvMostrarCliente = New System.Windows.Forms.ListView()
-        Me.chRtn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTelefono = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chDireccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chFecha = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chSexo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chMunicipio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ChDiasPlazo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.GcCliente = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        CType(Me.GcCliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LsvMostrarCliente
-        '
-        Me.LsvMostrarCliente.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chRtn, Me.chNombre, Me.chEmail, Me.chTelefono, Me.chDireccion, Me.chFecha, Me.chSexo, Me.chMunicipio, Me.ChDiasPlazo})
-        Me.LsvMostrarCliente.FullRowSelect = True
-        Me.LsvMostrarCliente.GridLines = True
-        Me.LsvMostrarCliente.Location = New System.Drawing.Point(0, 84)
-        Me.LsvMostrarCliente.Name = "LsvMostrarCliente"
-        Me.LsvMostrarCliente.Size = New System.Drawing.Size(821, 254)
-        Me.LsvMostrarCliente.TabIndex = 88
-        Me.LsvMostrarCliente.UseCompatibleStateImageBehavior = False
-        Me.LsvMostrarCliente.View = System.Windows.Forms.View.Details
-        '
-        'chRtn
-        '
-        Me.chRtn.Text = "RTN CLiente"
-        Me.chRtn.Width = 100
-        '
-        'chNombre
-        '
-        Me.chNombre.Text = "NombreCompleto"
-        Me.chNombre.Width = 105
-        '
-        'chEmail
-        '
-        Me.chEmail.Text = "Email"
-        Me.chEmail.Width = 100
-        '
-        'chTelefono
-        '
-        Me.chTelefono.Text = "Teléfono"
-        '
-        'chDireccion
-        '
-        Me.chDireccion.Text = "Dirección"
-        Me.chDireccion.Width = 120
-        '
-        'chFecha
-        '
-        Me.chFecha.Text = "Fecha"
-        Me.chFecha.Width = 110
-        '
-        'chSexo
-        '
-        Me.chSexo.Text = "Sexo"
-        Me.chSexo.Width = 70
-        '
-        'chMunicipio
-        '
-        Me.chMunicipio.Text = "Municipio"
-        Me.chMunicipio.Width = 90
-        '
-        'ChDiasPlazo
-        '
-        Me.ChDiasPlazo.Text = "DiasPlazo"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(179, 37)
-        Me.txtBuscar.Multiline = True
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(416, 29)
-        Me.txtBuscar.TabIndex = 85
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(308, 9)
+        Me.Label1.Location = New System.Drawing.Point(359, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(152, 25)
         Me.Label1.TabIndex = 83
@@ -124,11 +54,43 @@ Partial Class FrmBuscarCliente
         Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.Location = New System.Drawing.Point(778, 45)
+        Me.btnAgregar.Location = New System.Drawing.Point(778, 22)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(30, 33)
         Me.btnAgregar.TabIndex = 89
         Me.btnAgregar.UseVisualStyleBackColor = False
+        '
+        'GcCliente
+        '
+        Me.GcCliente.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GcCliente.Location = New System.Drawing.Point(4, 61)
+        Me.GcCliente.MainView = Me.GridView1
+        Me.GcCliente.Name = "GcCliente"
+        Me.GcCliente.Size = New System.Drawing.Size(816, 282)
+        Me.GcCliente.TabIndex = 102
+        Me.GcCliente.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GcCliente
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsBehavior.ReadOnly = True
+        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.SimpleButton1.Location = New System.Drawing.Point(725, 22)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(47, 33)
+        Me.SimpleButton1.TabIndex = 105
         '
         'FrmBuscarCliente
         '
@@ -137,10 +99,10 @@ Partial Class FrmBuscarCliente
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(820, 339)
+        Me.ClientSize = New System.Drawing.Size(820, 363)
+        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.GcCliente)
         Me.Controls.Add(Me.btnAgregar)
-        Me.Controls.Add(Me.LsvMostrarCliente)
-        Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -151,23 +113,17 @@ Partial Class FrmBuscarCliente
         Me.HelpProvider1.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Cliente"
+        CType(Me.GcCliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents LsvMostrarCliente As ListView
-    Friend WithEvents chRtn As ColumnHeader
-    Friend WithEvents chNombre As ColumnHeader
-    Friend WithEvents chEmail As ColumnHeader
-    Friend WithEvents chTelefono As ColumnHeader
-    Friend WithEvents chDireccion As ColumnHeader
-    Friend WithEvents chFecha As ColumnHeader
-    Friend WithEvents chSexo As ColumnHeader
-    Friend WithEvents chMunicipio As ColumnHeader
-    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnAgregar As Button
     Friend WithEvents HelpProvider1 As HelpProvider
-    Friend WithEvents ChDiasPlazo As ColumnHeader
+    Friend WithEvents GcCliente As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

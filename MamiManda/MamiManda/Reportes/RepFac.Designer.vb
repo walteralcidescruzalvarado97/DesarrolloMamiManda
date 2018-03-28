@@ -30,20 +30,21 @@ Partial Public Class RepFac
         Me.ClienteTableAdapter = New MamiManda.BakerySystemDataSetTableAdapters.ClienteTableAdapter()
         Me.FacturaTableAdapter1 = New MamiManda.BakerySystemDataSetTableAdapters.FacturaTableAdapter()
         Me.GroupHeaderBand1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
-        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrPanel2 = New DevExpress.XtraReports.UI.XRPanel()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel13 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel13 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel17 = New DevExpress.XtraReports.UI.XRLabel()
@@ -84,7 +85,9 @@ Partial Public Class RepFac
         Me.CalculatedField1 = New DevExpress.XtraReports.UI.CalculatedField()
         Me.CalculatedField2 = New DevExpress.XtraReports.UI.CalculatedField()
         Me.CalculatedField3 = New DevExpress.XtraReports.UI.CalculatedField()
-        Me.XrPanel2 = New DevExpress.XtraReports.UI.XRPanel()
+        Me.XrLabel33 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel44 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel45 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.BakerySystemDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -176,60 +179,17 @@ Partial Public Class RepFac
         Me.GroupHeaderBand1.Level = 1
         Me.GroupHeaderBand1.Name = "GroupHeaderBand1"
         '
-        'XrLabel6
+        'XrPanel2
         '
-        Me.XrLabel6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.IdFactura")})
-        Me.XrLabel6.Dpi = 100.0!
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(125.5208!, 10.00001!)
-        Me.XrLabel6.Name = "XrLabel6"
-        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel6.SizeF = New System.Drawing.SizeF(141.4254!, 15.16667!)
-        Me.XrLabel6.StyleName = "DataField"
-        Me.XrLabel6.Text = "XrLabel6"
-        '
-        'XrLabel7
-        '
-        Me.XrLabel7.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.Fecha")})
-        Me.XrLabel7.Dpi = 100.0!
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(321.4524!, 10.00001!)
-        Me.XrLabel7.Name = "XrLabel7"
-        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel7.SizeF = New System.Drawing.SizeF(158.0025!, 15.16667!)
-        Me.XrLabel7.StyleName = "DataField"
-        Me.XrLabel7.Text = "XrLabel7"
-        '
-        'XrLabel8
-        '
-        Me.XrLabel8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.FechaVence")})
-        Me.XrLabel8.Dpi = 100.0!
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(104.4427!, 37.08334!)
-        Me.XrLabel8.Name = "XrLabel8"
-        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel8.SizeF = New System.Drawing.SizeF(149.6389!, 15.16667!)
-        Me.XrLabel8.StyleName = "DataField"
-        Me.XrLabel8.Text = "XrLabel8"
-        '
-        'XrLabel9
-        '
-        Me.XrLabel9.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.TipoPago")})
-        Me.XrLabel9.Dpi = 100.0!
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(560.9133!, 10.00001!)
-        Me.XrLabel9.Name = "XrLabel9"
-        Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel9.SizeF = New System.Drawing.SizeF(101.5571!, 15.16667!)
-        Me.XrLabel9.StyleName = "DataField"
-        Me.XrLabel9.Text = "XrLabel9"
-        '
-        'XrLabel10
-        '
-        Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.EstadoFactura")})
-        Me.XrLabel10.Dpi = 100.0!
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(392.3097!, 37.08334!)
-        Me.XrLabel10.Name = "XrLabel10"
-        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel10.SizeF = New System.Drawing.SizeF(123.4165!, 15.16667!)
-        Me.XrLabel10.StyleName = "DataField"
-        Me.XrLabel10.Text = "XrLabel10"
+        Me.XrPanel2.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrPanel2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1, Me.XrLabel14, Me.XrLabel11, Me.XrLabel13, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel12, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6})
+        Me.XrPanel2.Dpi = 100.0!
+        Me.XrPanel2.LocationFloat = New DevExpress.Utils.PointFloat(3.083324!, 0.0!)
+        Me.XrPanel2.Name = "XrPanel2"
+        Me.XrPanel2.SizeF = New System.Drawing.SizeF(647.9166!, 99.99998!)
+        Me.XrPanel2.StylePriority.UseBorders = False
         '
         'XrLabel1
         '
@@ -244,73 +204,6 @@ Partial Public Class RepFac
         Me.XrLabel1.StylePriority.UseBackColor = False
         Me.XrLabel1.StylePriority.UseForeColor = False
         Me.XrLabel1.Text = "Código Factura:"
-        '
-        'XrLabel2
-        '
-        Me.XrLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.XrLabel2.Dpi = 100.0!
-        Me.XrLabel2.ForeColor = System.Drawing.Color.Black
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(266.9462!, 10.00001!)
-        Me.XrLabel2.Name = "XrLabel2"
-        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(53.80551!, 15.16667!)
-        Me.XrLabel2.StyleName = "FieldCaption"
-        Me.XrLabel2.StylePriority.UseBackColor = False
-        Me.XrLabel2.StylePriority.UseForeColor = False
-        Me.XrLabel2.Text = "Fecha"
-        '
-        'XrLabel3
-        '
-        Me.XrLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.XrLabel3.Dpi = 100.0!
-        Me.XrLabel3.ForeColor = System.Drawing.Color.Black
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(11.17887!, 37.08334!)
-        Me.XrLabel3.Name = "XrLabel3"
-        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(93.26382!, 15.16667!)
-        Me.XrLabel3.StyleName = "FieldCaption"
-        Me.XrLabel3.StylePriority.UseBackColor = False
-        Me.XrLabel3.StylePriority.UseForeColor = False
-        Me.XrLabel3.Text = "Fecha Vence"
-        '
-        'XrLabel4
-        '
-        Me.XrLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.XrLabel4.Dpi = 100.0!
-        Me.XrLabel4.ForeColor = System.Drawing.Color.Black
-        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(479.4549!, 10.00001!)
-        Me.XrLabel4.Name = "XrLabel4"
-        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(78.93811!, 15.16667!)
-        Me.XrLabel4.StyleName = "FieldCaption"
-        Me.XrLabel4.StylePriority.UseBackColor = False
-        Me.XrLabel4.StylePriority.UseForeColor = False
-        Me.XrLabel4.Text = "Tipo Pago"
-        '
-        'XrLabel5
-        '
-        Me.XrLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.XrLabel5.Dpi = 100.0!
-        Me.XrLabel5.ForeColor = System.Drawing.Color.Black
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(281.6725!, 37.08334!)
-        Me.XrLabel5.Name = "XrLabel5"
-        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel5.SizeF = New System.Drawing.SizeF(107.7162!, 15.16667!)
-        Me.XrLabel5.StyleName = "FieldCaption"
-        Me.XrLabel5.StylePriority.UseBackColor = False
-        Me.XrLabel5.StylePriority.UseForeColor = False
-        Me.XrLabel5.Text = "Estado Factura"
-        '
-        'XrLabel13
-        '
-        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.RTNCliente")})
-        Me.XrLabel13.Dpi = 100.0!
-        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(89.92446!, 62.08334!)
-        Me.XrLabel13.Name = "XrLabel13"
-        Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel13.SizeF = New System.Drawing.SizeF(187.3895!, 15.16667!)
-        Me.XrLabel13.StyleName = "DataField"
-        Me.XrLabel13.Text = "XrLabel13"
         '
         'XrLabel14
         '
@@ -337,6 +230,73 @@ Partial Public Class RepFac
         Me.XrLabel11.StylePriority.UseForeColor = False
         Me.XrLabel11.Text = "RTNCliente"
         '
+        'XrLabel13
+        '
+        Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.RTNCliente")})
+        Me.XrLabel13.Dpi = 100.0!
+        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(89.92446!, 62.08334!)
+        Me.XrLabel13.Name = "XrLabel13"
+        Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel13.SizeF = New System.Drawing.SizeF(187.3895!, 15.16667!)
+        Me.XrLabel13.StyleName = "DataField"
+        Me.XrLabel13.Text = "XrLabel13"
+        '
+        'XrLabel5
+        '
+        Me.XrLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.XrLabel5.Dpi = 100.0!
+        Me.XrLabel5.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(281.6725!, 37.08334!)
+        Me.XrLabel5.Name = "XrLabel5"
+        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(107.7162!, 15.16667!)
+        Me.XrLabel5.StyleName = "FieldCaption"
+        Me.XrLabel5.StylePriority.UseBackColor = False
+        Me.XrLabel5.StylePriority.UseForeColor = False
+        Me.XrLabel5.Text = "Estado Factura"
+        '
+        'XrLabel4
+        '
+        Me.XrLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.XrLabel4.Dpi = 100.0!
+        Me.XrLabel4.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(479.4549!, 10.00001!)
+        Me.XrLabel4.Name = "XrLabel4"
+        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(78.93811!, 15.16667!)
+        Me.XrLabel4.StyleName = "FieldCaption"
+        Me.XrLabel4.StylePriority.UseBackColor = False
+        Me.XrLabel4.StylePriority.UseForeColor = False
+        Me.XrLabel4.Text = "Tipo Pago"
+        '
+        'XrLabel3
+        '
+        Me.XrLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.XrLabel3.Dpi = 100.0!
+        Me.XrLabel3.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(11.17887!, 37.08334!)
+        Me.XrLabel3.Name = "XrLabel3"
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(93.26382!, 15.16667!)
+        Me.XrLabel3.StyleName = "FieldCaption"
+        Me.XrLabel3.StylePriority.UseBackColor = False
+        Me.XrLabel3.StylePriority.UseForeColor = False
+        Me.XrLabel3.Text = "Fecha Vence"
+        '
+        'XrLabel2
+        '
+        Me.XrLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.XrLabel2.Dpi = 100.0!
+        Me.XrLabel2.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(266.9462!, 10.00001!)
+        Me.XrLabel2.Name = "XrLabel2"
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(53.80551!, 15.16667!)
+        Me.XrLabel2.StyleName = "FieldCaption"
+        Me.XrLabel2.StylePriority.UseBackColor = False
+        Me.XrLabel2.StylePriority.UseForeColor = False
+        Me.XrLabel2.Text = "Fecha"
+        '
         'XrLabel12
         '
         Me.XrLabel12.BackColor = System.Drawing.Color.Transparent
@@ -350,6 +310,61 @@ Partial Public Class RepFac
         Me.XrLabel12.StylePriority.UseBackColor = False
         Me.XrLabel12.StylePriority.UseForeColor = False
         Me.XrLabel12.Text = "Nombre Cliente"
+        '
+        'XrLabel10
+        '
+        Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.EstadoFactura")})
+        Me.XrLabel10.Dpi = 100.0!
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(392.3097!, 37.08334!)
+        Me.XrLabel10.Name = "XrLabel10"
+        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel10.SizeF = New System.Drawing.SizeF(123.4165!, 15.16667!)
+        Me.XrLabel10.StyleName = "DataField"
+        Me.XrLabel10.Text = "XrLabel10"
+        '
+        'XrLabel9
+        '
+        Me.XrLabel9.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.TipoPago")})
+        Me.XrLabel9.Dpi = 100.0!
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(560.9133!, 10.00001!)
+        Me.XrLabel9.Name = "XrLabel9"
+        Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel9.SizeF = New System.Drawing.SizeF(101.5571!, 15.16667!)
+        Me.XrLabel9.StyleName = "DataField"
+        Me.XrLabel9.Text = "XrLabel9"
+        '
+        'XrLabel8
+        '
+        Me.XrLabel8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.FechaVence")})
+        Me.XrLabel8.Dpi = 100.0!
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(104.4427!, 37.08334!)
+        Me.XrLabel8.Name = "XrLabel8"
+        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel8.SizeF = New System.Drawing.SizeF(149.6389!, 15.16667!)
+        Me.XrLabel8.StyleName = "DataField"
+        Me.XrLabel8.Text = "XrLabel8"
+        '
+        'XrLabel7
+        '
+        Me.XrLabel7.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.Fecha")})
+        Me.XrLabel7.Dpi = 100.0!
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(321.4524!, 10.00001!)
+        Me.XrLabel7.Name = "XrLabel7"
+        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel7.SizeF = New System.Drawing.SizeF(158.0025!, 15.16667!)
+        Me.XrLabel7.StyleName = "DataField"
+        Me.XrLabel7.Text = "XrLabel7"
+        '
+        'XrLabel6
+        '
+        Me.XrLabel6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Factura.IdFactura")})
+        Me.XrLabel6.Dpi = 100.0!
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(125.5208!, 10.00001!)
+        Me.XrLabel6.Name = "XrLabel6"
+        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel6.SizeF = New System.Drawing.SizeF(141.4254!, 15.16667!)
+        Me.XrLabel6.StyleName = "DataField"
+        Me.XrLabel6.Text = "XrLabel6"
         '
         'XrLabel15
         '
@@ -522,7 +537,7 @@ Partial Public Class RepFac
         Me.XrPanel1.BorderWidth = 1.0!
         Me.XrPanel1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel15, Me.XrLabel16, Me.XrLabel17, Me.XrLabel18, Me.XrLabel19})
         Me.XrPanel1.Dpi = 100.0!
-        Me.XrPanel1.LocationFloat = New DevExpress.Utils.PointFloat(3.083324!, 0!)
+        Me.XrPanel1.LocationFloat = New DevExpress.Utils.PointFloat(3.083324!, 0.0!)
         Me.XrPanel1.Name = "XrPanel1"
         Me.XrPanel1.SizeF = New System.Drawing.SizeF(647.9166!, 40.625!)
         Me.XrPanel1.StylePriority.UseBackColor = False
@@ -611,7 +626,7 @@ Partial Public Class RepFac
         '
         Me.XrPictureBox1.Dpi = 100.0!
         Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 0!)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 0.0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
         Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
@@ -620,7 +635,7 @@ Partial Public Class RepFac
         '
         Me.XrLabel40.Dpi = 100.0!
         Me.XrLabel40.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel40.LocationFloat = New DevExpress.Utils.PointFloat(204.3464!, 0!)
+        Me.XrLabel40.LocationFloat = New DevExpress.Utils.PointFloat(204.3464!, 0.0!)
         Me.XrLabel40.Name = "XrLabel40"
         Me.XrLabel40.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel40.SizeF = New System.Drawing.SizeF(340.7141!, 31.33334!)
@@ -668,7 +683,7 @@ Partial Public Class RepFac
         '
         'ReportFooter
         '
-        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel39, Me.XrLabel37, Me.XrLabel38, Me.XrLabel34, Me.XrLabel35, Me.XrLabel36, Me.XrLabel26, Me.XrLabel27, Me.XrLabel28, Me.XrLabel25, Me.XrLabel32, Me.XrLabel31, Me.XrLabel30, Me.XrLabel29})
+        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel33, Me.XrLabel44, Me.XrLabel45, Me.XrLabel39, Me.XrLabel37, Me.XrLabel38, Me.XrLabel34, Me.XrLabel35, Me.XrLabel36, Me.XrLabel26, Me.XrLabel27, Me.XrLabel28, Me.XrLabel25, Me.XrLabel32, Me.XrLabel31, Me.XrLabel30, Me.XrLabel29})
         Me.ReportFooter.Dpi = 100.0!
         Me.ReportFooter.HeightF = 98.95834!
         Me.ReportFooter.Name = "ReportFooter"
@@ -752,17 +767,32 @@ Partial Public Class RepFac
         Me.CalculatedField3.Expression = "[CalculatedField1]+[CalculatedField2]"
         Me.CalculatedField3.Name = "CalculatedField3"
         '
-        'XrPanel2
+        'XrLabel33
         '
-        Me.XrPanel2.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrPanel2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1, Me.XrLabel14, Me.XrLabel11, Me.XrLabel13, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel12, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6})
-        Me.XrPanel2.Dpi = 100.0!
-        Me.XrPanel2.LocationFloat = New DevExpress.Utils.PointFloat(3.083324!, 0!)
-        Me.XrPanel2.Name = "XrPanel2"
-        Me.XrPanel2.SizeF = New System.Drawing.SizeF(647.9166!, 99.99998!)
-        Me.XrPanel2.StylePriority.UseBorders = False
+        Me.XrLabel33.Dpi = 100.0!
+        Me.XrLabel33.LocationFloat = New DevExpress.Utils.PointFloat(441.0428!, 3.500016!)
+        Me.XrLabel33.Name = "XrLabel33"
+        Me.XrLabel33.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel33.SizeF = New System.Drawing.SizeF(60.41672!, 23.0!)
+        Me.XrLabel33.Text = "Subtotal"
+        '
+        'XrLabel44
+        '
+        Me.XrLabel44.Dpi = 100.0!
+        Me.XrLabel44.LocationFloat = New DevExpress.Utils.PointFloat(441.0428!, 39.0!)
+        Me.XrLabel44.Name = "XrLabel44"
+        Me.XrLabel44.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel44.SizeF = New System.Drawing.SizeF(35.41672!, 23.0!)
+        Me.XrLabel44.Text = "I.S.V"
+        '
+        'XrLabel45
+        '
+        Me.XrLabel45.Dpi = 100.0!
+        Me.XrLabel45.LocationFloat = New DevExpress.Utils.PointFloat(417.0846!, 73.49997!)
+        Me.XrLabel45.Name = "XrLabel45"
+        Me.XrLabel45.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel45.SizeF = New System.Drawing.SizeF(84.37503!, 23.0!)
+        Me.XrLabel45.Text = "Total a pagar"
         '
         'RepFac
         '
@@ -844,4 +874,7 @@ Partial Public Class RepFac
     Friend WithEvents XrLabel42 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel43 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrPanel2 As DevExpress.XtraReports.UI.XRPanel
+    Friend WithEvents XrLabel33 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel44 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel45 As DevExpress.XtraReports.UI.XRLabel
 End Class

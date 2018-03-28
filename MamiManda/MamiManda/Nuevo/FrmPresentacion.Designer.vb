@@ -183,6 +183,7 @@ Partial Class FrmPresentacion
         Me.NavBarControl1.ActiveGroup = Me.NavBarGroup1
         Me.NavBarControl1.Appearance.Background.BackColor = System.Drawing.Color.Transparent
         Me.NavBarControl1.Appearance.Background.Options.UseBackColor = True
+        Me.NavBarControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.NavBarControl1.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup1})
         Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3})
         Me.NavBarControl1.Location = New System.Drawing.Point(0, 0)
@@ -233,6 +234,11 @@ Partial Class FrmPresentacion
         '
         'GridView1
         '
+        Me.GridView1.Appearance.HeaderPanel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridView1.Appearance.HeaderPanel.Options.UseFont = True
+        Me.GridView1.Appearance.Row.BackColor = System.Drawing.Color.White
+        Me.GridView1.Appearance.Row.BackColor2 = System.Drawing.Color.White
+        Me.GridView1.Appearance.Row.Options.UseBackColor = True
         Me.GridView1.GridControl = Me.GcPresentacion
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False

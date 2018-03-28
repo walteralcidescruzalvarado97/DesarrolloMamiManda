@@ -51,8 +51,7 @@ Public Class FrmBuscarEmpleado
     'End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        FrmEmpleado.Show()
-        Close()
+        FrmEmpleado.ShowDialog()
     End Sub
 
     Private Sub GcEmpleado_DoubleClick(sender As Object, e As EventArgs) Handles GcEmpleado.DoubleClick
@@ -61,5 +60,9 @@ Public Class FrmBuscarEmpleado
             FrmUsuario.txtEmpleado.Text = GridView1.GetRowCellValue(fila, "IdEmpleado")
         End If
         Me.Close()
+    End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Call LlenarGridEmpleado()
     End Sub
 End Class

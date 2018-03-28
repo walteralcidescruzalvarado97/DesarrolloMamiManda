@@ -37,8 +37,7 @@ Public Class FrmBuscarMateriaPrima
         End Try
     End Sub
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        FrmMateriaPrima.Show()
-        Close()
+        FrmMateriaPrima.ShowDialog()
     End Sub
 
     Private Sub GcMateriaPrima_DoubleClick(sender As Object, e As EventArgs) Handles GcMateriaPrima.DoubleClick
@@ -73,4 +72,7 @@ Public Class FrmBuscarMateriaPrima
     '    Close()
     'End Sub
 
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Call LlenarGridMateriaPrima()
+    End Sub
 End Class

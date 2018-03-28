@@ -185,19 +185,21 @@ Public Class ConfiguracionCai
         Return Val
     End Function
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If ExisteRegistro() = False Then
-            If Validar() = True Then
-                If ModoEdicion Then
-                    Call ActualizarCai()
-                Else
+
+        If Validar() = True Then
+            If ModoEdicion Then
+                Call ActualizarCai()
+            Else
+                If ExisteRegistro() = False Then
                     Call InsertarCai()
                 End If
-                Limpiar()
-                HabilitarControles(False)
-                HabilitarBotones(False, False)
-                FrmConfigSar.ActualizarTablas(True)
             End If
+            Limpiar()
+            HabilitarControles(False)
+            HabilitarBotones(False, False)
+            FrmConfigSar.ActualizarTablas(True)
         End If
+
         Me.Close()
     End Sub
 

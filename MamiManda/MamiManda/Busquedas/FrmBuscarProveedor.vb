@@ -40,8 +40,7 @@ Public Class FrmBuscarProveedor
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        FrmProveedor.Show()
-        Close()
+        FrmProveedor.ShowDialog()
     End Sub
 
     Private Sub GcProveedor_DoubleClick(sender As Object, e As EventArgs) Handles GcProveedor.DoubleClick
@@ -65,4 +64,7 @@ Public Class FrmBuscarProveedor
     'End Sub
 
 
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Call LlenarGridProveedor()
+    End Sub
 End Class

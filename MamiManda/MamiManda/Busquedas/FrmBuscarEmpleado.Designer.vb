@@ -28,6 +28,7 @@ Partial Class FrmBuscarEmpleado
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.GcEmpleado = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.BtnActualizar = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GcEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -82,6 +83,15 @@ Partial Class FrmBuscarEmpleado
         Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
+        Me.BtnActualizar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.BtnActualizar.Location = New System.Drawing.Point(743, 59)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(47, 33)
+        Me.BtnActualizar.TabIndex = 105
+        '
         'FrmBuscarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -89,6 +99,7 @@ Partial Class FrmBuscarEmpleado
         Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(838, 409)
+        Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.GcEmpleado)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Label1)
@@ -113,4 +124,5 @@ Partial Class FrmBuscarEmpleado
     Friend WithEvents HelpProvider1 As HelpProvider
     Friend WithEvents GcEmpleado As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents BtnActualizar As DevExpress.XtraEditors.SimpleButton
 End Class

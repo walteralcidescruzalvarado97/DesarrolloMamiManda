@@ -2,13 +2,12 @@
 Imports MamiManda
 Imports DevExpress.XtraReports.UI
 Public Class Venta
-    Implements ICliente
-    Implements IPresentacion
-
-    Dim Existencia As Integer
+    Friend Property Existencia As Integer = 0
+    Friend Property NombreProducto As String = ""
+    Friend Property CodPresentacion As Integer = 0
     Dim registro As Integer = 0
 
-    Private Property _Dias As Integer = 0
+    Friend Property _Dias As Integer = 0
 
     Private Property Cai As String = ""
     Private Property FechaInicio As Date
@@ -29,10 +28,10 @@ Public Class Venta
         HelpProvider1.SetHelpNavigator(Me, HelpNavigator.KeywordIndex)
         HelpProvider1.SetHelpKeyword(Me, "Ventas")
         btnNuevo.Focus()
-
-        If ModoConsulta = True Then
-            Call CargarDetalleFacturaGuardada()
+        RdbNo.Checked = True
+        If ModoConsulta Then
             Call CargarFacturaGuardada()
+            Call CargarDetalleFacturaGuardada()
             Call BloquearControles()
         End If
     End Sub
@@ -57,6 +56,9 @@ Public Class Venta
         NuDiasPlazo.Enabled = valor
         TxtFechaVence.Enabled = valor
         TxtNombreCliente.Enabled = valor
+        RdbSi.Enabled = valor
+        RdbNo.Enabled = valor
+        TxtDes.Enabled = valor
     End Sub
 
 
@@ -81,6 +83,8 @@ Public Class Venta
         TxtFechaVence.Text = Nothing
         NuDiasPlazo.Value = Nothing
         TxtNombreCliente.Text = Nothing
+        TxtDes.Text = Nothing
+        TxtDescuento.Text = Nothing
     End Sub
 
     Private Sub LimpiarArticulos()
@@ -139,24 +143,26 @@ Public Class Venta
     End Sub
 
     Private Sub btnBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnBuscarCliente.Click
+        _Dias = 0
         Dim BuscarCliente As New FrmBuscarCliente
+        BuscarCliente.DesdeFactura = True
         BuscarCliente.Show(Me)
         btnBuscarProducto.Focus()
         BuscarCliente.Focus()
     End Sub
 
-    Public Sub ObtenerCodCliente(Codigo As String) Implements ICliente.ObtenerCodCliente
-        txtCliente.Text = Codigo
-    End Sub
+    'Public Sub ObtenerCodCliente(Codigo As String) Implements ICliente.ObtenerCodCliente
+    '    txtCliente.Text = Codigo
+    'End Sub
 
-    Public Sub ObtenerNombreCliente(Nombre As String) Implements ICliente.ObtenerNombreCliente
-        TxtNombreCliente.Text = Nombre
-    End Sub
+    'Public Sub ObtenerNombreCliente(Nombre As String) Implements ICliente.ObtenerNombreCliente
+    '    TxtNombreCliente.Text = Nombre
+    'End Sub
 
-    Public Sub ObtenerDiasPlazoCLiente(DiasPlazo As Integer) Implements ICliente.ObtenerDiasPlazoCliente
-        NuDiasPlazo.Value = DiasPlazo
-        _Dias = DiasPlazo
-    End Sub
+    'Public Sub ObtenerDiasPlazoCLiente(DiasPlazo As Integer) Implements ICliente.ObtenerDiasPlazoCliente
+    '    NuDiasPlazo.Value = DiasPlazo
+    '    _Dias = DiasPlazo
+    'End Sub
 #End Region
 
 #Region "Llenar"
@@ -240,14 +246,32 @@ Public Class Venta
                         Dim Correlativo As String = IdUltimaFactura2(3) + 1
                         Dim NumFactura As String = ""
                         Dim caracter As String = ""
+                        Dim Ultimo As String = CorrelativoHasta
+                        Dim Ultimo2 As String() = Ultimo.Split("-")
 
                         For num As Integer = 1 To (8 - Correlativo.Length)
                             caracter = caracter & 0
                         Next
-
-                        NumFactura = "001-001-01-" & caracter & Correlativo
-
-                        txtCodFactura.Text = NumFactura
+                        If Now.Date <> FechaFinal Then
+                            If (Integer.Parse(Ultimo2(3)) - Correlativo) <= 10 Then
+                                MessageBox.Show("Solo quedan" & " " & Integer.Parse(Ultimo2(3)) - Correlativo & " " & "correlativos disponibles, Por favor revise su configuración SAR", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            ElseIf Correlativo > Integer.Parse(Ultimo2(3)) Then
+                                MessageBox.Show("Ya no hay Correlativos disponibles, Por favor registre una nueva configuración del SAR", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                HabilitarBotones(True, False, False, False)
+                                Limpiar()
+                                LimpiarArticulos()
+                                Return
+                            End If
+                            'NumFactura = "001-001-01-" & caracter & Correlativo
+                            NumFactura = IdUltimaFactura2(0).ToString & "-" & IdUltimaFactura2(1).ToString & "-" & IdUltimaFactura2(2).ToString & "-" & caracter & Correlativo
+                            txtCodFactura.Text = NumFactura
+                        Else
+                            MessageBox.Show("Ha llegado a su fecha límite de Emisión, Por favor relalice una nueva configuracón SAR", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            HabilitarBotones(True, False, False, False)
+                            Limpiar()
+                            LimpiarArticulos()
+                            Return
+                        End If
                     End If
                 End If
             End Using
@@ -288,6 +312,7 @@ Public Class Venta
 
                     TxtFechaVence.Text = FechaVence1(0).ToString
                     CboTipoPago.SelectedValue = CInt(lector("IdTipoPago").ToString)
+                    TxtDescuento.Text = CDbl(lector("Descuento").ToString)
                 End While
 
             End Using
@@ -321,9 +346,9 @@ Public Class Venta
                     With Me.lsvMostrar.Items.Add(lector("IdInventario").ToString)
                         .SubItems.Add(lector("NombreProducto").ToString)
                         .SubItems.Add(lector("TipoPresentacion").ToString)
-                        .SubItems.Add(lector("Precio").ToString)
+                        .SubItems.Add(FormatCurrency(lector("Precio").ToString))
                         .SubItems.Add(lector("Cantidad").ToString)
-                        .SubItems.Add(lector("Total").ToString)
+                        .SubItems.Add(FormatCurrency(lector("Total").ToString))
                     End With
                 End While
             End Using
@@ -375,12 +400,12 @@ Public Class Venta
         Try
             Using cmd As New SqlCommand
                 With cmd
-                    .CommandText = "Sp_RestarProducto"
+                    .CommandText = "Sp_RestarProductoPresentacion"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
-                    .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodProducto.Text.Trim
                     .Parameters.Add("@Cantidad", SqlDbType.Int).Value = txtCantidad.Text.Trim
-                    .Parameters.Add("@CantidadPresentacion", SqlDbType.Int).Value = txtUnidad.Text.Trim
+                    .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = txtCodProducto.Text.Trim
+                    .Parameters.Add("@IdTipoPresentacion", SqlDbType.Int).Value = CodPresentacion
                     .ExecuteNonQuery()
                 End With
             End Using
@@ -401,16 +426,40 @@ Public Class Venta
             For i As Integer = 0 To lsvMostrar.Items.Count - 1
                 Using cmd As New SqlCommand
                     With cmd
-                        .CommandText = "Sp_SumarProducto"
+                        .CommandText = "Sp_SumarProductoPresentacion"
                         .CommandType = CommandType.StoredProcedure
                         .Connection = cnn
-                        .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = lsvMostrar.Items(i).SubItems(0).Text
                         .Parameters.Add("@Cantidad", SqlDbType.Int).Value = lsvMostrar.Items(i).SubItems(4).Text
-                        .Parameters.Add("@CantidadPresentacion", SqlDbType.Int).Value = lsvMostrar.Items(i).SubItems(7).Text
+                        .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = lsvMostrar.Items(i).SubItems(0).Text
+                        .Parameters.Add("@IdTipoPresentacion", SqlDbType.Int).Value = lsvMostrar.Items(i).SubItems(6).Text
                         .ExecuteNonQuery()
                     End With
                 End Using
             Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            cnn.Close()
+        End Try
+    End Sub
+
+    Private Sub QuitarProducto()
+        If cnn.State = ConnectionState.Open Then
+            cnn.Close()
+        End If
+        cnn.Open()
+        Try
+            Using cmd As New SqlCommand
+                With cmd
+                    .CommandText = "Sp_SumarProductoPresentacion"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = cnn
+                    .Parameters.Add("@Cantidad", SqlDbType.Int).Value = lsvMostrar.FocusedItem.SubItems(4).Text
+                    .Parameters.Add("@IdInventario", SqlDbType.VarChar).Value = lsvMostrar.FocusedItem.SubItems(0).Text
+                    .Parameters.Add("@IdTipoPresentacion", SqlDbType.Int).Value = lsvMostrar.FocusedItem.SubItems(6).Text
+                    .ExecuteNonQuery()
+                End With
+            End Using
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -462,7 +511,7 @@ Public Class Venta
                     .Parameters.Add("@RTNCliente", SqlDbType.NVarChar).Value = txtCliente.Text
                     If CboTipoPago.SelectedIndex = 1 Then
                         .Parameters.Add("DiasPlazo", SqlDbType.Int).Value = 0
-                        .Parameters.Add("FechaVence", SqlDbType.Date).Value = DBNull.Value
+                        .Parameters.Add("FechaVence", SqlDbType.Date).Value = Now.Date.AddDays(1)
                         .Parameters.Add("EstadoFactura", SqlDbType.Int).Value = 2
                     Else
                         .Parameters.Add("DiasPlazo", SqlDbType.Int).Value = NuDiasPlazo.Value
@@ -470,8 +519,9 @@ Public Class Venta
                         .Parameters.Add("EstadoFactura", SqlDbType.Int).Value = 1
                     End If
                     .Parameters.Add("TipoPago", SqlDbType.Int).Value = CboTipoPago.SelectedValue
-                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = FrmPrincipal.LblId.Text
+                    .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = UsuarioActivo.IdUsuario
                     .Parameters.Add("@Cai", SqlDbType.NVarChar).Value = Cai
+                    .Parameters.Add("@Descuento", SqlDbType.Money).Value = TxtDescuento.Text
                     .ExecuteNonQuery()
                 End With
             End Using
@@ -485,55 +535,55 @@ Public Class Venta
 
     Private Sub btnBuscarProducto_Click(sender As Object, e As EventArgs) Handles btnBuscarProducto.Click
         Dim BuscarProducto As New FrmBuscarPresentacion
+        BuscarProducto.DesdeFactura = True
         BuscarProducto.Show(Me)
         txtCantidad.Focus()
         BuscarProducto.Focus()
     End Sub
 
-    Public Sub ObtenerCodProducto(Codigo As String) Implements IPresentacion.ObtenerCodProducto
-        txtCodProducto.Text = Codigo
-    End Sub
+    'Public Sub ObtenerCodProducto(Codigo As String) Implements IPresentacion.ObtenerCodProducto
+    '    txtCodProducto.Text = Codigo
+    'End Sub
 
-    Public Sub ObtenerPresentacion(Presentacion As String) Implements IPresentacion.ObtenerPresentacion
-        txtPresentacion.Text = Presentacion
-    End Sub
+    'Public Sub ObtenerPresentacion(Presentacion As String) Implements IPresentacion.ObtenerPresentacion
+    '    txtPresentacion.Text = Presentacion
+    'End Sub
 
-    Public Sub ObtenerCodPresentacion(CodPresentacion As String) Implements IPresentacion.ObtenerCodPresentacion
-        lblCodPresentacion.Text = CodPresentacion
-    End Sub
+    'Public Sub ObtenerCodPresentacion(CodPresentacion As String) Implements IPresentacion.ObtenerCodPresentacion
+    '    lblCodPresentacion.Text = CodPresentacion
+    'End Sub
 
-    Public Sub ObtenerPrecio(Precio As String) Implements IPresentacion.ObtenerPrecio
-        txtPrecio.Text = Precio
-    End Sub
+    'Public Sub ObtenerPrecio(Precio As String) Implements IPresentacion.ObtenerPrecio
+    '    txtPrecio.Text = Precio
+    'End Sub
 
-    Public Sub ObtenerUnidades(Unidades As String) Implements IPresentacion.ObtenerUnidades
-        txtUnidad.Text = Unidades
-    End Sub
+    'Public Sub ObtenerUnidades(Unidades As String) Implements IPresentacion.ObtenerUnidades
+    '    txtUnidad.Text = Unidades
+    'End Sub
 
-    Public Sub ObtenerNombre(Nombre As String) Implements IPresentacion.ObtenerNombreProducto
-        lblNombreProducto.Text = Nombre
-    End Sub
+    'Public Sub ObtenerNombre(Nombre As String) Implements IPresentacion.ObtenerNombreProducto
+    '    lblNombreProducto.Text = Nombre
+    'End Sub
 
-    Public Sub ObtenerExistencia(Valor As String) Implements IPresentacion.ObtenerExistencia
-        Existencia = Valor
-    End Sub
+    'Public Sub ObtenerExistencia(Valor As String) Implements IPresentacion.ObtenerExistencia
+    '    Existencia = Valor
+    'End Sub
 
     Private Sub Calculos()
         Dim Subtotal As Decimal = 0
         Dim Isv As Decimal
+        'Dim Descuento As Decimal = CDec(TxtDescuento.Text)
         Dim Total As Decimal
-
         For i As Integer = 0 To lsvMostrar.Items.Count - 1
             Subtotal = Subtotal + lsvMostrar.Items(i).SubItems(5).Text
         Next
 
         Isv = Subtotal * 0.15
-        Total = Subtotal + Isv
-
+        Total = Subtotal + Isv - TxtDescuento.Text
         txtSubTotal.Text = FormatCurrency(Subtotal, 2)
         txtIsv.Text = FormatCurrency(Isv, 2)
+        TxtDescuento.Text = FormatCurrency(TxtDescuento.Text, 2)
         txtTotal.Text = FormatCurrency(Total, 2)
-
 
     End Sub
 
@@ -544,9 +594,12 @@ Public Class Venta
         ElseIf Validar(txtPrecio, "Debe ingresar el precio") Then
         ElseIf Validar(txtCantidad, "Debe ingresar la cantidad de productos a comprar") Then
         Else
+            If RdbSi.Checked And TxtDes.Text = 0 Then
+                MessageBox.Show("El descuento debe ser mayora 0", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
 
-
-            If (txtCantidad.Text * txtUnidad.Text) > Existencia Then
+            If txtCantidad.Text > Existencia Then
                 MessageBox.Show("No hay suficientes productos", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
 
@@ -560,22 +613,24 @@ Public Class Venta
 
                         total = txtCantidad.Text * txtPrecio.Text
                         With Me.lsvMostrar.Items.Add(txtCodProducto.Text)
-                            .SubItems.Add(lblNombreProducto.Text)
+                            .SubItems.Add(NombreProducto)
                             .SubItems.Add(txtPresentacion.Text)
                             .SubItems.Add(FormatCurrency(txtPrecio.Text))
                             .SubItems.Add(txtCantidad.Text)
                             .SubItems.Add(FormatCurrency(total.ToString))
-                            .SubItems.Add(lblCodPresentacion.Text)
+                            .SubItems.Add(CodPresentacion)
                             .SubItems.Add(txtUnidad.Text)
+                            TxtDescuento.Text = TxtDes.Text
                         End With
 
                     Else
 
                         For i As Integer = 0 To lsvMostrar.Items.Count - 1
-                            If lsvMostrar.Items(i).SubItems(0).Text = txtCodProducto.Text And lsvMostrar.Items(i).SubItems(6).Text = lblCodPresentacion.Text Then
+                            If lsvMostrar.Items(i).SubItems(0).Text = txtCodProducto.Text And lsvMostrar.Items(i).SubItems(6).Text = CodPresentacion Then
                                 cantidad = lsvMostrar.Items(i).SubItems(4).Text
                                 lsvMostrar.Items(i).SubItems(4).Text = cantidad + txtCantidad.Text
                                 lsvMostrar.Items(i).SubItems(5).Text = lsvMostrar.Items(i).SubItems(4).Text * lsvMostrar.Items(i).SubItems(3).Text
+                                TxtDescuento.Text = TxtDes.Text
                                 existe = 1
                             End If
                         Next
@@ -583,13 +638,14 @@ Public Class Venta
                         If existe = 0 Then
                             total = total + txtCantidad.Text * txtPrecio.Text
                             With Me.lsvMostrar.Items.Add(txtCodProducto.Text)
-                                .SubItems.Add(lblNombreProducto.Text)
+                                .SubItems.Add(NombreProducto)
                                 .SubItems.Add(txtPresentacion.Text)
                                 .SubItems.Add(FormatCurrency(txtPrecio.Text))
                                 .SubItems.Add(txtCantidad.Text)
                                 .SubItems.Add(FormatCurrency(total.ToString))
-                                .SubItems.Add(lblCodPresentacion.Text)
+                                .SubItems.Add(CodPresentacion)
                                 .SubItems.Add(txtUnidad.Text)
+                                TxtDescuento.Text = TxtDes.Text
                             End With
                             existe = 0
                         End If
@@ -710,18 +766,34 @@ Public Class Venta
     End Sub
 
     Private Sub QuitarItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitarItemToolStripMenuItem.Click
+        QuitarProducto()
         Me.lsvMostrar.FocusedItem.Remove()
         Calculos()
     End Sub
 
     Sub ImprimirFactura()
+        Dim texto As New ConvertirCantidadesLetras
+        Dim Text As String = texto.Letras(txtTotal.Text)
         Dim id As String = txtCodFactura.Text
         Dim total As Double = txtTotal.Text
-        Dim rpt As New RepFac(id)
+        Dim rpt As New RptFactura(id, Text)
         Dim printTool As New ReportPrintTool(rpt)
         printTool.ShowRibbonPreview()
     End Sub
     Private Sub BtnImprimir_Click(sender As Object, e As EventArgs) Handles BtnImprimir.Click
         ImprimirFactura()
+    End Sub
+
+    Private Sub RdbSi_CheckedChanged(sender As Object, e As EventArgs) Handles RdbSi.CheckedChanged
+        LblDes.Visible = True
+        TxtDes.Visible = True
+        TxtDes.Enabled = True
+        TxtDes.Focus()
+    End Sub
+
+    Private Sub RdbNo_CheckedChanged(sender As Object, e As EventArgs) Handles RdbNo.CheckedChanged
+        LblDes.Visible = False
+        TxtDes.Visible = False
+        TxtDes.Text = 0
     End Sub
 End Class
