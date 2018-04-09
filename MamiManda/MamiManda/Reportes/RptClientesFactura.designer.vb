@@ -19,17 +19,21 @@ Partial Public Class RptClientesFactura
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
-        Dim XrSummary2 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RptClientesFactura))
+        Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
+        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
@@ -38,6 +42,15 @@ Partial Public Class RptClientesFactura
         Me.ClienteTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ClienteTableAdapter()
         Me.Sp_ClienteFacturaTableAdapter1 = New MamiManda.dsBakerySystemTableAdapters.Sp_ClienteFacturaTableAdapter()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLine2 = New DevExpress.XtraReports.UI.XRLine()
+        Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
@@ -50,37 +63,30 @@ Partial Public Class RptClientesFactura
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
-        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
-        Me.XrLine2 = New DevExpress.XtraReports.UI.XRLine()
-        Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
-        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLine1, Me.XrLabel11, Me.XrLabel10, Me.XrLabel7, Me.XrLabel6, Me.XrLabel4, Me.XrLabel1})
+        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel10, Me.XrLine1, Me.XrLabel11, Me.XrLabel7, Me.XrLabel6, Me.XrLabel4, Me.XrLabel1})
         Me.Detail.Dpi = 100.0!
         Me.Detail.HeightF = 50.16667!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrLine1
+        '
+        Me.XrLine1.Dpi = 100.0!
+        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 22.99999!)
+        Me.XrLine1.Name = "XrLine1"
+        Me.XrLine1.SizeF = New System.Drawing.SizeF(650.0!, 23.0!)
         '
         'XrLabel11
         '
@@ -93,19 +99,6 @@ Partial Public Class RptClientesFactura
         Me.XrLabel11.SizeF = New System.Drawing.SizeF(93.74991!, 23.0!)
         Me.XrLabel11.StylePriority.UseFont = False
         Me.XrLabel11.Text = "XrLabel11"
-        '
-        'XrLabel10
-        '
-        Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteFactura.total", "{0:c}")})
-        Me.XrLabel10.Dpi = 100.0!
-        Me.XrLabel10.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(576.0416!, 0!)
-        Me.XrLabel10.Name = "XrLabel10"
-        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel10.SizeF = New System.Drawing.SizeF(73.95837!, 23.0!)
-        Me.XrLabel10.StylePriority.UseFont = False
-        XrSummary1.FormatString = "{0:c}"
-        Me.XrLabel10.Summary = XrSummary1
         '
         'XrLabel7
         '
@@ -163,6 +156,59 @@ Partial Public Class RptClientesFactura
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.Dpi = 100.0!
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 15.95827!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        '
+        'XrLabel24
+        '
+        Me.XrLabel24.Dpi = 100.0!
+        Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(204.3464!, 15.95827!)
+        Me.XrLabel24.Name = "XrLabel24"
+        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel24.SizeF = New System.Drawing.SizeF(340.7141!, 31.33334!)
+        Me.XrLabel24.StylePriority.UseFont = False
+        Me.XrLabel24.Text = "PANADERÍA MAMIMANDA"
+        '
+        'XrLabel25
+        '
+        Me.XrLabel25.Dpi = 100.0!
+        Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(252.0011!, 47.2916!)
+        Me.XrLabel25.Name = "XrLabel25"
+        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel25.SizeF = New System.Drawing.SizeF(258.6844!, 23.0!)
+        Me.XrLabel25.StylePriority.UseFont = False
+        Me.XrLabel25.Text = "Prop. Pedro Leonardo Martín Ponce"
+        '
+        'XrLabel26
+        '
+        Me.XrLabel26.Dpi = 100.0!
+        Me.XrLabel26.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(192.5956!, 72.95827!)
+        Me.XrLabel26.Name = "XrLabel26"
+        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(368.8807!, 23.0!)
+        Me.XrLabel26.StylePriority.UseFont = False
+        Me.XrLabel26.Text = "B° Iztoca, Dos Cuadras de Agua Pinguino, Choluteca"
+        '
+        'XrLabel27
+        '
+        Me.XrLabel27.Dpi = 100.0!
+        Me.XrLabel27.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(168.6961!, 95.95827!)
+        Me.XrLabel27.Name = "XrLabel27"
+        Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
+        Me.XrLabel27.StylePriority.UseFont = False
+        Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
         '
         'XrLabel5
         '
@@ -222,6 +268,84 @@ Partial Public Class RptClientesFactura
         Me.ReportHeader.HeightF = 125.4167!
         Me.ReportHeader.Name = "ReportHeader"
         '
+        'XrLine2
+        '
+        Me.XrLine2.Dpi = 100.0!
+        Me.XrLine2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 102.4167!)
+        Me.XrLine2.Name = "XrLine2"
+        Me.XrLine2.SizeF = New System.Drawing.SizeF(650.0!, 23.0!)
+        '
+        'XrLabel14
+        '
+        Me.XrLabel14.Dpi = 100.0!
+        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(192.5956!, 0!)
+        Me.XrLabel14.Name = "XrLabel14"
+        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel14.SizeF = New System.Drawing.SizeF(318.0899!, 39.0!)
+        Me.XrLabel14.StylePriority.UseFont = False
+        Me.XrLabel14.Text = "Reporte Facturas por Cliente"
+        '
+        'XrTable2
+        '
+        Me.XrTable2.Dpi = 100.0!
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0.00001589457!, 53.45834!)
+        Me.XrTable2.Name = "XrTable2"
+        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(650.0!, 25.0!)
+        '
+        'XrTableRow2
+        '
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell8, Me.XrTableCell9, Me.XrTableCell10, Me.XrTableCell11})
+        Me.XrTableRow2.Dpi = 100.0!
+        Me.XrTableRow2.Name = "XrTableRow2"
+        Me.XrTableRow2.Weight = 1.0R
+        '
+        'XrTableCell7
+        '
+        Me.XrTableCell7.Dpi = 100.0!
+        Me.XrTableCell7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell7.Name = "XrTableCell7"
+        Me.XrTableCell7.StylePriority.UseFont = False
+        Me.XrTableCell7.Text = "Código del Cliente"
+        Me.XrTableCell7.Weight = 0.62019239512003543R
+        '
+        'XrTableCell8
+        '
+        Me.XrTableCell8.Dpi = 100.0!
+        Me.XrTableCell8.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell8.Name = "XrTableCell8"
+        Me.XrTableCell8.StylePriority.UseFont = False
+        Me.XrTableCell8.Text = "Nombre del Cliente"
+        Me.XrTableCell8.Weight = 0.77970810426558934R
+        '
+        'XrTableCell9
+        '
+        Me.XrTableCell9.Dpi = 100.0!
+        Me.XrTableCell9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell9.Name = "XrTableCell9"
+        Me.XrTableCell9.StylePriority.UseFont = False
+        Me.XrTableCell9.Text = "Telefono"
+        Me.XrTableCell9.Weight = 0.39336957194830213R
+        '
+        'XrTableCell10
+        '
+        Me.XrTableCell10.Dpi = 100.0!
+        Me.XrTableCell10.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell10.Name = "XrTableCell10"
+        Me.XrTableCell10.StylePriority.UseFont = False
+        Me.XrTableCell10.Text = "Sexo"
+        Me.XrTableCell10.Weight = 0.432691895753736R
+        '
+        'XrTableCell11
+        '
+        Me.XrTableCell11.Dpi = 100.0!
+        Me.XrTableCell11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell11.Name = "XrTableCell11"
+        Me.XrTableCell11.StylePriority.UseFont = False
+        Me.XrTableCell11.Text = "E-Mail"
+        Me.XrTableCell11.Weight = 0.77403817331271374R
+        '
         'XrLabel9
         '
         Me.XrLabel9.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteFactura.Telefono")})
@@ -270,10 +394,10 @@ Partial Public Class RptClientesFactura
         Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel12.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
         Me.XrLabel12.StylePriority.UseFont = False
-        XrSummary2.FormatString = "{0:c}"
-        XrSummary2.IgnoreNullValues = True
-        XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
-        Me.XrLabel12.Summary = XrSummary2
+        XrSummary1.FormatString = "{0:c}"
+        XrSummary1.IgnoreNullValues = True
+        XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
+        Me.XrLabel12.Summary = XrSummary1
         '
         'PageHeader
         '
@@ -333,6 +457,15 @@ Partial Public Class RptClientesFactura
         Me.XrTableCell4.Text = "Vencimiento"
         Me.XrTableCell4.Weight = 0.43269175490336864R
         '
+        'XrTableCell6
+        '
+        Me.XrTableCell6.Dpi = 100.0!
+        Me.XrTableCell6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell6.Name = "XrTableCell6"
+        Me.XrTableCell6.StylePriority.UseFont = False
+        Me.XrTableCell6.Text = "Estado"
+        Me.XrTableCell6.Weight = 0.43269189575373579R
+        '
         'XrTableCell5
         '
         Me.XrTableCell5.Dpi = 100.0!
@@ -348,152 +481,15 @@ Partial Public Class RptClientesFactura
         Me.PageFooter.HeightF = 100.0!
         Me.PageFooter.Name = "PageFooter"
         '
-        'XrPictureBox1
+        'XrLabel10
         '
-        Me.XrPictureBox1.Dpi = 100.0!
-        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(41.30389!, 15.95827!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(111.5!, 107.0833!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
-        '
-        'XrLabel24
-        '
-        Me.XrLabel24.Dpi = 100.0!
-        Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(204.3464!, 15.95827!)
-        Me.XrLabel24.Name = "XrLabel24"
-        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel24.SizeF = New System.Drawing.SizeF(340.7141!, 31.33334!)
-        Me.XrLabel24.StylePriority.UseFont = False
-        Me.XrLabel24.Text = "PANADERÍA MAMIMANDA"
-        '
-        'XrLabel25
-        '
-        Me.XrLabel25.Dpi = 100.0!
-        Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(252.0011!, 47.2916!)
-        Me.XrLabel25.Name = "XrLabel25"
-        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel25.SizeF = New System.Drawing.SizeF(258.6844!, 23.0!)
-        Me.XrLabel25.StylePriority.UseFont = False
-        Me.XrLabel25.Text = "Prop. Pedro Leonardo Martín Ponce"
-        '
-        'XrLabel26
-        '
-        Me.XrLabel26.Dpi = 100.0!
-        Me.XrLabel26.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(192.5956!, 72.95827!)
-        Me.XrLabel26.Name = "XrLabel26"
-        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel26.SizeF = New System.Drawing.SizeF(368.8807!, 23.0!)
-        Me.XrLabel26.StylePriority.UseFont = False
-        Me.XrLabel26.Text = "B° Iztoca, Dos Cuadras de Agua Pinguino, Choluteca"
-        '
-        'XrLabel27
-        '
-        Me.XrLabel27.Dpi = 100.0!
-        Me.XrLabel27.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(168.6961!, 95.95827!)
-        Me.XrLabel27.Name = "XrLabel27"
-        Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel27.SizeF = New System.Drawing.SizeF(440.0!, 23.00001!)
-        Me.XrLabel27.StylePriority.UseFont = False
-        Me.XrLabel27.Text = "Tel: 2782-9818  Cel: 9828-3827  Email: pmartin244@gmail.com"
-        '
-        'XrTableCell11
-        '
-        Me.XrTableCell11.Dpi = 100.0!
-        Me.XrTableCell11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell11.Name = "XrTableCell11"
-        Me.XrTableCell11.StylePriority.UseFont = False
-        Me.XrTableCell11.Text = "E-Mail"
-        Me.XrTableCell11.Weight = 0.77403817331271374R
-        '
-        'XrTableCell10
-        '
-        Me.XrTableCell10.Dpi = 100.0!
-        Me.XrTableCell10.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell10.Name = "XrTableCell10"
-        Me.XrTableCell10.StylePriority.UseFont = False
-        Me.XrTableCell10.Text = "Sexo"
-        Me.XrTableCell10.Weight = 0.432691895753736R
-        '
-        'XrTableCell9
-        '
-        Me.XrTableCell9.Dpi = 100.0!
-        Me.XrTableCell9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell9.Name = "XrTableCell9"
-        Me.XrTableCell9.StylePriority.UseFont = False
-        Me.XrTableCell9.Text = "Telefono"
-        Me.XrTableCell9.Weight = 0.39336957194830213R
-        '
-        'XrTableCell8
-        '
-        Me.XrTableCell8.Dpi = 100.0!
-        Me.XrTableCell8.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell8.Name = "XrTableCell8"
-        Me.XrTableCell8.StylePriority.UseFont = False
-        Me.XrTableCell8.Text = "Nombre del Cliente"
-        Me.XrTableCell8.Weight = 0.77970810426558934R
-        '
-        'XrTableCell7
-        '
-        Me.XrTableCell7.Dpi = 100.0!
-        Me.XrTableCell7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell7.Name = "XrTableCell7"
-        Me.XrTableCell7.StylePriority.UseFont = False
-        Me.XrTableCell7.Text = "Código del Cliente"
-        Me.XrTableCell7.Weight = 0.62019239512003543R
-        '
-        'XrTableRow2
-        '
-        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell8, Me.XrTableCell9, Me.XrTableCell10, Me.XrTableCell11})
-        Me.XrTableRow2.Dpi = 100.0!
-        Me.XrTableRow2.Name = "XrTableRow2"
-        Me.XrTableRow2.Weight = 1.0R
-        '
-        'XrTable2
-        '
-        Me.XrTable2.Dpi = 100.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0.00001589457!, 53.45834!)
-        Me.XrTable2.Name = "XrTable2"
-        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(650.0!, 25.0!)
-        '
-        'XrLabel14
-        '
-        Me.XrLabel14.Dpi = 100.0!
-        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(192.5956!, 0!)
-        Me.XrLabel14.Name = "XrLabel14"
-        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel14.SizeF = New System.Drawing.SizeF(318.0899!, 39.0!)
-        Me.XrLabel14.StylePriority.UseFont = False
-        Me.XrLabel14.Text = "Reporte Facturas por Cliente"
-        '
-        'XrLine1
-        '
-        Me.XrLine1.Dpi = 100.0!
-        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 22.99999!)
-        Me.XrLine1.Name = "XrLine1"
-        Me.XrLine1.SizeF = New System.Drawing.SizeF(650.0!, 23.0!)
-        '
-        'XrLine2
-        '
-        Me.XrLine2.Dpi = 100.0!
-        Me.XrLine2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 102.4167!)
-        Me.XrLine2.Name = "XrLine2"
-        Me.XrLine2.SizeF = New System.Drawing.SizeF(650.0!, 23.0!)
-        '
-        'XrTableCell6
-        '
-        Me.XrTableCell6.Dpi = 100.0!
-        Me.XrTableCell6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell6.Name = "XrTableCell6"
-        Me.XrTableCell6.StylePriority.UseFont = False
-        Me.XrTableCell6.Text = "Estado"
-        Me.XrTableCell6.Weight = 0.43269189575373579R
+        Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteFactura.total", "{0:c}")})
+        Me.XrLabel10.Dpi = 100.0!
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(576.0416!, 0!)
+        Me.XrLabel10.Name = "XrLabel10"
+        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel10.SizeF = New System.Drawing.SizeF(73.95837!, 23.0!)
+        Me.XrLabel10.Text = "XrLabel10"
         '
         'RptClientesFactura
         '
@@ -505,8 +501,8 @@ Partial Public Class RptClientesFactura
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.Version = "16.1"
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -523,7 +519,6 @@ Partial Public Class RptClientesFactura
     Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents ReportHeader As DevExpress.XtraReports.UI.ReportHeaderBand
     Friend WithEvents XrLabel11 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel10 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel7 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel6 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel9 As DevExpress.XtraReports.UI.XRLabel
@@ -556,4 +551,5 @@ Partial Public Class RptClientesFactura
     Friend WithEvents XrLine1 As DevExpress.XtraReports.UI.XRLine
     Friend WithEvents XrLine2 As DevExpress.XtraReports.UI.XRLine
     Friend WithEvents XrTableCell6 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrLabel10 As DevExpress.XtraReports.UI.XRLabel
 End Class

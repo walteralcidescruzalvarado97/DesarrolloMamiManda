@@ -1016,7 +1016,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_ClienteMayorCompraTableAdapter" GeneratorDataComponentClassName="Sp_ClienteMayorCompraTableAdapter" Name="Sp_ClienteMayorCompra" UserDataComponentName="Sp_ClienteMayorCompraTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_ClienteMayorCompra" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_ClienteMayorCompra" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_ClienteMayorCompra</CommandText>
@@ -1031,6 +1031,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <Mapping SourceColumn="RTNCliente" DataSetColumn="RTNCliente" />
               <Mapping SourceColumn="Nombre Completo" DataSetColumn="Nombre Completo" />
               <Mapping SourceColumn="sub" DataSetColumn="sub" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1171,7 +1172,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_VentasAnoTableAdapter" GeneratorDataComponentClassName="Sp_VentasAnoTableAdapter" Name="Sp_VentasAno" UserDataComponentName="Sp_VentasAnoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_VentasAno" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_VentasAno" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_VentasAno</CommandText>
@@ -1188,12 +1189,13 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <Mapping SourceColumn="ISV" DataSetColumn="ISV" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
               <Mapping SourceColumn="Año" DataSetColumn="Año" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_VentasDiaTableAdapter" GeneratorDataComponentClassName="Sp_VentasDiaTableAdapter" Name="Sp_VentasDia" UserDataComponentName="Sp_VentasDiaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_VentasDia" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_VentasDia" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_VentasDia</CommandText>
@@ -1210,12 +1212,13 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <Mapping SourceColumn="ISV" DataSetColumn="ISV" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_VentasMesTableAdapter" GeneratorDataComponentClassName="Sp_VentasMesTableAdapter" Name="Sp_VentasMes" UserDataComponentName="Sp_VentasMesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_VentasMes" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_VentasMes" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_VentasMes</CommandText>
@@ -1232,12 +1235,13 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <Mapping SourceColumn="ISV" DataSetColumn="ISV" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
               <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_ClienteMayorCompraMesTableAdapter" GeneratorDataComponentClassName="Sp_ClienteMayorCompraMesTableAdapter" Name="Sp_ClienteMayorCompraMes" UserDataComponentName="Sp_ClienteMayorCompraMesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_ClienteMayorCompraMes" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_ClienteMayorCompraMes" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_ClienteMayorCompraMes</CommandText>
@@ -1254,12 +1258,13 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <Mapping SourceColumn="Nombre Completo" DataSetColumn="Nombre Completo" />
               <Mapping SourceColumn="sub" DataSetColumn="sub" />
               <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_ClienteMayorCompraAnoTableAdapter" GeneratorDataComponentClassName="Sp_ClienteMayorCompraAnoTableAdapter" Name="Sp_ClienteMayorCompraAno" UserDataComponentName="Sp_ClienteMayorCompraAnoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_ClienteMayorCompraAno" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BakerySystemConnectionString (MySettings)" DbObjectName="BakerySystem.dbo.Sp_ClienteMayorCompraAno" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_ClienteMayorCompraAno</CommandText>
@@ -1276,6 +1281,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <Mapping SourceColumn="Nombre Completo" DataSetColumn="Nombre Completo" />
               <Mapping SourceColumn="sub" DataSetColumn="sub" />
               <Mapping SourceColumn="Año" DataSetColumn="Año" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2043,6 +2049,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="sub" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsub" msprop:Generator_ColumnPropNameInRow="_sub" msprop:Generator_ColumnPropNameInTable="subColumn" msprop:Generator_UserColumnName="sub" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2240,6 +2247,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <xs:element name="ISV" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnISV" msprop:Generator_ColumnPropNameInRow="ISV" msprop:Generator_ColumnPropNameInTable="ISVColumn" msprop:Generator_UserColumnName="ISV" type="xs:decimal" minOccurs="0" />
               <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
               <xs:element name="Año" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAño" msprop:Generator_ColumnPropNameInRow="Año" msprop:Generator_ColumnPropNameInTable="AñoColumn" msprop:Generator_UserColumnName="Año" type="xs:int" minOccurs="0" />
+              <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2250,6 +2258,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <xs:element name="ISV" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnISV" msprop:Generator_ColumnPropNameInRow="ISV" msprop:Generator_ColumnPropNameInTable="ISVColumn" msprop:Generator_UserColumnName="ISV" type="xs:decimal" minOccurs="0" />
               <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2260,6 +2269,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               <xs:element name="ISV" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnISV" msprop:Generator_ColumnPropNameInRow="ISV" msprop:Generator_ColumnPropNameInTable="ISVColumn" msprop:Generator_UserColumnName="ISV" type="xs:decimal" minOccurs="0" />
               <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
               <xs:element name="Mes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
+              <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2282,6 +2292,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               </xs:element>
               <xs:element name="sub" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsub" msprop:Generator_ColumnPropNameInRow="_sub" msprop:Generator_ColumnPropNameInTable="subColumn" msprop:Generator_UserColumnName="sub" type="xs:decimal" minOccurs="0" />
               <xs:element name="Mes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
+              <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2304,6 +2315,7 @@ WHERE  F.IdFactura=  @IdFactura</CommandText>
               </xs:element>
               <xs:element name="sub" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsub" msprop:Generator_ColumnPropNameInRow="_sub" msprop:Generator_ColumnPropNameInTable="subColumn" msprop:Generator_UserColumnName="sub" type="xs:decimal" minOccurs="0" />
               <xs:element name="Año" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAño" msprop:Generator_ColumnPropNameInRow="Año" msprop:Generator_ColumnPropNameInTable="AñoColumn" msprop:Generator_UserColumnName="Año" type="xs:int" minOccurs="0" />
+              <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

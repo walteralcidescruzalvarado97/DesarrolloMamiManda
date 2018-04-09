@@ -26,7 +26,6 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell14 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.DsBakerySystem1 = New MamiManda.dsBakerySystem()
         Me.ClienteTableAdapter = New MamiManda.dsBakerySystemTableAdapters.ClienteTableAdapter()
         Me.Sp_ClienteMayorCompraMesTableAdapter1 = New MamiManda.dsBakerySystemTableAdapters.Sp_ClienteMayorCompraMesTableAdapter()
@@ -62,6 +61,16 @@ Partial Public Class RptClienteMCM
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Sp_VentasDiaTableAdapter = New MamiManda.dsBakerySystemTableAdapters.Sp_VentasDiaTableAdapter()
+        Me.XrTableCell15 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell16 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell17 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.CalculatedField1 = New DevExpress.XtraReports.UI.CalculatedField()
+        Me.CalculatedField2 = New DevExpress.XtraReports.UI.CalculatedField()
+        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +78,7 @@ Partial Public Class RptClienteMCM
         '
         'Detail
         '
-        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
+        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrTable2})
         Me.Detail.Dpi = 100.0!
         Me.Detail.HeightF = 23.0!
         Me.Detail.Name = "Detail"
@@ -80,14 +89,14 @@ Partial Public Class RptClienteMCM
         '
         Me.XrTable2.AnchorVertical = CType((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top Or DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom), DevExpress.XtraReports.UI.VerticalAnchorStyles)
         Me.XrTable2.Dpi = 100.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow4})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(638.0!, 23.0!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(340.8938!, 23.0!)
         '
         'XrTableRow4
         '
-        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell12, Me.XrTableCell14})
+        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell12})
         Me.XrTableRow4.Dpi = 100.0!
         Me.XrTableRow4.Name = "XrTableRow4"
         Me.XrTableRow4.Weight = 1.0R
@@ -100,7 +109,7 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell8.Name = "XrTableCell8"
         Me.XrTableCell8.StyleName = "DataField"
         Me.XrTableCell8.Text = "XrTableCell8"
-        Me.XrTableCell8.Weight = 53.977017640818374R
+        Me.XrTableCell8.Weight = 33.905170984657296R
         '
         'XrTableCell10
         '
@@ -110,7 +119,7 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell10.Name = "XrTableCell10"
         Me.XrTableCell10.StyleName = "DataField"
         Me.XrTableCell10.Text = "XrTableCell10"
-        Me.XrTableCell10.Weight = 67.664972630164968R
+        Me.XrTableCell10.Weight = 38.925753514365375R
         '
         'XrTableCell12
         '
@@ -120,17 +129,7 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell12.Name = "XrTableCell12"
         Me.XrTableCell12.StyleName = "DataField"
         Me.XrTableCell12.Text = "XrTableCell12"
-        Me.XrTableCell12.Weight = 45.795463426484332R
-        '
-        'XrTableCell14
-        '
-        Me.XrTableCell14.CanGrow = False
-        Me.XrTableCell14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteMayorCompraMes.Mes")})
-        Me.XrTableCell14.Dpi = 100.0!
-        Me.XrTableCell14.Name = "XrTableCell14"
-        Me.XrTableCell14.StyleName = "DataField"
-        Me.XrTableCell14.Text = "XrTableCell14"
-        Me.XrTableCell14.Weight = 44.229212969199R
+        Me.XrTableCell12.Weight = 40.26602902144694R
         '
         'DsBakerySystem1
         '
@@ -147,23 +146,23 @@ Partial Public Class RptClienteMCM
         '
         'PageHeaderBand1
         '
-        Me.PageHeaderBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1})
+        Me.PageHeaderBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLine1, Me.XrTable1})
         Me.PageHeaderBand1.Dpi = 100.0!
-        Me.PageHeaderBand1.HeightF = 42.0!
+        Me.PageHeaderBand1.HeightF = 71.16667!
         Me.PageHeaderBand1.Name = "PageHeaderBand1"
         '
         'XrTable1
         '
         Me.XrTable1.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom
         Me.XrTable1.Dpi = 100.0!
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 6.0!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(1.999966!, 0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(638.0!, 36.0!)
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(648.0001!, 36.0!)
         '
         'XrTableRow3
         '
-        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9, Me.XrTableCell11, Me.XrTableCell13})
+        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9, Me.XrTableCell15, Me.XrTableCell16, Me.XrTableCell17, Me.XrTableCell11, Me.XrTableCell13})
         Me.XrTableRow3.Dpi = 100.0!
         Me.XrTableRow3.Name = "XrTableRow3"
         Me.XrTableRow3.Weight = 1.0R
@@ -176,7 +175,7 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell7.StyleName = "FieldCaption"
         Me.XrTableCell7.Text = "RTN del Cliente"
         Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell7.Weight = 53.977022703164792R
+        Me.XrTableCell7.Weight = 33.2416517522766R
         '
         'XrTableCell9
         '
@@ -184,9 +183,9 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell9.Dpi = 100.0!
         Me.XrTableCell9.Name = "XrTableCell9"
         Me.XrTableCell9.StyleName = "FieldCaption"
-        Me.XrTableCell9.Text = "Nombre Completo del Cliente"
+        Me.XrTableCell9.Text = "Nombre Completo"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell9.Weight = 67.664967567818536R
+        Me.XrTableCell9.Weight = 38.925748492233922R
         '
         'XrTableCell11
         '
@@ -194,9 +193,9 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell11.Dpi = 100.0!
         Me.XrTableCell11.Name = "XrTableCell11"
         Me.XrTableCell11.StyleName = "FieldCaption"
-        Me.XrTableCell11.Text = "Total Final"
+        Me.XrTableCell11.Text = " Total Final"
         Me.XrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell11.Weight = 45.795463426484332R
+        Me.XrTableCell11.Weight = 26.459791223332672R
         '
         'XrTableCell13
         '
@@ -204,9 +203,9 @@ Partial Public Class RptClienteMCM
         Me.XrTableCell13.Dpi = 100.0!
         Me.XrTableCell13.Name = "XrTableCell13"
         Me.XrTableCell13.StyleName = "FieldCaption"
-        Me.XrTableCell13.Text = "Mes de las Ventas"
+        Me.XrTableCell13.Text = " Mes"
         Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell13.Weight = 44.229212969199R
+        Me.XrTableCell13.Weight = 15.752663862493479R
         '
         'XrTableRow1
         '
@@ -268,7 +267,7 @@ Partial Public Class RptClienteMCM
         '
         Me.PageFooterBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPageInfo1, Me.XrPageInfo2})
         Me.PageFooterBand1.Dpi = 100.0!
-        Me.PageFooterBand1.HeightF = 29.0!
+        Me.PageFooterBand1.HeightF = 30.8125!
         Me.PageFooterBand1.Name = "PageFooterBand1"
         '
         'XrPageInfo1
@@ -420,9 +419,105 @@ Partial Public Class RptClienteMCM
         '
         Me.Sp_VentasDiaTableAdapter.ClearBeforeFill = True
         '
+        'XrTableCell15
+        '
+        Me.XrTableCell15.CanGrow = False
+        Me.XrTableCell15.Dpi = 100.0!
+        Me.XrTableCell15.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell15.Name = "XrTableCell15"
+        Me.XrTableCell15.StylePriority.UseFont = False
+        Me.XrTableCell15.StylePriority.UseTextAlignment = False
+        Me.XrTableCell15.Text = "Subtotal Acumulado"
+        Me.XrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell15.Weight = 40.2660246862015R
+        '
+        'XrTableCell16
+        '
+        Me.XrTableCell16.CanGrow = False
+        Me.XrTableCell16.Dpi = 100.0!
+        Me.XrTableCell16.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell16.Name = "XrTableCell16"
+        Me.XrTableCell16.StylePriority.UseFont = False
+        Me.XrTableCell16.StylePriority.UseTextAlignment = False
+        Me.XrTableCell16.Text = "  ISV Final"
+        Me.XrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell16.Weight = 26.275688805176539R
+        '
+        'XrTableCell17
+        '
+        Me.XrTableCell17.CanGrow = False
+        Me.XrTableCell17.Dpi = 100.0!
+        Me.XrTableCell17.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell17.Name = "XrTableCell17"
+        Me.XrTableCell17.StylePriority.UseFont = False
+        Me.XrTableCell17.StylePriority.UseTextAlignment = False
+        Me.XrTableCell17.Text = " Descuento Final"
+        Me.XrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell17.Weight = 34.062777446479757R
+        '
+        'XrLabel2
+        '
+        Me.XrLabel2.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteMayorCompraMes.Descuento", "{0:c}")})
+        Me.XrLabel2.Dpi = 100.0!
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(420.0933!, 0!)
+        Me.XrLabel2.Name = "XrLabel2"
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(102.6711!, 23.0!)
+        Me.XrLabel2.Text = "XrLabel2"
+        '
+        'CalculatedField1
+        '
+        Me.CalculatedField1.DataMember = "Sp_ClienteMayorCompraMes"
+        Me.CalculatedField1.Expression = "[sub]*0.15"
+        Me.CalculatedField1.Name = "CalculatedField1"
+        '
+        'CalculatedField2
+        '
+        Me.CalculatedField2.DataMember = "Sp_ClienteMayorCompraMes"
+        Me.CalculatedField2.Expression = "([sub]+[CalculatedField1])-[Descuento]"
+        Me.CalculatedField2.Name = "CalculatedField2"
+        '
+        'XrLabel3
+        '
+        Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteMayorCompraMes.CalculatedField1", "{0:c}")})
+        Me.XrLabel3.Dpi = 100.0!
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(340.8938!, 0!)
+        Me.XrLabel3.Name = "XrLabel3"
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(79.19952!, 23.0!)
+        Me.XrLabel3.Text = "XrLabel3"
+        '
+        'XrLabel4
+        '
+        Me.XrLabel4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteMayorCompraMes.CalculatedField2", "{0:c}")})
+        Me.XrLabel4.Dpi = 100.0!
+        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(522.7643!, 0!)
+        Me.XrLabel4.Name = "XrLabel4"
+        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(79.75439!, 23.0!)
+        Me.XrLabel4.Text = "XrLabel4"
+        '
+        'XrLabel5
+        '
+        Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_ClienteMayorCompraMes.Mes")})
+        Me.XrLabel5.Dpi = 100.0!
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(602.5187!, 0!)
+        Me.XrLabel5.Name = "XrLabel5"
+        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(47.48126!, 23.0!)
+        Me.XrLabel5.Text = "XrLabel5"
+        '
+        'XrLine1
+        '
+        Me.XrLine1.Dpi = 100.0!
+        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(219.1964!, 34.0!)
+        Me.XrLine1.Name = "XrLine1"
+        Me.XrLine1.SizeF = New System.Drawing.SizeF(306.5476!, 2.0!)
+        '
         'RptClienteMCM
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeaderBand1, Me.PageFooterBand1, Me.ReportHeaderBand1, Me.TopMarginBand1, Me.BottomMarginBand1})
+        Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.CalculatedField1, Me.CalculatedField2})
         Me.DataAdapter = Me.Sp_ClienteMayorCompraMesTableAdapter1
         Me.DataMember = "Sp_ClienteMayorCompraMes"
         Me.DataSource = Me.DsBakerySystem1
@@ -442,7 +537,6 @@ Partial Public Class RptClienteMCM
     Friend WithEvents XrTableCell8 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell10 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell12 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell14 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents DsBakerySystem1 As dsBakerySystem
     Friend WithEvents ClienteTableAdapter As dsBakerySystemTableAdapters.ClienteTableAdapter
     Friend WithEvents Sp_ClienteMayorCompraMesTableAdapter1 As dsBakerySystemTableAdapters.Sp_ClienteMayorCompraMesTableAdapter
@@ -478,4 +572,14 @@ Partial Public Class RptClienteMCM
     Friend WithEvents XrLabel24 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
     Friend WithEvents Sp_VentasDiaTableAdapter As dsBakerySystemTableAdapters.Sp_VentasDiaTableAdapter
+    Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel4 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel3 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLine1 As DevExpress.XtraReports.UI.XRLine
+    Friend WithEvents XrTableCell15 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell16 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell17 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents CalculatedField1 As DevExpress.XtraReports.UI.CalculatedField
+    Friend WithEvents CalculatedField2 As DevExpress.XtraReports.UI.CalculatedField
 End Class
