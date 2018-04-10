@@ -135,6 +135,7 @@ Public Class Venta
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        NuDiasPlazo.Value = Nothing
         HabilitarBotones(True, False, False, False)
         SumarProducto()
         estado = True
@@ -146,7 +147,7 @@ Public Class Venta
         _Dias = 0
         Dim BuscarCliente As New FrmBuscarCliente
         BuscarCliente.DesdeFactura = True
-        BuscarCliente.Show(Me)
+        BuscarCliente.ShowDialog(Me)
         btnBuscarProducto.Focus()
         BuscarCliente.Focus()
     End Sub
@@ -536,7 +537,7 @@ Public Class Venta
     Private Sub btnBuscarProducto_Click(sender As Object, e As EventArgs) Handles btnBuscarProducto.Click
         Dim BuscarProducto As New FrmBuscarPresentacion
         BuscarProducto.DesdeFactura = True
-        BuscarProducto.Show(Me)
+        BuscarProducto.ShowDialog(Me)
         txtCantidad.Focus()
         BuscarProducto.Focus()
     End Sub
@@ -595,7 +596,14 @@ Public Class Venta
         ElseIf Validar(txtCantidad, "Debe ingresar la cantidad de productos a comprar") Then
         Else
             If RdbSi.Checked And TxtDes.Text = 0 Then
-                MessageBox.Show("El descuento debe ser mayora 0", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("El descuento debe ser mayor a 0", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TxtDes.Focus()
+                Return
+            End If
+
+            If TxtDes.Text >= txtCantidad.Text * txtPrecio.Text Then
+                MessageBox.Show("No se puede dar un descuento mayor o igual al subtotal de la venta", "BakerySystem", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TxtDes.Focus()
                 Return
             End If
 
@@ -768,6 +776,9 @@ Public Class Venta
     Private Sub QuitarItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitarItemToolStripMenuItem.Click
         QuitarProducto()
         Me.lsvMostrar.FocusedItem.Remove()
+        If lsvMostrar.Items.Count - 1 Then
+            TxtDescuento.Text = 0
+        End If
         Calculos()
     End Sub
 
