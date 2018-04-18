@@ -66,7 +66,12 @@ Public Class FrmAsignarPermisos
             cnn.Open()
             Using cmd As New SqlCommand
                 With cmd
-                    .CommandText = "Sp_ConsultarModulosDisponibles"
+                    If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "TipoUsuario") = "Admin" Then
+                        .CommandText = "Sp_ModulosAsignados"
+                    Else
+                        .CommandText = "Sp_ConsultarModulosDisponibles"
+                    End If
+
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "IdUsuario")
@@ -95,7 +100,11 @@ Public Class FrmAsignarPermisos
             cnn.Open()
             Using cmd As New SqlCommand
                 With cmd
-                    .CommandText = "Sp_ModulosAsignados"
+                    If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "TipoUsuario") = "Admin" Then
+                        .CommandText = "Sp_ConsultarModulosDisponibles"
+                    Else
+                        .CommandText = "Sp_ModulosAsignados"
+                    End If
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
                     .Parameters.Add("@IdUsuario", SqlDbType.Int).Value = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "IdUsuario")
@@ -172,7 +181,7 @@ Public Class FrmAsignarPermisos
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
         Call InsertarPermisos()
-        Call LlenarModulosDisponibles()
+        Call LlenarGridModulosDisponibles()
         Call LlenarGridModulosAsignados()
     End Sub
 

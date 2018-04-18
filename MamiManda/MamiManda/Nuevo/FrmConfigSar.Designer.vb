@@ -36,6 +36,7 @@ Partial Class FrmConfigSar
         Me.DtIdCai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DtInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DtFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DtgCai, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -90,12 +91,12 @@ Partial Class FrmConfigSar
         Me.DtgCai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DtgCai.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DtCai, Me.DtFechaInicial, Me.DtFechaFinal, Me.DtUsado, Me.DtIdCai, Me.DtInicio, Me.DtFin})
         Me.DtgCai.GridColor = System.Drawing.SystemColors.ButtonFace
-        Me.DtgCai.Location = New System.Drawing.Point(189, 12)
+        Me.DtgCai.Location = New System.Drawing.Point(189, 29)
         Me.DtgCai.MultiSelect = False
         Me.DtgCai.Name = "DtgCai"
         Me.DtgCai.ReadOnly = True
         Me.DtgCai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DtgCai.Size = New System.Drawing.Size(976, 435)
+        Me.DtgCai.Size = New System.Drawing.Size(976, 418)
         Me.DtgCai.TabIndex = 34
         '
         'DtCai
@@ -150,6 +151,18 @@ Partial Class FrmConfigSar
         Me.DtFin.ReadOnly = True
         Me.DtFin.Width = 154
         '
+        'Label7
+        '
+        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(1022, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 13)
+        Me.Label7.TabIndex = 35
+        Me.Label7.Text = "Hacer doble click para editar"
+        '
         'FrmConfigSar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -157,6 +170,7 @@ Partial Class FrmConfigSar
         Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.IMG_20180311_WA0027
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1177, 471)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DtgCai)
         Me.Controls.Add(Me.NavBarControl1)
         Me.Name = "FrmConfigSar"
@@ -164,6 +178,7 @@ Partial Class FrmConfigSar
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtgCai, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -180,4 +195,5 @@ Partial Class FrmConfigSar
     Friend WithEvents DtIdCai As DataGridViewTextBoxColumn
     Friend WithEvents DtInicio As DataGridViewTextBoxColumn
     Friend WithEvents DtFin As DataGridViewTextBoxColumn
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

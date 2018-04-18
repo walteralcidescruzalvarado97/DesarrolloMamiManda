@@ -46,6 +46,7 @@ Partial Class FrmProductoPresentacion
         '
         'gbDatos
         '
+        Me.gbDatos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.gbDatos.BackColor = System.Drawing.Color.Transparent
         Me.gbDatos.Controls.Add(Me.BtnBuscarPresentacion)
         Me.gbDatos.Controls.Add(Me.TxtNombrePresentacion)
@@ -166,6 +167,7 @@ Partial Class FrmProductoPresentacion
         '
         'btnGuardar
         '
+        Me.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
         Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -182,6 +184,7 @@ Partial Class FrmProductoPresentacion
         '
         'Label9
         '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -193,6 +196,7 @@ Partial Class FrmProductoPresentacion
         '
         'Label13
         '
+        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -204,6 +208,7 @@ Partial Class FrmProductoPresentacion
         '
         'btnCancelar
         '
+        Me.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -236,7 +241,7 @@ Partial Class FrmProductoPresentacion
         Me.Controls.Add(Me.gbDatos)
         Me.Name = "FrmProductoPresentacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Gestión Producto Terminado Con Su Presentación"
+        Me.Text = "Gestión Producto Terminado con su Presentación"
         Me.gbDatos.ResumeLayout(False)
         Me.gbDatos.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()

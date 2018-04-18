@@ -143,7 +143,7 @@ Public Class ConfiguracionCai
                     .CommandType = CommandType.StoredProcedure
                     .Connection = cnn
                     .Parameters.Add("@Cai", SqlDbType.NVarChar).Value = TxtCai.Text
-                    .Parameters.Add("@FechaInicio", SqlDbType.NVarChar).Value = DtFechaInicio.Value
+                    .Parameters.Add("@FechaInicio", SqlDbType.Date).Value = DtFechaInicio.Value
                     .Parameters.Add("@FechaFinal", SqlDbType.Date).Value = DtFechaFin.Value
                     .Parameters.Add("@CorrelativoDesde", SqlDbType.NVarChar).Value = TxtInicio.Text
                     .Parameters.Add("@CorrelativoHasta", SqlDbType.NVarChar).Value = TxtFin.Text

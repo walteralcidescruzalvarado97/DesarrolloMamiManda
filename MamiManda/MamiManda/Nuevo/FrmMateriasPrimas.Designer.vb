@@ -24,8 +24,6 @@ Partial Class FrmMateriasPrimas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMateriasPrimas))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.TxtProveedor = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtMedida = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtExistencia = New System.Windows.Forms.TextBox()
@@ -57,8 +55,6 @@ Partial Class FrmMateriasPrimas
         Me.GroupControl1.Appearance.Options.UseBackColor = True
         Me.GroupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.GroupControl1.CaptionImage = CType(resources.GetObject("GroupControl1.CaptionImage"), System.Drawing.Image)
-        Me.GroupControl1.Controls.Add(Me.TxtProveedor)
-        Me.GroupControl1.Controls.Add(Me.Label6)
         Me.GroupControl1.Controls.Add(Me.TxtMedida)
         Me.GroupControl1.Controls.Add(Me.Label5)
         Me.GroupControl1.Controls.Add(Me.TxtExistencia)
@@ -75,23 +71,6 @@ Partial Class FrmMateriasPrimas
         Me.GroupControl1.Size = New System.Drawing.Size(255, 471)
         Me.GroupControl1.TabIndex = 5
         Me.GroupControl1.Text = "Datos de  la Materia Prima"
-        '
-        'TxtProveedor
-        '
-        Me.TxtProveedor.Location = New System.Drawing.Point(11, 252)
-        Me.TxtProveedor.Name = "TxtProveedor"
-        Me.TxtProveedor.ReadOnly = True
-        Me.TxtProveedor.Size = New System.Drawing.Size(184, 21)
-        Me.TxtProveedor.TabIndex = 23
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 236)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(61, 13)
-        Me.Label6.TabIndex = 22
-        Me.Label6.Text = "Proveedor:"
         '
         'TxtMedida
         '
@@ -248,11 +227,11 @@ Partial Class FrmMateriasPrimas
         Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(747, 29)
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(754, 30)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(143, 13)
-        Me.Label7.TabIndex = 6
+        Me.Label7.TabIndex = 24
         Me.Label7.Text = "Hacer doble click para editar"
         '
         'FrmMateriasPrimas
@@ -280,8 +259,6 @@ Partial Class FrmMateriasPrimas
     End Sub
 
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TxtProveedor As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents TxtMedida As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtExistencia As TextBox

@@ -151,6 +151,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BakerySystemDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -352,6 +353,12 @@
     <Compile Include="Catalogos\Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Nuevo\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Nuevo\FrmAsignarPermisos.Designer.vb">
       <DependentUpon>FrmAsignarPermisos.vb</DependentUpon>
     </Compile>
@@ -380,6 +387,12 @@
       <DependentUpon>FrmInventarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Nuevo\FrmInventarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo\FrmMateriaPrimaProveedor.Designer.vb">
+      <DependentUpon>FrmMateriaPrimaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\FrmMateriaPrimaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nuevo\FrmMateriasPrimas.Designer.vb">
@@ -694,6 +707,9 @@
     <EmbeddedResource Include="Catalogos\Usuario.resx">
       <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\FrmAsignarPermisos.resx">
       <DependentUpon>FrmAsignarPermisos.vb</DependentUpon>
     </EmbeddedResource>
@@ -708,6 +724,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\FrmInventarios.resx">
       <DependentUpon>FrmInventarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\FrmMateriaPrimaProveedor.resx">
+      <DependentUpon>FrmMateriaPrimaProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\FrmMateriasPrimas.resx">
       <DependentUpon>FrmMateriasPrimas.vb</DependentUpon>

@@ -68,6 +68,7 @@ Public Class MenuPrincipal
             End If
             Me.BsIUsuario.Caption = UsuarioActivo.NombreCompleto
             BbiCambiar.Enabled = True
+            BtnInfo.Enabled = True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -260,11 +261,19 @@ Public Class MenuPrincipal
     End Sub
 
     Private Sub BarButtonItem46_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem46.ItemClick
-        FrmProductoPresentacion.ShowDialog()
+        AbrirForm(FrmProductoPresentacion)
     End Sub
 
     Private Sub BarButtonItem47_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem47.ItemClick
         FrmGraficoVenta.MdiParent = Me
         FrmGraficoVenta.Show()
+    End Sub
+
+    Private Sub BarButtonItem7_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem7.ItemClick
+        AbrirForm(FrmMateriaPrimaProveedor)
+    End Sub
+
+    Private Sub BtnInfo_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BtnInfo.ItemClick
+        AboutBox1.ShowDialog()
     End Sub
 End Class

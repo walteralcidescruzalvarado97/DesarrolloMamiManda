@@ -253,7 +253,13 @@ Public Class Venta
                         For num As Integer = 1 To (8 - Correlativo.Length)
                             caracter = caracter & 0
                         Next
-                        If Now.Date <> FechaFinal Then
+                        If Now.Date >= FechaFinal Then
+                            MessageBox.Show("Ha llegado a su fecha límite de Emisión, Por favor realice una nueva configuracón SAR", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            HabilitarBotones(True, False, False, False)
+                            Limpiar()
+                            LimpiarArticulos()
+                            Return
+                        Else
                             If (Integer.Parse(Ultimo2(3)) - Correlativo) <= 10 Then
                                 MessageBox.Show("Solo quedan" & " " & Integer.Parse(Ultimo2(3)) - Correlativo & " " & "correlativos disponibles, Por favor revise su configuración SAR", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             ElseIf Correlativo > Integer.Parse(Ultimo2(3)) Then
@@ -266,12 +272,6 @@ Public Class Venta
                             'NumFactura = "001-001-01-" & caracter & Correlativo
                             NumFactura = IdUltimaFactura2(0).ToString & "-" & IdUltimaFactura2(1).ToString & "-" & IdUltimaFactura2(2).ToString & "-" & caracter & Correlativo
                             txtCodFactura.Text = NumFactura
-                        Else
-                            MessageBox.Show("Ha llegado a su fecha límite de Emisión, Por favor relalice una nueva configuracón SAR", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            HabilitarBotones(True, False, False, False)
-                            Limpiar()
-                            LimpiarArticulos()
-                            Return
                         End If
                     End If
                 End If

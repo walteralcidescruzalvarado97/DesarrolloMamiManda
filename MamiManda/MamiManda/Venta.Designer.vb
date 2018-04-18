@@ -211,15 +211,17 @@ Partial Class Venta
         '
         'txtUnidad
         '
+        Me.txtUnidad.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtUnidad.BackColor = System.Drawing.SystemColors.Window
         Me.txtUnidad.Enabled = False
-        Me.txtUnidad.Location = New System.Drawing.Point(710, 28)
+        Me.txtUnidad.Location = New System.Drawing.Point(710, 27)
         Me.txtUnidad.Name = "txtUnidad"
         Me.txtUnidad.Size = New System.Drawing.Size(108, 26)
         Me.txtUnidad.TabIndex = 22
         '
         'Label5
         '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(633, 29)
@@ -230,6 +232,7 @@ Partial Class Venta
         '
         'txtPresentacion
         '
+        Me.txtPresentacion.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtPresentacion.BackColor = System.Drawing.SystemColors.Window
         Me.txtPresentacion.Enabled = False
         Me.txtPresentacion.Location = New System.Drawing.Point(425, 27)
@@ -239,6 +242,7 @@ Partial Class Venta
         '
         'Label14
         '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(317, 30)
@@ -249,6 +253,7 @@ Partial Class Venta
         '
         'btnBuscarProducto
         '
+        Me.btnBuscarProducto.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.btnBuscarProducto.BackgroundImage = CType(resources.GetObject("btnBuscarProducto.BackgroundImage"), System.Drawing.Image)
         Me.btnBuscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand
@@ -264,7 +269,8 @@ Partial Class Venta
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(1444, 27)
+        Me.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btnAgregar.Location = New System.Drawing.Point(1447, 24)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(86, 28)
         Me.btnAgregar.TabIndex = 8
@@ -273,6 +279,7 @@ Partial Class Venta
         '
         'txtPrecio
         '
+        Me.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtPrecio.BackColor = System.Drawing.SystemColors.Window
         Me.txtPrecio.Location = New System.Drawing.Point(974, 26)
         Me.txtPrecio.Name = "txtPrecio"
@@ -281,9 +288,10 @@ Partial Class Venta
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(915, 26)
+        Me.Label1.Location = New System.Drawing.Point(915, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 20)
         Me.Label1.TabIndex = 16
@@ -291,17 +299,19 @@ Partial Class Venta
         '
         'txtCantidad
         '
+        Me.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtCantidad.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCantidad.Location = New System.Drawing.Point(1248, 23)
+        Me.txtCantidad.Location = New System.Drawing.Point(1248, 25)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(109, 26)
         Me.txtCantidad.TabIndex = 7
         '
         'label6
         '
+        Me.label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label6.AutoSize = True
         Me.label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label6.Location = New System.Drawing.Point(1169, 25)
+        Me.label6.Location = New System.Drawing.Point(1169, 28)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(73, 20)
         Me.label6.TabIndex = 14
@@ -309,6 +319,7 @@ Partial Class Venta
         '
         'txtCodProducto
         '
+        Me.txtCodProducto.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtCodProducto.BackColor = System.Drawing.SystemColors.Window
         Me.txtCodProducto.Enabled = False
         Me.txtCodProducto.Location = New System.Drawing.Point(140, 28)
@@ -318,6 +329,7 @@ Partial Class Venta
         '
         'lblCodPresentacion
         '
+        Me.lblCodPresentacion.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblCodPresentacion.AutoSize = True
         Me.lblCodPresentacion.BackColor = System.Drawing.Color.Transparent
         Me.lblCodPresentacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -329,6 +341,7 @@ Partial Class Venta
         '
         'label7
         '
+        Me.label7.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.label7.AutoSize = True
         Me.label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label7.Location = New System.Drawing.Point(10, 31)
@@ -622,7 +635,7 @@ Partial Class Venta
         '
         'txtSubTotal
         '
-        Me.txtSubTotal.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtSubTotal.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.txtSubTotal.BackColor = System.Drawing.SystemColors.Window
         Me.txtSubTotal.Enabled = False
         Me.txtSubTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -635,7 +648,7 @@ Partial Class Venta
         '
         'Label15
         '
-        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -647,7 +660,7 @@ Partial Class Venta
         '
         'txtIsv
         '
-        Me.txtIsv.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtIsv.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.txtIsv.BackColor = System.Drawing.SystemColors.Window
         Me.txtIsv.Enabled = False
         Me.txtIsv.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -660,7 +673,7 @@ Partial Class Venta
         '
         'Label16
         '
-        Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -672,7 +685,7 @@ Partial Class Venta
         '
         'txtTotal
         '
-        Me.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.txtTotal.BackColor = System.Drawing.SystemColors.Window
         Me.txtTotal.Enabled = False
         Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -685,7 +698,7 @@ Partial Class Venta
         '
         'Label17
         '
-        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -711,7 +724,7 @@ Partial Class Venta
         '
         'BtnImprimir
         '
-        Me.BtnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnImprimir.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.BtnImprimir.Image = CType(resources.GetObject("BtnImprimir.Image"), System.Drawing.Image)
         Me.BtnImprimir.Location = New System.Drawing.Point(24, 552)
         Me.BtnImprimir.Name = "BtnImprimir"
@@ -722,7 +735,7 @@ Partial Class Venta
         '
         'Label8
         '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -734,7 +747,7 @@ Partial Class Venta
         '
         'TxtDescuento
         '
-        Me.TxtDescuento.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TxtDescuento.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.TxtDescuento.BackColor = System.Drawing.SystemColors.Window
         Me.TxtDescuento.Enabled = False
         Me.TxtDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -747,7 +760,7 @@ Partial Class Venta
         '
         'Label9
         '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

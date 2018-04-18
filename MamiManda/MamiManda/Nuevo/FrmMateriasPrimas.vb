@@ -40,7 +40,6 @@ Public Class FrmMateriasPrimas
         TxtExistenciaMinima.Text = GridView1.GetRowCellValue(fila, "ExistenciaMinima")
         TxtExistencia.Text = GridView1.GetRowCellValue(fila, "Existencia")
         TxtMedida.Text = GridView1.GetRowCellValue(fila, "Medida")
-        TxtProveedor.Text = GridView1.GetRowCellValue(fila, "NombreCompleto")
     End Sub
 
     Private Sub NavBarItem1_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem1.LinkClicked

@@ -227,7 +227,7 @@ Partial Class FrmInventarios
         Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(750, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(143, 13)

@@ -221,11 +221,11 @@ Partial Class FrmUsuarios
         Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(748, 35)
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(753, 32)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(143, 13)
-        Me.Label7.TabIndex = 6
+        Me.Label7.TabIndex = 50
         Me.Label7.Text = "Hacer doble click para editar"
         '
         'FrmUsuarios
