@@ -21,7 +21,6 @@ Partial Public Class RptVentasMes
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RptVentasMes))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
-        Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
@@ -65,6 +64,7 @@ Partial Public Class RptVentasMes
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Sp_VentasAnoTableAdapter = New MamiManda.dsBakerySystemTableAdapters.Sp_VentasAnoTableAdapter()
+        Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsBakerySystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,16 +78,6 @@ Partial Public Class RptVentasMes
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'XrLabel5
-        '
-        Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_VentasMes.Mes")})
-        Me.XrLabel5.Dpi = 100.0!
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(521.7328!, 0!)
-        Me.XrLabel5.Name = "XrLabel5"
-        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel5.SizeF = New System.Drawing.SizeF(128.2672!, 23.0!)
-        Me.XrLabel5.Text = "XrLabel5"
         '
         'XrLabel4
         '
@@ -452,6 +442,16 @@ Partial Public Class RptVentasMes
         '
         Me.Sp_VentasAnoTableAdapter.ClearBeforeFill = True
         '
+        'XrLabel5
+        '
+        Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Sp_VentasMes.Mes1")})
+        Me.XrLabel5.Dpi = 100.0!
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(521.7328!, 0!)
+        Me.XrLabel5.Name = "XrLabel5"
+        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(122.2672!, 23.0!)
+        Me.XrLabel5.Text = "XrLabel5"
+        '
         'RptVentasMes
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeaderBand1, Me.PageFooterBand1, Me.ReportHeaderBand1, Me.TopMarginBand1, Me.BottomMarginBand1})
@@ -508,9 +508,9 @@ Partial Public Class RptVentasMes
     Friend WithEvents XrLabel27 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents Sp_VentasAnoTableAdapter As dsBakerySystemTableAdapters.Sp_VentasAnoTableAdapter
     Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel4 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel3 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLine1 As DevExpress.XtraReports.UI.XRLine
     Friend WithEvents XrTableCell8 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
 End Class

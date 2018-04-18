@@ -25,9 +25,11 @@ Partial Class FrmReporteVentasCliente
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.TxtRTN = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -65,24 +67,26 @@ Partial Class FrmReporteVentasCliente
         Me.RadioButton1.Text = "Cliente que mas Compro al Año"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'TxtRTN
-        '
-        Me.TxtRTN.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TxtRTN.Enabled = False
-        Me.TxtRTN.Location = New System.Drawing.Point(43, 102)
-        Me.TxtRTN.Name = "TxtRTN"
-        Me.TxtRTN.Size = New System.Drawing.Size(214, 20)
-        Me.TxtRTN.TabIndex = 24
-        '
         'Button1
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button1.Location = New System.Drawing.Point(333, 93)
+        Me.Button1.Location = New System.Drawing.Point(333, 84)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(126, 36)
         Me.Button1.TabIndex = 23
         Me.Button1.Text = "Generar Reporte"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'DateEdit1
+        '
+        Me.DateEdit1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.DateEdit1.EditValue = New Date(2018, 4, 17, 19, 52, 0, 230)
+        Me.DateEdit1.Location = New System.Drawing.Point(43, 90)
+        Me.DateEdit1.Name = "DateEdit1"
+        Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DateEdit1.Size = New System.Drawing.Size(190, 20)
+        Me.DateEdit1.TabIndex = 26
         '
         'FrmReporteVentasCliente
         '
@@ -91,22 +95,23 @@ Partial Class FrmReporteVentasCliente
         Me.BackgroundImage = Global.MamiManda.My.Resources.Resources.FondoNew
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(573, 235)
+        Me.Controls.Add(Me.DateEdit1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TxtRTN)
         Me.Controls.Add(Me.Button1)
         Me.Name = "FrmReporteVentasCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Reporte Ventas por SCliente"
+        Me.Text = "Reporte Ventas por Cliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents TxtRTN As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
 End Class

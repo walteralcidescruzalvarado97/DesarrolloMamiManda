@@ -349,7 +349,20 @@ alter procedure Sp_ClienteMayorCompraMes
 As
 	BEGIN
 		Set nocount on 
-			select c.RTNCliente, c.Nombre+' '+c.Apellido as 'Nombre Completo', SUM(d.Cantidad*d.Precio) as 'sub',sum(f.descuento) as 'Descuento',MONTH(f.fecha) as 'Mes'
+			select c.RTNCliente, c.Nombre+' '+c.Apellido as 'Nombre Completo', SUM(d.Cantidad*d.Precio) as 'sub',sum(f.descuento) as 'Descuento',CASE Month(f.fecha) 
+																																					   WHEN 1 THEN 'ENERO'
+																																					   WHEN 2 THEN 'FEBRERO'
+																																					   WHEN 3 THEN 'MARZO'
+																																					   WHEN 4 THEN 'ABRIL'
+																																					   WHEN 5 THEN 'MAYO'
+																																					   WHEN 6 THEN 'JUNIO'
+																																					   WHEN 7 THEN 'JULIO'
+																																					   WHEN 8 THEN 'AGOSTO'
+																																					   WHEN 9 THEN 'SEPTIEMBRE'
+																																					   WHEN 10 THEN 'OCTUBRE'
+																																					   WHEN 11 THEN 'NOVIEMBRE'
+																																					   WHEN 12 THEN 'DICIEMBRE'
+																																					   END AS Mes
 			from Cliente c inner join Factura f on c.RTNCliente =  f.RTNCliente
 							inner join DetalleFactura d on d.IdFactura = f.IdFactura
 			where month(f.Fecha)= @ano
@@ -361,6 +374,8 @@ As
 													 where month(f.Fecha)= @ano
 													 GROUP BY c.RTNCliente)df1)
 	END
+
+ exec Sp_ClienteMayorCompraMes 4
 
 
 --RptClienteMayorAno 17
@@ -407,7 +422,20 @@ alter procedure Sp_VentasMes
 @ano int
 As
 	BEGIN
-		SELECT Sum(df.Cantidad*df.Precio) AS 'Sub',(Sum(df.Cantidad*df.Precio)*0.15) as 'ISV',sum(f.Descuento) as 'Descuento',((Sum(df.Cantidad*df.Precio)+(Sum(df.Cantidad*df.Precio)*0.15))-(sum(f.Descuento))) as 'Total', Month(f.fecha) AS 'Mes'
+		SELECT Sum(df.Cantidad*df.Precio) AS 'Sub',(Sum(df.Cantidad*df.Precio)*0.15) as 'ISV',sum(f.Descuento) as 'Descuento',((Sum(df.Cantidad*df.Precio)+(Sum(df.Cantidad*df.Precio)*0.15))-(sum(f.Descuento))) as 'Total', CASE Month(f.fecha) 
+																																																								   WHEN 1 THEN 'ENERO'
+																																																								   WHEN 2 THEN 'FEBRERO'
+																																																								   WHEN 3 THEN 'MARZO'
+																																																								   WHEN 4 THEN 'ABRIL'
+																																																								   WHEN 5 THEN 'MAYO'
+																																																								   WHEN 6 THEN 'JUNIO'
+																																																								   WHEN 7 THEN 'JULIO'
+																																																								   WHEN 8 THEN 'AGOSTO'
+																																																								   WHEN 9 THEN 'SEPTIEMBRE'
+																																																								   WHEN 10 THEN 'OCTUBRE'
+																																																								   WHEN 11 THEN 'NOVIEMBRE'
+																																																								   WHEN 12 THEN 'DICIEMBRE'
+																																																								   END AS Mes
 		FROM DetalleFactura df inner join Factura f
 							on df.IdFactura=f.idfactura
 		where Month(f.Fecha)= @ano
@@ -426,4 +454,34 @@ As
 		where f.Fecha= @ano
 		GROUP BY f.fecha
 	END
+
+
+CREATE PROCEDURE Sp_GraficoVentas
+	@ano INT
+AS
+	BEGIN
+
+		SELECT ((Sum(df.Cantidad*df.Precio)+(Sum(df.Cantidad*df.Precio)*0.15))-(sum(f.Descuento))) as 'Total', CASE Month(f.fecha) 
+																											   WHEN 1 THEN 'ENERO'
+																											   WHEN 2 THEN 'FEBRERO'
+																											   WHEN 3 THEN 'MARZO'
+																											   WHEN 4 THEN 'ABRIL'
+																											   WHEN 5 THEN 'MAYO'
+																											   WHEN 6 THEN 'JUNIO'
+																											   WHEN 7 THEN 'JULIO'
+																											   WHEN 8 THEN 'AGOSTO'
+																											   WHEN 9 THEN 'SEPTIEMBRE'
+																											   WHEN 10 THEN 'OCTUBRE'
+																											   WHEN 11 THEN 'NOVIEMBRE'
+																											   WHEN 12 THEN 'DICIEMBRE'
+																											   END AS Mes
+		FROM DetalleFactura df inner join Factura f
+							on df.IdFactura=f.idfactura
+		where YEAR(f.Fecha)= 2018
+		GROUP BY MONTH(f.fecha)
+	END
+
+
+
+
 

@@ -102,6 +102,7 @@ Partial Class MenuPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Sp_EmpleadoFacturaTableAdapter = New MamiManda.dsBakerySystemTableAdapters.Sp_EmpleadoFacturaTableAdapter()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.BarButtonItem47 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,9 +115,9 @@ Partial Class MenuPrincipal
         Me.RibbonControl.ApplicationIcon = Global.MamiManda.My.Resources.Resources.Imagen11
         Me.RibbonControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem26, Me.BarButtonItem27, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36, Me.BarButtonItem37, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarButtonItem41, Me.BarButtonItem42, Me.BarButtonItem43, Me.BarButtonItem44, Me.BarButtonItem45, Me.BarButtonItem46})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BbiCambiar, Me.SkinRibbonGalleryBarItem1, Me.BarButtonItem17, Me.BarStaticItem1, Me.BsIUsuario, Me.BarButtonItem16, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem26, Me.BarButtonItem27, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36, Me.BarButtonItem37, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarButtonItem41, Me.BarButtonItem42, Me.BarButtonItem43, Me.BarButtonItem44, Me.BarButtonItem45, Me.BarButtonItem46, Me.BarButtonItem47})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 54
+        Me.RibbonControl.MaxItemId = 55
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage2, Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage4, Me.RibbonPage5})
         Me.RibbonControl.Size = New System.Drawing.Size(1102, 143)
@@ -597,6 +598,7 @@ Partial Class MenuPrincipal
         Me.RibbonPageGroup13.ItemLinks.Add(Me.BarButtonItem40)
         Me.RibbonPageGroup13.ItemLinks.Add(Me.BarButtonItem43)
         Me.RibbonPageGroup13.ItemLinks.Add(Me.BarButtonItem45)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.BarButtonItem47)
         Me.RibbonPageGroup13.Name = "RibbonPageGroup13"
         Me.RibbonPageGroup13.Text = "Reportes de Ventas"
         '
@@ -690,6 +692,12 @@ Partial Class MenuPrincipal
         'Sp_EmpleadoFacturaTableAdapter
         '
         Me.Sp_EmpleadoFacturaTableAdapter.ClearBeforeFill = True
+        '
+        'BarButtonItem47
+        '
+        Me.BarButtonItem47.Caption = "Reporte Ventas Mensuales G."
+        Me.BarButtonItem47.Id = 54
+        Me.BarButtonItem47.Name = "BarButtonItem47"
         '
         'MenuPrincipal
         '
@@ -801,4 +809,5 @@ Partial Class MenuPrincipal
     Friend WithEvents BarButtonItem45 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem46 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents HelpProvider1 As System.Windows.Forms.HelpProvider
+    Friend WithEvents BarButtonItem47 As DevExpress.XtraBars.BarButtonItem
 End Class

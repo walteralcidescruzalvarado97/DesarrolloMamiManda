@@ -262,4 +262,9 @@ Public Class MenuPrincipal
     Private Sub BarButtonItem46_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem46.ItemClick
         FrmProductoPresentacion.ShowDialog()
     End Sub
+
+    Private Sub BarButtonItem47_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BarButtonItem47.ItemClick
+        FrmGraficoVenta.MdiParent = Me
+        FrmGraficoVenta.Show()
+    End Sub
 End Class

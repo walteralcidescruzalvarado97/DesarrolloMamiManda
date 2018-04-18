@@ -1,52 +1,49 @@
 ﻿Imports DevExpress.XtraReports.UI
 Public Class FrmReporteVenta
     Private Sub FrmReporteVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dtpFecha.Enabled = False
+        DateEdit1.Enabled = False
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If (RadioButton1.Checked = True) Then
-            If (TxtRTN.Text = Nothing) Then
-                MessageBox.Show("Ingrese el Año de las Ventas a Mostrar", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                TxtRTN.Focus()
-            Else
-                Dim rpt As New RptVentasAno(TxtRTN.Text)
-                Dim printTool As New ReportPrintTool(rpt)
+
+            Dim rpt As New RptVentasAno(DateEdit1.DateTime.Year)
+            Dim printTool As New ReportPrintTool(rpt)
                 printTool.ShowRibbonPreview()
-            End If
+
         ElseIf (RadioButton3.Checked = True) Then
-            If (dtpFecha.Text = Nothing) Then
-                MessageBox.Show("Ingrese la Fecha de las Ventas", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                TxtRTN.Focus()
-            Else
-                Dim Reporte As New RptVentasDia(dtpFecha.Text)
-                Reporte.ShowRibbonPreview
-            End If
+
+            Dim Reporte As New RptVentasDia(DateEdit1.DateTime)
+            Reporte.ShowRibbonPreview
+
 
         ElseIf (RadioButton2.Checked = True) Then
-            If (TxtRTN.Text = Nothing) Then
-                MessageBox.Show("Ingrese el Mes de las Ventas", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                TxtRTN.Focus()
-            Else
-                Dim Reporte As New RptVentasMes(TxtRTN.Text)
-                Reporte.ShowRibbonPreview
-            End If
+
+            Dim Reporte As New RptVentasMes(DateEdit1.DateTime.Month)
+            Reporte.ShowRibbonPreview
+
         Else
             MessageBox.Show("No ha seleccionado nada", "MamiManda", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-        TxtRTN.Enabled = True
+        DateEdit1.Enabled = True
 
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        TxtRTN.Enabled = True
+        DateEdit1.Enabled = True
     End Sub
 
     Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
-        dtpFecha.Enabled = True
-        TxtRTN.Enabled = False
-        TxtRTN.Clear()
+        DateEdit1.Enabled = True
+    End Sub
+
+    Private Sub DateEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles DateEdit1.EditValueChanged
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class
