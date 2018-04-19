@@ -25,100 +25,42 @@ Partial Class FrmReporteMateriaPrima
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReporteMateriaPrima))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdMateriaPrimaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreMateriaPrimaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ExistenciaMinimaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ExistenciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioCostoMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RTNProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MateriaPrimaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DsBakerySystem = New MamiManda.dsBakerySystem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.TxtID = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.MateriaPrimaTableAdapter = New MamiManda.dsBakerySystemTableAdapters.MateriaPrimaTableAdapter()
+        Me.DsBakerySystem = New MamiManda.dsBakerySystem()
+        Me.SpMostrarMateBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Sp_MostrarMateTableAdapter = New MamiManda.dsBakerySystemTableAdapters.Sp_MostrarMateTableAdapter()
+        Me.IdMateriaPrimaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreMateriaPrimaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ExistenciaMinimaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ExistenciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioCostoMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MateriaPrimaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpMostrarMateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
         Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdMateriaPrimaDataGridViewTextBoxColumn, Me.NombreMateriaPrimaDataGridViewTextBoxColumn, Me.ExistenciaMinimaDataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.PrecioCostoMDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.RTNProveedorDataGridViewTextBoxColumn, Me.MedidaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.MateriaPrimaBindingSource
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdMateriaPrimaDataGridViewTextBoxColumn, Me.NombreMateriaPrimaDataGridViewTextBoxColumn, Me.ProveedorDataGridViewTextBoxColumn, Me.ExistenciaMinimaDataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.MedidaDataGridViewTextBoxColumn, Me.PrecioCostoMDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.SpMostrarMateBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 124)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(801, 209)
         Me.DataGridView1.TabIndex = 0
-        '
-        'IdMateriaPrimaDataGridViewTextBoxColumn
-        '
-        Me.IdMateriaPrimaDataGridViewTextBoxColumn.DataPropertyName = "IdMateriaPrima"
-        Me.IdMateriaPrimaDataGridViewTextBoxColumn.HeaderText = "IdMateriaPrima"
-        Me.IdMateriaPrimaDataGridViewTextBoxColumn.Name = "IdMateriaPrimaDataGridViewTextBoxColumn"
-        Me.IdMateriaPrimaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreMateriaPrimaDataGridViewTextBoxColumn
-        '
-        Me.NombreMateriaPrimaDataGridViewTextBoxColumn.DataPropertyName = "NombreMateriaPrima"
-        Me.NombreMateriaPrimaDataGridViewTextBoxColumn.HeaderText = "NombreMateriaPrima"
-        Me.NombreMateriaPrimaDataGridViewTextBoxColumn.Name = "NombreMateriaPrimaDataGridViewTextBoxColumn"
-        '
-        'ExistenciaMinimaDataGridViewTextBoxColumn
-        '
-        Me.ExistenciaMinimaDataGridViewTextBoxColumn.DataPropertyName = "ExistenciaMinima"
-        Me.ExistenciaMinimaDataGridViewTextBoxColumn.HeaderText = "ExistenciaMinima"
-        Me.ExistenciaMinimaDataGridViewTextBoxColumn.Name = "ExistenciaMinimaDataGridViewTextBoxColumn"
-        '
-        'ExistenciaDataGridViewTextBoxColumn
-        '
-        Me.ExistenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia"
-        Me.ExistenciaDataGridViewTextBoxColumn.HeaderText = "Existencia"
-        Me.ExistenciaDataGridViewTextBoxColumn.Name = "ExistenciaDataGridViewTextBoxColumn"
-        '
-        'PrecioCostoMDataGridViewTextBoxColumn
-        '
-        Me.PrecioCostoMDataGridViewTextBoxColumn.DataPropertyName = "PrecioCostoM"
-        Me.PrecioCostoMDataGridViewTextBoxColumn.HeaderText = "PrecioCostoM"
-        Me.PrecioCostoMDataGridViewTextBoxColumn.Name = "PrecioCostoMDataGridViewTextBoxColumn"
-        '
-        'FechaDataGridViewTextBoxColumn
-        '
-        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha"
-        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
-        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
-        '
-        'RTNProveedorDataGridViewTextBoxColumn
-        '
-        Me.RTNProveedorDataGridViewTextBoxColumn.DataPropertyName = "RTNProveedor"
-        Me.RTNProveedorDataGridViewTextBoxColumn.HeaderText = "RTNProveedor"
-        Me.RTNProveedorDataGridViewTextBoxColumn.Name = "RTNProveedorDataGridViewTextBoxColumn"
-        '
-        'MedidaDataGridViewTextBoxColumn
-        '
-        Me.MedidaDataGridViewTextBoxColumn.DataPropertyName = "Medida"
-        Me.MedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
-        Me.MedidaDataGridViewTextBoxColumn.Name = "MedidaDataGridViewTextBoxColumn"
-        '
-        'MateriaPrimaBindingSource
-        '
-        Me.MateriaPrimaBindingSource.DataMember = "MateriaPrima"
-        Me.MateriaPrimaBindingSource.DataSource = Me.DsBakerySystem
-        '
-        'DsBakerySystem
-        '
-        Me.DsBakerySystem.DataSetName = "dsBakerySystem"
-        Me.DsBakerySystem.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label1
         '
@@ -185,9 +127,69 @@ Partial Class FrmReporteMateriaPrima
         Me.Button1.Text = "Generar Reporte"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'MateriaPrimaTableAdapter
+        'DsBakerySystem
         '
-        Me.MateriaPrimaTableAdapter.ClearBeforeFill = True
+        Me.DsBakerySystem.DataSetName = "dsBakerySystem"
+        Me.DsBakerySystem.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SpMostrarMateBindingSource
+        '
+        Me.SpMostrarMateBindingSource.DataMember = "Sp_MostrarMate"
+        Me.SpMostrarMateBindingSource.DataSource = Me.DsBakerySystem
+        '
+        'Sp_MostrarMateTableAdapter
+        '
+        Me.Sp_MostrarMateTableAdapter.ClearBeforeFill = True
+        '
+        'IdMateriaPrimaDataGridViewTextBoxColumn
+        '
+        Me.IdMateriaPrimaDataGridViewTextBoxColumn.DataPropertyName = "IdMateriaPrima"
+        Me.IdMateriaPrimaDataGridViewTextBoxColumn.HeaderText = "IdMateriaPrima"
+        Me.IdMateriaPrimaDataGridViewTextBoxColumn.Name = "IdMateriaPrimaDataGridViewTextBoxColumn"
+        Me.IdMateriaPrimaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreMateriaPrimaDataGridViewTextBoxColumn
+        '
+        Me.NombreMateriaPrimaDataGridViewTextBoxColumn.DataPropertyName = "NombreMateriaPrima"
+        Me.NombreMateriaPrimaDataGridViewTextBoxColumn.HeaderText = "NombreMateriaPrima"
+        Me.NombreMateriaPrimaDataGridViewTextBoxColumn.Name = "NombreMateriaPrimaDataGridViewTextBoxColumn"
+        '
+        'ProveedorDataGridViewTextBoxColumn
+        '
+        Me.ProveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor"
+        Me.ProveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor"
+        Me.ProveedorDataGridViewTextBoxColumn.Name = "ProveedorDataGridViewTextBoxColumn"
+        Me.ProveedorDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ExistenciaMinimaDataGridViewTextBoxColumn
+        '
+        Me.ExistenciaMinimaDataGridViewTextBoxColumn.DataPropertyName = "ExistenciaMinima"
+        Me.ExistenciaMinimaDataGridViewTextBoxColumn.HeaderText = "ExistenciaMinima"
+        Me.ExistenciaMinimaDataGridViewTextBoxColumn.Name = "ExistenciaMinimaDataGridViewTextBoxColumn"
+        '
+        'ExistenciaDataGridViewTextBoxColumn
+        '
+        Me.ExistenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia"
+        Me.ExistenciaDataGridViewTextBoxColumn.HeaderText = "Existencia"
+        Me.ExistenciaDataGridViewTextBoxColumn.Name = "ExistenciaDataGridViewTextBoxColumn"
+        '
+        'MedidaDataGridViewTextBoxColumn
+        '
+        Me.MedidaDataGridViewTextBoxColumn.DataPropertyName = "Medida"
+        Me.MedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
+        Me.MedidaDataGridViewTextBoxColumn.Name = "MedidaDataGridViewTextBoxColumn"
+        '
+        'PrecioCostoMDataGridViewTextBoxColumn
+        '
+        Me.PrecioCostoMDataGridViewTextBoxColumn.DataPropertyName = "PrecioCostoM"
+        Me.PrecioCostoMDataGridViewTextBoxColumn.HeaderText = "PrecioCostoM"
+        Me.PrecioCostoMDataGridViewTextBoxColumn.Name = "PrecioCostoMDataGridViewTextBoxColumn"
+        '
+        'FechaDataGridViewTextBoxColumn
+        '
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
         '
         'FrmReporteMateriaPrima
         '
@@ -207,10 +209,10 @@ Partial Class FrmReporteMateriaPrima
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte MateriaPrima"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MateriaPrimaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DsBakerySystem, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpMostrarMateBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -218,20 +220,20 @@ Partial Class FrmReporteMateriaPrima
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DsBakerySystem As dsBakerySystem
-    Friend WithEvents MateriaPrimaBindingSource As BindingSource
-    Friend WithEvents MateriaPrimaTableAdapter As dsBakerySystemTableAdapters.MateriaPrimaTableAdapter
-    Friend WithEvents IdMateriaPrimaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreMateriaPrimaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ExistenciaMinimaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ExistenciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioCostoMDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RTNProveedorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MedidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents TxtID As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents SpMostrarMateBindingSource As BindingSource
+    Friend WithEvents Sp_MostrarMateTableAdapter As dsBakerySystemTableAdapters.Sp_MostrarMateTableAdapter
+    Friend WithEvents IdMateriaPrimaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreMateriaPrimaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProveedorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ExistenciaMinimaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ExistenciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MedidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioCostoMDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

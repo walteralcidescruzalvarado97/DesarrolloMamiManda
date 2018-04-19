@@ -1,8 +1,14 @@
 ﻿Imports DevExpress.XtraReports.UI
 Public Class FrmReporteMateriaPrima
     Private Sub FrmReporteMateriaPrima_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DsBakerySystem.Sp_MostrarMate' table. You can move, or remove it, as needed.
+        Me.Sp_MostrarMateTableAdapter.Fill(Me.DsBakerySystem.Sp_MostrarMate)
+        'TODO: This line of code loads data into the 'DsBakerySystem.Sp_MostrarMate' table. You can move, or remove it, as needed.
+        Me.Sp_MostrarMateTableAdapter.Fill(Me.DsBakerySystem.Sp_MostrarMate)
+        'TODO: This line of code loads data into the 'DsBakerySystem.Sp_MostrarMate' table. You can move, or remove it, as needed.
+        Me.Sp_MostrarMateTableAdapter.Fill(Me.DsBakerySystem.Sp_MostrarMate)
         'TODO: This line of code loads data into the 'DsBakerySystem.MateriaPrima' table. You can move, or remove it, as needed.
-        Me.MateriaPrimaTableAdapter.Fill(Me.DsBakerySystem.MateriaPrima)
+        Me.Sp_MostrarMateTableAdapter.Fill(Me.DsBakerySystem.Sp_MostrarMate)
 
     End Sub
 
@@ -33,5 +39,9 @@ Public Class FrmReporteMateriaPrima
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         TxtID.Enabled = False
         TxtID.Clear()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class
