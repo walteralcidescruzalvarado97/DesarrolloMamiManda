@@ -274,6 +274,6 @@ Public Class MenuPrincipal
     End Sub
 
     Private Sub BtnInfo_ItemClick(sender As Object, e As ItemClickEventArgs) Handles BtnInfo.ItemClick
-        AboutBox1.ShowDialog()
+        FrmAcercaDe.ShowDialog()
     End Sub
 End Class

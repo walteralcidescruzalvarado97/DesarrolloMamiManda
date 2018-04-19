@@ -359,6 +359,12 @@
     <Compile Include="Nuevo\AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Nuevo\AcercaDe.Designer.vb">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo\AcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Nuevo\FrmAsignarPermisos.Designer.vb">
       <DependentUpon>FrmAsignarPermisos.vb</DependentUpon>
     </Compile>
@@ -709,6 +715,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo\AcercaDe.resx">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nuevo\FrmAsignarPermisos.resx">
       <DependentUpon>FrmAsignarPermisos.vb</DependentUpon>
